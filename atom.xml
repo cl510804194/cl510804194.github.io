@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-08-12T03:05:52.289Z</updated>
+  <updated>2019-08-12T06:13:09.485Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,16 +17,26 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>a</title>
-    <link href="http://yoursite.com/2019/08/12/a/"/>
-    <id>http://yoursite.com/2019/08/12/a/</id>
+    <title>Node.js学习</title>
+    <link href="http://yoursite.com/2019/08/12/learnNode/"/>
+    <id>http://yoursite.com/2019/08/12/learnNode/</id>
     <published>2019-08-12T03:05:52.000Z</published>
-    <updated>2019-08-12T03:05:52.289Z</updated>
+    <updated>2019-08-12T06:13:09.485Z</updated>
+    
+    <content type="html"><![CDATA[<p>Node.js 的学习笔记</p>]]></content>
     
     <summary type="html">
     
+      
+      
+        &lt;p&gt;Node.js 的学习笔记&lt;/p&gt;
+
+      
+    
     </summary>
     
+    
+      <category term="node.js" scheme="http://yoursite.com/tags/node-js/"/>
     
   </entry>
   
