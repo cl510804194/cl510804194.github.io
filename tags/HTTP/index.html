@@ -6,20 +6,15 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Node.js学习 | 程亮的个人博客</title>
+  <title>Tag: HTTP | 程亮的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Node.js 的学习笔记 创建基类 model当成功返回时和失败返回时，返回信息 12345678910111213141516171819202122232425262728293031class BaseModel &amp;#123;  constructor(data, message) &amp;#123;    if (typeof data === &apos;string&apos;) &amp;#123;      th">
-<meta name="keywords" content="node.js">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Node.js学习">
-<meta property="og:url" content="http://yoursite.com/2019/08/12/learnNode/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="程亮的个人博客">
+<meta property="og:url" content="http://yoursite.com/tags/HTTP/index.html">
 <meta property="og:site_name" content="程亮的个人博客">
-<meta property="og:description" content="Node.js 的学习笔记 创建基类 model当成功返回时和失败返回时，返回信息 12345678910111213141516171819202122232425262728293031class BaseModel &amp;#123;  constructor(data, message) &amp;#123;    if (typeof data === &apos;string&apos;) &amp;#123;      th">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-08-13T06:36:28.079Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Node.js学习">
-<meta name="twitter:description" content="Node.js 的学习笔记 创建基类 model当成功返回时和失败返回时，返回信息 12345678910111213141516171819202122232425262728293031class BaseModel &amp;#123;  constructor(data, message) &amp;#123;    if (typeof data === &apos;string&apos;) &amp;#123;      th">
+<meta name="twitter:title" content="程亮的个人博客">
   
     <link rel="alternative" href="/atom.xml" title="程亮的个人博客" type="application/atom+xml">
   
@@ -176,203 +171,60 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-learnNode" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      Node.js学习
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2019" class="archive-year">2019</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2019/08/13/learnHTTP/" class="archive-article-date">
+  	<time datetime="2019-08-13T01:35:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-13</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2019/08/13/learnHTTP/">http学习笔记</a>
     </h1>
   
 
-        
-        <a href="/2019/08/12/learnNode/" class="archive-article-date">
-  	<time datetime="2019-08-12T03:05:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-12</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Node.js 的学习笔记</p>
-<h3 id="创建基类-model"><a href="#创建基类-model" class="headerlink" title="创建基类 model"></a>创建基类 model</h3><p>当成功返回时和失败返回时，返回信息</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">class BaseModel &#123;</span><br><span class="line">  constructor(data, message) &#123;</span><br><span class="line">    <span class="keyword">if</span> (typeof data === <span class="string">'string'</span>) &#123;</span><br><span class="line">      this.message = data;</span><br><span class="line">      data = null;</span><br><span class="line">      message = null;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (data) &#123;</span><br><span class="line">      this.data = data;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (message) &#123;</span><br><span class="line">      this.message = message;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">class SuccessModel extends BaseModel &#123;</span><br><span class="line">  constructor(data, message) &#123;</span><br><span class="line">    super(data, message);</span><br><span class="line">    this.errno = 0;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">class ErrorModel extends BaseModel &#123;</span><br><span class="line">  constructor(data, message) &#123;</span><br><span class="line">    super(data, message);</span><br><span class="line">    this.errno = -1;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">module.exports = &#123;</span><br><span class="line">  SuccessModel,</span><br><span class="line">  ErrorModel</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<h3 id="拆分-URL"><a href="#拆分-URL" class="headerlink" title="拆分 URL"></a>拆分 URL</h3><p>将 url 拆分成一个数组，分成 path 和参数</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">const url = req.url;</span><br><span class="line">req.path = url.split(<span class="string">'?'</span>)[0];</span><br></pre></td></tr></table></figure>
-
-<a id="more"></a>
-
-<h3 id="创建博客接口"><a href="#创建博客接口" class="headerlink" title="创建博客接口"></a>创建博客接口</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">const handleBlogRouter = (req, res) =&gt; &#123;</span><br><span class="line">  const method = req.method;</span><br><span class="line">  const url = req.url;</span><br><span class="line">  const path = url.split(<span class="string">'?'</span>)[0];</span><br><span class="line">  //获取博客列表</span><br><span class="line">  <span class="keyword">if</span> (method === <span class="string">'GET'</span> &amp;&amp; path === <span class="string">'/api/blog/list'</span>) &#123;</span><br><span class="line">    <span class="built_in">return</span> &#123;</span><br><span class="line">      msg: <span class="string">'这是获取博客列表的接口'</span></span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;</span><br><span class="line">  //获取博客详情</span><br><span class="line">  <span class="keyword">if</span> (method === <span class="string">'GET'</span> &amp;&amp; path === <span class="string">'/api/blog/detail'</span>) &#123;</span><br><span class="line">    <span class="built_in">return</span> &#123;</span><br><span class="line">      msg: <span class="string">'这是获取博客详情的接口'</span></span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;</span><br><span class="line">  //新建一篇博客</span><br><span class="line">  <span class="keyword">if</span> (method === <span class="string">'POST'</span> &amp;&amp; path === <span class="string">'/api/blog/new'</span>) &#123;</span><br><span class="line">    <span class="built_in">return</span> &#123;</span><br><span class="line">      msg: <span class="string">'这是新建博客的接口'</span></span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;</span><br><span class="line">  //更新一篇博客</span><br><span class="line">  <span class="keyword">if</span> (method === <span class="string">'POST'</span> &amp;&amp; path === <span class="string">'/api/blog/update'</span>) &#123;</span><br><span class="line">    <span class="built_in">return</span> &#123;</span><br><span class="line">      msg: <span class="string">'这是更新博客的接口'</span></span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;</span><br><span class="line">  //删除一篇博客</span><br><span class="line">  <span class="keyword">if</span> (method === <span class="string">'POST'</span> &amp;&amp; path === <span class="string">'/api/blog/del'</span>) &#123;</span><br><span class="line">    <span class="built_in">return</span> &#123;</span><br><span class="line">      msg: <span class="string">'这是删除博客的接口'</span></span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">module.exprots = handleBlogRouter</span><br></pre></td></tr></table></figure>
-
-<h3 id="创建用户接口"><a href="#创建用户接口" class="headerlink" title="创建用户接口"></a>创建用户接口</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">const handleUserRouter = (req, res) =&gt; &#123;</span><br><span class="line">  const method = req.method;</span><br><span class="line">  const url = req.url;</span><br><span class="line">  const path = url.split(<span class="string">'?'</span>)[0];</span><br><span class="line">  <span class="keyword">if</span> (method === <span class="string">'POST'</span> &amp;&amp; path === <span class="string">'/api/user/login'</span>) &#123;</span><br><span class="line">    <span class="built_in">return</span> &#123;</span><br><span class="line">      msg: <span class="string">'这是登陆的接口'</span></span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line">module.exprots = handleUserRouter;</span><br></pre></td></tr></table></figure>
-
-<h3 id="Controler-层-创建数据"><a href="#Controler-层-创建数据" class="headerlink" title="Controler 层 创建数据"></a>Controler 层 创建数据</h3><pre><code>创建完后 在对应的接口地址上，添加逻辑，并创建一个成功的对象</code></pre><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (method === <span class="string">'GET'</span> &amp;&amp; req.path === <span class="string">'/api/blog/list'</span>) &#123;</span><br><span class="line">   const author = req.query.author || <span class="string">''</span>;</span><br><span class="line">   console.log(author);</span><br><span class="line">   const keyword = req.query.keyword || <span class="string">''</span>;</span><br><span class="line">   const listData = getList(author, keyword);</span><br><span class="line">   <span class="built_in">return</span> new SuccessModel(listData);</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="项目分为如下层"><a href="#项目分为如下层" class="headerlink" title="项目分为如下层"></a>项目分为如下层</h3><h4 id="server-js-服务层"><a href="#server-js-服务层" class="headerlink" title="server.js:服务层"></a>server.js:服务层</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">const http = require(<span class="string">'http'</span>);</span><br><span class="line">const PORT = 8003;</span><br><span class="line">const serverHandle = require(<span class="string">'../app'</span>);</span><br><span class="line">const server = http.createServer(serverHandle);</span><br><span class="line">server.listen(PORT);</span><br></pre></td></tr></table></figure>
-
-<h4 id="app-js-数据设置层"><a href="#app-js-数据设置层" class="headerlink" title="app.js:数据设置层"></a>app.js:数据设置层</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">const querystring = require(<span class="string">'querystring'</span>);</span><br><span class="line">const handleBlogRouter = require(<span class="string">'./src/router/blog.js'</span>);</span><br><span class="line">console.log(handleBlogRouter, <span class="string">'handleBlogRouter'</span>);</span><br><span class="line">const handleUserRouter = require(<span class="string">'./src/router/user.js'</span>);</span><br><span class="line"></span><br><span class="line">const serverHandle = (req, res) =&gt; &#123;</span><br><span class="line">  res.setHeader(<span class="string">'Content-type'</span>, <span class="string">'application/json'</span>);</span><br><span class="line">  //获取path</span><br><span class="line">  const url = req.url;</span><br><span class="line">  req.path = url.split(<span class="string">'?'</span>)[0];</span><br><span class="line"></span><br><span class="line">  //解析query</span><br><span class="line">  req.query = querystring.parse(url.split(<span class="string">'?'</span>)[0]);</span><br><span class="line">  console.log(req.query);</span><br><span class="line">  const blogData = handleBlogRouter(req, res);</span><br><span class="line">  <span class="keyword">if</span> (blogData) &#123;</span><br><span class="line">    res.end(JSON.stringify(blogData));</span><br><span class="line">    <span class="built_in">return</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  //处理User路由</span><br><span class="line">  const userData = handleUserRouter(req, res);</span><br><span class="line">  <span class="keyword">if</span> (userData) &#123;</span><br><span class="line">    res.end(JSON.stringify(userData));</span><br><span class="line">    <span class="built_in">return</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  //未命中路由，返回404</span><br><span class="line">  res.writeHead(404, &#123; <span class="string">'Content-type'</span>: <span class="string">'text/plain'</span> &#125;);</span><br><span class="line">  res.write(<span class="string">'404 Not Found\n'</span>);</span><br><span class="line">  res.end();</span><br><span class="line">&#125;;</span><br><span class="line">module.exports = serverHandle;</span><br></pre></td></tr></table></figure>
-
-<h4 id="router-js-路由层"><a href="#router-js-路由层" class="headerlink" title="router.js:路由层"></a>router.js:路由层</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">const handleUserRouter = (req, res) =&gt; &#123;</span><br><span class="line">  const method = req.method;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (method === <span class="string">'POST'</span> &amp;&amp; req.path === <span class="string">'/api/user/login'</span>) &#123;</span><br><span class="line">    <span class="built_in">return</span> &#123;</span><br><span class="line">      msg: <span class="string">'这是登陆的接口'</span></span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line">module.exports = handleUserRouter;</span><br></pre></td></tr></table></figure>
-
-<h4 id="controler-js-数据层"><a href="#controler-js-数据层" class="headerlink" title="controler.js:数据层"></a>controler.js:数据层</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">const getList = (author, keyword) =&gt; &#123;</span><br><span class="line">  //先返回假数据</span><br><span class="line">  <span class="built_in">return</span> [</span><br><span class="line">    &#123;</span><br><span class="line">      id: 1,</span><br><span class="line">      title: <span class="string">'标题A'</span>,</span><br><span class="line">      createTime: 15466104911112,</span><br><span class="line">      author: <span class="string">'程亮'</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      id: 2,</span><br><span class="line">      title: <span class="string">'标题B'</span>,</span><br><span class="line">      createTime: 15466104911112,</span><br><span class="line">      author: <span class="string">'程亮2'</span></span><br><span class="line">    &#125;</span><br><span class="line">  ];</span><br><span class="line">&#125;;</span><br><span class="line">module.exports = &#123;</span><br><span class="line">  getList</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<h3 id="实现一个回调函数"><a href="#实现一个回调函数" class="headerlink" title="实现一个回调函数"></a>实现一个回调函数</h3><p>callback 方式</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> getFileContent(fileName, callback) &#123;</span><br><span class="line">  const fullFileName = path.resolve(__dirname, <span class="string">'files'</span>, fileName);</span><br><span class="line">  fs.readFile(fullFileName, (err, data) =&gt; &#123;</span><br><span class="line">    <span class="keyword">if</span> (err) &#123;</span><br><span class="line">      console.log(err);</span><br><span class="line">      <span class="built_in">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    callback(JSON.parse(data.toString()));</span><br><span class="line">    // console.log();</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br><span class="line">getFileContent(<span class="string">'a.json'</span>, aData =&gt; &#123;</span><br><span class="line">  console.log(<span class="string">'a data'</span>, aData);</span><br><span class="line">  getFileContent(aData.next, bData =&gt; &#123;</span><br><span class="line">    console.log(<span class="string">'b data'</span>, bData);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<p>promise 方式</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> getFileContent(fileName) &#123;</span><br><span class="line">  const promise = new Promise((resolve, reject) =&gt; &#123;</span><br><span class="line">    const fullFileName = path.resolve(__dirname, <span class="string">'files'</span>, fileName);</span><br><span class="line">    fs.readFile(fullFileName, (err, data) =&gt; &#123;</span><br><span class="line">      <span class="keyword">if</span> (err) &#123;</span><br><span class="line">        reject(err);</span><br><span class="line">        <span class="built_in">return</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      resolve(JSON.parse(data.toString()));</span><br><span class="line">      // console.log();</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;);</span><br><span class="line">  <span class="built_in">return</span> promise;</span><br><span class="line">&#125;</span><br><span class="line">getFileContent(<span class="string">'a.json'</span>)</span><br><span class="line">  .<span class="keyword">then</span>(res =&gt; &#123;</span><br><span class="line">    console.log(<span class="string">'a data'</span>, res);</span><br><span class="line">    <span class="built_in">return</span> getFileContent(res.next); //要返回一个值，则需要 <span class="built_in">return</span></span><br><span class="line">  &#125;)</span><br><span class="line">  .<span class="keyword">then</span>(res =&gt; &#123;</span><br><span class="line">    console.log(<span class="string">'b data'</span>, res);</span><br><span class="line">  &#125;);</span><br></pre></td></tr></table></figure>
-
-<h3 id="使用-promise-接收-post-data"><a href="#使用-promise-接收-post-data" class="headerlink" title="使用 promise 接收 post data"></a>使用 promise 接收 post data</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">const getPostData = req =&gt; &#123;</span><br><span class="line">  const promise = new Promise((res, rej) =&gt; &#123;</span><br><span class="line">    <span class="keyword">if</span> (req.method !== <span class="string">'POST'</span>) &#123;</span><br><span class="line">      resolve(&#123;&#125;);</span><br><span class="line">      <span class="built_in">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (req.headers[<span class="string">'content-type'</span>] !== <span class="string">'application/json'</span>) &#123;</span><br><span class="line">      resolve(&#123;&#125;);</span><br><span class="line">      <span class="built_in">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">let</span> postData = <span class="string">''</span>;</span><br><span class="line">    req.on(<span class="string">'data'</span>, chunk =&gt; &#123;</span><br><span class="line">      postData += chunk.toString();</span><br><span class="line">    &#125;);</span><br><span class="line">    req.on(<span class="string">'end'</span>, () =&gt; &#123;</span><br><span class="line">      <span class="keyword">if</span> (!postData) &#123;</span><br><span class="line">        resolve(&#123;&#125;);</span><br><span class="line">        <span class="built_in">return</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      resolve(JSON.parse(postData));</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;);</span><br><span class="line">  <span class="built_in">return</span> promise;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<h4 id="处理-postData"><a href="#处理-postData" class="headerlink" title="处理 postData"></a>处理 postData</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">getPostData(req).then(postData =&gt; &#123;</span><br><span class="line">    req.body = postData;</span><br><span class="line"></span><br><span class="line">    //处理blog路由</span><br><span class="line">    const blogData = handleBlogRouter(req, res);</span><br><span class="line">    if (blogData) &#123;</span><br><span class="line">      res.end(JSON.stringify(blogData));</span><br><span class="line">      return;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    //处理User路由</span><br><span class="line">    const userData = handleUserRouter(req, res);</span><br><span class="line">    if (userData) &#123;</span><br><span class="line">      res.end(JSON.stringify(userData));</span><br><span class="line">      return;</span><br><span class="line">    &#125;</span><br><span class="line">    //未命中路由，返回404</span><br><span class="line">    res.writeHead(404, &#123; &apos;Content-type&apos;: &apos;text/plain&apos; &#125;);</span><br><span class="line">    res.write(&apos;404 Not Found\n&apos;);</span><br><span class="line">    res.end();</span><br><span class="line">  &#125;);</span><br></pre></td></tr></table></figure>
-
-
-      
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">node.js</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">HTTP</a>
         		</li>
       		
 		</ul>
 	</div>
 
-      
+          
 
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/08/12/learnNode/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2019/08/13/learnHTTP/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          http学习笔记
-        
-      </div>
-    </a>
   
   
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-  
+    </div></section>
   
 
-  
-
-  
-
-  
+    
 
 
           </div>
@@ -395,9 +247,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
