@@ -6,19 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>回顾ES6 | 程亮的个人博客</title>
+  <title>HTTP学习笔记 | 程亮的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="执行上下文当有两个相同函数名时候，后面的会覆盖前面的函数 1234567891011function foo() &amp;#123;  console.log(&amp;apos;foo1&amp;apos;);&amp;#125;foo(); // foo2function foo() &amp;#123;  console.log(&amp;apos;foo2&amp;apos;);&amp;#125;foo(); // foo2  actionScop">
+  <meta name="description" content="http 的学习笔记 参考来自： HTTP 权威指南学习笔记 @woai30231github.com/woai30231/http/tree/master  URL 与资源URI（统一资源标识符）由 URL（统一资源定位符）和 URN（统一资源名）两个子集构成。 URL 以位置定位URL 是从资源的位置来定义一个资源的，比如在“中国山东的一只小狗”和在“中国广东的一只小狗”就分别定义了两只不同的">
+<meta name="keywords" content="http">
 <meta property="og:type" content="article">
-<meta property="og:title" content="回顾ES6">
-<meta property="og:url" content="http://yoursite.com/2019/08/13/reviewEs6/index.html">
+<meta property="og:title" content="HTTP学习笔记">
+<meta property="og:url" content="http://yoursite.com/2019/08/12/learnHTTP/index.html">
 <meta property="og:site_name" content="程亮的个人博客">
-<meta property="og:description" content="执行上下文当有两个相同函数名时候，后面的会覆盖前面的函数 1234567891011function foo() &amp;#123;  console.log(&amp;apos;foo1&amp;apos;);&amp;#125;foo(); // foo2function foo() &amp;#123;  console.log(&amp;apos;foo2&amp;apos;);&amp;#125;foo(); // foo2  actionScop">
+<meta property="og:description" content="http 的学习笔记 参考来自： HTTP 权威指南学习笔记 @woai30231github.com/woai30231/http/tree/master  URL 与资源URI（统一资源标识符）由 URL（统一资源定位符）和 URN（统一资源名）两个子集构成。 URL 以位置定位URL 是从资源的位置来定义一个资源的，比如在“中国山东的一只小狗”和在“中国广东的一只小狗”就分别定义了两只不同的">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-08-17T04:10:33.412Z">
+<meta property="og:updated_time" content="2019-08-16T02:46:25.213Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="回顾ES6">
-<meta name="twitter:description" content="执行上下文当有两个相同函数名时候，后面的会覆盖前面的函数 1234567891011function foo() &amp;#123;  console.log(&amp;apos;foo1&amp;apos;);&amp;#125;foo(); // foo2function foo() &amp;#123;  console.log(&amp;apos;foo2&amp;apos;);&amp;#125;foo(); // foo2  actionScop">
+<meta name="twitter:title" content="HTTP学习笔记">
+<meta name="twitter:description" content="http 的学习笔记 参考来自： HTTP 权威指南学习笔记 @woai30231github.com/woai30231/http/tree/master  URL 与资源URI（统一资源标识符）由 URL（统一资源定位符）和 URN（统一资源名）两个子集构成。 URL 以位置定位URL 是从资源的位置来定义一个资源的，比如在“中国山东的一只小狗”和在“中国广东的一只小狗”就分别定义了两只不同的">
   
     <link rel="alternative" href="/atom.xml" title="程亮的个人博客" type="application/atom+xml">
   
@@ -175,92 +176,428 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-reviewEs6" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-learnHTTP" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      回顾ES6
+      HTTP学习笔记
     </h1>
   
 
         
-        <a href="/2019/08/13/reviewEs6/" class="archive-article-date">
-  	<time datetime="2019-08-13T07:23:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-13</time>
+        <a href="/2019/08/12/learnHTTP/" class="archive-article-date">
+  	<time datetime="2019-08-12T03:05:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-12</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="执行上下文"><a href="#执行上下文" class="headerlink" title="执行上下文"></a>执行上下文</h3><p>当有两个相同函数名时候，后面的会覆盖前面的函数</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">function foo() &#123;</span><br><span class="line">  console.log(&apos;foo1&apos;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">foo(); // foo2</span><br><span class="line"></span><br><span class="line">function foo() &#123;</span><br><span class="line">  console.log(&apos;foo2&apos;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">foo(); // foo2</span><br></pre></td></tr></table></figure>
+        <p>http 的学习笔记</p>
+<p>参考来自：</p>
+<blockquote><p>HTTP 权威指南学习笔记</p>
+<footer><strong>@woai30231</strong><cite><a href="https://github.com/woai30231/http/tree/master" target="_blank" rel="noopener">github.com/woai30231/http/tree/master</a></cite></footer></blockquote>
 
-<h3 id="actionScope"><a href="#actionScope" class="headerlink" title="actionScope"></a>actionScope</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">var value = 1;</span><br><span class="line"></span><br><span class="line">function foo() &#123;</span><br><span class="line">  // console.log(this);</span><br><span class="line">  console.log(1);</span><br><span class="line">  console.log(value);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function bar() &#123;</span><br><span class="line">  var value = 2;</span><br><span class="line">  // console.log(this);</span><br><span class="line">  foo();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">bar();</span><br></pre></td></tr></table></figure>
-
-<p>输出 1</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var scope = &apos;global scope&apos;;</span><br><span class="line">function checkscope() &#123;</span><br><span class="line">  var scope = &apos;local scope&apos;;</span><br><span class="line">  // console.log(scope);</span><br><span class="line">  function f() &#123;</span><br><span class="line">    return scope;</span><br><span class="line">  &#125;</span><br><span class="line">  return f();</span><br><span class="line">&#125;</span><br><span class="line">checkscope();</span><br></pre></td></tr></table></figure>
-
-<p>输出 local scope</p>
-<h3 id="解构赋值"><a href="#解构赋值" class="headerlink" title="解构赋值"></a>解构赋值</h3><ul>
-<li>获取数组中的值</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var foo = [&quot;one&quot;, &quot;two&quot;, &quot;three&quot;, &quot;four&quot;];</span><br><span class="line">var [one, two, three] = foo;</span><br><span class="line">console.log(one); // &quot;one&quot;</span><br><span class="line">console.log(two); // &quot;two&quot;</span><br><span class="line">console.log(three); // &quot;three&quot;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>如果要忽略掉某些值</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var [first, , , last] = foo;</span><br><span class="line">console.log(first); // &quot;one&quot;</span><br><span class="line">console.log(last); // &quot;four&quot;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>如果没有从数组中拿到值，可以为变量设置一个默认值</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[a=5, b=7] = [1];</span><br><span class="line">console.log(a); // 1</span><br><span class="line">console.log(b); // 7</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>交换两数</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var a = 1;</span><br><span class="line">var b = 3;</span><br><span class="line">[a, b] = [b, a];</span><br><span class="line">console.log(a); // 3</span><br><span class="line">console.log(b); // 1</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>获取对象的值</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">const student = &#123;</span><br><span class="line">  name:&apos;Ming&apos;,</span><br><span class="line">  age:&apos;18&apos;,</span><br><span class="line">  city:&apos;Shanghai&apos;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">const &#123;name,age,city&#125; = student;</span><br><span class="line">console.log(name); // &quot;Ming&quot;</span><br><span class="line">console.log(age); // &quot;18&quot;</span><br><span class="line">console.log(city); // &quot;Shanghai&quot;</span><br></pre></td></tr></table></figure>
-
+<h2 id="URL-与资源"><a href="#URL-与资源" class="headerlink" title="URL 与资源"></a>URL 与资源</h2><p>URI（统一资源标识符）由 URL（统一资源定位符）和 URN（统一资源名）两个子集构成。</p>
+<h3 id="URL-以位置定位"><a href="#URL-以位置定位" class="headerlink" title="URL 以位置定位"></a>URL 以位置定位</h3><p>URL 是从资源的位置来定义一个资源的，比如在“中国山东的一只小狗”和在“中国广东的一只小狗”就分别定义了两只不同的狗<br>缺点：如果资源的位置发生了改变，那么资源也就找不到了</p>
+<h3 id="URN-以名字定位"><a href="#URN-以名字定位" class="headerlink" title="URN 以名字定位"></a>URN 以名字定位</h3><p>URN 是从资源的名字来定义的，比如小明和小李就分别定义了两个人</p>
+<h3 id="URL-和-URN-对比"><a href="#URL-和-URN-对比" class="headerlink" title="URL 和 URN 对比"></a>URL 和 URN 对比</h3><p>URL 的缺点就是如果资源的位置发生了改变，那么资源也就找不到了，而 URN 正是解决这个问题的，因为 URN 不受位置的限制，它只受名字的管理，因为对于 URN 来说，一个资源的名字是唯一的，所以无论资源移动到什么地方，都能通过名字定位到资源。从某种意义上来说，URN 是 URI 的未来趋势，但是 URN 的实现需要一个中间架构来满足这种位置到名字的映射，所以要完成从 URL 到 URN 的过度，显然是一个工程量的过程，如果不是 URL 到了不能用的时候，URN 的实现需要很长的时间，幸运的是现在 URL 架构还是很好的满足网络需求的！</p>
+<h2 id="URL-的语法"><a href="#URL-的语法" class="headerlink" title="URL 的语法"></a>URL 的语法</h2><p>URL 的语法描述的是 URL 由哪些组件构成，以及这些组件是怎么组合成一个 URL，中间由什么符号连接，每个组件代表什么等！其格式如下：</p>
+<blockquote><p><code>&lt;scheme&gt;://&lt;user&gt;:&lt;password&gt;@&lt;host&gt;:&lt;port&gt;/&lt;path&gt;;&lt;params&gt;?&lt;query&gt;#&lt;frag&gt;</code></p>
+</blockquote>
+<p>其中：<br>scheme:方法描述了请求资源时用了什么协议，用“:”与 url 其它部分隔开；<br>user:用户名描述了访问是带的用户名；<br>password:密码描述了用户名后面可能跟的密码，用“:”跟用户名隔开；<br>host:主机描述了网站主机名或 ip 地址，如果前面有用户名和密码，用@分开；<br>post:服务器当前正在监听的端口，http 默认为 80，https 默认为 443;<br>path:路劲描述了资源在服务器上的位置，用‘/’跟前面部分隔开；<br>params:参数描述了请求需要附加的参数，用“;”与其他部分隔开；<br>query:查询是用来激活服务器程序去执行某些操作，比如查询数据库等，用“?”与其余部分隔开；<br>frag:片段只在客户端使用，不发送到服务器端；</p>
 <a id="more"></a>
 
-<h3 id="延展操作符"><a href="#延展操作符" class="headerlink" title="延展操作符"></a>延展操作符</h3><ul>
-<li>对象延展<br>合并后，后合并的对象中如果有和前面对象相同的键名，将会覆盖掉前面的键值对</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var obj1 = &#123; foo: &apos;bar&apos;, x: 42 &#125;;</span><br><span class="line">var obj2 = &#123; foo: &apos;baz&apos;, y: 13 &#125;;</span><br><span class="line">var clonedObj = &#123; ...obj1 &#125;;</span><br><span class="line">// 克隆后的对象: &#123; foo: &quot;bar&quot;, x: 42 &#125;</span><br><span class="line">var mergedObj = &#123; ...obj1, ...obj2 &#125;;</span><br><span class="line">// 合并后的对象: &#123; foo: &quot;baz&quot;, x: 42, y: 13 &#125;</span><br></pre></td></tr></table></figure>
-
+<h2 id="HTTP-报文"><a href="#HTTP-报文" class="headerlink" title="HTTP 报文"></a>HTTP 报文</h2><h3 id="报文的组成部分"><a href="#报文的组成部分" class="headerlink" title="报文的组成部分"></a>报文的组成部分</h3><p>报文由三个部分组成，起始行、首部、主体</p>
 <ul>
-<li>react 延展操作符的用法<br>使用 … ，等同于上面的写法</li>
+<li>首部<br>说一下首部分类，主要有五类：通用首部、请求首部、响应首部、主体首部、扩展首部。通用首部就是请求报文和响应报文都可以用，用以说明报文的一般属性；请求首部出现在请求报文中，用于客户端告诉服务器是什么情况，比如能接受什么，不能接受什么等；响应报文用于响应报文中，服务器端用来告诉客户端什么情况；主体首部用来描述主体的信息，比如主体的长度是多少等；扩展报文是非官方的报文，但是 http 也支持发送。</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">const params = &#123;name: &apos;Jine&apos;,age: 21&#125;</span><br><span class="line">&lt;CustomComponent &#123;...params&#125; /&gt;</span><br></pre></td></tr></table></figure>
-
-<p>配合解构赋值避免传入一些不需要的参数</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var params = &#123;name: &apos;123&apos;,title: &apos;456&apos;,type: &apos;aaa&apos;&#125;</span><br><span class="line">var &#123; type, ...other &#125; = params;</span><br><span class="line">&lt;CustomComponent type=&apos;normal&apos; number=&#123;2&#125; &#123;...other&#125; /&gt;</span><br><span class="line">//等同于</span><br><span class="line">&lt;CustomComponent type=&apos;normal&apos; number=&#123;2&#125; name=&apos;123&apos; title=&apos;456&apos; /&gt;</span><br></pre></td></tr></table></figure>
-
-<h3 id="Promise-all"><a href="#Promise-all" class="headerlink" title="Promise.all()"></a>Promise.all()</h3><p>Promise.all()有如下两种情况</p>
+<h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h3><h4 id="安全方法"><a href="#安全方法" class="headerlink" title="安全方法"></a>安全方法</h4><ul>
+<li>GET 方法用于请求服务器端发送某个资源</li>
+<li>HEAD 方法跟 GET 方法类似，区别就是不返回主体</li>
+<li>PUT 方法用于向服务器端修改、插入数据</li>
+<li>POST 方法用于向服务器端发送数据</li>
+<li>TRACK 方法用于向服务器端请求报文在发送的过程中经过了什么修改，主要用于测试</li>
+<li>OPTIONS 用于请求服务器告知其支持什么功能</li>
+<li>DELETE 用于向服务器删除某个指定的资源</li>
+</ul>
+<h4 id="状态码"><a href="#状态码" class="headerlink" title="状态码"></a>状态码</h4><ul>
+<li>100-199 信息性状态码</li>
+<li>200-299 成功状态码 （常见 200 表示请求成功）</li>
+<li>300-399 重定向状态码 （常见 302 重定向）</li>
+<li>400-499 客户端错误状态码 （常见 404，请求资源不存在）</li>
+<li>500-599 服务端错误状态码</li>
+</ul>
+<h3 id="常见首部字段含义介绍"><a href="#常见首部字段含义介绍" class="headerlink" title="常见首部字段含义介绍"></a>常见首部字段含义介绍</h3><ul>
+<li>通用首部</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>首部</th>
+<th align="center">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Connection</td>
+<td align="center">允许客户端和服务器指定与请求/响应连接有关的选项</td>
+</tr>
+<tr>
+<td>Date</td>
+<td align="center">提供了日期的时间标志，说明报文是什么时间创建的</td>
+</tr>
+<tr>
+<td>MIME-Version</td>
+<td align="center">给出了发送端使用的 MIME 版本</td>
+</tr>
+<tr>
+<td>Trailer</td>
+<td align="center">如果报文采用了分块传输编码方式，就可以用这个首部列出位于报文拖挂部分的首部集合</td>
+</tr>
+<tr>
+<td>Transfer-Encoding</td>
+<td align="center">告知接收端为了保证报文的可靠传输，对报文采用了什么编码方式</td>
+</tr>
+<tr>
+<td>Update</td>
+<td align="center">给出了发送端可能想要“升级”使用的新版本或协议</td>
+</tr>
+<tr>
+<td>Via</td>
+<td align="center">显示了报文经过的中间节点（代理、网关）</td>
+</tr>
+<tr>
+<td>Cache-Control</td>
+<td align="center">用于随报文传送缓存指示</td>
+</tr>
+<tr>
+<td>Pragma</td>
+<td align="center">另一种随报文传送指示的方式，但并不专用缓存</td>
+</tr>
+</tbody></table>
 <ul>
-<li><p>完成（Fulfillment）:<br>如果传入的可迭代对象为空，Promise.all 会同步地返回一个已完成（resolved）状态的 promise。<br>如果所有传入的 promise 都变为完成状态，或者传入的可迭代对象内没有 promise，Promise.all 返回的 promise 异步地变为完成。<br>在任何情况下，Promise.all 返回的 promise 的完成状态的结果都是一个数组，它包含所有的传入迭代参数对象的值（也包括非 promise 值）。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">const promises = [</span><br><span class="line">  Promise.resolve(&apos;a&apos;),</span><br><span class="line">  Promise.resolve(&apos;b&apos;),</span><br><span class="line">  Promise.resolve(&apos;c&apos;),</span><br><span class="line">];</span><br><span class="line">Promise.all(promises)</span><br><span class="line">  .then((arr) =&gt; console.log(arr));</span><br></pre></td></tr></table></figure>
-
-<p>输出为(‘a’,’b’,’c’)</p>
-</li>
-<li><p>失败(Rejection):<br>如果传入的 promise 中有一个失败（rejected），Promise.all 异步地将失败的那个结果给失败状态的回调函数，而不管其它 promise 是否完成。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">const promises = [</span><br><span class="line">Promise.resolve(&apos;a&apos;),</span><br><span class="line">Promise.reject(&apos;b&apos;),</span><br><span class="line">Promise.reject(&apos;ERROR&apos;)</span><br><span class="line">];</span><br><span class="line">Promise.all(promises)</span><br><span class="line">.then(res =&gt; console.log(res))</span><br><span class="line">.catch(err =&gt; console.log(err));</span><br></pre></td></tr></table></figure>
-
-<p>输出为’b’</p>
+<li>请求首部</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>首部</th>
+<th align="center">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Client-IP</td>
+<td align="center">提供了运行客户端的机器的 IP 地址</td>
+</tr>
+<tr>
+<td>From</td>
+<td align="center">提供了客户端用户的 E-mail 地址</td>
+</tr>
+<tr>
+<td>Host</td>
+<td align="center">给出了接收请求的服务器的主机名和端口号</td>
+</tr>
+<tr>
+<td>Referer</td>
+<td align="center">提供了包含当前请求 URL 的文档的 URL</td>
+</tr>
+<tr>
+<td>UA-Color</td>
+<td align="center">提供了与客户端显示器的显示颜色有关的信息</td>
+</tr>
+<tr>
+<td>UA-CPU</td>
+<td align="center">给出了客户端 CPU 的类型或制造商</td>
+</tr>
+<tr>
+<td>UA-Disp</td>
+<td align="center">提供了与客户端显示器（屏幕）能力有关的信息</td>
+</tr>
+<tr>
+<td>UA-OS</td>
+<td align="center">给出了运行在客户端机器上的操作系统名称及版本</td>
+</tr>
+<tr>
+<td>UA-Pixels</td>
+<td align="center">提供了客户端显示器的像素信息</td>
+</tr>
+<tr>
+<td>User-Agent</td>
+<td align="center">将发起请求的应用程序名称告知服务器</td>
+</tr>
+<tr>
+<td>Accept</td>
+<td align="center">告诉服务器能够发送那些媒体类型</td>
+</tr>
+<tr>
+<td>Accept-Charset</td>
+<td align="center">告诉服务器能够给发送那些字符集</td>
+</tr>
+<tr>
+<td>Accept-Encoding</td>
+<td align="center">告诉服务器能够发送那些编码方式</td>
+</tr>
+<tr>
+<td>Accept-Language</td>
+<td align="center">告诉服务器能够发送那些语言</td>
+</tr>
+<tr>
+<td>TE</td>
+<td align="center">告诉服务器可以使用那些扩展传输编码</td>
+</tr>
+</tbody></table>
+<ul>
+<li>响应首部</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>首部</th>
+<th align="center">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Age</td>
+<td align="center">（从最初创建开始）响应持续时间</td>
+</tr>
+<tr>
+<td>Public</td>
+<td align="center">服务器为其资源支持的请求方法列表</td>
+</tr>
+<tr>
+<td>Retry-After</td>
+<td align="center">如果资源不可用的话，在此日期或时间重试</td>
+</tr>
+<tr>
+<td>Server</td>
+<td align="center">服务器应用程序软件的名称和版本</td>
+</tr>
+<tr>
+<td>Title</td>
+<td align="center">对 HTML 文档来说，就是 HTML 文档的源端给出的标题</td>
+</tr>
+<tr>
+<td>Warning</td>
+<td align="center">比原因短语中更详细的警告报文</td>
+</tr>
+<tr>
+<td>Accept-Ranges</td>
+<td align="center">对此资源来说，服务器可接受的范围类型</td>
+</tr>
+<tr>
+<td>Vary</td>
+<td align="center">服务器查看的其他首部的列表，可能会使响应发生变化；也就是说，这是一个首部列表， 服务器会根据这些首部的内容挑选处最合适的资源版本发送个客户端</td>
+</tr>
+<tr>
+<td>Proxy-Authenticate</td>
+<td align="center">来自代理的对客户端的质询列表</td>
+</tr>
+<tr>
+<td>Set-Cookie</td>
+<td align="center">不是真正的安全首部，但隐含有安全功能；可以在客户端设置一个令牌，以便服务器对客户端进行标志</td>
+</tr>
+<tr>
+<td>Set-Cookie2</td>
+<td align="center">与 Set-Cookie 类似</td>
+</tr>
+<tr>
+<td>WWW-Authenticate</td>
+<td align="center">来自服务器的对客户端的质询列表</td>
+</tr>
+</tbody></table>
+<ul>
+<li><p>实体首部</p>
+<table>
+<thead>
+<tr>
+<th>首部</th>
+<th align="center">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Content-Base</td>
+<td align="center">解析主体中的相对 URL 时使用的基础 URL</td>
+</tr>
+<tr>
+<td>Content-Encoding</td>
+<td align="center">对主体执行的任意编码方式</td>
+</tr>
+<tr>
+<td>Content-Language</td>
+<td align="center">理解主体时最适宜使用的自然语言</td>
+</tr>
+<tr>
+<td>Content-Length</td>
+<td align="center">主体的长度或者尺寸</td>
+</tr>
+<tr>
+<td>Content-Location</td>
+<td align="center">资源实际所处的位置</td>
+</tr>
+<tr>
+<td>Content-MD5</td>
+<td align="center">主体的 MD5 校验和</td>
+</tr>
+<tr>
+<td>Content-Range</td>
+<td align="center">在整个资源中此实体表示的字节范围</td>
+</tr>
+<tr>
+<td>Content-Type</td>
+<td align="center">这个主体的对象类型</td>
+</tr>
+<tr>
+<td>ETag</td>
+<td align="center">与此实体相关的实体标记</td>
+</tr>
+<tr>
+<td>Expires</td>
+<td align="center">实体不再有效，要从原始的源端再次获取此实体的日期和时间</td>
+</tr>
+<tr>
+<td>Last-Modified</td>
+<td align="center">这个实体最后一次被修改的日期和时间</td>
+</tr>
+</tbody></table>
 </li>
 </ul>
-<h3 id="Promise-race"><a href="#Promise-race" class="headerlink" title="Promise.race()"></a>Promise.race()</h3><p>Promise.race(iterable) 方法返回一个 promise，一旦迭代器中的某个 promise 解决或拒绝，返回的 promise 就会解决或拒绝。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">const promises = [</span><br><span class="line">  new Promise((resolve, reject) =&gt;</span><br><span class="line">    setTimeout(() =&gt; resolve(&apos;result&apos;), 100)),</span><br><span class="line">  new Promise((resolve, reject) =&gt;</span><br><span class="line">    setTimeout(() =&gt; reject(&apos;ERROR&apos;), 200)),</span><br><span class="line">];</span><br><span class="line">Promise.race(promises)</span><br><span class="line">  .then((result) =&gt; assert.equal(</span><br><span class="line">    result, &apos;result&apos;));</span><br></pre></td></tr></table></figure>
-
-<p>返回的是 result</p>
+<h2 id="连接管理"><a href="#连接管理" class="headerlink" title="连接管理"></a>连接管理</h2><h3 id="TCP-IP-连接"><a href="#TCP-IP-连接" class="headerlink" title="TCP/IP 连接"></a>TCP/IP 连接</h3><ul>
+<li>TCP/IP 是全球计算机及网络设备都在使用的一种常用的分组交换<strong>网络分层</strong>协议集，位于 http 下层。其实常谈论的 http 连接实际上就是 tcp 连接加上一些使用连接的规则，tcp 为 http 提供了一条可靠的比特传输管道。一旦连接建立起来，在客户端和服务器的计算机之间交换的报文就永远不会丢失、受损或失序。</li>
+</ul>
+<ol>
+<li>浏览器从地址栏中解析处域名（主机名），也就是拿到 <a href="http://www.xxx.com" target="_blank" rel="noopener">www.xxx.com</a></li>
+<li>浏览器根据得到的主机名查询出 ip 地址，比如算出 ip 为 202.43.78.3， <strong>DNS 进行解析域名得到 IP 地址</strong></li>
+<li>浏览器解析出端口（http 默认为 80，https 默认为 443）</li>
+<li>浏览器发起一条到 202.43.78.3 端口为 80 的链接，（重建需要经过几次确定相关参数的来回“握手”） <strong>三次握手</strong></li>
+<li>浏览器发起请求报文</li>
+<li>服务器返回响应报文<br>浏览器关闭连接（其实浏览器和服务器都可以在不通知对方的情况关闭连接）</li>
+</ol>
+<ul>
+<li>TCP 确定一个连接</li>
+</ul>
+<p>TCP 用四个信息来唯一确定一条连接：源 ip 地址、源端口号、目的 ip 地址、目的端口号。只要其中有一个不同，那么就不是同一条连接。在任意时刻计算机都可以有几条 tcp 连接在打开状态。</p>
+<h3 id="TCP-性能问题"><a href="#TCP-性能问题" class="headerlink" title="TCP 性能问题"></a>TCP 性能问题</h3><ol>
+<li>首先客户端解析 ip 地址或者端口号需要时间，如果当前没有访问过相关资源，那么解析还需要查询 dns 服务器，此操作，造成的时延较多，可能花费数十秒。</li>
+<li>建立 tcp 链接会有建立时延，通常 2s 左右，如果当前的 http 事务较多，那么会很快叠加上去。</li>
+<li>传输、处理请求报文需要时间</li>
+<li>回传响应报文需要时间</li>
+<li>当然还有其他因素，比如硬件、网络负载，以及报文尺寸等！</li>
+</ol>
+<h3 id="三次握手"><a href="#三次握手" class="headerlink" title="三次握手"></a>三次握手</h3><ol>
+<li>客户端发送携带“SYN”标记的 TCP 段说明发起连接请求</li>
+<li>服务端返回“SYN”和“ACK”的 TCP 段说明已接受</li>
+<li>最后客户端发送确认信息以确认连接</li>
+</ol>
+<h3 id="HTTP-连接的处理"><a href="#HTTP-连接的处理" class="headerlink" title="HTTP 连接的处理"></a>HTTP 连接的处理</h3><ul>
+<li>接收端在收到请求报文之后，对报文进行解析，并查看 connection 首部中列出的首部列表，并在转发出去之前，删除相关首部，这一行为称为：“对首部的保护”</li>
+</ul>
+<h3 id="串行处理事务时延"><a href="#串行处理事务时延" class="headerlink" title="串行处理事务时延"></a>串行处理事务时延</h3><p>描述了 http 事务<strong>一个一个接着发起</strong>，不能同时下载更多的资源，使得界面上用户看不到东西，体验不够好。串行连接没有很好的利用 tcp/ip 连接的慢启动机制！</p>
+<ul>
+<li>优化方法</li>
+</ul>
+<ol>
+<li>并行连接:通过多条 TCP 连接发起并发的 HTTP 连接</li>
+<li>持久连接: 重用 TCP 连接，以消除连接及关闭时延</li>
+<li>管道化连接：通过共享的 TCP 连接发起并发的 HTTP 请求</li>
+</ol>
+<ul>
+<li><p>并行连接<br>优点：浏览同时发起多个 http 事务，因为是并行的，所以时延也并行的，这样总时延较小，页面呈现更快，体验较好</p>
+<p>缺点：如果在网络速度很慢的时候，多个连接会去竞争本来不多的带宽，那么就谈不上加快速度了。还有就是并行连接也是需要付出代价的，比如增加系统内训消耗、服务器负载，比如有一个 100 客户端同时对服务发起 100tcp 并行连接的话，那么服务器就得负责 10000 个处理请求，很快的你的服务器就会爆掉。</p>
+</li>
+<li><p>持久连接<br>持久连接描述的是：如果对<strong>同 ip、同端口</strong>的发起多个 http 事务连接，那么可以在前一个事务处理完成之后不要关闭 tcp 连接，以此来减小建立 tcp、tcp 慢启动所带来的时延。</p>
+</li>
+<li><p>管道化连接<br>HTTP/1.1 允许在持久连接上可选地使用请求管道。这是在 keep-alive 连接上的进一步性能优化。在响应到达之前，可以将多条请求放入队列。当第一条请求通过网络流向地球另一端的服务器时，第二条和第三条请求也可以开始发送了。在高时延网络条件下，这样做可以降低网络的环回时间，提高性能。</p>
+<p>管道连接的限制</p>
+<ol>
+<li>如果不是持久连接就不要使用管道连接</li>
+<li>接收端必须按收到请求报文的顺序返回响应报文，因为 HTTP 报文中没有序列号标签。所以必须靠按序发送响应报文来达到“数据对应”</li>
+<li>发送端应该做好数据没有发送完连接就关闭的准备并开始重新发送数据。</li>
+<li>HTTP 客户端不应该用管道化的方式发送会产生副作用的请求（比如 POST）。</li>
+</ol>
+</li>
+<li><p>持久连接与管道连接的区别<br>持久连接<br>请求 1 -&gt; 响应 1 -&gt; 请求 2 -&gt; 响应 2<br>管线化<br>请求 1 -&gt; 请求 2 -&gt; 请求 3 -&gt; 响应 1 -&gt; 响应 2 -&gt; 响应 3</p>
+</li>
+</ul>
+<h3 id="web-服务器"><a href="#web-服务器" class="headerlink" title="web 服务器"></a>web 服务器</h3><ul>
+<li><p>定义<br>实现提供资源或应答的提供者都可以谓之为服务器</p>
+</li>
+<li><p>服务器的分类</p>
+<ol>
+<li>标准计算机上安装的通用服务器，如 apache</li>
+<li>购买的服务器</li>
+<li>嵌入式服务器</li>
+</ol>
+</li>
+<li><p>web 服务器的工作流程</p>
+<ol>
+<li>接收建立连接请求</li>
+<li>接收请求</li>
+<li>处理请求</li>
+<li>访问报文中指定的资源</li>
+<li>构建响应</li>
+<li>发送响应</li>
+<li>记录事务处理过程</li>
+</ol>
+</li>
+</ul>
+<h4 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h4><ul>
+<li><p>第一步-接受客户端连接<br>客户端收到一条连接之后，那么它将会把新连接添加到现存 web 服务器连接列表中，用于监视当前连接上的数据传输情况。期间服务器还应该做到通过一定的设备机制阻止未认证或已知恶意黑名客户端的连接，相关设别技术有：客户端主机名设别、通过 ident 设别客户端用户等！</p>
+</li>
+<li><p>第二步-接收请求报文</p>
+<ol>
+<li>解析请求行，得知方法、url、协议版本，以及 crlf 符</li>
+<li>解析得到以 crlf 结尾的首部</li>
+<li>得到以 crlf 结尾，标志首部结束的空行（如果有的话）</li>
+<li>解析得到主体，（如果有的话）</li>
+</ol>
+<ul>
+<li>web 服务可能还会把请求报文用一种自己能快速处理的内部数据结构来存储请求报文</li>
+<li>不同的服务器配置预示它能同时处理的事务情况<ol>
+<li>单线程 web 服务器：只能处理一个请求，待当前请求处理完成之后才能处理下一个请求！优点：简单已于实现，适用于低负荷服务器。缺点：不能及时处理其他请求，容易引发延迟过长而导致性能问题。</li>
+<li>多线程及多进程 web 服务器：能同时处理多个请求！优点：响应及时。缺点：构建复杂，容易快速引起内存消耗过大而死机！最好应该对能同时处理的连接数量进行限制</li>
+<li>复用 i/o 的 web 服务器：复用 i/o</li>
+<li>复用 i/o 和多线程的 web 服务器：2 和 3 的结合</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p>第三步-处理请求</p>
+</li>
+<li><p>第四步-对资源的映射及访问</p>
+<ol>
+<li>这里介绍了请求资源的一种路径映射关系，说白了就是找到客户端请求资源在服务器的上的目录路径！相关概念有：docroot(文档根目录)、不允许访问根目录的上一级目录。</li>
+<li>虚拟托管的 docroot:在一个服务器上挂了几个 web 站点，那么这样当请求的资源路径相同时，服务器应该从请求报文首部的 host、uri 字段找出真正的资源目录，这些目录都是可以配置的</li>
+</ol>
+</li>
+<li><p>第五步-构建响应</p>
+<ul>
+<li>构建响应报文</li>
+</ul>
+<ol>
+<li>正确设置响应主体的长度（content-length）</li>
+<li>设置报文的 mime 类型（content-type）</li>
+<li>控制重定向</li>
+</ol>
+<ul>
+<li>重定向<ol>
+<li>重定向可用于以下情况 1. 永久删除的资源，状态码为 301</li>
+<li>临时删除的资源，状态码为 303 或 307</li>
+<li>URL 增强，状态码为 303 或 307</li>
+<li>负载均衡，主要是减少服务器的压力，让请求跑到一个负载不大的服务器上去，状态码为 303 或 307</li>
+<li>服务器关联，去保存有用户本地信息的服务器上获取用户信息，状态码为 303 或 307</li>
+<li>规范目录名称，客户端请求的 URI 是一个不带尾部斜线的目录名时，大多数 Web 服务器都会将客户端重定向到一个加了斜线的 URI 上，这样相对链接就可以正常工作了！</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p>第六步-发送请求</p>
+</li>
+<li><p>第七步-记录事务日记</p>
+</li>
+</ul>
 
       
 
@@ -290,6 +627,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">http</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -340,7 +688,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/08/13/reviewEs6/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/08/12/learnHTTP/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -354,20 +702,15 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/08/14/reviewFrondEnd/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/08/12/learnNode/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          重学前端
+          Node.js学习
         
       </div>
     </a>
   
-  
-    <a href="/2019/08/12/learnNode/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Node.js学习</div>
-      <i class="icon-circle-right"></i>
-    </a>
   
 </nav>
 
