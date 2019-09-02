@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="程亮的个人博客">
 <meta property="og:description" content="总结了从参加实习到工作以来中遇见的问题，和可以改进的地方 react 中 style、 className 动态修改12345&amp;lt;div style=&amp;#123;&amp;#123;display: (index===this.state.currentIndex) ? &amp;quot;block&amp;quot; : &amp;quot;none&amp;quot;&amp;#125;&amp;#125;&amp;gt;此标签是否隐藏&amp;lt;/di">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-08-26T01:59:14.308Z">
+<meta property="og:updated_time" content="2019-08-27T07:06:42.703Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="工作中遇见的问题">
 <meta name="twitter:description" content="总结了从参加实习到工作以来中遇见的问题，和可以改进的地方 react 中 style、 className 动态修改12345&amp;lt;div style=&amp;#123;&amp;#123;display: (index===this.state.currentIndex) ? &amp;quot;block&amp;quot; : &amp;quot;none&amp;quot;&amp;#125;&amp;#125;&amp;gt;此标签是否隐藏&amp;lt;/di">
@@ -201,6 +201,15 @@
 <h3 id="在-jsx-中如何使用两个类名"><a href="#在-jsx-中如何使用两个类名" class="headerlink" title="在 jsx 中如何使用两个类名"></a>在 jsx 中如何使用两个类名</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div className=`$&#123;&#125;  $&#123;&#125;`&gt;</span><br></pre></td></tr></table></figure>
 
 <h3 id="React-是根据-useState-出现的顺序来确定的"><a href="#React-是根据-useState-出现的顺序来确定的" class="headerlink" title="React 是根据 useState 出现的顺序来确定的"></a>React 是根据 useState 出现的顺序来确定的</h3><p>React Hooks 不能出现在条件判断语句中，因为它必须有完全一样的渲染顺序。</p>
+<h3 id="react-hooks-useReducer-小案例"><a href="#react-hooks-useReducer-小案例" class="headerlink" title="react-hooks useReducer 小案例"></a>react-hooks useReducer 小案例</h3><p>color.js</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">import React, &#123; createContext, useReducer &#125; from &apos;react&apos;;</span><br><span class="line"></span><br><span class="line">export const ColorContext = createContext(&#123;&#125;);</span><br><span class="line"></span><br><span class="line">export const UPDATE_COLOR = &apos;UPDATE_COLOR&apos;;</span><br><span class="line"></span><br><span class="line">const reducer = (state, action) =&gt; &#123;</span><br><span class="line">  switch (action.type) &#123;</span><br><span class="line">    case UPDATE_COLOR:</span><br><span class="line">      return action.color;</span><br><span class="line">    default:</span><br><span class="line">      return state;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">export const Color = props =&gt; &#123;</span><br><span class="line">  const [color, dispatch] = useReducer(reducer, &apos;blue&apos;);</span><br><span class="line">  return (</span><br><span class="line">    &lt;ColorContext.Provider value=&#123;&#123; color, dispatch &#125;&#125;&gt;</span><br><span class="line">      &#123;props.children&#125;</span><br><span class="line">    &lt;/ColorContext.Provider&gt;</span><br><span class="line">  );</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>button.js</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">import React, &#123; useContext &#125; from &apos;react&apos;;</span><br><span class="line">import &#123; ColorContext, UPDATE_COLOR &#125; from &apos;./Color&apos;;</span><br><span class="line"></span><br><span class="line">function Buttons() &#123;</span><br><span class="line">  const &#123; dispatch &#125; = useContext(ColorContext);</span><br><span class="line">  return (</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      &lt;button</span><br><span class="line">        onClick=&#123;() =&gt; &#123;</span><br><span class="line">          dispatch(&#123; type: UPDATE_COLOR, color: &apos;red&apos; &#125;);</span><br><span class="line">        &#125;&#125;</span><br><span class="line">      &gt;</span><br><span class="line">        红色</span><br><span class="line">      &lt;/button&gt;</span><br><span class="line">      &lt;button</span><br><span class="line">        onClick=&#123;() =&gt; &#123;</span><br><span class="line">          dispatch(&#123; type: UPDATE_COLOR, color: &apos;yellow&apos; &#125;);</span><br><span class="line">        &#125;&#125;</span><br><span class="line">      &gt;</span><br><span class="line">        黄色</span><br><span class="line">      &lt;/button&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">export default Buttons;</span><br></pre></td></tr></table></figure>
+
+<p>showArea.js</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">import React, &#123;</span><br><span class="line">  useState,</span><br><span class="line">  useContext,</span><br><span class="line">  useEffect,</span><br><span class="line">  useCallback,</span><br><span class="line">  useMemo</span><br><span class="line">&#125; from &apos;react&apos;;</span><br><span class="line">import &#123; ColorContext &#125; from &apos;./Color&apos;;</span><br><span class="line">function ShowArea() &#123;</span><br><span class="line">  const &#123; color &#125; = useContext(ColorContext);</span><br><span class="line">  return &lt;div style=&#123;&#123; color: color &#125;&#125;&gt;字体颜色为blue&lt;/div&gt;;</span><br><span class="line">&#125;</span><br><span class="line">export default ShowArea;</span><br></pre></td></tr></table></figure>
+
 
       
 
@@ -293,6 +302,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2019/08/29/learnTaro/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Taro学习笔记
+        
+      </div>
+    </a>
   
   
     <a href="/2019/08/14/reviewFrondEnd/" id="article-nav-older" class="article-nav-link-wrap">
