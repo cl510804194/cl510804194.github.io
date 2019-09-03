@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="程亮的个人博客">
 <meta property="og:description" content="执行上下文当有两个相同函数名时候，后面的会覆盖前面的函数 1234567891011function foo() &amp;#123;  console.log(&amp;apos;foo1&amp;apos;);&amp;#125;foo(); // foo2function foo() &amp;#123;  console.log(&amp;apos;foo2&amp;apos;);&amp;#125;foo(); // foo2  actionScop">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-08-17T04:10:33.412Z">
+<meta property="og:updated_time" content="2019-09-02T02:55:23.325Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="回顾ES6">
 <meta name="twitter:description" content="执行上下文当有两个相同函数名时候，后面的会覆盖前面的函数 1234567891011function foo() &amp;#123;  console.log(&amp;apos;foo1&amp;apos;);&amp;#125;foo(); // foo2function foo() &amp;#123;  console.log(&amp;apos;foo2&amp;apos;);&amp;#125;foo(); // foo2  actionScop">
@@ -261,6 +261,17 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">const promises = [</span><br><span class="line">  new Promise((resolve, reject) =&gt;</span><br><span class="line">    setTimeout(() =&gt; resolve(&apos;result&apos;), 100)),</span><br><span class="line">  new Promise((resolve, reject) =&gt;</span><br><span class="line">    setTimeout(() =&gt; reject(&apos;ERROR&apos;), 200)),</span><br><span class="line">];</span><br><span class="line">Promise.race(promises)</span><br><span class="line">  .then((result) =&gt; assert.equal(</span><br><span class="line">    result, &apos;result&apos;));</span><br></pre></td></tr></table></figure>
 
 <p>返回的是 result</p>
+<h3 id="cookie"><a href="#cookie" class="headerlink" title="cookie"></a>cookie</h3><ul>
+<li><p>什么是 cookie</p>
+<ol>
+<li>存储在浏览器的一段字符串（最大 5kb）</li>
+<li>跨域不共享</li>
+<li>每次发送 http 请求，会将请求与的 cookie 一起发送给 server</li>
+<li>server 可以修改 cookie 并返回给浏览器</li>
+<li>浏览器中也可以用 js 修改 cookie</li>
+</ol>
+</li>
+</ul>
 
       
 
@@ -467,7 +478,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">程亮&lt;br&gt;&lt;br&gt;佛性程序员&lt;br&gt;&lt;br&gt;有女朋友，不秃顶&lt;br&gt;&lt;br&gt;爱好广泛，闲的时候喜欢看看掘金&lt;br&gt;&lt;br&gt;打打游戏</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">程亮&lt;br&gt;&lt;br&gt;佛性程序员&lt;br&gt;&lt;br&gt;熟悉react、html5、小程序、飞冰、vue、熟悉各类组件库、熟悉各类适配&lt;br&gt;&lt;br&gt;了解node.js、webpack、flutter等等&lt;br&gt;&lt;br&gt;有女朋友，不秃顶&lt;br&gt;&lt;br&gt;爱好广泛，闲的时候喜欢看看掘金&lt;br&gt;&lt;br&gt;打打游戏</div>
   	  	
     	</section>
     

@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="程亮的个人博客">
 <meta property="og:description" content="http 的学习笔记 参考来自： HTTP 权威指南学习笔记 @woai30231github.com/woai30231/http/tree/master  URL 与资源URI（统一资源标识符）由 URL（统一资源定位符）和 URN（统一资源名）两个子集构成。 URL 以位置定位URL 是从资源的位置来定义一个资源的，比如在“中国山东的一只小狗”和在“中国广东的一只小狗”就分别定义了两只不同的">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-08-27T06:30:06.280Z">
+<meta property="og:updated_time" content="2019-09-02T01:24:24.868Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HTTP学习笔记">
 <meta name="twitter:description" content="http 的学习笔记 参考来自： HTTP 权威指南学习笔记 @woai30231github.com/woai30231/http/tree/master  URL 与资源URI（统一资源标识符）由 URL（统一资源定位符）和 URN（统一资源名）两个子集构成。 URL 以位置定位URL 是从资源的位置来定义一个资源的，比如在“中国山东的一只小狗”和在“中国广东的一只小狗”就分别定义了两只不同的">
@@ -683,7 +683,34 @@
 <h3 id="距离时延"><a href="#距离时延" class="headerlink" title="距离时延"></a>距离时延</h3><ul>
 <li>距离时延说明的一个问题就是传输数据过程这个过程是需要时间的，而且路程越长，那么需要的时间也会越多，即时延越长。所以在距离客户端较近的地方部署缓存服务器，减小了传输路程，那么就减小了传输时延</li>
 </ul>
-<p>###</p>
+<h2 id="集成点：网关、隧道及中继"><a href="#集成点：网关、隧道及中继" class="headerlink" title="集成点：网关、隧道及中继"></a>集成点：网关、隧道及中继</h2><h3 id="网关"><a href="#网关" class="headerlink" title="网关"></a>网关</h3><p>网络上的资源种类越来越复杂，单一的应用程序是无法处理这些能想到的资源的，所以才有了网关的概念，网关抽象出了一种能达到资源的方法，从而实现这样一种机制：客户端发送 http 请求，请求到达服务器端应用程序，应用程序向网关转发请求，网关处理请求并返回响应。其中网关充当了一种“翻译器”的功能，使得 http 能请求其他非 http 协议的资源！</p>
+<h3 id="客户端和服务器端网关"><a href="#客户端和服务器端网关" class="headerlink" title="客户端和服务器端网关"></a>客户端和服务器端网关</h3><p>客户端网关和服务器端网关描述的是说明对话是在那一侧进行的。客户端网关是用其他协议来和客户端对话，用 http 协议来和服务器端通信；服务器端网关是用其他协议来和服务器端对话，用 http 协议来和客户端通信。</p>
+<h3 id="协议网关"><a href="#协议网关" class="headerlink" title="协议网关"></a>协议网关</h3><p>协议网关主要描述了几种架构在客户端和服务器端之间的网关，它们两侧使用了不同的协议来达到通信的目的，主要有：HTTP/*（服务器端 web 网关）、HTTP/HTTPS（服务器端安全网关）、HTTPS/HTTP（客户端安全网关加速器）。这里主要以 HTTP/FTP 为例讲解一次 http 请求在经过 FTP 网关时网关会去做什么事：</p>
+<ol>
+<li><p>发送 USER 和 PASS 命令登录到服务器上去；</p>
+</li>
+<li><p>发布 CWD 命令，转移到服务器上合适的目录中去；</p>
+</li>
+<li><p>将下载类型设置 ASCII;</p>
+</li>
+<li><p>用 MDTM 获取文档的最后修改时间；</p>
+</li>
+<li><p>用 PASV 告诉服务器将有被动数据获取请求到达；</p>
+</li>
+<li><p>用 RETR 请求进行对象获取；</p>
+</li>
+<li><p>打开到 FTP 服务器的数据连接，服务器端口由控制信道返回；一旦数据信道打开了，就将对象内容回送给网关。</p>
+</li>
+</ol>
+<h3 id="隧道"><a href="#隧道" class="headerlink" title="隧道"></a>隧道</h3><ul>
+<li><p>Web 隧道允许用户通过 HTTP 连接发送非 HTTP 流量，这样就可以在 HTTP 上捎带其他协议数据了。使用 Web 隧道最常见的原因就是要在 HTTP 连接中嵌入 HTTP 流量，这样，这类流量就可以穿过只允许 Web 流量通过的防火墙了。</p>
+</li>
+<li><p>Web 隧道使用 HTTP 的 CONNECT 方法建立起来的。 CONNECT 方法并不是 HTTP/1.1 核心规范的一部分，但却是一种得到广泛应用的扩展。</p>
+</li>
+<li><p>CONNECT 连接：除了起始行之外，CONNECT 的语法与其他 HTTP 方法类似。一个后面跟着冒号和端口号的主机名取代了请求 URL</p>
+</li>
+</ul>
+<h3 id="中继"><a href="#中继" class="headerlink" title="中继"></a>中继</h3><p>HTTP 中继是没有完全遵循 HTTP 规范的简单 HTTP 代理。中继负责处理 HTTP 中建立连接的部分，然后对字节进行盲转发！</p>
 
       
 
@@ -896,7 +923,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">程亮&lt;br&gt;&lt;br&gt;佛性程序员&lt;br&gt;&lt;br&gt;有女朋友，不秃顶&lt;br&gt;&lt;br&gt;爱好广泛，闲的时候喜欢看看掘金&lt;br&gt;&lt;br&gt;打打游戏</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">程亮&lt;br&gt;&lt;br&gt;佛性程序员&lt;br&gt;&lt;br&gt;熟悉react、html5、小程序、飞冰、vue、熟悉各类组件库、熟悉各类适配&lt;br&gt;&lt;br&gt;了解node.js、webpack、flutter等等&lt;br&gt;&lt;br&gt;有女朋友，不秃顶&lt;br&gt;&lt;br&gt;爱好广泛，闲的时候喜欢看看掘金&lt;br&gt;&lt;br&gt;打打游戏</div>
   	  	
     	</section>
     

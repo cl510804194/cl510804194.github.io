@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="程亮的个人博客">
 <meta property="og:description" content="useState类似于 state 和 setState.  相同点：也是异步的，例如在 onClick 事件中，调用两次 setState，数据只改变一次。 不同点：类中的 setState 是合并，而函数组件中的 setState 是替换。  12345678910111213141516import React, &amp;#123; useState &amp;#125; from &amp;apos;react">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-08-30T03:03:03.621Z">
+<meta property="og:updated_time" content="2019-09-02T02:56:00.289Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ReactHooks学习笔记">
 <meta name="twitter:description" content="useState类似于 state 和 setState.  相同点：也是异步的，例如在 onClick 事件中，调用两次 setState，数据只改变一次。 不同点：类中的 setState 是合并，而函数组件中的 setState 是替换。  12345678910111213141516import React, &amp;#123; useState &amp;#125; from &amp;apos;react">
@@ -284,7 +284,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">const memoizedCallback = useCallback(</span><br><span class="line">  () =&gt; &#123;</span><br><span class="line">    doSomething(a, b);</span><br><span class="line">  &#125;,</span><br><span class="line">  [a, b],</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
 
 <p>把内联回调函数及依赖项数组作为参数传入 useCallback，它将返回该回调函数的 memoized 版本，该回调函数仅在某个依赖项改变时才会更新。当你把回调函数传递给经过优化的并使用引用相等性去避免非必要渲染（例如 shouldComponentUpdate）的子组件时，它将非常有用。</p>
-
+<h3 id="server-端操作-cookie"><a href="#server-端操作-cookie" class="headerlink" title="server 端操作 cookie"></a>server 端操作 cookie</h3>
       
 
       
@@ -387,6 +387,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2019/09/02/个人组件库/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          个人组件库
+        
+      </div>
+    </a>
   
   
     <a href="/2019/08/29/learnTaro/" id="article-nav-older" class="article-nav-link-wrap">
@@ -492,7 +501,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">程亮&lt;br&gt;&lt;br&gt;佛性程序员&lt;br&gt;&lt;br&gt;有女朋友，不秃顶&lt;br&gt;&lt;br&gt;爱好广泛，闲的时候喜欢看看掘金&lt;br&gt;&lt;br&gt;打打游戏</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">程亮&lt;br&gt;&lt;br&gt;佛性程序员&lt;br&gt;&lt;br&gt;熟悉react、html5、小程序、飞冰、vue、熟悉各类组件库、熟悉各类适配&lt;br&gt;&lt;br&gt;了解node.js、webpack、flutter等等&lt;br&gt;&lt;br&gt;有女朋友，不秃顶&lt;br&gt;&lt;br&gt;爱好广泛，闲的时候喜欢看看掘金&lt;br&gt;&lt;br&gt;打打游戏</div>
   	  	
     	</section>
     
