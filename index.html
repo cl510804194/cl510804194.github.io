@@ -173,6 +173,71 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-MyComponents" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/09/06/MyComponents/">MyComponents</a>
+    </h1>
+  
+
+        
+        <a href="/2019/09/06/MyComponents/" class="archive-article-date">
+  	<time datetime="2019-09-06T03:30:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-06</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="未购买商品卡片"><a href="#未购买商品卡片" class="headerlink" title="未购买商品卡片"></a>未购买商品卡片</h2><p><img src="MyComponents/card.png" alt="1"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line">import Taro, &#123;</span><br><span class="line">  useEffect,</span><br><span class="line">  useLayoutEffect,</span><br><span class="line">  useReducer,</span><br><span class="line">  useState,</span><br><span class="line">  useRef,</span><br><span class="line">  useCallback,</span><br><span class="line">  useMemo</span><br><span class="line">&#125; from &apos;@tarojs/taro&apos;;</span><br><span class="line">import &#123;</span><br><span class="line">  View,</span><br><span class="line">  Text,</span><br><span class="line">  Button,</span><br><span class="line">  Swiper,</span><br><span class="line">  SwiperItem,</span><br><span class="line">  Image</span><br><span class="line">&#125; from &apos;@tarojs/components&apos;;</span><br><span class="line">import &#123; AtButton, AtTabBar, AtDivider, AtCard &#125; from &apos;taro-ui&apos;;</span><br><span class="line">import &apos;../index.scss&apos;;</span><br><span class="line"></span><br><span class="line">function Index() &#123;</span><br><span class="line">  return (</span><br><span class="line">    &lt;View className=&apos;myorder-cardBor&apos;&gt;</span><br><span class="line">      &lt;View className=&apos;at-row &apos;&gt;</span><br><span class="line">        &lt;View className=&apos;at-row myorder-card-box&apos;&gt;</span><br><span class="line">          &lt;Image</span><br><span class="line">            style=&apos;width: 90px;height: 90px;background: #fff;&apos;</span><br><span class="line">            src=&apos;https://camo.githubusercontent.com/3e1b76e514b895760055987f164ce6c95935a3aa/687474703a2f2f73746f726167652e333630627579696d672e636f6d2f6d74642f686f6d652f6c6f676f2d3278313531333833373932363730372e706e67&apos;</span><br><span class="line">          /&gt;</span><br><span class="line">          &lt;View className=&apos;myorder-pro-content&apos;&gt;</span><br><span class="line">            &lt;View className=&apos;pro-con-name&apos;&gt;产品名称&lt;/View&gt;</span><br><span class="line">            &lt;View className=&apos;pro-con-esc&apos;&gt;</span><br><span class="line">              分区计划发货即可请回复大厦的啦杀杀杀城市</span><br><span class="line">            &lt;/View&gt;</span><br><span class="line">          &lt;/View&gt;</span><br><span class="line">          &lt;View className=&apos;myorder-pro-con-num&apos;&gt;</span><br><span class="line">            &lt;View&gt;999元/年&lt;/View&gt;</span><br><span class="line">            &lt;View className=&apos;myorder-pro-con-number&apos;&gt;x2&lt;/View&gt;</span><br><span class="line">          &lt;/View&gt;</span><br><span class="line">        &lt;/View&gt;</span><br><span class="line">      &lt;/View&gt;</span><br><span class="line">      &lt;View className=&apos;myorder-buttonGourp&apos;&gt;</span><br><span class="line">        &lt;AtButton className=&apos;myoder-button&apos; type=&apos;secondary&apos; size=&apos;small&apos;&gt;</span><br><span class="line">          客服</span><br><span class="line">        &lt;/AtButton&gt;</span><br><span class="line">        &lt;AtButton className=&apos;myoder-button&apos; type=&apos;secondary&apos; size=&apos;small&apos;&gt;</span><br><span class="line">          查看详情</span><br><span class="line">        &lt;/AtButton&gt;</span><br><span class="line">        &lt;AtButton type=&apos;secondary&apos; size=&apos;small&apos;&gt;</span><br><span class="line">          立即购买</span><br><span class="line">        &lt;/AtButton&gt;</span><br><span class="line">      &lt;/View&gt;</span><br><span class="line">    &lt;/View&gt;</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br><span class="line">export default Index;</span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/09/06/MyComponents/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-个人组件库" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -301,6 +366,9 @@
 <p>在组件销毁时候，移除监听器</p>
 <h4 id="优化-1"><a href="#优化-1" class="headerlink" title="优化"></a>优化</h4><p>useEffect 的第二个参数是一个数组，里面放入在 useEffect 使用到的 state 值，可以用作优化，只有当数组中 state 值发生变化时，才会执行这个 useEffect。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">useEffect(() =&gt; &#123;</span><br><span class="line">    // 使用浏览器API更新文档标题</span><br><span class="line">    document.title = `You clicked $&#123;count&#125; times`;</span><br><span class="line">&#125;, [ count ]);</span><br></pre></td></tr></table></figure>
+
+<p>useEffect 的第二个参数是空数组时，只会在首次渲染的时候进行，相当于 componentWillMount</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">useEffect(() =&gt; &#123;</span><br><span class="line">    // 使用浏览器API更新文档标题</span><br><span class="line">    document.title = `You clicked $&#123;count&#125; times`;</span><br><span class="line">&#125;, []);</span><br></pre></td></tr></table></figure>
 
 <h3 id="useContext"><a href="#useContext" class="headerlink" title="useContext"></a>useContext</h3><p>接受上下文对象（从中 React.createContext 返回的值）并返回该上下文的当前上下文值。当前上下文值由树中调用组件上方 value 最近的 prop 确定&lt;MyContext.Provider&gt;。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const value = useContext(MyContext);</span><br></pre></td></tr></table></figure>
@@ -502,6 +570,41 @@
 
 <h3 id="react-hooks-类似于选项卡功能"><a href="#react-hooks-类似于选项卡功能" class="headerlink" title="react-hooks 类似于选项卡功能"></a>react-hooks 类似于选项卡功能</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">const [current, setcurrent] = useState(1);</span><br><span class="line"> const List = [1, 2, 3, 4, 5, 6, 7, 8, 9];</span><br><span class="line"> const [type, settype] = useState(&apos;secondary&apos;);</span><br><span class="line"> const handleButoon = (item, e) =&gt; &#123;</span><br><span class="line">   setcurrent(e.currentTarget.dataset.id);</span><br><span class="line"> &#125;;</span><br><span class="line"> const renderButoon = List.map((item, index) =&gt; &#123;</span><br><span class="line">   return (</span><br><span class="line">     &lt;View</span><br><span class="line">       className=&apos;factor-button-box&apos;</span><br><span class="line">       onClick=&#123;handleButoon.bind(this, item)&#125;</span><br><span class="line">       key=&#123;`d$&#123;index&#125;`&#125;</span><br><span class="line">       current=&#123;current&#125;</span><br><span class="line">       data-id=&#123;item&#125;</span><br><span class="line">     &gt;</span><br><span class="line">       &lt;AtButton</span><br><span class="line">         className=&apos;factor-button&apos;</span><br><span class="line">         size=&apos;normal&apos;</span><br><span class="line">         type=&#123;current == item ? &apos;primary&apos; : &apos;secondary&apos;&#125;</span><br><span class="line">       &gt;</span><br><span class="line">         要素信息</span><br><span class="line">       &lt;/AtButton&gt;</span><br><span class="line">     &lt;/View&gt;</span><br><span class="line">   );</span><br><span class="line"> &#125;);</span><br><span class="line"> return &lt;View className=&apos;factour-box&apos;&gt;&#123;renderButoon&#125;&lt;/View&gt;;</span><br></pre></td></tr></table></figure>
 
+<h3 id="review-属性"><a href="#review-属性" class="headerlink" title="review 属性"></a>review 属性</h3><p>可以让用户控制元素的宽高</p>
+<h3 id="使用-linear-gradient-控制文本渐变"><a href="#使用-linear-gradient-控制文本渐变" class="headerlink" title="使用 linear-gradient 控制文本渐变"></a>使用 linear-gradient 控制文本渐变</h3><p>可以使文字产生渐变</p>
+<h3 id="W3C-和-IE-盒模型的区别"><a href="#W3C-和-IE-盒模型的区别" class="headerlink" title="W3C 和 IE 盒模型的区别"></a>W3C 和 IE 盒模型的区别</h3><ul>
+<li>IE: width:content+padding+border</li>
+<li>W3C: width: content</li>
+</ul>
+<h3 id="calc-函数"><a href="#calc-函数" class="headerlink" title="calc()函数"></a>calc()函数</h3><p>calc() 函数用于动态计算长度值。<br>例如：width: calc(100% - 10px)；</p>
+<h3 id="VScode-Eslint-通用配置"><a href="#VScode-Eslint-通用配置" class="headerlink" title="VScode Eslint 通用配置"></a>VScode Eslint 通用配置</h3><p>在 package.json 文件中添加一些 dev dependencies 并执行命令 npm i 或 yarn</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&quot;devDependencies&quot;: &#123;</span><br><span class="line"></span><br><span class="line"> &quot;eslint-config-airbnb&quot;: &quot;^17.1.0&quot;,</span><br><span class="line"></span><br><span class="line"> &quot;eslint-config-prettier&quot;: &quot;^3.1.0&quot;,</span><br><span class="line"></span><br><span class="line"> &quot;eslint-plugin-import&quot;: &quot;^2.14.0&quot;,</span><br><span class="line"></span><br><span class="line"> &quot;eslint-plugin-jsx-a11y&quot;: &quot;^6.1.1&quot;,</span><br><span class="line"></span><br><span class="line"> &quot;eslint-plugin-prettier&quot;: &quot;^3.0.0&quot;,</span><br><span class="line"></span><br><span class="line"> &quot;eslint-plugin-react&quot;: &quot;^7.11.0&quot;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="深度拷贝"><a href="#深度拷贝" class="headerlink" title="深度拷贝"></a>深度拷贝</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">let newState=JSON.parse(JSON.stringify(state))</span><br></pre></td></tr></table></figure>
+
+<h3 id="react-获取触发元素的自定义属性-e-target-dataset"><a href="#react-获取触发元素的自定义属性-e-target-dataset" class="headerlink" title="react 获取触发元素的自定义属性 e.target.dataset"></a>react 获取触发元素的自定义属性 e.target.dataset</h3><ol>
+<li>需要在触发元素上用“data-”+“属性”的形式定义，如 value 值写成 data-value,calss 值写成 data-class</li>
+<li>通过 e.target.dataset.属性能够获取属性</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"> renderyear=()=&gt;&#123;</span><br><span class="line">    return(</span><br><span class="line">      &lt;div&gt;</span><br><span class="line">        &lt;Tag color=&quot;#108ee9&quot; onClick=&#123;this.TagClick&#125; data-value=&quot;年初&quot;&gt;年初&lt;/Tag&gt;</span><br><span class="line">        &lt;Tag color=&quot;#108ee9&quot; onClick=&#123;this.TagClick&#125; data-value=&quot;年末&quot;&gt;年末&lt;/Tag&gt;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">  //点击标签的时候触发的函数</span><br><span class="line">TagClick=(e)=&gt;&#123;</span><br><span class="line">    console.log(&quot;e&quot;,e);</span><br><span class="line">    console.log(&quot;e.target&quot;,e.target); //指向返回事件的目标节点(触发该事件的节点)</span><br><span class="line">    console.log(&quot;e.target.dataset&quot;,e.target.dataset);</span><br><span class="line">    this.setState(&#123;</span><br><span class="line">      tagSelect:e.target.dataset.value,</span><br><span class="line">      Pickerstatus:false,</span><br><span class="line">     &#125;);</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="nth-of-type-和-nth-child-区别"><a href="#nth-of-type-和-nth-child-区别" class="headerlink" title="nth-of-type 和 nth-child 区别"></a>nth-of-type 和 nth-child 区别</h3><ul>
+<li><p>:nth-child：是选择父元素下的第几个元素，不分标签类别，计数从 1 开始</p>
+</li>
+<li><p>:nth-of-type：是选择父元素下的同类型元素的第几个元素。区分标签类别，计数从 1 开始</p>
+</li>
+</ul>
+<h3 id="原生-JS-如何添加自定义属性"><a href="#原生-JS-如何添加自定义属性" class="headerlink" title="原生 JS 如何添加自定义属性"></a>原生 JS 如何添加自定义属性</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function counter()&#123;</span><br><span class="line">    var div =document.createElement(&apos;div&apos;);</span><br><span class="line">    div.setAttributes(&apos;id&apos;,&apos;counter&apos;);</span><br><span class="line">    div.innerHTML=1;</span><br><span class="line">    div.onclick=function()&#123;</span><br><span class="line">        div.innerHTML=parseInt(div.innerHTML,10)+1</span><br><span class="line">    &#125;</span><br><span class="line">    document.body.appendChild(div)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Taro-微信小程序-如何获取用户信息"><a href="#Taro-微信小程序-如何获取用户信息" class="headerlink" title="Taro(微信小程序)如何获取用户信息"></a>Taro(微信小程序)如何获取用户信息</h3><ol>
+<li>通过 Taro.login()判断用户是否授权，返回 Code</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>通过 服务器接口将这个 code 作为传参，获取 openid</li>
+<li>通过 <button opentype="xxx"></button></li>
+</ol>
 
       
 

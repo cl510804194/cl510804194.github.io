@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="程亮的个人博客">
 <meta property="og:description" content="useState类似于 state 和 setState.  相同点：也是异步的，例如在 onClick 事件中，调用两次 setState，数据只改变一次。 不同点：类中的 setState 是合并，而函数组件中的 setState 是替换。  12345678910111213141516import React, &amp;#123; useState &amp;#125; from &amp;apos;react">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-02T02:56:00.289Z">
+<meta property="og:updated_time" content="2019-09-05T09:49:01.391Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ReactHooks学习笔记">
 <meta name="twitter:description" content="useState类似于 state 和 setState.  相同点：也是异步的，例如在 onClick 事件中，调用两次 setState，数据只改变一次。 不同点：类中的 setState 是合并，而函数组件中的 setState 是替换。  12345678910111213141516import React, &amp;#123; useState &amp;#125; from &amp;apos;react">
@@ -228,6 +228,9 @@
 <p>在组件销毁时候，移除监听器</p>
 <h4 id="优化-1"><a href="#优化-1" class="headerlink" title="优化"></a>优化</h4><p>useEffect 的第二个参数是一个数组，里面放入在 useEffect 使用到的 state 值，可以用作优化，只有当数组中 state 值发生变化时，才会执行这个 useEffect。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">useEffect(() =&gt; &#123;</span><br><span class="line">    // 使用浏览器API更新文档标题</span><br><span class="line">    document.title = `You clicked $&#123;count&#125; times`;</span><br><span class="line">&#125;, [ count ]);</span><br></pre></td></tr></table></figure>
+
+<p>useEffect 的第二个参数是空数组时，只会在首次渲染的时候进行，相当于 componentWillMount</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">useEffect(() =&gt; &#123;</span><br><span class="line">    // 使用浏览器API更新文档标题</span><br><span class="line">    document.title = `You clicked $&#123;count&#125; times`;</span><br><span class="line">&#125;, []);</span><br></pre></td></tr></table></figure>
 
 <h3 id="useContext"><a href="#useContext" class="headerlink" title="useContext"></a>useContext</h3><p>接受上下文对象（从中 React.createContext 返回的值）并返回该上下文的当前上下文值。当前上下文值由树中调用组件上方 value 最近的 prop 确定&lt;MyContext.Provider&gt;。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const value = useContext(MyContext);</span><br></pre></td></tr></table></figure>
