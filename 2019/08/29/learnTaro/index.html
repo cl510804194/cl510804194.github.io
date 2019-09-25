@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="程亮的个人博客">
 <meta property="og:description" content="在我们设计组件时，有些组件通常不知道自己的子组件会有什么内容，例如 Sidebar 和 Dialog 这样的容器组件。 我们建议在这样的情况使用 this.props.children 来传递子元素： 12345678910111213class Dialog extends Component &amp;#123;  render () &amp;#123;    return (      &amp;lt;View">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-06T07:10:12.655Z">
+<meta property="og:updated_time" content="2019-09-23T14:20:59.425Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Taro学习笔记">
 <meta name="twitter:description" content="在我们设计组件时，有些组件通常不知道自己的子组件会有什么内容，例如 Sidebar 和 Dialog 这样的容器组件。 我们建议在这样的情况使用 this.props.children 来传递子元素： 12345678910111213class Dialog extends Component &amp;#123;  render () &amp;#123;    return (      &amp;lt;View">
@@ -203,6 +203,7 @@
 <p>这样就能允许其它组件在 JSX 中嵌套任意子组件传递给 Dialog:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">class App extends Component &#123;</span><br><span class="line">  render () &#123;</span><br><span class="line">    return (</span><br><span class="line">      &lt;View className=&apos;container&apos;&gt;</span><br><span class="line">        &lt;Dialog&gt;</span><br><span class="line">          &lt;View className=&quot;dialog-message&quot;&gt;</span><br><span class="line">            Thank you for using Taro</span><br><span class="line">          &lt;/View&gt;</span><br><span class="line">        &lt;/Dialog&gt;</span><br><span class="line">      &lt;/View&gt;</span><br><span class="line">    )</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<h3 id="useEffct-和-useDidShow"><a href="#useEffct-和-useDidShow" class="headerlink" title="useEffct 和 useDidShow"></a>useEffct 和 useDidShow</h3><p>useDidshow()中调接口会每次都在页面加载时候请求<br>useEffct 只会在首次加载，之后不加载</p>
 
       
 

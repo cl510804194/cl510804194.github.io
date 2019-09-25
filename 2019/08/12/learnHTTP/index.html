@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="程亮的个人博客">
 <meta property="og:description" content="http 的学习笔记 参考来自： HTTP 权威指南学习笔记 @woai30231github.com/woai30231/http/tree/master  URL 与资源URI（统一资源标识符）由 URL（统一资源定位符）和 URN（统一资源名）两个子集构成。 URL 以位置定位URL 是从资源的位置来定义一个资源的，比如在“中国山东的一只小狗”和在“中国广东的一只小狗”就分别定义了两只不同的">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-06T03:21:23.258Z">
+<meta property="og:updated_time" content="2019-09-17T01:47:29.049Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HTTP学习笔记">
 <meta name="twitter:description" content="http 的学习笔记 参考来自： HTTP 权威指南学习笔记 @woai30231github.com/woai30231/http/tree/master  URL 与资源URI（统一资源标识符）由 URL（统一资源定位符）和 URN（统一资源名）两个子集构成。 URL 以位置定位URL 是从资源的位置来定义一个资源的，比如在“中国山东的一只小狗”和在“中国广东的一只小狗”就分别定义了两只不同的">
@@ -683,6 +683,18 @@
 <h3 id="距离时延"><a href="#距离时延" class="headerlink" title="距离时延"></a>距离时延</h3><ul>
 <li>距离时延说明的一个问题就是传输数据过程这个过程是需要时间的，而且路程越长，那么需要的时间也会越多，即时延越长。所以在距离客户端较近的地方部署缓存服务器，减小了传输路程，那么就减小了传输时延</li>
 </ul>
+<h3 id="强缓存与协商缓存"><a href="#强缓存与协商缓存" class="headerlink" title="强缓存与协商缓存"></a>强缓存与协商缓存</h3><ul>
+<li><p>强缓存： 浏览器在第一次请求资源的时候，服务端响应头里可以设置 expires 字段，该字段表示该资源的缓存过期时间，第二次请求的时候，如果时间还在该缓存时间之内，则会直接使用缓存，否则重新加载资源，这个 expires 字段有个缺陷，就是它必须服务端和客户端的时间严格同步才能生效，所以现在很多人不会使用改方案。另外一种方案是第一次请求资源的时候，服务端设置响应头 cache-control: max-age，这样设置的意思是告诉浏览器，这个资源什么时候过期，等第二次请求资源的时候，判断是否超出了过期时间，如果没超出，直接使用缓存。</p>
+</li>
+<li><p>协商缓存：协商缓存有两种，一种是 Last-Modified，就是第一次请求资源的时候，服务端会在响应头里面设置该字段，表示该资源的最后修改时间，浏览器第二次请求该资源的时候，会在请求头里面加上一个字段 If-Modified-Since，值为第一次请求的时候服务端返回的 Last-Modified 的值，服务端会判断资源当时的最后更改时间与请求头里面的 If-Modified-Since 字段是否相同，如果相同，则告诉客户端使用缓存，否则重新下载资源。然后另外一种协商缓存时使用 ETag，原理与 Last-Modified 类似，就是第一次请求的时候，服务端会根据资源的内容或者最后修改时间生成一个标识，然后在响应头里面设置为 ETag 返回给客户端，客户端第二次请求的时候会在请求头里面带上这个 ETag，也就是在请求头里面加上 If-None-Match 字段，服务端接收到了 ETag 之后判断是否与原来第一次的标识相同，如果相同，则告诉客户端使用缓存。</p>
+</li>
+</ul>
+<h3 id="cache-control-的值"><a href="#cache-control-的值" class="headerlink" title="cache-control 的值"></a>cache-control 的值</h3><ol>
+<li>public，客户端和服务端都可以缓存</li>
+<li>private 服务端可以缓存</li>
+<li>no-store 不使用缓存</li>
+<li>no-cache 协商缓存</li>
+</ol>
 <h2 id="集成点：网关、隧道及中继"><a href="#集成点：网关、隧道及中继" class="headerlink" title="集成点：网关、隧道及中继"></a>集成点：网关、隧道及中继</h2><h3 id="网关"><a href="#网关" class="headerlink" title="网关"></a>网关</h3><p>网络上的资源种类越来越复杂，单一的应用程序是无法处理这些能想到的资源的，所以才有了网关的概念，网关抽象出了一种能达到资源的方法，从而实现这样一种机制：客户端发送 http 请求，请求到达服务器端应用程序，应用程序向网关转发请求，网关处理请求并返回响应。其中网关充当了一种“翻译器”的功能，使得 http 能请求其他非 http 协议的资源！</p>
 <h3 id="客户端和服务器端网关"><a href="#客户端和服务器端网关" class="headerlink" title="客户端和服务器端网关"></a>客户端和服务器端网关</h3><p>客户端网关和服务器端网关描述的是说明对话是在那一侧进行的。客户端网关是用其他协议来和客户端对话，用 http 协议来和服务器端通信；服务器端网关是用其他协议来和服务器端对话，用 http 协议来和客户端通信。</p>
 <h3 id="协议网关"><a href="#协议网关" class="headerlink" title="协议网关"></a>协议网关</h3><p>协议网关主要描述了几种架构在客户端和服务器端之间的网关，它们两侧使用了不同的协议来达到通信的目的，主要有：HTTP/*（服务器端 web 网关）、HTTP/HTTPS（服务器端安全网关）、HTTPS/HTTP（客户端安全网关加速器）。这里主要以 HTTP/FTP 为例讲解一次 http 请求在经过 FTP 网关时网关会去做什么事：</p>
@@ -779,6 +791,36 @@
 <blockquote>
 <p>服务器端<br>Set-Cookie2: ID=”29046”; Domain=”.joes-hardware.com”<br>Set-Cookie2: color=blue<br>Set-Cookie2: support-pref=”L2”; Domain=”customer-care.joes-hardware.com”<br>Set-Cookie2: Coupon=”hammer027”; Version=”1”; Path=”/tools”<br>Set-Cookie2: Coupon=”handvac103”; Version=”1”;Path=”/tools/cordless”<br>客户端<br>Cookie: $Version=”1”;<br>ID=”29046”; $Domain=”.joes-hardware.com”;<br>color=”blue”;<br>Coupon=”hammer027”; $Path=”/tools”;<br>Coupon=”handvac103”; $Path=”/tools/cordless”</p>
 </blockquote>
+</li>
+</ul>
+<h2 id="基本认证机制"><a href="#基本认证机制" class="headerlink" title="基本认证机制"></a>基本认证机制</h2><ul>
+<li><p>基本认证概述<br>基本认证描述的就是用户第一次访问服务器的时候，服务器返回 401 状态码和 WWW-Authenticate 响应首部，并在首部中描述了密码编码算法和对应要使用密码的安全域，然后客户端弹框，在输入用户名和密码提交后。客户端发送含有 Authorization 首部的 get 请求申请验证身份，其中首部中携带了用户名和密码糅合在一起的编码后的验证码给服务器端，如果验证通过，那么服务器返回 200 的响应，并以 Authentication-Info 首部携带相关信息，以后用户就可以不用密码访问相关文件了！</p>
+</li>
+<li><p>认证</p>
+<ol>
+<li>认证就是给出一种身份证明</li>
+<li>HTTP 的质询/响应认证框架：简单来说就是客户端和服务器端之间通信需要通过不断验证身份的过程来完成一个会话。web 第一次发起一条 http 请求报文时，服务器返回一个“认证质询”响应，要求客户端提供用户信息，用户再次发起请求时，就会附上身份信息证书，如果验证通过，那么就完成会话，否则继续发起质询/认证！</li>
+<li>认证协议与首部：http 官方定义了两个官方的认证协议：基本认证和摘要认证。与此有关的报文首部如下：<blockquote>
+<p>WWW-Authenticate————发生在服务器向客户端发起质询时，此时服务端返回 401 状态码,同时此首部定义了服务器端那个域需要验证质询认证<br>Authorization————发生在客户端发起认证时，携带用户名和密码等信息！<br>Authentication-Info————发生在认证成功时，服务器返回 200 ok,并以此首部携带一些信息</p>
+</blockquote>
+</li>
+</ol>
+</li>
+<li><p>基本认证</p>
+<ol>
+<li>基本认证实现服务器端可以拒绝一个事务，并要求验证客户端信息，返回 401 状态码，发起质询/认证！</li>
+<li>Base-64 用户名/密码编码：是一种编码机制</li>
+<li>代理认证：就是代替服务器向客户端发起质询/认证，与服务器端发起的质询/认证主要有几点不同：质询的时候返回的是 407 状态码，服务器端质询返回的首部是 Proxy-Authenticate，客户端认证时发送的是 Proxy-Authorizatio 首部，认证成功之后返回的是 Proxy-Authentication-Info 首部。</li>
+</ol>
+</li>
+<li><p>基本认证的安全缺陷<br>基本认证简单快捷，但并不安全，存在以下缺陷：</p>
+<ol>
+<li>基本认证是采用网络以明文的方式发送用户名和密码，容易被别人捕获。</li>
+<li>即使是密文发送 ，也很容易被别人解码</li>
+<li>适用于很简单的会话服务</li>
+<li>没有中间节点的保护措施</li>
+<li>容易假冒服务器骗过基本认证</li>
+</ol>
 </li>
 </ul>
 
