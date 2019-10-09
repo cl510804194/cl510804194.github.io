@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="程亮的个人博客">
 <meta property="og:description" content="http 的学习笔记 参考来自： HTTP 权威指南学习笔记 @woai30231github.com/woai30231/http/tree/master  URL 与资源URI（统一资源标识符）由 URL（统一资源定位符）和 URN（统一资源名）两个子集构成。 URL 以位置定位URL 是从资源的位置来定义一个资源的，比如在“中国山东的一只小狗”和在“中国广东的一只小狗”就分别定义了两只不同的">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-17T01:47:29.049Z">
+<meta property="og:updated_time" content="2019-10-08T06:36:44.697Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HTTP学习笔记">
 <meta name="twitter:description" content="http 的学习笔记 参考来自： HTTP 权威指南学习笔记 @woai30231github.com/woai30231/http/tree/master  URL 与资源URI（统一资源标识符）由 URL（统一资源定位符）和 URN（统一资源名）两个子集构成。 URL 以位置定位URL 是从资源的位置来定义一个资源的，比如在“中国山东的一只小狗”和在“中国广东的一只小狗”就分别定义了两只不同的">
@@ -490,6 +490,16 @@
 <li>客户端发送携带“SYN”标记的 TCP 段说明发起连接请求</li>
 <li>服务端返回“SYN”和“ACK”的 TCP 段说明已接受</li>
 <li>最后客户端发送确认信息以确认连接</li>
+</ol>
+<h3 id="四次挥手"><a href="#四次挥手" class="headerlink" title="四次挥手"></a>四次挥手</h3><ol>
+<li><p>第一次挥手：Client 的应用进程先向其 TCP 发出连接释放报文段（FIN = 1，序号 seq = u），并停止再发送数据，主动关闭 TCP 连接，进入 FIN-WAIT-1（终止等待 1）状态，等待 Server 的确认。</p>
+</li>
+<li><p>第二次挥手：Server 收到连接释放报文段后即发出确认报文段，（ACK = 1，确认号 ack = u + 1，序号 seq = v），Server 进入 CLOSE-WAIT（关闭等待）状态，此时的 TCP 处于半关闭状态，Client 到 Server 的连接释放。</p>
+</li>
+<li><p>第三次挥手：Server 已经没有要向 Client 发出的数据了，Server 发出连接释放报文段（FIN = 1，ACK = 1，序号 seq = w，确认号 ack = u + 1），Server 进入 LAST-ACK（最后确认）状态，等待 Client 的确认。</p>
+</li>
+<li><p>第四次挥手：Client 收到 Server 的连接释放报文段后，对此发出确认报文段（ACK = 1，seq = u + 1，ack = w + 1），Client 进入 TIME-WAIT（时间等待）状态。此时 TCP 未释放掉，需要经过时间等待计时器设置的时间 2MSL 后，Client 才进入 CLOSED 状态。</p>
+</li>
 </ol>
 <h3 id="HTTP-连接的处理"><a href="#HTTP-连接的处理" class="headerlink" title="HTTP 连接的处理"></a>HTTP 连接的处理</h3><ul>
 <li>接收端在收到请求报文之后，对报文进行解析，并查看 connection 首部中列出的首部列表，并在转发出去之前，删除相关首部，这一行为称为：“对首部的保护”</li>

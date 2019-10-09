@@ -173,6 +173,144 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-studySummarize" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/10/08/studySummarize/">前端学习总结</a>
+    </h1>
+  
+
+        
+        <a href="/2019/10/08/studySummarize/" class="archive-article-date">
+  	<time datetime="2019-10-08T06:41:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-08</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="浏览器渲染页面"><a href="#浏览器渲染页面" class="headerlink" title="浏览器渲染页面"></a>浏览器渲染页面</h2><ol>
+<li>浏览器通过 HTMLParser 根据深度遍历的原则把 HTML 解析成 DOM Tree。</li>
+<li>浏览器通过 CSSParser 将 CSS 解析成 CSS Rule Tree（CSSOM Tree）。</li>
+<li>浏览器将 JavaScript 通过 DOM API 或者 CSSOM API 将 JS 代码解析并应用到布局中，按要求呈现响应的结果。</li>
+<li>根据 DOM 树和 CSSOM 树来构造 render Tree。</li>
+<li>layout：重排（也可以叫回流），当 render tree 中任一节点的几何尺寸发生改变，render tree 就会重新布局，重新来计算所有节点在屏幕的位置。</li>
+<li>repaint：重绘，当 render tree 中任一元素样式属性（几何尺寸没改变）发生改变时，render tree 都会重新画，比如字体颜色，背景等变化。</li>
+<li>paint：遍历 render tree，并调动硬件图形 API 来绘制每个节点。</li>
+</ol>
+<h2 id="浏览器命令截图新姿势"><a href="#浏览器命令截图新姿势" class="headerlink" title="浏览器命令截图新姿势"></a>浏览器命令截图新姿势</h2><p>打开 Command 菜单 通过 Capture full size screenshot 命令 全屏截图</p>
+<h2 id="Array-prototype-reduce"><a href="#Array-prototype-reduce" class="headerlink" title="Array.prototype.reduce"></a>Array.prototype.reduce</h2><p>arr.reduce((sum, { total }) =&gt; {<br>return sum + total;<br>}, 0)<br>每次将此前的累计值加上当前项的 total 为此次回调函数的返回值，作为下次执行时 sum 的实参使用</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/10/08/studySummarize/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-excellentLink" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/09/26/excellentLink/">优秀文章链接</a>
+    </h1>
+  
+
+        
+        <a href="/2019/09/26/excellentLink/" class="archive-article-date">
+  	<time datetime="2019-09-26T06:21:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-26</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>经常看到一些好的 github 链接或者掘金上的文章 怕自己记不住</p>
+        
+          <a class="article-more-a" href="/2019/09/26/excellentLink/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/09/26/excellentLink/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-MyComponents" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -563,8 +701,16 @@
 
 <p>预防:将尖括号进行转义成其他字符</p>
 <h3 id="react-router-获取-url-传递的参数"><a href="#react-router-获取-url-传递的参数" class="headerlink" title="react-router 获取 url 传递的参数"></a>react-router 获取 url 传递的参数</h3><p>如 box 文件中有 index.js,子文件 box.js 当 box.js 被引入到 index.js 中时，无法使用 this.props.match 获取路由对象</p>
-<h3 id="如何将变量作为-setState-的-key"><a href="#如何将变量作为-setState-的-key" class="headerlink" title="如何将变量作为 setState 的 key"></a>如何将变量作为 setState 的 key</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">Calc = (type, data, item, index) =&gt; &#123;</span><br><span class="line">   return (</span><br><span class="line">     &lt;div key=&#123;index&#125; className=&quot;torsio-item1&quot;&gt;</span><br><span class="line">       &lt;p&gt;</span><br><span class="line">         &#123;item.name&#125;</span><br><span class="line">         &lt;span className=&quot;torque-value&quot;&gt;</span><br><span class="line">           &#123;type&#125;=&#123;this.state.k&#125;</span><br><span class="line">         &lt;/span&gt;</span><br><span class="line">       &lt;/p&gt;</span><br><span class="line">       &lt;CascaderSelect</span><br><span class="line">         listStyle=&#123;item.listStyle&#125;</span><br><span class="line">         onChange=&#123;v =&gt; &#123;</span><br><span class="line">           this.setState(&#123; [type]: v &#125;);</span><br><span class="line">         &#125;&#125;</span><br><span class="line">         dataSource=&#123;data&#125;</span><br><span class="line">       /&gt;</span><br><span class="line">     &lt;/div&gt;</span><br><span class="line">   );</span><br><span class="line"> &#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="如何将变量作为-setState-的-key"><a href="#如何将变量作为-setState-的-key" class="headerlink" title="如何将变量作为 setState 的 key"></a>如何将变量作为 setState 的 key</h3><p>数据源</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br></pre></td><td class="code"><pre><span class="line">const data = &#123;</span><br><span class="line">  dataK: [</span><br><span class="line">    &#123;</span><br><span class="line">      value: &apos;钢螺栓（黑色氧化膜）油润滑&apos;,</span><br><span class="line">      label: &apos;钢螺栓（黑色氧化膜）油润滑&apos;,</span><br><span class="line">      children: [</span><br><span class="line">        &#123;</span><br><span class="line">          value: &apos;0.145&apos;,</span><br><span class="line">          label: &apos;SCM−FC FC−FC SUS−FC&apos;,</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">          value: &apos;0.155&apos;,</span><br><span class="line">          label:</span><br><span class="line">            &apos;S10C−FC SCM−S10C SCM−SCM FC−S10C FC−SCM&apos;,</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">          value: &apos;0.165&apos;,</span><br><span class="line">          label:</span><br><span class="line">            &apos;SCM−SUS FC−SUS AL−FC SUS−S10C SUS−SCM SUS−SUS&apos;,</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">          value: &apos;0.175&apos;,</span><br><span class="line">          label:</span><br><span class="line">            &apos;S10C−S10C S10C−SCM S10C−SUS AL−S10C AL−SCM&apos;,</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">          value: &apos;0.185&apos;,</span><br><span class="line">          label: &apos;SCM−AL FC−AL AL−SUS&apos;,</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">          value: &apos;0.195&apos;,</span><br><span class="line">          label: &apos;S10C−AL SUS−AL&apos;,</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123; value: &apos;0.215&apos;, label: &apos;AL−AL&apos; &#125;,</span><br><span class="line">      ],</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      value: &apos;钢螺栓（黑色氧化膜）油润滑&apos;,</span><br><span class="line">      label: &apos;钢螺栓（黑色氧化膜）油润滑&apos;,</span><br><span class="line">      children: [</span><br><span class="line">        &#123;</span><br><span class="line">          value: &apos;0.145&apos;,</span><br><span class="line">          label: &apos;SCM−FC FC−FC SUS−FC&apos;,</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">          value: &apos;0.155&apos;,</span><br><span class="line">          label:</span><br><span class="line">            &apos;S10C−FC SCM−S10C SCM−SCM FC−S10C FC−SCM&apos;,</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">          value: &apos;0.165&apos;,</span><br><span class="line">          label:</span><br><span class="line">            &apos;SCM−SUS FC−SUS AL−FC SUS−S10C SUS−SCM SUS−SUS&apos;,</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">          value: &apos;0.175&apos;,</span><br><span class="line">          label:</span><br><span class="line">            &apos;S10C−S10C S10C−SCM S10C−SUS AL−S10C AL−SCM&apos;,</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">          value: &apos;0.185&apos;,</span><br><span class="line">          label: &apos;SCM−AL FC−AL AL−SUS&apos;,</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">          value: &apos;0.195&apos;,</span><br><span class="line">          label: &apos;S10C−AL SUS−AL&apos;,</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123; value: &apos;0.215&apos;, label: &apos;AL−AL&apos; &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">          value: &apos;0.25&apos;,</span><br><span class="line">          label: &apos;S10C−FC SCM−FC FC−FC&apos;,</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">          value: &apos;0.45&apos;,</span><br><span class="line">          label:</span><br><span class="line">            &apos;S10C−S10C SCM−S10C AL−S10C AL−SCM&apos;,</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">          value: &apos;0.55&apos;,</span><br><span class="line">          label: &apos;SCM−AL FC−AL AL−AL&apos;,</span><br><span class="line">        &#125;,</span><br><span class="line">      ],</span><br><span class="line">    &#125;,</span><br><span class="line">  ],</span><br><span class="line">  dataQ: [],</span><br><span class="line">  dataAs: [</span><br><span class="line">    &#123; label: &apos;M 3×0.5&apos;, value: &apos;5.03&apos; &#125;,</span><br><span class="line">    &#123; label: &apos;M 4×0.7&apos;, value: &apos;8.78&apos; &#125;,</span><br><span class="line">    &#123; label: &apos;M 5×0.8&apos;, value: &apos;14.2&apos; &#125;,</span><br><span class="line">    &#123; label: &apos;M 6×1&apos;, value: &apos;20.1&apos; &#125;,</span><br><span class="line">    &#123; label: &apos;M 8×1.25&apos;, value: &apos;36.6&apos; &#125;,</span><br><span class="line">    &#123; label: &apos;M10×1.5&apos;, value: &apos;58&apos; &#125;,</span><br><span class="line">    &#123; label: &apos;M12×1.75&apos;, value: &apos;84.3&apos; &#125;,</span><br><span class="line">    &#123; label: &apos;M14×2&apos;, value: &apos;115&apos; &#125;,</span><br><span class="line">    &#123; label: &apos;M16×2&apos;, value: &apos;157&apos; &#125;,</span><br><span class="line">    &#123; label: &apos;M18×2.5&apos;, value: &apos;192&apos; &#125;,</span><br><span class="line">    &#123; label: &apos;M20×2.5&apos;, value: &apos;245&apos; &#125;,</span><br><span class="line">    &#123; label: &apos;M22×2.5&apos;, value: &apos;303&apos; &#125;,</span><br><span class="line">    &#123; label: &apos;M24×3&apos;, value: &apos;353&apos; &#125;,</span><br><span class="line">  ],</span><br><span class="line">  dataY: [</span><br><span class="line">    &#123; label: &apos;3.6&apos;, value: &apos;19&apos; &#125;,</span><br><span class="line">    &#123; label: &apos;4.6&apos;, value: &apos;25&apos; &#125;,</span><br><span class="line">    &#123; label: &apos;4.8&apos;, value: &apos;33&apos; &#125;,</span><br><span class="line">    &#123; label: &apos;5.6&apos;, value: &apos;31&apos; &#125;,</span><br><span class="line">    &#123; label: &apos;6.8&apos;, value: &apos;50&apos; &#125;,</span><br><span class="line">    &#123; label: &apos;8.8&apos;, value: &apos;66&apos; &#125;,</span><br><span class="line">    &#123; label: &apos;9.8&apos;, value: &apos;74&apos; &#125;,</span><br><span class="line">    &#123; label: &apos;10.9&apos;, value: &apos;93&apos; &#125;,</span><br><span class="line">    &#123; label: &apos;12.9&apos;, value: &apos;112&apos; &#125;,</span><br><span class="line">  ],</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
+<p>渲染的数据</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">list: [</span><br><span class="line">      &#123;</span><br><span class="line">        id: 1,</span><br><span class="line">        type: &apos;CascaderSelect&apos;,</span><br><span class="line">        name: &apos;扭矩系数&apos;,</span><br><span class="line">        value: &apos;k&apos;,</span><br><span class="line">        data: &apos;dataK&apos;,</span><br><span class="line">        listStyle: &#123;</span><br><span class="line">          width: &apos;280px&apos;,</span><br><span class="line">          height: &apos;160px&apos;,</span><br><span class="line">        &#125;,</span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        id: 2,</span><br><span class="line">        type: &apos;CascaderSelect&apos;,</span><br><span class="line">        name: &apos;紧固系数&apos;,</span><br><span class="line">        value: &apos;q&apos;,</span><br><span class="line">        data: &apos;dataQ&apos;,</span><br><span class="line">        listStyle: &#123;</span><br><span class="line">          width: &apos;280px&apos;,</span><br><span class="line">          height: &apos;160px&apos;,</span><br><span class="line">        &#125;,</span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        id: 3,</span><br><span class="line">        type: &apos;Select&apos;,</span><br><span class="line">        name: &apos;螺栓的公称直径[cm]&apos;,</span><br><span class="line">        data: &apos;dataAs&apos;,</span><br><span class="line">        value: &apos;As&apos;,</span><br><span class="line">        listStyle: &#123;</span><br><span class="line">          width: &apos;280px&apos;,</span><br><span class="line">          height: &apos;160px&apos;,</span><br><span class="line">        &#125;,</span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        id: 4,</span><br><span class="line">        type: &apos;Select&apos;,</span><br><span class="line">        name: &apos;耐力(kgf/mm2)&apos;,</span><br><span class="line">        data: &apos;dataY&apos;,</span><br><span class="line">        value: &apos;Y&apos;,</span><br><span class="line">        listStyle: &#123;</span><br><span class="line">          width: &apos;280px&apos;,</span><br><span class="line">          height: &apos;160px&apos;,</span><br><span class="line">        &#125;,</span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        id: 5,</span><br><span class="line">        type: &apos;input&apos;,</span><br><span class="line">        name: &apos;螺栓的有效截面积[mm2]&apos;,</span><br><span class="line">        listStyle: &#123;</span><br><span class="line">          width: &apos;280px&apos;,</span><br><span class="line">          height: &apos;160px&apos;,</span><br><span class="line">        &#125;,</span><br><span class="line">      &#125;,</span><br><span class="line">    ],</span><br></pre></td></tr></table></figure>
+
+<p>渲染级联选择器</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">Calc = (value, data, item, index) =&gt; &#123;</span><br><span class="line">   return (</span><br><span class="line">     &lt;div key=&#123;index&#125; className=&quot;torsio-item1&quot;&gt;</span><br><span class="line">       &lt;p&gt;</span><br><span class="line">         &#123;item.name&#125;</span><br><span class="line">         &lt;span className=&quot;torque-value&quot;&gt;</span><br><span class="line">           &#123;value&#125;=&#123;this.state[value]&#125;</span><br><span class="line">         &lt;/span&gt;</span><br><span class="line">       &lt;/p&gt;</span><br><span class="line">       &lt;CascaderSelect</span><br><span class="line">         listStyle=&#123;item.listStyle&#125;</span><br><span class="line">         onChange=&#123;v =&gt; &#123;</span><br><span class="line">           this.setState(&#123; [value]: v &#125;);</span><br><span class="line">         &#125;&#125;</span><br><span class="line">         dataSource=&#123;data&#125;</span><br><span class="line">       /&gt;</span><br><span class="line">     &lt;/div&gt;</span><br><span class="line">   );</span><br><span class="line"> &#125;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="withRouter-的作用"><a href="#withRouter-的作用" class="headerlink" title="withRouter 的作用"></a>withRouter 的作用</h3><p>将该组件使用 withRouter 包裹，将可以使用 this.props.history/match 等功能呢</p>
 
       
 
@@ -843,7 +989,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">node.js</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">node.js express</a>
         		</li>
       		
 		</ul>

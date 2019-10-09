@@ -6,19 +6,15 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>工作中遇见的问题 | 程亮的个人博客</title>
+  <title>Archives: 2019/10 | 程亮的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="总结了从参加实习到工作以来中遇见的问题，和可以改进的地方 react 中 style、 className 动态修改12345&amp;lt;div style=&amp;#123;&amp;#123;display: (index===this.state.currentIndex) ? &amp;quot;block&amp;quot; : &amp;quot;none&amp;quot;&amp;#125;&amp;#125;&amp;gt;此标签是否隐藏&amp;lt;/di">
-<meta property="og:type" content="article">
-<meta property="og:title" content="工作中遇见的问题">
-<meta property="og:url" content="http://yoursite.com/2019/08/17/work/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="程亮的个人博客">
+<meta property="og:url" content="http://yoursite.com/archives/2019/10/index.html">
 <meta property="og:site_name" content="程亮的个人博客">
-<meta property="og:description" content="总结了从参加实习到工作以来中遇见的问题，和可以改进的地方 react 中 style、 className 动态修改12345&amp;lt;div style=&amp;#123;&amp;#123;display: (index===this.state.currentIndex) ? &amp;quot;block&amp;quot; : &amp;quot;none&amp;quot;&amp;#125;&amp;#125;&amp;gt;此标签是否隐藏&amp;lt;/di">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-29T01:19:08.586Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="工作中遇见的问题">
-<meta name="twitter:description" content="总结了从参加实习到工作以来中遇见的问题，和可以改进的地方 react 中 style、 className 动态修改12345&amp;lt;div style=&amp;#123;&amp;#123;display: (index===this.state.currentIndex) ? &amp;quot;block&amp;quot; : &amp;quot;none&amp;quot;&amp;#125;&amp;#125;&amp;gt;此标签是否隐藏&amp;lt;/di">
+<meta name="twitter:title" content="程亮的个人博客">
   
     <link rel="alternative" href="/atom.xml" title="程亮的个人博客" type="application/atom+xml">
   
@@ -175,273 +171,49 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-work" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      工作中遇见的问题
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2019" class="archive-year">2019</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2019/10/08/studySummarize/" class="archive-article-date">
+  	<time datetime="2019-10-08T06:41:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-08</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2019/10/08/studySummarize/">前端学习总结</a>
     </h1>
   
 
-        
-        <a href="/2019/08/17/work/" class="archive-article-date">
-  	<time datetime="2019-08-17T04:10:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-17</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>总结了从参加实习到工作以来中遇见的问题，和可以改进的地方</p>
-<h3 id="react-中-style、-className-动态修改"><a href="#react-中-style、-className-动态修改" class="headerlink" title="react 中 style、 className 动态修改"></a>react 中 style、 className 动态修改</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;div style=&#123;&#123;display: (index===this.state.currentIndex) ? &quot;block&quot; : &quot;none&quot;&#125;&#125;&gt;此标签是否隐藏&lt;/div&gt;</span><br><span class="line">&lt;div style=&#123;&#123;display: (index===this.state.currentIndex) ? &quot;block&quot; : &quot;none&quot;, color:&quot;red&quot;&#125;&#125;&gt;此标签是否隐藏&lt;/div&gt;</span><br><span class="line">&lt;div className=&#123;index===this.state.currentIndex?&quot;active&quot;:null&#125;&gt;此标签是否选中&lt;/div&gt;</span><br><span class="line">&lt;div className=&#123;`container tab $&#123;index===this.state.currentIndex?&quot;active&quot;:null&#125;`&#125;&gt;此标签是否选中&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+        <div class="article-info info-on-right">
+          
+          
 
-<h3 id="在-jsx-中如何使用两个类名"><a href="#在-jsx-中如何使用两个类名" class="headerlink" title="在 jsx 中如何使用两个类名"></a>在 jsx 中如何使用两个类名</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div className=`$&#123;&#125;  $&#123;&#125;`&gt;</span><br></pre></td></tr></table></figure>
-
-<h3 id="React-是根据-useState-出现的顺序来确定的"><a href="#React-是根据-useState-出现的顺序来确定的" class="headerlink" title="React 是根据 useState 出现的顺序来确定的"></a>React 是根据 useState 出现的顺序来确定的</h3><p>React Hooks 不能出现在条件判断语句中，因为它必须有完全一样的渲染顺序。</p>
-<h3 id="react-hooks-useReducer-小案例"><a href="#react-hooks-useReducer-小案例" class="headerlink" title="react-hooks useReducer 小案例"></a>react-hooks useReducer 小案例</h3><p>color.js</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">import React, &#123; createContext, useReducer &#125; from &apos;react&apos;;</span><br><span class="line"></span><br><span class="line">export const ColorContext = createContext(&#123;&#125;);</span><br><span class="line"></span><br><span class="line">export const UPDATE_COLOR = &apos;UPDATE_COLOR&apos;;</span><br><span class="line"></span><br><span class="line">const reducer = (state, action) =&gt; &#123;</span><br><span class="line">  switch (action.type) &#123;</span><br><span class="line">    case UPDATE_COLOR:</span><br><span class="line">      return action.color;</span><br><span class="line">    default:</span><br><span class="line">      return state;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">export const Color = props =&gt; &#123;</span><br><span class="line">  const [color, dispatch] = useReducer(reducer, &apos;blue&apos;);</span><br><span class="line">  return (</span><br><span class="line">    &lt;ColorContext.Provider value=&#123;&#123; color, dispatch &#125;&#125;&gt;</span><br><span class="line">      &#123;props.children&#125;</span><br><span class="line">    &lt;/ColorContext.Provider&gt;</span><br><span class="line">  );</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<p>button.js</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">import React, &#123; useContext &#125; from &apos;react&apos;;</span><br><span class="line">import &#123; ColorContext, UPDATE_COLOR &#125; from &apos;./Color&apos;;</span><br><span class="line"></span><br><span class="line">function Buttons() &#123;</span><br><span class="line">  const &#123; dispatch &#125; = useContext(ColorContext);</span><br><span class="line">  return (</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      &lt;button</span><br><span class="line">        onClick=&#123;() =&gt; &#123;</span><br><span class="line">          dispatch(&#123; type: UPDATE_COLOR, color: &apos;red&apos; &#125;);</span><br><span class="line">        &#125;&#125;</span><br><span class="line">      &gt;</span><br><span class="line">        红色</span><br><span class="line">      &lt;/button&gt;</span><br><span class="line">      &lt;button</span><br><span class="line">        onClick=&#123;() =&gt; &#123;</span><br><span class="line">          dispatch(&#123; type: UPDATE_COLOR, color: &apos;yellow&apos; &#125;);</span><br><span class="line">        &#125;&#125;</span><br><span class="line">      &gt;</span><br><span class="line">        黄色</span><br><span class="line">      &lt;/button&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">export default Buttons;</span><br></pre></td></tr></table></figure>
-
-<p>showArea.js</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">import React, &#123;</span><br><span class="line">  useState,</span><br><span class="line">  useContext,</span><br><span class="line">  useEffect,</span><br><span class="line">  useCallback,</span><br><span class="line">  useMemo</span><br><span class="line">&#125; from &apos;react&apos;;</span><br><span class="line">import &#123; ColorContext &#125; from &apos;./Color&apos;;</span><br><span class="line">function ShowArea() &#123;</span><br><span class="line">  const &#123; color &#125; = useContext(ColorContext);</span><br><span class="line">  return &lt;div style=&#123;&#123; color: color &#125;&#125;&gt;字体颜色为blue&lt;/div&gt;;</span><br><span class="line">&#125;</span><br><span class="line">export default ShowArea;</span><br></pre></td></tr></table></figure>
-
-<h3 id="使用-text-align-last-对齐两端文本"><a href="#使用-text-align-last-对齐两端文本" class="headerlink" title="使用 text-align-last 对齐两端文本"></a>使用 text-align-last 对齐两端文本</h3><p>要点：通过 text-align-last:justify 设置文本两端对齐</p>
-<h3 id="使用-not-去除无用属性"><a href="#使用-not-去除无用属性" class="headerlink" title="使用:not()去除无用属性"></a>使用:not()去除无用属性</h3><p>要点：通过:not()排除指定元素不使用设置样式</p>
-<h3 id="使用-object-fit-规定图像尺寸"><a href="#使用-object-fit-规定图像尺寸" class="headerlink" title="使用 object-fit 规定图像尺寸"></a>使用 object-fit 规定图像尺寸</h3><p>要点：通过 object-fit 使图像脱离 background-size 的约束，使用<img>来标记图像背景尺寸<br>场景：图片尺寸自适应</p>
-<h3 id="使用-transform-描绘-1px-边框"><a href="#使用-transform-描绘-1px-边框" class="headerlink" title="使用 transform 描绘 1px 边框"></a>使用 transform 描绘 1px 边框</h3><p>要点：分辨率比较低的屏幕下显示 1px 的边框会显得模糊，通过::before 或::after 和 transform 模拟细腻的 1px 边框</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">.thin &#123;</span><br><span class="line">	position: relative;</span><br><span class="line">	&amp;::after &#123;</span><br><span class="line">		position: absolute;</span><br><span class="line">		left: 0;</span><br><span class="line">		top: 0;</span><br><span class="line">		border: 1px solid $red;</span><br><span class="line">		width: 200%;</span><br><span class="line">		height: 200%;</span><br><span class="line">		content: &quot;&quot;;</span><br><span class="line">		transform: scale(.5);</span><br><span class="line">		transform-origin: left top;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="使用-letter-spacing-排版倒序文本"><a href="#使用-letter-spacing-排版倒序文本" class="headerlink" title="使用 letter-spacing 排版倒序文本"></a>使用 letter-spacing 排版倒序文本</h3><p>要点：通过 letter-spacing 设置负值字体间距将文本倒序</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">.reverse-text &#123;</span><br><span class="line">	font-weight: bold;</span><br><span class="line">	font-size: 50px;</span><br><span class="line">	color: $red;</span><br><span class="line">	letter-spacing: -100px; // letter-spacing最少是font-size的2倍</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="使用-margin-left-排版左重右轻列表"><a href="#使用-margin-left-排版左重右轻列表" class="headerlink" title="使用 margin-left 排版左重右轻列表"></a>使用 margin-left 排版左重右轻列表</h3><p>要点：使用 flexbox 横向布局时，最后一个元素通过 margin-left:auto 实现向右对齐<br>场景：右侧带图标的导航栏</p>
-<h3 id="在-react-hooks-中-循环遍历组件以及判断"><a href="#在-react-hooks-中-循环遍历组件以及判断" class="headerlink" title="在 react-hooks 中 循环遍历组件以及判断"></a>在 react-hooks 中 循环遍历组件以及判断</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line">const renderItem = () =&gt; &#123;</span><br><span class="line">    const renderCardItem = [1, 2, 3, 4, 5].map((item, index) =&gt; &#123;</span><br><span class="line">      return &lt;Card key=&#123;`p+$&#123;index&#125;`&#125;&gt;&lt;/Card&gt;;</span><br><span class="line">    &#125;);</span><br><span class="line">    if (current == 0) &#123;</span><br><span class="line">      return (</span><br><span class="line">        &lt;View className=&apos;buy-box&apos;&gt;</span><br><span class="line">          &lt;Swiper</span><br><span class="line">            className=&apos;test-h&apos;</span><br><span class="line">            indicatorColor=&apos;#999&apos;</span><br><span class="line">            indicatorActiveColor=&apos;#333&apos;</span><br><span class="line">            circular</span><br><span class="line">            indicatorDots</span><br><span class="line">            autoplay</span><br><span class="line">          &gt;</span><br><span class="line">            &lt;SwiperItem&gt;</span><br><span class="line">              &lt;View className=&apos;demo-text-1&apos;&gt;1&lt;/View&gt;</span><br><span class="line">            &lt;/SwiperItem&gt;</span><br><span class="line">            &lt;SwiperItem&gt;</span><br><span class="line">              &lt;View className=&apos;demo-text-2&apos;&gt;2&lt;/View&gt;</span><br><span class="line">            &lt;/SwiperItem&gt;</span><br><span class="line">            &lt;SwiperItem&gt;</span><br><span class="line">              &lt;View className=&apos;demo-text-3&apos;&gt;3&lt;/View&gt;</span><br><span class="line">            &lt;/SwiperItem&gt;</span><br><span class="line">          &lt;/Swiper&gt;</span><br><span class="line">          &lt;AtDivider</span><br><span class="line">            height=&#123;120&#125;</span><br><span class="line">            content=&apos;企业版&apos;</span><br><span class="line">            fontColor=&apos;#ff7715&apos;</span><br><span class="line">            lineColor=&apos;#ff7715&apos;</span><br><span class="line">          /&gt;</span><br><span class="line">          &#123;renderCardItem&#125;</span><br><span class="line">          &lt;AtDivider</span><br><span class="line">            height=&#123;80&#125;</span><br><span class="line">            content=&apos;个人版&apos;</span><br><span class="line">            fontColor=&apos;#ff7715&apos;</span><br><span class="line">            lineColor=&apos;#ff7715&apos;</span><br><span class="line">          /&gt;</span><br><span class="line">          &lt;View className=&apos;buy-person&apos;&gt;暂未发布&lt;/View&gt;</span><br><span class="line">        &lt;/View&gt;</span><br><span class="line">      );</span><br><span class="line">    &#125;</span><br><span class="line">    if (current == 2) &#123;</span><br><span class="line">      return (</span><br><span class="line">        &lt;View&gt;</span><br><span class="line">          &lt;Fit&gt;&lt;/Fit&gt;</span><br><span class="line">        &lt;/View&gt;</span><br><span class="line">      );</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br></pre></td></tr></table></figure>
-
-<h3 id="小程序获取自定义属性"><a href="#小程序获取自定义属性" class="headerlink" title="小程序获取自定义属性"></a>小程序获取自定义属性</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(e.currentTarget.dataset.id);</span><br></pre></td></tr></table></figure>
-
-<h3 id="react-hooks-类似于选项卡功能"><a href="#react-hooks-类似于选项卡功能" class="headerlink" title="react-hooks 类似于选项卡功能"></a>react-hooks 类似于选项卡功能</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">const [current, setcurrent] = useState(1);</span><br><span class="line"> const List = [1, 2, 3, 4, 5, 6, 7, 8, 9];</span><br><span class="line"> const [type, settype] = useState(&apos;secondary&apos;);</span><br><span class="line"> const handleButoon = (item, e) =&gt; &#123;</span><br><span class="line">   setcurrent(e.currentTarget.dataset.id);</span><br><span class="line"> &#125;;</span><br><span class="line"> const renderButoon = List.map((item, index) =&gt; &#123;</span><br><span class="line">   return (</span><br><span class="line">     &lt;View</span><br><span class="line">       className=&apos;factor-button-box&apos;</span><br><span class="line">       onClick=&#123;handleButoon.bind(this, item)&#125;</span><br><span class="line">       key=&#123;`d$&#123;index&#125;`&#125;</span><br><span class="line">       current=&#123;current&#125;</span><br><span class="line">       data-id=&#123;item&#125;</span><br><span class="line">     &gt;</span><br><span class="line">       &lt;AtButton</span><br><span class="line">         className=&apos;factor-button&apos;</span><br><span class="line">         size=&apos;normal&apos;</span><br><span class="line">         type=&#123;current == item ? &apos;primary&apos; : &apos;secondary&apos;&#125;</span><br><span class="line">       &gt;</span><br><span class="line">         要素信息</span><br><span class="line">       &lt;/AtButton&gt;</span><br><span class="line">     &lt;/View&gt;</span><br><span class="line">   );</span><br><span class="line"> &#125;);</span><br><span class="line"> return &lt;View className=&apos;factour-box&apos;&gt;&#123;renderButoon&#125;&lt;/View&gt;;</span><br></pre></td></tr></table></figure>
-
-<h3 id="review-属性"><a href="#review-属性" class="headerlink" title="review 属性"></a>review 属性</h3><p>可以让用户控制元素的宽高</p>
-<h3 id="使用-linear-gradient-控制文本渐变"><a href="#使用-linear-gradient-控制文本渐变" class="headerlink" title="使用 linear-gradient 控制文本渐变"></a>使用 linear-gradient 控制文本渐变</h3><p>可以使文字产生渐变</p>
-<h3 id="W3C-和-IE-盒模型的区别"><a href="#W3C-和-IE-盒模型的区别" class="headerlink" title="W3C 和 IE 盒模型的区别"></a>W3C 和 IE 盒模型的区别</h3><ul>
-<li>IE: width:content+padding+border</li>
-<li>W3C: width: content</li>
-</ul>
-<h3 id="calc-函数"><a href="#calc-函数" class="headerlink" title="calc()函数"></a>calc()函数</h3><p>calc() 函数用于动态计算长度值。<br>例如：width: calc(100% - 10px)；</p>
-<h3 id="VScode-Eslint-通用配置"><a href="#VScode-Eslint-通用配置" class="headerlink" title="VScode Eslint 通用配置"></a>VScode Eslint 通用配置</h3><p>在 package.json 文件中添加一些 dev dependencies 并执行命令 npm i 或 yarn</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&quot;devDependencies&quot;: &#123;</span><br><span class="line"></span><br><span class="line"> &quot;eslint-config-airbnb&quot;: &quot;^17.1.0&quot;,</span><br><span class="line"></span><br><span class="line"> &quot;eslint-config-prettier&quot;: &quot;^3.1.0&quot;,</span><br><span class="line"></span><br><span class="line"> &quot;eslint-plugin-import&quot;: &quot;^2.14.0&quot;,</span><br><span class="line"></span><br><span class="line"> &quot;eslint-plugin-jsx-a11y&quot;: &quot;^6.1.1&quot;,</span><br><span class="line"></span><br><span class="line"> &quot;eslint-plugin-prettier&quot;: &quot;^3.0.0&quot;,</span><br><span class="line"></span><br><span class="line"> &quot;eslint-plugin-react&quot;: &quot;^7.11.0&quot;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="深度拷贝"><a href="#深度拷贝" class="headerlink" title="深度拷贝"></a>深度拷贝</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">let newState=JSON.parse(JSON.stringify(state))</span><br></pre></td></tr></table></figure>
-
-<h3 id="react-获取触发元素的自定义属性-e-target-dataset"><a href="#react-获取触发元素的自定义属性-e-target-dataset" class="headerlink" title="react 获取触发元素的自定义属性 e.target.dataset"></a>react 获取触发元素的自定义属性 e.target.dataset</h3><ol>
-<li>需要在触发元素上用“data-”+“属性”的形式定义，如 value 值写成 data-value,calss 值写成 data-class</li>
-<li>通过 e.target.dataset.属性能够获取属性</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"> renderyear=()=&gt;&#123;</span><br><span class="line">    return(</span><br><span class="line">      &lt;div&gt;</span><br><span class="line">        &lt;Tag color=&quot;#108ee9&quot; onClick=&#123;this.TagClick&#125; data-value=&quot;年初&quot;&gt;年初&lt;/Tag&gt;</span><br><span class="line">        &lt;Tag color=&quot;#108ee9&quot; onClick=&#123;this.TagClick&#125; data-value=&quot;年末&quot;&gt;年末&lt;/Tag&gt;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">  //点击标签的时候触发的函数</span><br><span class="line">TagClick=(e)=&gt;&#123;</span><br><span class="line">    console.log(&quot;e&quot;,e);</span><br><span class="line">    console.log(&quot;e.target&quot;,e.target); //指向返回事件的目标节点(触发该事件的节点)</span><br><span class="line">    console.log(&quot;e.target.dataset&quot;,e.target.dataset);</span><br><span class="line">    this.setState(&#123;</span><br><span class="line">      tagSelect:e.target.dataset.value,</span><br><span class="line">      Pickerstatus:false,</span><br><span class="line">     &#125;);</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="nth-of-type-和-nth-child-区别"><a href="#nth-of-type-和-nth-child-区别" class="headerlink" title="nth-of-type 和 nth-child 区别"></a>nth-of-type 和 nth-child 区别</h3><ul>
-<li><p>:nth-child：是选择父元素下的第几个元素，不分标签类别，计数从 1 开始</p>
-</li>
-<li><p>:nth-of-type：是选择父元素下的同类型元素的第几个元素。区分标签类别，计数从 1 开始</p>
-</li>
-</ul>
-<h3 id="原生-JS-如何添加自定义属性"><a href="#原生-JS-如何添加自定义属性" class="headerlink" title="原生 JS 如何添加自定义属性"></a>原生 JS 如何添加自定义属性</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function counter()&#123;</span><br><span class="line">    var div =document.createElement(&apos;div&apos;);</span><br><span class="line">    div.setAttributes(&apos;id&apos;,&apos;counter&apos;);</span><br><span class="line">    div.innerHTML=1;</span><br><span class="line">    div.onclick=function()&#123;</span><br><span class="line">        div.innerHTML=parseInt(div.innerHTML,10)+1</span><br><span class="line">    &#125;</span><br><span class="line">    document.body.appendChild(div)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="Taro-微信小程序-如何获取用户信息"><a href="#Taro-微信小程序-如何获取用户信息" class="headerlink" title="Taro(微信小程序)如何获取用户信息"></a>Taro(微信小程序)如何获取用户信息</h3><ol>
-<li>通过 Taro.login()判断用户是否授权，返回 Code</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<ol start="2">
-<li>通过 服务器接口将这个 code 作为传参，获取 openid</li>
-<li>通过 <button opentype="xxx"></button></li>
-</ol>
-<h3 id="CPU、进程、线程之间的关系"><a href="#CPU、进程、线程之间的关系" class="headerlink" title="CPU、进程、线程之间的关系"></a>CPU、进程、线程之间的关系</h3><ul>
-<li>进程是 cpu 资源分配的最小单位（是能拥有资源和独立运行的最小单位）</li>
-<li>线程是 cpu 调度的最小单位（线程是建立在进程的基础上的一次程序运行单位，一个进程中可以有多个线程）</li>
-<li>不同进程之间也可以通信，不过代价较大</li>
-</ul>
-<h3 id="移动端-viewport-设置"><a href="#移动端-viewport-设置" class="headerlink" title="移动端 viewport 设置"></a>移动端 viewport 设置</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta name=&apos;viewport&apos; content=&apos;width=device-width,initial-scale=1,user-scale=no&apos; /&gt;</span><br></pre></td></tr></table></figure>
-
-<h3 id="设备像素比"><a href="#设备像素比" class="headerlink" title="设备像素比"></a>设备像素比</h3><h4 id="物理像素（physical-pixel）"><a href="#物理像素（physical-pixel）" class="headerlink" title="物理像素（physical pixel）"></a>物理像素（physical pixel）</h4><p>手机屏幕上显示的最小单元，该最小单元具有颜色及亮度的属性可供设置，iphone6、7、8 为：750 _ 1334，iphone6+、7+、8+ 为 1242 _ 2208</p>
-<h4 id="设备独立像素（density-indenpendent-pixel）"><a href="#设备独立像素（density-indenpendent-pixel）" class="headerlink" title="设备独立像素（density-indenpendent pixel）"></a>设备独立像素（density-indenpendent pixel）</h4><p>此为逻辑像素，计算机设备中的一个点，css 中设置的像素指的就是该像素。老早在没有 retina 屏之前，设备独立像素与物理像素是相等的。</p>
-<h4 id="设备像素比（device-pixel-ratio）"><a href="#设备像素比（device-pixel-ratio）" class="headerlink" title="设备像素比（device pixel ratio）"></a>设备像素比（device pixel ratio）</h4><p>设备像素比(dpr) = 物理像素/设备独立像素。如 iphone 6、7、8 的 dpr 为 2，那么一个设备独立像素便为 4 个物理像素，因此在 css 上设置的 1px 在其屏幕上占据的是 2 个物理像素，0.5px 对应的才是其所能展示的最小单位。这就是 1px 在 retina 屏上变粗的原因，目前有很多办法来解决这一问题。</p>
-<h4 id="在-react-中如何动态渲染-react-图片-src"><a href="#在-react-中如何动态渲染-react-图片-src" class="headerlink" title="在 react 中如何动态渲染 react 图片 src"></a>在 react 中如何动态渲染 react 图片 src</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">        name: &apos;能耗KPI考核&apos;,</span><br><span class="line">        img: require(&apos;../images/banner01.png&apos;),</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
-
-<p>Img 中的使用</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;Carousel.Item key=&#123;index&#125;&gt;</span><br><span class="line">              &lt;div className=&quot;energy-banner-content&quot;&gt;</span><br><span class="line">                &lt;img</span><br><span class="line">                  src=&#123;item.img&#125;</span><br><span class="line">                  alt=&quot;&quot;</span><br><span class="line">                  className=&quot;banner-item&quot;</span><br><span class="line">                /&gt;</span><br><span class="line">                &lt;p&gt;能耗KPI考核&lt;/p&gt;</span><br><span class="line">              &lt;/div&gt;</span><br><span class="line">            &lt;/Carousel.Item&gt;</span><br></pre></td></tr></table></figure>
-
-<h3 id="匿名函数会造成性能上的一些下降"><a href="#匿名函数会造成性能上的一些下降" class="headerlink" title="匿名函数会造成性能上的一些下降"></a>匿名函数会造成性能上的一些下降</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">class Demo &#123;</span><br><span class="line">render() &#123;</span><br><span class="line">return &lt;button onClick=&#123;(e) =&gt; &#123;</span><br><span class="line">alert(&apos;我点击了按钮&apos;)</span><br><span class="line">&#125;&#125;&gt;</span><br><span class="line">按钮</span><br><span class="line">&lt;/button&gt;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="event-loop"><a href="#event-loop" class="headerlink" title="event loop"></a>event loop</h3><p>js 引擎在一次事件循环中，会先执行 js 线程的主任务，然后会去查找是否有微任务 microtask（promise），如果有那就优先执行微任务，如果没有，在去查找宏任务 macrotask（setTimeout、setInterval）进行执行。</p>
-<h3 id="indexOf-方法注意"><a href="#indexOf-方法注意" class="headerlink" title="indexOf 方法注意"></a>indexOf 方法注意</h3><p>当数组中包含多个对象时，只能通过对象的属性进行判断，不能通过整个对象进行判断</p>
-<h3 id="splice-方法的应用"><a href="#splice-方法的应用" class="headerlink" title="splice 方法的应用"></a>splice 方法的应用</h3><p>当数组直接调用该方法时会改变该数组，并返回一个新数组，</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">const array=[1,2,3,4]</span><br><span class="line">array.splice(1,2)  //返回[1,4]</span><br><span class="line">const newArray=array.splice(1,2)   // newArray返回的是删除的数组即[2,3]</span><br></pre></td></tr></table></figure>
-
-<h3 id="cookie-和-session"><a href="#cookie-和-session" class="headerlink" title="cookie 和 session"></a>cookie 和 session</h3><p>cookie 客户端和服务端都可以访问 无法保证隐私安全<br>session 服务端操作，保证隐私</p>
-<h3 id="session-带来的问题"><a href="#session-带来的问题" class="headerlink" title="session 带来的问题"></a>session 带来的问题</h3><ol>
-<li>进程内容有限，访问量如果过大，内存就会暴增</li>
-<li>正式线上运行时多进程，进程之间内存无法共享</li>
-</ol>
-<h3 id="redis"><a href="#redis" class="headerlink" title="redis"></a>redis</h3><p>webserver 最常用的缓存数据库，数据存放在内存中</p>
-<h3 id="XSS-攻击"><a href="#XSS-攻击" class="headerlink" title="XSS 攻击"></a>XSS 攻击</h3><p>在页面展示内容中参杂 JS 代码，以获取网页信息如</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;alert(document.cookie)&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-<p>预防:将尖括号进行转义成其他字符</p>
-<h3 id="react-router-获取-url-传递的参数"><a href="#react-router-获取-url-传递的参数" class="headerlink" title="react-router 获取 url 传递的参数"></a>react-router 获取 url 传递的参数</h3><p>如 box 文件中有 index.js,子文件 box.js 当 box.js 被引入到 index.js 中时，无法使用 this.props.match 获取路由对象</p>
-<h3 id="如何将变量作为-setState-的-key"><a href="#如何将变量作为-setState-的-key" class="headerlink" title="如何将变量作为 setState 的 key"></a>如何将变量作为 setState 的 key</h3><p>数据源</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br></pre></td><td class="code"><pre><span class="line">const data = &#123;</span><br><span class="line">  dataK: [</span><br><span class="line">    &#123;</span><br><span class="line">      value: &apos;钢螺栓（黑色氧化膜）油润滑&apos;,</span><br><span class="line">      label: &apos;钢螺栓（黑色氧化膜）油润滑&apos;,</span><br><span class="line">      children: [</span><br><span class="line">        &#123;</span><br><span class="line">          value: &apos;0.145&apos;,</span><br><span class="line">          label: &apos;SCM−FC FC−FC SUS−FC&apos;,</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">          value: &apos;0.155&apos;,</span><br><span class="line">          label:</span><br><span class="line">            &apos;S10C−FC SCM−S10C SCM−SCM FC−S10C FC−SCM&apos;,</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">          value: &apos;0.165&apos;,</span><br><span class="line">          label:</span><br><span class="line">            &apos;SCM−SUS FC−SUS AL−FC SUS−S10C SUS−SCM SUS−SUS&apos;,</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">          value: &apos;0.175&apos;,</span><br><span class="line">          label:</span><br><span class="line">            &apos;S10C−S10C S10C−SCM S10C−SUS AL−S10C AL−SCM&apos;,</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">          value: &apos;0.185&apos;,</span><br><span class="line">          label: &apos;SCM−AL FC−AL AL−SUS&apos;,</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">          value: &apos;0.195&apos;,</span><br><span class="line">          label: &apos;S10C−AL SUS−AL&apos;,</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123; value: &apos;0.215&apos;, label: &apos;AL−AL&apos; &#125;,</span><br><span class="line">      ],</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      value: &apos;钢螺栓（黑色氧化膜）油润滑&apos;,</span><br><span class="line">      label: &apos;钢螺栓（黑色氧化膜）油润滑&apos;,</span><br><span class="line">      children: [</span><br><span class="line">        &#123;</span><br><span class="line">          value: &apos;0.145&apos;,</span><br><span class="line">          label: &apos;SCM−FC FC−FC SUS−FC&apos;,</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">          value: &apos;0.155&apos;,</span><br><span class="line">          label:</span><br><span class="line">            &apos;S10C−FC SCM−S10C SCM−SCM FC−S10C FC−SCM&apos;,</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">          value: &apos;0.165&apos;,</span><br><span class="line">          label:</span><br><span class="line">            &apos;SCM−SUS FC−SUS AL−FC SUS−S10C SUS−SCM SUS−SUS&apos;,</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">          value: &apos;0.175&apos;,</span><br><span class="line">          label:</span><br><span class="line">            &apos;S10C−S10C S10C−SCM S10C−SUS AL−S10C AL−SCM&apos;,</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">          value: &apos;0.185&apos;,</span><br><span class="line">          label: &apos;SCM−AL FC−AL AL−SUS&apos;,</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">          value: &apos;0.195&apos;,</span><br><span class="line">          label: &apos;S10C−AL SUS−AL&apos;,</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123; value: &apos;0.215&apos;, label: &apos;AL−AL&apos; &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">          value: &apos;0.25&apos;,</span><br><span class="line">          label: &apos;S10C−FC SCM−FC FC−FC&apos;,</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">          value: &apos;0.45&apos;,</span><br><span class="line">          label:</span><br><span class="line">            &apos;S10C−S10C SCM−S10C AL−S10C AL−SCM&apos;,</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">          value: &apos;0.55&apos;,</span><br><span class="line">          label: &apos;SCM−AL FC−AL AL−AL&apos;,</span><br><span class="line">        &#125;,</span><br><span class="line">      ],</span><br><span class="line">    &#125;,</span><br><span class="line">  ],</span><br><span class="line">  dataQ: [],</span><br><span class="line">  dataAs: [</span><br><span class="line">    &#123; label: &apos;M 3×0.5&apos;, value: &apos;5.03&apos; &#125;,</span><br><span class="line">    &#123; label: &apos;M 4×0.7&apos;, value: &apos;8.78&apos; &#125;,</span><br><span class="line">    &#123; label: &apos;M 5×0.8&apos;, value: &apos;14.2&apos; &#125;,</span><br><span class="line">    &#123; label: &apos;M 6×1&apos;, value: &apos;20.1&apos; &#125;,</span><br><span class="line">    &#123; label: &apos;M 8×1.25&apos;, value: &apos;36.6&apos; &#125;,</span><br><span class="line">    &#123; label: &apos;M10×1.5&apos;, value: &apos;58&apos; &#125;,</span><br><span class="line">    &#123; label: &apos;M12×1.75&apos;, value: &apos;84.3&apos; &#125;,</span><br><span class="line">    &#123; label: &apos;M14×2&apos;, value: &apos;115&apos; &#125;,</span><br><span class="line">    &#123; label: &apos;M16×2&apos;, value: &apos;157&apos; &#125;,</span><br><span class="line">    &#123; label: &apos;M18×2.5&apos;, value: &apos;192&apos; &#125;,</span><br><span class="line">    &#123; label: &apos;M20×2.5&apos;, value: &apos;245&apos; &#125;,</span><br><span class="line">    &#123; label: &apos;M22×2.5&apos;, value: &apos;303&apos; &#125;,</span><br><span class="line">    &#123; label: &apos;M24×3&apos;, value: &apos;353&apos; &#125;,</span><br><span class="line">  ],</span><br><span class="line">  dataY: [</span><br><span class="line">    &#123; label: &apos;3.6&apos;, value: &apos;19&apos; &#125;,</span><br><span class="line">    &#123; label: &apos;4.6&apos;, value: &apos;25&apos; &#125;,</span><br><span class="line">    &#123; label: &apos;4.8&apos;, value: &apos;33&apos; &#125;,</span><br><span class="line">    &#123; label: &apos;5.6&apos;, value: &apos;31&apos; &#125;,</span><br><span class="line">    &#123; label: &apos;6.8&apos;, value: &apos;50&apos; &#125;,</span><br><span class="line">    &#123; label: &apos;8.8&apos;, value: &apos;66&apos; &#125;,</span><br><span class="line">    &#123; label: &apos;9.8&apos;, value: &apos;74&apos; &#125;,</span><br><span class="line">    &#123; label: &apos;10.9&apos;, value: &apos;93&apos; &#125;,</span><br><span class="line">    &#123; label: &apos;12.9&apos;, value: &apos;112&apos; &#125;,</span><br><span class="line">  ],</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<p>渲染的数据</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">list: [</span><br><span class="line">      &#123;</span><br><span class="line">        id: 1,</span><br><span class="line">        type: &apos;CascaderSelect&apos;,</span><br><span class="line">        name: &apos;扭矩系数&apos;,</span><br><span class="line">        value: &apos;k&apos;,</span><br><span class="line">        data: &apos;dataK&apos;,</span><br><span class="line">        listStyle: &#123;</span><br><span class="line">          width: &apos;280px&apos;,</span><br><span class="line">          height: &apos;160px&apos;,</span><br><span class="line">        &#125;,</span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        id: 2,</span><br><span class="line">        type: &apos;CascaderSelect&apos;,</span><br><span class="line">        name: &apos;紧固系数&apos;,</span><br><span class="line">        value: &apos;q&apos;,</span><br><span class="line">        data: &apos;dataQ&apos;,</span><br><span class="line">        listStyle: &#123;</span><br><span class="line">          width: &apos;280px&apos;,</span><br><span class="line">          height: &apos;160px&apos;,</span><br><span class="line">        &#125;,</span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        id: 3,</span><br><span class="line">        type: &apos;Select&apos;,</span><br><span class="line">        name: &apos;螺栓的公称直径[cm]&apos;,</span><br><span class="line">        data: &apos;dataAs&apos;,</span><br><span class="line">        value: &apos;As&apos;,</span><br><span class="line">        listStyle: &#123;</span><br><span class="line">          width: &apos;280px&apos;,</span><br><span class="line">          height: &apos;160px&apos;,</span><br><span class="line">        &#125;,</span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        id: 4,</span><br><span class="line">        type: &apos;Select&apos;,</span><br><span class="line">        name: &apos;耐力(kgf/mm2)&apos;,</span><br><span class="line">        data: &apos;dataY&apos;,</span><br><span class="line">        value: &apos;Y&apos;,</span><br><span class="line">        listStyle: &#123;</span><br><span class="line">          width: &apos;280px&apos;,</span><br><span class="line">          height: &apos;160px&apos;,</span><br><span class="line">        &#125;,</span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        id: 5,</span><br><span class="line">        type: &apos;input&apos;,</span><br><span class="line">        name: &apos;螺栓的有效截面积[mm2]&apos;,</span><br><span class="line">        listStyle: &#123;</span><br><span class="line">          width: &apos;280px&apos;,</span><br><span class="line">          height: &apos;160px&apos;,</span><br><span class="line">        &#125;,</span><br><span class="line">      &#125;,</span><br><span class="line">    ],</span><br></pre></td></tr></table></figure>
-
-<p>渲染级联选择器</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">Calc = (value, data, item, index) =&gt; &#123;</span><br><span class="line">   return (</span><br><span class="line">     &lt;div key=&#123;index&#125; className=&quot;torsio-item1&quot;&gt;</span><br><span class="line">       &lt;p&gt;</span><br><span class="line">         &#123;item.name&#125;</span><br><span class="line">         &lt;span className=&quot;torque-value&quot;&gt;</span><br><span class="line">           &#123;value&#125;=&#123;this.state[value]&#125;</span><br><span class="line">         &lt;/span&gt;</span><br><span class="line">       &lt;/p&gt;</span><br><span class="line">       &lt;CascaderSelect</span><br><span class="line">         listStyle=&#123;item.listStyle&#125;</span><br><span class="line">         onChange=&#123;v =&gt; &#123;</span><br><span class="line">           this.setState(&#123; [value]: v &#125;);</span><br><span class="line">         &#125;&#125;</span><br><span class="line">         dataSource=&#123;data&#125;</span><br><span class="line">       /&gt;</span><br><span class="line">     &lt;/div&gt;</span><br><span class="line">   );</span><br><span class="line"> &#125;;</span><br></pre></td></tr></table></figure>
-
-<h3 id="withRouter-的作用"><a href="#withRouter-的作用" class="headerlink" title="withRouter 的作用"></a>withRouter 的作用</h3><p>将该组件使用 withRouter 包裹，将可以使用 this.props.history/match 等功能呢</p>
-
-      
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
         </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
-        </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/08/17/work/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2019/08/29/learnTaro/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Taro学习笔记
-        
-      </div>
-    </a>
   
   
-    <a href="/2019/08/14/reviewFrondEnd/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">重学前端</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-  
+    </div></section>
   
 
-  
-
-  
-
-  
+    
 
 
           </div>
@@ -464,8 +236,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
-		isArchive: false,
+		isPost: false,
+		isArchive: true,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
