@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="程亮的个人博客">
 <meta property="og:description" content="Node.js 的学习笔记 创建基类 model当成功返回时和失败返回时，返回信息 12345678910111213141516171819202122232425262728293031class BaseModel &amp;#123;  constructor(data, message) &amp;#123;    if (typeof data === &apos;string&apos;) &amp;#123;      th">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-27T01:20:28.912Z">
+<meta property="og:updated_time" content="2019-10-11T06:49:02.327Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Node.js学习">
 <meta name="twitter:description" content="Node.js 的学习笔记 创建基类 model当成功返回时和失败返回时，返回信息 12345678910111213141516171819202122232425262728293031class BaseModel &amp;#123;  constructor(data, message) &amp;#123;    if (typeof data === &apos;string&apos;) &amp;#123;      th">
@@ -293,8 +293,23 @@
 
 <h3 id="防止-xss-攻击"><a href="#防止-xss-攻击" class="headerlink" title="防止 xss 攻击"></a>防止 xss 攻击</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">const xss = require(&apos;xss&apos;);</span><br><span class="line">const title = xss(blogData.title);</span><br></pre></td></tr></table></figure>
 
-<h1 id="express"><a href="#express" class="headerlink" title="express"></a>express</h1><p>核心概念中间件</p>
+<h3 id="express"><a href="#express" class="headerlink" title="express"></a>express</h3><p>核心概念中间件</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">router.post(&apos;/login&apos;, function(req, res, next) &#123;</span><br><span class="line">  const &#123; username, password &#125; = req.body;</span><br><span class="line">  res.json(&#123;</span><br><span class="line">    errno: 0,</span><br><span class="line">    data: &#123;</span><br><span class="line">      username,</span><br><span class="line">      password</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="koa-router-路由"><a href="#koa-router-路由" class="headerlink" title="koa-router 路由"></a>koa-router 路由</h3><ul>
+<li>使用</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">router</span><br><span class="line">  .get(&apos;/&apos;, (ctx, next) =&gt; &#123;</span><br><span class="line">    ctx.body = &apos;hello Jspang&apos;;</span><br><span class="line">  &#125;)</span><br><span class="line">  .get(&apos;/todo&apos;, (ctx, next) =&gt; &#123;</span><br><span class="line">    ctx.body = &apos;todo page&apos;;</span><br><span class="line">  &#125;);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>层级</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">const router = new Router(&#123;</span><br><span class="line">  prefix: &apos;/jspang&apos;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>参数</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">router.get(&apos;/&apos;, function(ctx, next) &#123;</span><br><span class="line">  ctx.body = ctx.query;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
 
       
