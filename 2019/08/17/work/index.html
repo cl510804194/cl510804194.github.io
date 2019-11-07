@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="程亮的个人博客">
 <meta property="og:description" content="总结了从参加实习到工作以来中遇见的问题，和可以改进的地方">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-10-14T02:49:15.862Z">
+<meta property="og:updated_time" content="2019-10-30T03:55:19.182Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="工作中遇见的问题">
 <meta name="twitter:description" content="总结了从参加实习到工作以来中遇见的问题，和可以改进的地方">
@@ -281,6 +281,8 @@
 
 <h3 id="event-loop"><a href="#event-loop" class="headerlink" title="event loop"></a>event loop</h3><p>js 引擎在一次事件循环中，会先执行 js 线程的主任务，然后会去查找是否有微任务 microtask（promise），如果有那就优先执行微任务，如果没有，在去查找宏任务 macrotask（setTimeout、setInterval）进行执行。</p>
 <h3 id="indexOf-方法注意"><a href="#indexOf-方法注意" class="headerlink" title="indexOf 方法注意"></a>indexOf 方法注意</h3><p>当数组中包含多个对象时，只能通过对象的属性进行判断，不能通过整个对象进行判断</p>
+<h3 id="如何替换一个数组中的对象"><a href="#如何替换一个数组中的对象" class="headerlink" title="如何替换一个数组中的对象"></a>如何替换一个数组中的对象</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">const newData = &#123;&#125;;</span><br><span class="line">   newData.gid = gid;</span><br><span class="line">   newData.data = arr;</span><br><span class="line">   const find = this.dataSource.findIndex(item =&gt; item.gid == gid);</span><br><span class="line">   if (find == -1) &#123;</span><br><span class="line">     const newData = &#123;&#125;;</span><br><span class="line">     newData.gid = gid;</span><br><span class="line">     newData.data = arr;</span><br><span class="line">     this.dataSource.push(newData);</span><br><span class="line">   &#125; else &#123;</span><br><span class="line">     this.dataSource.splice(find, 1, newData);</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+
 <h3 id="splice-方法的应用"><a href="#splice-方法的应用" class="headerlink" title="splice 方法的应用"></a>splice 方法的应用</h3><p>当数组直接调用该方法时会改变该数组，并返回一个新数组，</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">const array=[1,2,3,4]</span><br><span class="line">array.splice(1,2)  //返回[1,4]</span><br><span class="line">const newArray=array.splice(1,2)   // newArray返回的是删除的数组即[2,3]</span><br></pre></td></tr></table></figure>
 

@@ -173,6 +173,603 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-egg-js" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/01/egg-js/">egg.js笔记</a>
+    </h1>
+  
+
+        
+        <a href="/2019/11/01/egg-js/" class="archive-article-date">
+  	<time datetime="2019-11-01T08:06:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="获取动态传值"><a href="#获取动态传值" class="headerlink" title="获取动态传值"></a>获取动态传值</h3><p>router.js</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">router.get(&apos;/api/datails/page&apos;, controller.deafault.details.page); // 获取详情历史信息分页</span><br></pre></td></tr></table></figure>
+
+<p>controller.js</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">async page() &#123;</span><br><span class="line">    // const &#123; ctx &#125; = this;</span><br><span class="line">    const gid = this.ctx.query.gid;</span><br><span class="line">    const number = this.ctx.query.number;</span><br><span class="line">    const result = await this.service.search.page(gid, number);</span><br><span class="line">    // console.log(this.ctx.query);</span><br><span class="line">    this.ctx.body = result;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/11/01/egg-js/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-linux" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/01/linux/">linux</a>
+    </h1>
+  
+
+        
+        <a href="/2019/11/01/linux/" class="archive-article-date">
+  	<time datetime="2019-11-01T02:39:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="linux-与-windows"><a href="#linux-与-windows" class="headerlink" title="linux 与 windows"></a>linux 与 windows</h3><p>linux 不区别文件扩展名<br>windows 下的程序不能直接在 linux 中安装</p>
+<h3 id="分区"><a href="#分区" class="headerlink" title="分区"></a>分区</h3><p>FAT32:单个文件不能超过 4g<br>NTFS:支持更大的单个文件</p>
+<h3 id="分区设备文件名"><a href="#分区设备文件名" class="headerlink" title="分区设备文件名"></a>分区设备文件名</h3><p>/dev/hda1 (IDE 接口)<br>/dev/sda1(SCSI 硬盘接口、SATA 硬盘接口)<br>逻辑分区要从 5 开始</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">linux</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/11/01/linux/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-react源码" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/10/22/react源码/">react源码笔记</a>
+    </h1>
+  
+
+        
+        <a href="/2019/10/22/react源码/" class="archive-article-date">
+  	<time datetime="2019-10-22T09:19:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-22</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="react-createElement"><a href="#react-createElement" class="headerlink" title="react.createElement"></a>react.createElement</h3><p>如果是大写，react.createElement 第一个参数是变量，小写则是一个字符串</p>
+<h3 id="component"><a href="#component" class="headerlink" title="component"></a>component</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">function Component(props, context, updater) &#123;</span><br><span class="line">  this.props = props;</span><br><span class="line">  this.context = context;</span><br><span class="line">  // If a component has string refs, we will assign a different object later.</span><br><span class="line">  this.refs = emptyObject;</span><br><span class="line">  // We initialize the default updater but the real one gets injected by the</span><br><span class="line">  // renderer.</span><br><span class="line">  this.updater = updater || ReactNoopUpdateQueue;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Component.prototype.isReactComponent = &#123;&#125;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="createRef"><a href="#createRef" class="headerlink" title="createRef"></a>createRef</h3><p>创建的三种方式</p>
+<ol>
+<li>stringRef 已经被废弃</li>
+<li>react.createRef()</li>
+<li>function 方式 {ele=&gt;{this.methodRef=lel}}<br>方法使用</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">export function createRef(): RefObject &#123;</span><br><span class="line">  const refObject = &#123;</span><br><span class="line">    current: null,</span><br><span class="line">  &#125;;</span><br><span class="line">  if (__DEV__) &#123;</span><br><span class="line">    Object.seal(refObject);   //密封该对象</span><br><span class="line">  &#125;</span><br><span class="line">  return refObject;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/10/22/react源码/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-react最佳实践" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/10/18/react最佳实践/">react最佳实践</a>
+    </h1>
+  
+
+        
+        <a href="/2019/10/18/react最佳实践/" class="archive-article-date">
+  	<time datetime="2019-10-18T07:15:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-18</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="定义清晰可维护的接口"><a href="#定义清晰可维护的接口" class="headerlink" title="定义清晰可维护的接口"></a>定义清晰可维护的接口</h3><ol>
+<li>保持接口小，props 数量要少；</li>
+<li>根据数据边界来划分组件，充分利用组合（composition）；</li>
+<li>把 state 往上层组件提取，让下层组件只需要实现为纯函数。</li>
+</ol>
+<h3 id="给组件默认赋初始值"><a href="#给组件默认赋初始值" class="headerlink" title="给组件默认赋初始值"></a>给组件默认赋初始值</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">const MajorClock = (&#123;milliseconds=0&#125;) =&gt; &#123;</span><br><span class="line">  return &lt;h1&gt;&#123;ms2Time(milliseconds)&#125;&lt;/h1&gt;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>如果使用 MajorClock 时没有传入 milliseconds 这个 props，那么 milliseconds 的值就是 0。</p>
+<h3 id="父子组件关系"><a href="#父子组件关系" class="headerlink" title="父子组件关系"></a>父子组件关系</h3><p>父组件负责逻辑层数据管理，子组件负责 UI 的渲染（有状态组件和无状态组件）</p>
+<h3 id="PureComponent"><a href="#PureComponent" class="headerlink" title="PureComponent"></a>PureComponent</h3><p>React.PureComponent 与 React.Component 很相似。两者的区别在于 React.Component 并未实现 shouldComponentUpdate()，而 React.PureComponent 中以浅层对比 prop 和 state 的方式来实现了该函数。</p>
+<p>如果赋予 React 组件相同的 props 和 state，render() 函数会渲染相同的内容，那么在某些情况下使用 React.PureComponent 可提高性能。</p>
+<h3 id="React-memo"><a href="#React-memo" class="headerlink" title="React.memo"></a>React.memo</h3><p>React.memo 为高阶组件。它与 React.PureComponent 非常相似，但它适用于函数组件，但不适用于 class 组件。</p>
+<h3 id="render-props-模式"><a href="#render-props-模式" class="headerlink" title="render props 模式"></a>render props 模式</h3><p>所谓 render props，指的是让 React 组件的 props 支持函数这种模式。因为作为 props 传入的函数往往被用来渲染一部分界面，所以这种模式被称为 render props。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">const RenderAll = (props) =&gt; &#123;</span><br><span class="line">  return(</span><br><span class="line">     &lt;React.Fragment&gt;</span><br><span class="line">     	&#123;props.children(props)&#125;</span><br><span class="line">     &lt;/React.Fragment&gt;</span><br><span class="line">  );</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>传递 props</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;RenderAll&gt;</span><br><span class="line">  &#123;() =&gt; &lt;h1&gt;hello world&lt;/h1&gt;&#125;</span><br><span class="line">&lt;/RenderAll&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="适合-Redux-的场景"><a href="#适合-Redux-的场景" class="headerlink" title="适合 Redux 的场景"></a>适合 Redux 的场景</h3><p>第一步，看这个状态是否会被多个 React 组件共享。<br>第二步，看这个组件被 unmount 之后重新被 mount，之前的状态是否需要保留。</p>
+<h3 id="为什么不在-componentWillMount-里去做-AJAX？"><a href="#为什么不在-componentWillMount-里去做-AJAX？" class="headerlink" title="为什么不在 componentWillMount 里去做 AJAX？"></a>为什么不在 componentWillMount 里去做 AJAX？</h3><p>一个组件的 componentWillMount 比 componentDidMount 也早调用不了几微秒，性能没啥提高；而且，等到异步渲染开启的时候，componentWillMount 就可能被中途打断，中断之后渲染又要重做一遍，想一想，在 componentWillMount 中做 AJAX 调用，代码里看到只有调用一次，但是实际上可能调用 N 多次，这明显不合适。相反，若把 AJAX 放在 componentDidMount，因为 componentDidMount 在第二阶段，所以绝对不会多次重复调用，这才是 AJAX 合适的位置</p>
+<h3 id="异步渲染：两阶段渲染"><a href="#异步渲染：两阶段渲染" class="headerlink" title="异步渲染：两阶段渲染"></a>异步渲染：两阶段渲染</h3><p>根据 React Fiber 的设计，一个组件的渲染被分为两个阶段：第一个阶段（也叫做 render 阶段）是可以被 React 打断的，一旦被打断，这阶段所做的所有事情都被废弃，当 React 处理完紧急的事情回来，依然会重新渲染这个组件，这时候第一阶段的工作会重做一遍；第二个阶段叫做 commit 阶段，一旦开始就不能中断，也就是说第二个阶段的工作会稳稳当当地做到这个组件的渲染结束。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/10/18/react最佳实践/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-performance" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/10/16/performance/">前端性能</a>
+    </h1>
+  
+
+        
+        <a href="/2019/10/16/performance/" class="archive-article-date">
+  	<time datetime="2019-10-16T07:03:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>关于前端性能方面的总结</p>
+<h3 id="Happypack——将-loader-由单进程转为多进程"><a href="#Happypack——将-loader-由单进程转为多进程" class="headerlink" title="Happypack——将 loader 由单进程转为多进程"></a>Happypack——将 loader 由单进程转为多进程</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">const HappyPack = require(&apos;happypack&apos;)</span><br><span class="line">// 手动创建进程池</span><br><span class="line">const happyThreadPool =  HappyPack.ThreadPool(&#123; size: os.cpus().length &#125;)</span><br><span class="line"></span><br><span class="line">module.exports = &#123;</span><br><span class="line">  module: &#123;</span><br><span class="line">    rules: [</span><br><span class="line">      ...</span><br><span class="line">      &#123;</span><br><span class="line">        test: /\.js$/,</span><br><span class="line">        // 问号后面的查询参数指定了处理这类文件的HappyPack实例的名字</span><br><span class="line">        loader: &apos;happypack/loader?id=happyBabel&apos;,</span><br><span class="line">        ...</span><br><span class="line">      &#125;,</span><br><span class="line">    ],</span><br><span class="line">  &#125;,</span><br><span class="line">  plugins: [</span><br><span class="line">    ...</span><br><span class="line">    new HappyPack(&#123;</span><br><span class="line">      // 这个HappyPack的“名字”就叫做happyBabel，和楼上的查询参数遥相呼应</span><br><span class="line">      id: &apos;happyBabel&apos;,</span><br><span class="line">      // 指定进程池</span><br><span class="line">      threadPool: happyThreadPool,</span><br><span class="line">      loaders: [&apos;babel-loader?cacheDirectory&apos;]</span><br><span class="line">    &#125;)</span><br><span class="line">  ],</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="webpack-bundle-analyzer-构建结果体积压缩"><a href="#webpack-bundle-analyzer-构建结果体积压缩" class="headerlink" title="webpack-bundle-analyzer 构建结果体积压缩"></a>webpack-bundle-analyzer 构建结果体积压缩</h3><p>文件结构可视化，找出导致体积过大的原因</p>
+<h3 id="Tree-Shaking"><a href="#Tree-Shaking" class="headerlink" title="Tree-Shaking"></a>Tree-Shaking</h3><p>Tree-Shaking 可以在编译的过程中获悉哪些模块并没有真正被使用，这些没用的代码，在最后打包的时候会被去除。</p>
+<h3 id="UglifyJsPlugin"><a href="#UglifyJsPlugin" class="headerlink" title="UglifyJsPlugin"></a>UglifyJsPlugin</h3><p>压缩过程中对碎片化的冗余代码（如 console 语句、注释等）进行自动化删除</p>
+<h3 id="按需加载"><a href="#按需加载" class="headerlink" title="按需加载"></a>按需加载</h3><p>核心代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">require.ensure(dependencies, callback, chunkName)</span><br></pre></td></tr></table></figure>
+
+<h3 id="Gzip-压缩原理"><a href="#Gzip-压缩原理" class="headerlink" title="Gzip 压缩原理"></a>Gzip 压缩原理</h3><p>Gzip 压缩背后的原理，是在一个文本文件中找出一些重复出现的字符串、临时替换它们，从而使整个文件变小。根据这个原理，文件中代码的重复率越高，那么压缩的效率就越高，使用 Gzip 的收益也就越大。反之亦然。</p>
+<h3 id="图片方案选型"><a href="#图片方案选型" class="headerlink" title="图片方案选型"></a>图片方案选型</h3><p>在计算机中，像素用二进制数来表示。不同的图片格式中像素与二进制位数之间的对应关系是不同的。一个像素对应的二进制位数越多，它可以表示的颜色种类就越多，成像效果也就越细腻，文件体积相应也会越大。</p>
+<p>一个二进制位表示两种颜色（0|1 对应黑|白），如果一种图片格式对应的二进制位数有 n 个，那么它就可以呈现 2^n 种颜色。</p>
+<ul>
+<li><p>JPEG/JPG</p>
+<ol>
+<li>优点:JPG 最大的特点是有损压缩。这种高效的压缩算法使它成为了一种非常轻巧的图片格式。另一方面，即使被称为“有损”压缩，JPG 的压缩方式仍然是一种高质量的压缩方式：当我们把图片体积压缩至原有体积的 50% 以下时，JPG 仍然可以保持住 60% 的品质。此外，JPG 格式以 24 位存储单个图，可以呈现多达 1600 万种颜色，足以应对大多数场景下对色彩的要求，这一点决定了它压缩前后的质量损耗并不容易被我们人类的肉眼所察觉——前提是你用对了业务场景。</li>
+<li>使用场景:JPG 适用于呈现色彩丰富的图片，在我们日常开发中，JPG 图片经常作为大的背景图、轮播图或 Banner 图出现。</li>
+<li>缺点：有损压缩在上文所展示的轮播图上确实很难露出马脚，但当它处理矢量图形和 Logo 等线条感较强、颜色对比强烈的图像时，人为压缩导致的图片模糊会相当明显。<br>此外，JPEG 图像不支持透明度处理，透明图片需要召唤 PNG 来呈现。</li>
+</ol>
+</li>
+<li><p>PNG-8 与 PNG-24<br>无损压缩、质量高、体积大、支持透明</p>
+<ol>
+<li>优点： PNG（可移植网络图形格式）是一种无损压缩的高保真的图片格式。8 和 24，这里都是二进制数的位数。按照我们前置知识里提到的对应关系，8 位的 PNG 最多支持 256 种颜色，而 24 位的可以呈现约 1600 万种颜色。PNG 图片具有比 JPG 更强的色彩表现力，对线条的处理更加细腻，对透明度有良好的支持。它弥补了上文我们提到的 JPG 的局限性。</li>
+<li>PNG-8 与 PNG-24 的选择题：<br>理论上来说，当你追求最佳的显示效果、并且不在意文件体积大小时，是推荐使用 PNG-24 的。<br>但实践当中，为了规避体积的问题，我们一般不用 PNG 去处理较复杂的图像。当我们遇到适合 PNG 的场景时，也会优先选择更为小巧的 PNG-8。<br>如何确定一张图片是该用 PNG-8 还是 PNG-24 去呈现呢？好的做法是把图片先按照这两种格式分别输出，看 PNG-8 输出的结果是否会带来肉眼可见的质量损耗，并且确认这种损耗是否在我们（尤其是你的 UI 设计师）可接受的范围内，基于对比的结果去做判断。</li>
+</ol>
+</li>
+<li><p>SVG<br>文本文件、体积小、不失真、兼容性好<br>和性能关系最密切的一点就是：SVG 与 PNG 和 JPG 相比，文件体积更小，可压缩性更强。</p>
+</li>
+<li><p>Base64<br>文本文件、依赖编码、小图标解决方案<br>Base64 是一种用于传输 8Bit 字节码的编码方式，通过对图片进行 Base64 编码，我们可以直接将编码结果写入 HTML 或者写入 CSS，从而减少 HTTP 请求的次数。</p>
+<ol>
+<li>图像精灵<blockquote>
+<p>图像精灵（sprite，意为精灵），被运用于众多使用大量小图标的网页应用之上。它可取图像的一部分来使用，使得使用一个图像文件替代多个小文件成为可能。相较于一个小图标一个图像文件，单独一张图片所需的 HTTP 请求更少，对内存和带宽更加友好。</p>
+</blockquote>
+</li>
+<li>局限<br>Base64 编码后，图片大小会膨胀为原文件的 4/3（这是由 Base64 的编码原理决定的）。如果我们把大图也编码到 HTML 或 CSS 文件中，后者的体积会明显增加，即便我们减少了 HTTP 请求，也无法弥补这庞大的体积带来的性能开销，得不偿失。<br>在传输非常小的图片的时候，Base64 带来的文件体积膨胀、以及浏览器解析 Base64 的时间开销，与它节省掉的 HTTP 请求开销相比，可以忽略不计，这时候才能真正体现出它在性能方面的优势。</li>
+<li>运用场景<ul>
+<li>图片的实际尺寸很小（大家可以观察一下掘金页面的 Base64 图，几乎没有超过 2kb 的）</li>
+<li>图片无法以雪碧图的形式与其它小图结合（合成雪碧图仍是主要的减少 HTTP 请求的途- -径，Base64 是雪碧图的补充）</li>
+<li>图片的更新频率非常低（不需我们重复编码和修改文件内容，维护成本较低）</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>webP<br>WebP 像 JPEG 一样对细节丰富的图片信手拈来，像 PNG 一样支持透明，像 GIF 一样可以显示动态图片——它集多种图片文件格式的优点于一身。<br>局限性：兼容性太差</p>
+<blockquote>
+<p>与 PNG 相比，WebP 无损图像的尺寸缩小了 26％。在等效的 SSIM 质量指数下，WebP 有损图像比同类 JPEG 图像小 25-34％。 无损 WebP 支持透明度（也称为 alpha 通道），仅需 22％ 的额外字节。对于有损 RGB 压缩可接受的情况，有损 WebP 也支持透明度，与 PNG 相比，通常提供 3 倍的文件大小。</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="浏览器缓存机制介绍与缓存策略剖析"><a href="#浏览器缓存机制介绍与缓存策略剖析" class="headerlink" title="浏览器缓存机制介绍与缓存策略剖析"></a>浏览器缓存机制介绍与缓存策略剖析</h3><blockquote>
+<p>通过网络获取内容既速度缓慢又开销巨大。较大的响应需要在客户端与服务器之间进行多次往返通信，这会延迟浏览器获得和处理内容的时间，还会增加访问者的流量费用。因此，缓存并重复利用之前获取的资源的能力成为性能优化的一个关键方面。</p>
+</blockquote>
+<ol>
+<li><p>强缓存<br>强缓存是利用 http 头中的 Expires 和 Cache-Control 两个字段来控制的。强缓存中，当请求再次发出时，浏览器会根据其中的 expires 和 cache-control 判断目标资源是否“命中”强缓存，若命中则直接从缓存中获取资源，不会再与服务端发生通信。<br>Cache-Control 相对于 expires 更加准确，它的优先级也更高。当 Cache-Control 与 expires 同时出现时，我们以 Cache-Control 为准。<br>s-maxage 优先级高于 max-age，两者同时出现时，优先考虑 s-maxage。如果 s-maxage 未过期，则向代理服务器请求其缓存内容。</p>
+</li>
+<li><p>协商缓存<br>协商缓存机制下，浏览器需要向服务器去询问缓存的相关信息，进而判断是重新发起请求、下载完整的响应，还是从本地获取缓存的资源。</p>
+<p>如果服务端提示缓存资源未改动（Not Modified），资源会被重定向到浏览器缓存，这种情况下网络请求对应的状态码是 304。</p>
+</li>
+<li><p>MemoryCache<br>MemoryCache，是指存在内存中的缓存。从优先级上来说，它是浏览器最先尝试去命中的一种缓存。从效率上来说，它是响应速度最快的一种缓存。</p>
+</li>
+<li><p>Service Worker Cache<br>Service Worker 是一种独立于主线程之外的 Javascript 线程。它脱离于浏览器窗体，因此无法直接访问 DOM。这样独立的个性使得 Service Worker 的“个人行为”无法干扰页面的性能，这个“幕后工作者”可以帮我们实现离线缓存、消息推送和网络代理等功能。我们借助 Service worker 实现的离线缓存就称为 Service Worker Cache。</p>
+</li>
+</ol>
+<h3 id="Cookie-的性能劣势"><a href="#Cookie-的性能劣势" class="headerlink" title="Cookie 的性能劣势"></a>Cookie 的性能劣势</h3><ul>
+<li>Cookie 不够大<br>最大只能有 4KB</li>
+<li>过量的 Cookie 会带来巨大的性能浪费</li>
+</ul>
+<h3 id="Local-Storage-与-Session-Storage-的区别"><a href="#Local-Storage-与-Session-Storage-的区别" class="headerlink" title="Local Storage 与 Session Storage 的区别"></a>Local Storage 与 Session Storage 的区别</h3><p>Web Storage 的特性<br>存储容量大： Web Storage 根据浏览器的不同，存储容量可以达到 5-10M 之间。</p>
+<p>仅位于浏览器端，不与服务端发生通信。<br>两者的区别在于生命周期与作用域的不同</p>
+<ul>
+<li><p>生命周期：<br>Local Storage 是持久化的本地存储，存储在其中的数据是永远不会过期的，使其消失的唯一办法是手动删除；而 Session Storage 是临时性的本地存储，它是会话级别的存储，当会话结束（页面被关闭）时，存储内容也随之被释放。</p>
+</li>
+<li><p>作用域：<br>Local Storage、Session Storage 和 Cookie 都遵循同源策略。但 Session Storage 特别的一点在于，即便是相同域名下的两个页面，只要它们不在同一个浏览器窗口中打开，那么它们的 Session Storage 内容便无法共享。</p>
+</li>
+</ul>
+<h3 id="IndexedDB"><a href="#IndexedDB" class="headerlink" title="IndexedDB"></a>IndexedDB</h3><p>IndexedDB 是一个运行在浏览器上的非关系型数据库，当遇到大规模的、结构复杂的数据时进行存储</p>
+<h3 id="CDN"><a href="#CDN" class="headerlink" title="CDN"></a>CDN</h3><blockquote>
+<p>CDN （Content Delivery Network，即内容分发网络）指的是一组分布在各个地区的服务器。这些服务器存储着数据的副本，因此服务器可以根据哪些服务器与用户距离最近，来满足数据的请求。 CDN 提供快速服务，较少受高流量影响。</p>
+</blockquote>
+<p>缓存、本地存储带来的性能提升，是不是只能在“获取到资源并把它们存起来”这件事情发生之后？也就是说，首次请求资源的时候，这些招数都是救不了我们的。要提升首次请求的响应能力，我们还需要借助 CDN 的能力。</p>
+<ul>
+<li><p>缓存与回源<br>这两个概念都非常好理解。对标到上面描述的过程，“缓存”就是说我们把资源 copy 一份到 CDN 服务器上这个过程，“回源”就是说 CDN 发现自己没有这个资源（一般是缓存的数据过期了），转头向根服务器（或者它的上层服务器）去要这个资源的过程。</p>
+</li>
+<li><p>作用<br>CDN 往往被用来存放静态资源</p>
+</li>
+</ul>
+<h3 id="服务端渲染"><a href="#服务端渲染" class="headerlink" title="服务端渲染"></a>服务端渲染</h3><ul>
+<li>优点</li>
+</ul>
+<ol>
+<li>加快首屏渲染速度</li>
+<li>利于 SEO</li>
+</ol>
+<ul>
+<li>缺点</li>
+</ul>
+<ol>
+<li>服务器负载更大</li>
+</ol>
+<h3 id="CSS-优化"><a href="#CSS-优化" class="headerlink" title="CSS 优化"></a>CSS 优化</h3><p>CSS 引擎查找样式表，对每条规则都按从右到左的顺序去匹配</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#myList  li &#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>避免使用通配符，因为计算量过大，只对需要用到的元素进行选择。</li>
+<li>减少嵌套。后代选择器的开销是最高的，因此我们应该尽量将选择器的深度降到最低（最高不要超过三层），尽可能使用类来关联每一个标签元素。</li>
+</ol>
+<h3 id="CSS-的阻塞"><a href="#CSS-的阻塞" class="headerlink" title="CSS 的阻塞"></a>CSS 的阻塞</h3><p>只有当我们开始解析 HTML 后、解析到 link 标签或者 style 标签时，CSS 才登场，CSSOM 的构建才开始。很多时候，DOM 不得不等待 CSSOM。</p>
+<h3 id="JS-的三种加载方式"><a href="#JS-的三种加载方式" class="headerlink" title="JS 的三种加载方式"></a>JS 的三种加载方式</h3><ol>
+<li>正常模式<br>这种情况下 JS 会阻塞浏览器，浏览器必须等待 index.js 加载和执行完毕才能去做其它事情。</li>
+<li>async 模式<br>async 模式下，JS 不会阻塞浏览器做任何其它的事情。它的加载是异步的，当它加载结束，JS 脚本会立即执行。</li>
+<li>defer 模式<br>defer 模式下，JS 的加载是异步的，执行是被推迟的。等整个文档解析完成、DOMContentLoaded 事件即将被触发时，被标记了 defer 的 JS 文件才会开始依次执行。</li>
+</ol>
+<h3 id="DOM-优化"><a href="#DOM-优化" class="headerlink" title="DOM 优化"></a>DOM 优化</h3><ol>
+<li>重绘<br>重绘：当我们对 DOM 的修改导致了样式的变化、却并未影响其几何属性（比如修改了颜色或背景色）时，浏览器不需重新计算元素的几何属性、直接为该元素绘制新的样式（跳过了上图所示的回流环节）。这个过程叫做重绘。</li>
+<li>回流<br>回流：当我们对 DOM 的修改引发了 DOM 几何尺寸的变化（比如修改元素的宽、高或隐藏元素等）时，浏览器需要重新计算元素的几何属性（其他元素的几何属性和位置也会因此受到影响），然后再将计算的结果绘制出来。这个过程就是回流（也叫重排）。</li>
+</ol>
+<p>重绘不一定导致回流，回流一定会导致重绘</p>
+<h3 id="DOM-Fragment"><a href="#DOM-Fragment" class="headerlink" title="DOM Fragment"></a>DOM Fragment</h3><p>DocumentFragment 接口表示一个没有父级文件的最小文档对象。它被当做一个轻量版的 Document 使用，用于存储已排好版的或尚未打理好格式的 XML 片段。因为 DocumentFragment 不是真实 DOM 树的一部分，它的变化不会引起 DOM 树的重新渲染的操作（reflow），且不会导致性能等问题。</p>
+<h3 id="Micro-Task-与-Macro-Task"><a href="#Micro-Task-与-Macro-Task" class="headerlink" title="Micro-Task 与 Macro-Task"></a>Micro-Task 与 Macro-Task</h3><p>事件循环中的异步队列有两种：macro（宏任务）队列和 micro（微任务）队列。</p>
+<p>常见的 macro-task 比如： setTimeout、setInterval、 setImmediate、script（整体代码）、 I/O 操作、UI 渲染等。</p>
+<p>常见的 micro-task 比如: process.nextTick、Promise、MutationObserver 等。</p>
+<h3 id="优化首屏体验"><a href="#优化首屏体验" class="headerlink" title="优化首屏体验"></a>优化首屏体验</h3><ul>
+<li><p>lazy-load 懒加载<br>当前可视区域的高度</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const viewHeight = window.innerHeight || document.documentElement.clientHeight</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>元素距离可视区域顶部的高度</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">getBoundingClientRect()</span><br></pre></td></tr></table></figure>
+
+<p>核心代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  // 获取所有的图片标签</span><br><span class="line">  const imgs = document.getElementsByTagName(&apos;img&apos;)</span><br><span class="line">  // 获取可视区域的高度</span><br><span class="line">  const viewHeight = window.innerHeight || document.documentElement.clientHeight</span><br><span class="line">  // num用于统计当前显示到了哪一张图片，避免每次都从第一张图片开始检查是否露出</span><br><span class="line">  let num = 0</span><br><span class="line">  function lazyload()&#123;</span><br><span class="line">      for(let i=num; i&lt;imgs.length; i++) &#123;</span><br><span class="line">          // 用可视区域高度减去元素顶部距离可视区域顶部的高度</span><br><span class="line">          let distance = viewHeight - imgs[i].getBoundingClientRect().top</span><br><span class="line">          // 如果可视区域高度大于等于元素顶部距离可视区域顶部的高度，说明元素露出</span><br><span class="line">          if(distance &gt;= 0 )&#123;</span><br><span class="line">              // 给元素写入真实的src，展示图片</span><br><span class="line">              imgs[i].src = imgs[i].getAttribute(&apos;data-src&apos;)</span><br><span class="line">              // 前i张图片已经加载完毕，下次从第i+1张开始检查是否露出</span><br><span class="line">              num = i + 1</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  // 监听Scroll事件</span><br><span class="line">  window.addEventListener(&apos;scroll&apos;, lazyload, false);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="Micro-Task-与-Macro-Task-1"><a href="#Micro-Task-与-Macro-Task-1" class="headerlink" title="Micro-Task 与 Macro-Task"></a>Micro-Task 与 Macro-Task</h3><p>事件循环中的异步队列有两种：macro（宏任务）队列和 micro（微任务）队列。<br>常见的 macro-task 比如： setTimeout、setInterval、 setImmediate、script（整体代码）、 I/O 操作、UI 渲染等。<br>常见的 micro-task 比如: process.nextTick、Promise、MutationObserver 等。</p>
+<p>我们更新 DOM 的时间点，应该尽可能靠近渲染的时机。当我们需要在异步任务中实现 DOM 修改时，把它包装成 micro 任务是相对明智的选择。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/10/16/performance/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-algorithms" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/10/15/algorithms/">算法与数据结构</a>
+    </h1>
+  
+
+        
+        <a href="/2019/10/15/algorithms/" class="archive-article-date">
+  	<time datetime="2019-10-15T02:41:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-15</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h3><ol>
+<li>后进先出</li>
+<li>往一个栈插入新元素被称作进栈、入栈、压栈</li>
+<li>从一个栈删除元素又称作出栈或退栈</li>
+<li>函数调用栈</li>
+<li>相关代码（栈的基本方法、10 进制转化成 2 进制）</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">class Stack &#123;</span><br><span class="line">  //栈的属性</span><br><span class="line">  constructor() &#123;</span><br><span class="line">    this.items = [];</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  //栈的相关操作；</span><br><span class="line">&#125;</span><br><span class="line">//   入栈</span><br><span class="line">Stack.prototype.push = function(e) &#123;</span><br><span class="line">  this.items.push(e);</span><br><span class="line">&#125;;</span><br><span class="line">// 从栈中删除并取出元素</span><br><span class="line">Stack.prototype.pop = function() &#123;</span><br><span class="line">  return this.items.pop();</span><br><span class="line">&#125;;</span><br><span class="line">//  查看一下栈顶元素</span><br><span class="line">Stack.prototype.peek = function() &#123;</span><br><span class="line">  return this.items[this.items.length - 1];</span><br><span class="line">&#125;;</span><br><span class="line">// 判断是否为空</span><br><span class="line">Stack.prototype.isEmpty = function() &#123;</span><br><span class="line">  return this.items.length == 0;</span><br><span class="line">&#125;;</span><br><span class="line">// 获取栈中元素的个数</span><br><span class="line">Stack.prototype.size = function() &#123;</span><br><span class="line">  return this.items.length;</span><br><span class="line">&#125;;</span><br><span class="line">// 转化为string</span><br><span class="line">Stack.prototype.toString = function() &#123;</span><br><span class="line">  return this.items.join(&apos;&apos;);</span><br><span class="line">&#125;;</span><br><span class="line">//栈的使用</span><br><span class="line"></span><br><span class="line">function dec2bin(decNumber) &#123;</span><br><span class="line">  const stack = new Stack();</span><br><span class="line">  while (decNumber &gt; 0) &#123;</span><br><span class="line">    stack.push(decNumber % 2);</span><br><span class="line">    decNumber = Math.floor(decNumber / 2);</span><br><span class="line">  &#125;</span><br><span class="line">  let binaryString = &apos;&apos;;</span><br><span class="line">  while (!stack.isEmpty()) &#123;</span><br><span class="line">    binaryString += stack.pop();</span><br><span class="line">  &#125;</span><br><span class="line">  console.log(binaryString);</span><br><span class="line">  return binaryString;</span><br><span class="line">&#125;</span><br><span class="line">dec2bin(100);</span><br></pre></td></tr></table></figure>
+
+<h3 id="队列"><a href="#队列" class="headerlink" title="队列"></a>队列</h3><ol>
+<li>先进先出</li>
+<li>击鼓传花代码</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line">function Queue() &#123;</span><br><span class="line">  // 属性</span><br><span class="line">  this.items = [];</span><br><span class="line">  // 方法</span><br><span class="line">  //   1.将元素加入到队列中</span><br><span class="line">  Queue.prototype.enqueue = function(e) &#123;</span><br><span class="line">    this.items.push(e);</span><br><span class="line">  &#125;;</span><br><span class="line">  //   从队列中删除并返回前端元素</span><br><span class="line">  Queue.prototype.dequeue = function() &#123;</span><br><span class="line">    return this.items.shift();</span><br><span class="line">  &#125;;</span><br><span class="line">  //   查看前端元素</span><br><span class="line">  Queue.prototype.front = function() &#123;</span><br><span class="line">    return this.items[0];</span><br><span class="line">  &#125;;</span><br><span class="line">  //   查看队列是否为空</span><br><span class="line">  Queue.prototype.isEmpty = function() &#123;</span><br><span class="line">    return this.items.length == 0;</span><br><span class="line">  &#125;;</span><br><span class="line">  //   查看队列中元素的个数</span><br><span class="line">  Queue.prototype.size = function() &#123;</span><br><span class="line">    return this.items.length;</span><br><span class="line">  &#125;;</span><br><span class="line">  //   返回字符串形式</span><br><span class="line">  Queue.prototype.toString = function() &#123;</span><br><span class="line">    return this.items.join(&apos;&apos;);</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line">// 面试题：击鼓传花</span><br><span class="line">function passGame(nameList, num) &#123;</span><br><span class="line">  // 1.创建一个队列结构</span><br><span class="line">  const queue = new Queue();</span><br><span class="line">  //   2.将所有人一次加入到队列中</span><br><span class="line">  nameList.forEach(item =&gt; &#123;</span><br><span class="line">    // console.log(item);</span><br><span class="line">    queue.enqueue(item);</span><br><span class="line">  &#125;);</span><br><span class="line">  while (queue.size() &gt; 1) &#123;</span><br><span class="line">    for (var i = 0; i &lt; num - 1; i++) &#123;</span><br><span class="line">      queue.enqueue(queue.dequeue());</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  //   开始数数字，不是num的时候，重新加入到队列的末尾</span><br><span class="line">  //   是num这个数字的时候，将其从队列中删除</span><br><span class="line">  //   num数字之前的人重新放入末尾</span><br><span class="line">  queue.dequeue();</span><br><span class="line">  //   获取剩下的那个人</span><br><span class="line">  const endName = queue.front();</span><br><span class="line">  console.log(endName);</span><br><span class="line">  return nameList.indexOf(endName);</span><br><span class="line">&#125;</span><br><span class="line">passGame([1, 2, 3, 4, 5, 6, 43, 25, 62], 3);</span><br></pre></td></tr></table></figure>
+
+<h3 id="优先级队列"><a href="#优先级队列" class="headerlink" title="优先级队列"></a>优先级队列</h3><p>在队列中添加优先级别即可，队列中的元素为对象</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">function PriorityQueue() &#123;</span><br><span class="line">  // 在priorityQueue创新创建一个类：可以理解成内部类</span><br><span class="line">  function QueueElement(e, p) &#123;</span><br><span class="line">    this.element = e;</span><br><span class="line">    this.priority = priority;</span><br><span class="line">  &#125;</span><br><span class="line">  this.items = [];</span><br><span class="line">  PriorityQueue.prototype.enqueue = function(e, p) &#123;</span><br><span class="line">    //   1.创建queueElement对象</span><br><span class="line">    const queueElement = new QueueElement(e, p);</span><br><span class="line">    // 2.判断队列是否为空</span><br><span class="line">    if (this.items.length == 0) &#123;</span><br><span class="line">      this.items.push(queueElement);</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">      const added = false;</span><br><span class="line">      for (var i = 0; i &lt; this.items.length; i++) &#123;</span><br><span class="line">        if (queueElement.priority &lt; this.items[i].priority) &#123;</span><br><span class="line">          this.items.splice(i, 0);</span><br><span class="line">          added = true;</span><br><span class="line">          break;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      if (!added) &#123;</span><br><span class="line">        this.items.push(queueElement);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line">const pq = new PriorityQueue();</span><br></pre></td></tr></table></figure>
+
+<h3 id="单链表"><a href="#单链表" class="headerlink" title="单链表"></a>单链表</h3><p>数组的缺点：</p>
+<ol>
+<li>在数组开头活中间位置插入数据的成本很高</li>
+<li>数组的创建需要申请一段内存，内存消耗较高<br>链表的基本操作代码</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br></pre></td><td class="code"><pre><span class="line">// 封装链表类</span><br><span class="line">function LinkedList() &#123;</span><br><span class="line">  // 内部类：节点类</span><br><span class="line">  function Node(data, next) &#123;</span><br><span class="line">    this.data = data;</span><br><span class="line">    this.next = next;</span><br><span class="line">  &#125;</span><br><span class="line">  // 属性</span><br><span class="line">  this.head = null;</span><br><span class="line">  this.length = 0;</span><br><span class="line">  LinkedList.prototype.append = function(data) &#123;</span><br><span class="line">    //   判断是否添加的是第一个节点</span><br><span class="line">    const newNode = new Node(data);</span><br><span class="line">    if (this.length == 0) &#123;</span><br><span class="line">      this.head = newNode;</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">      let current = this.head;</span><br><span class="line">      while (current.next) &#123;</span><br><span class="line">        current = current.next;</span><br><span class="line">      &#125;</span><br><span class="line">      current.next = newNode;</span><br><span class="line">    &#125;</span><br><span class="line">    this.length += 1;</span><br><span class="line">  &#125;;</span><br><span class="line">  //   2.toString方法</span><br><span class="line">  LinkedList.prototype.toString = function() &#123;</span><br><span class="line">    const current = this.head;</span><br><span class="line">    const listString = &apos;&apos;;</span><br><span class="line">    // 循环获取一个个的节点</span><br><span class="line">    while (current) &#123;</span><br><span class="line">      listString += current.data + &apos; &apos;;</span><br><span class="line">      current = current.next;</span><br><span class="line">    &#125;</span><br><span class="line">    return listString;</span><br><span class="line">  &#125;;</span><br><span class="line">  //   插入方法</span><br><span class="line">  LinkedList.prototype.insert = function(position, data) &#123;</span><br><span class="line">    //   对position进行越界判断</span><br><span class="line">    if (position &lt; 0) return false;</span><br><span class="line">    if (position &gt; this.length) return false;</span><br><span class="line">    // 根据data创建newNode</span><br><span class="line">    const newNode = new Node(data);</span><br><span class="line">    // 判断插入的位置是否是第一个</span><br><span class="line">    if (position == 0) &#123;</span><br><span class="line">      newNode.next = this.head;</span><br><span class="line">      this.head = newNode;</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">      const index = 0;</span><br><span class="line">      const current = this.head;</span><br><span class="line">      const previous = null;</span><br><span class="line">      while (index++ &lt; positon) &#123;</span><br><span class="line">        previous = current;</span><br><span class="line">        current = current.next;</span><br><span class="line">      &#125;</span><br><span class="line">      newNode.next = current;</span><br><span class="line">      previous.next = newNode;</span><br><span class="line">    &#125;</span><br><span class="line">    this.length++;</span><br><span class="line">    return true;</span><br><span class="line">  &#125;;</span><br><span class="line">  //   获取某个节点</span><br><span class="line">  LinkedList.prototype.get = function(position) &#123;</span><br><span class="line">    if (position &lt; 0 || position &gt;= this.length) return null;</span><br><span class="line">    // 获取对应的data</span><br><span class="line">    const current = this.head;</span><br><span class="line">    let index = 0;</span><br><span class="line"></span><br><span class="line">    while (index &lt; positon) &#123;</span><br><span class="line">      current = current.next;</span><br><span class="line">      index += 1;</span><br><span class="line">    &#125;</span><br><span class="line">    return current.data;</span><br><span class="line">  &#125;;</span><br><span class="line">  //   修改某个节点</span><br><span class="line">  LinkedList.prototype.update = function(position, newData) &#123;</span><br><span class="line">    if (position &lt; 0 || position &gt;= this.length) return null;</span><br><span class="line">    // 获取对应的data</span><br><span class="line">    const current = this.head;</span><br><span class="line">    let index = 0;</span><br><span class="line"></span><br><span class="line">    while (index &lt; positon) &#123;</span><br><span class="line">      current = current.next;</span><br><span class="line">      index += 1;</span><br><span class="line">    &#125;</span><br><span class="line">    current.data = newData;</span><br><span class="line">    return true;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="双向链表"><a href="#双向链表" class="headerlink" title="双向链表"></a>双向链表</h3><p>单链表的缺点：</p>
+<ol>
+<li>只能从头遍历或者从尾遍历</li>
+<li>链表相连的过程是单向的</li>
+<li>编辑上一个节点很困难</li>
+</ol>
+<p>双链表的优点：</p>
+<ol>
+<li>既可以从头遍历，也可以从尾遍历</li>
+</ol>
+<p>双向链表的基本操作</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br></pre></td><td class="code"><pre><span class="line">function DoublyLinkList() &#123;</span><br><span class="line">  this.head = null;</span><br><span class="line">  this.tail = null;</span><br><span class="line">  this.length = 0;</span><br><span class="line">  //   内部类</span><br><span class="line">  function Node(data) &#123;</span><br><span class="line">    this.data = data;</span><br><span class="line">    this.prev = null;</span><br><span class="line">    this.next = null;</span><br><span class="line">  &#125;</span><br><span class="line">  //   追加方法</span><br><span class="line">  DoublyLinkList.prototype.append = function(data) &#123;</span><br><span class="line">    //   1.创建新节点</span><br><span class="line">    // 判断是否添加的是第一个节点</span><br><span class="line">    const newNode = new Node(data);</span><br><span class="line">    if (this.length == 0) &#123;</span><br><span class="line">      this.head = newNode;</span><br><span class="line">      this.tail = newNode;</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">      // 找到最后一个节点</span><br><span class="line">      newNode.prev = this.tail;</span><br><span class="line">      this.tail.next = newNode;</span><br><span class="line">      this.tail = newNode;</span><br><span class="line">    &#125;</span><br><span class="line">    this.length += 1;</span><br><span class="line">  &#125;;</span><br><span class="line">  //   将链表转成字符串形式</span><br><span class="line">  //   2.toString方法</span><br><span class="line">  DoublyLinkList.prototype.toString = function() &#123;</span><br><span class="line">    return this.backwardString();</span><br><span class="line">  &#125;;</span><br><span class="line">  //   forwardString方法</span><br><span class="line">  DoublyLinkList.prototype.forwardString = function() &#123;</span><br><span class="line">    let current = this.tail;</span><br><span class="line">    let resultString = &apos;&apos;;</span><br><span class="line">    while (current) &#123;</span><br><span class="line">      resultString += current.data + &apos;&apos;;</span><br><span class="line">      current = current.prev;</span><br><span class="line">    &#125;</span><br><span class="line">    return resultString;</span><br><span class="line">  &#125;;</span><br><span class="line">  //   backwardString方法</span><br><span class="line">  DoublyLinkList.prototype.backwardString = function() &#123;</span><br><span class="line">    let current = this.head;</span><br><span class="line">    let resultString = &apos;&apos;;</span><br><span class="line">    // 2.依次向后遍历，获取每一个节点</span><br><span class="line">    while (current) &#123;</span><br><span class="line">      resultString += current.data;</span><br><span class="line">      current = current.next;</span><br><span class="line">    &#125;</span><br><span class="line">    return resultString;</span><br><span class="line">  &#125;;</span><br><span class="line">  //   insert方法</span><br><span class="line">  DoublyLinkList.prototype.insert = function(position, data) &#123;</span><br><span class="line">    if (position &lt; 0 || position &gt; this.length) return;</span><br><span class="line">    // 根据data创建新的节点</span><br><span class="line">    const newNode = new Node(data);</span><br><span class="line">    //判断原来的猎鸟是否为空</span><br><span class="line">    if (this.length == 0) &#123;</span><br><span class="line">      this.head = newNode;</span><br><span class="line">      this.tail = newNode;</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">      // 3.1判断position是否为0</span><br><span class="line">      if (position == 0) &#123;</span><br><span class="line">        this.head.prev = newNode;</span><br><span class="line">        newNode.next = this.head;</span><br><span class="line">        this.head = newNode;</span><br><span class="line">      &#125; else if (position == this.length) &#123;</span><br><span class="line">        newNode.prev = this.tail;</span><br><span class="line">        this.tail.next = newNode;</span><br><span class="line">        this.tail = newNode;</span><br><span class="line">      &#125; else &#123;</span><br><span class="line">        const current = this.head;</span><br><span class="line">        let index = 0;</span><br><span class="line">        while (index++ &lt; position) &#123;</span><br><span class="line">          current = current.next;</span><br><span class="line">        &#125;</span><br><span class="line">        // 修改指针</span><br><span class="line">        newNode.next = current;</span><br><span class="line">        newNode.prev = current.prev;</span><br><span class="line">        current.prev.next = newNode;</span><br><span class="line">        current.prev = newNode;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line">const test = new DoublyLinkList();</span><br><span class="line">test.append(&apos;ABC&apos;);</span><br><span class="line">test.append(&apos;AdBC&apos;);</span><br><span class="line">test.append(&apos;ABSC&apos;);</span><br><span class="line">console.log(test.backwardString());</span><br><span class="line">console.log(test.forwardString());</span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/10/15/algorithms/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-learnDesignPattern" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -196,8 +793,94 @@
         <h3 id="构造器模式"><a href="#构造器模式" class="headerlink" title="构造器模式"></a>构造器模式</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function User(name , age, career) &#123;</span><br><span class="line">    this.name = name</span><br><span class="line">    this.age = age</span><br><span class="line">    this.career = career</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h3 id="工厂模式"><a href="#工厂模式" class="headerlink" title="工厂模式"></a>工厂模式</h3><p>通过 factory 根据不同的 career,赋值不同的 work,最后将参数传递给 User 构造函数</p>
+<ul>
+<li>简单工厂</li>
+</ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">function User(name , age, career, work) &#123;</span><br><span class="line">    this.name = name</span><br><span class="line">    this.age = age</span><br><span class="line">    this.career = career</span><br><span class="line">    this.work = work</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function Factory(name, age, career) &#123;</span><br><span class="line">    let work</span><br><span class="line">    switch(career) &#123;</span><br><span class="line">        case &apos;coder&apos;:</span><br><span class="line">            work =  [&apos;写代码&apos;,&apos;写系分&apos;, &apos;修Bug&apos;]</span><br><span class="line">            break</span><br><span class="line">        case &apos;product manager&apos;:</span><br><span class="line">            work = [&apos;订会议室&apos;, &apos;写PRD&apos;, &apos;催更&apos;]</span><br><span class="line">            break</span><br><span class="line">        case &apos;boss&apos;:</span><br><span class="line">            work = [&apos;喝茶&apos;, &apos;看报&apos;, &apos;见客户&apos;]</span><br><span class="line">        case &apos;xxx&apos;:</span><br><span class="line">            // 其它工种的职责分配</span><br><span class="line">            ...</span><br><span class="line"></span><br><span class="line">    return new User(name, age, career, work)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<ul>
+<li>抽象工厂</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">// 定义手机硬件这类产品的抽象产品类</span><br><span class="line">class HardWare &#123;</span><br><span class="line">    // 手机硬件的共性方法，这里提取了“根据命令运转”这个共性</span><br><span class="line">    operateByOrder() &#123;</span><br><span class="line">        throw new Error(&apos;抽象产品方法不允许直接调用，你需要将我重写！&apos;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 定义具体硬件的具体产品类</span><br><span class="line">class QualcommHardWare extends HardWare &#123;</span><br><span class="line">    operateByOrder() &#123;</span><br><span class="line">        console.log(&apos;我会用高通的方式去运转&apos;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class MiWare extends HardWare &#123;</span><br><span class="line">    operateByOrder() &#123;</span><br><span class="line">        console.log(&apos;我会用小米的方式去运转&apos;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+
+<h3 id="单例模式"><a href="#单例模式" class="headerlink" title="单例模式"></a>单例模式</h3><p>不管我们尝试去创建多少次，它都只给你返回第一次所创建的那唯一的一个实例。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">class SingleDog &#123;</span><br><span class="line">    show() &#123;</span><br><span class="line">        console.log(&apos;我是一个单例对象&apos;)</span><br><span class="line">    &#125;</span><br><span class="line">    static getInstance() &#123;</span><br><span class="line">        // 判断是否已经new过1个实例</span><br><span class="line">        if (!SingleDog.instance) &#123;</span><br><span class="line">            // 若这个唯一的实例不存在，那么先创建它</span><br><span class="line">            SingleDog.instance = new SingleDog()</span><br><span class="line">        &#125;</span><br><span class="line">        // 如果这个唯一的实例已经存在，则直接返回</span><br><span class="line">        return SingleDog.instance</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>笔试题</p>
+<blockquote>
+<p>实现 Storage，使得该对象为单例，基于 localStorage 进行封装。实现方法 setItem(key,value) 和 getItem(key)。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">// 定义Storage</span><br><span class="line">class Storage &#123;</span><br><span class="line">    static getInstance() &#123;</span><br><span class="line">        // 判断是否已经new过1个实例</span><br><span class="line">        if (!Storage.instance) &#123;</span><br><span class="line">            // 若这个唯一的实例不存在，那么先创建它</span><br><span class="line">            Storage.instance = new Storage()</span><br><span class="line">        &#125;</span><br><span class="line">        // 如果这个唯一的实例已经存在，则直接返回</span><br><span class="line">        return Storage.instance</span><br><span class="line">    &#125;</span><br><span class="line">    getItem (key) &#123;</span><br><span class="line">        return localStorage.getItem(key)</span><br><span class="line">    &#125;</span><br><span class="line">    setItem (key, value) &#123;</span><br><span class="line">        return localStorage.setItem(key, value)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const storage1 = Storage.getInstance()</span><br><span class="line">const storage2 = Storage.getInstance()</span><br><span class="line"></span><br><span class="line">storage1.setItem(&apos;name&apos;, &apos;李雷&apos;)</span><br><span class="line">// 李雷</span><br><span class="line">storage1.getItem(&apos;name&apos;)</span><br><span class="line">// 也是李雷</span><br><span class="line">storage2.getItem(&apos;name&apos;)</span><br><span class="line"></span><br><span class="line">// 返回true</span><br><span class="line">storage1 === storage2</span><br></pre></td></tr></table></figure>
+
+<p>使用闭包来实现</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">function StorageBase () &#123;&#125;</span><br><span class="line">StorageBase.prototype.getItem = function (key)&#123;</span><br><span class="line">    return localStorage.getItem(key)</span><br><span class="line">&#125;</span><br><span class="line">StorageBase.prototype.setItem = function (key, value) &#123;</span><br><span class="line">    return localStorage.setItem(key, value)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 以闭包的形式创建一个引用自由变量的构造函数</span><br><span class="line">const Storage = (function()&#123;</span><br><span class="line">    let instance = null</span><br><span class="line">    return function()&#123;</span><br><span class="line">        // 判断自由变量是否为null</span><br><span class="line">        if(!instance) &#123;</span><br><span class="line">            // 如果为null则new出唯一实例</span><br><span class="line">            instance = new StorageBase()</span><br><span class="line">        &#125;</span><br><span class="line">        return instance</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)()</span><br><span class="line"></span><br><span class="line">// 这里其实不用 new Storage 的形式调用，直接 Storage() 也会有一样的效果</span><br><span class="line">const storage1 = new Storage()</span><br><span class="line">const storage2 = new Storage()</span><br><span class="line"></span><br><span class="line">storage1.setItem(&apos;name&apos;, &apos;李雷&apos;)</span><br><span class="line">// 李雷</span><br><span class="line">storage1.getItem(&apos;name&apos;)</span><br><span class="line">// 也是李雷</span><br><span class="line">storage2.getItem(&apos;name&apos;)</span><br><span class="line"></span><br><span class="line">// 返回true</span><br><span class="line">storage1 === storage2</span><br></pre></td></tr></table></figure>
+
+<h3 id="原型模式"><a href="#原型模式" class="headerlink" title="原型模式"></a>原型模式</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">// 创建一个Dog构造函数</span><br><span class="line">function Dog(name, age) &#123;</span><br><span class="line">  this.name = name</span><br><span class="line">  this.age = age</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Dog.prototype.eat = function() &#123;</span><br><span class="line">  console.log(&apos;肉骨头真好吃&apos;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 使用Dog构造函数创建dog实例</span><br><span class="line">const dog = new Dog(&apos;旺财&apos;, 3)</span><br></pre></td></tr></table></figure>
+
+<p>写个漂亮的递归深拷贝</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">function deepClone(obj) &#123;</span><br><span class="line">    // 如果是 值类型 或 null，则直接return</span><br><span class="line">    if(typeof obj !== &apos;object&apos; || obj === null) &#123;</span><br><span class="line">        return obj</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    // 定义结果对象</span><br><span class="line">    let copy = &#123;&#125;</span><br><span class="line"></span><br><span class="line">    // 如果对象是数组，则定义结果数组</span><br><span class="line">    if(obj.constructor === Array) &#123;</span><br><span class="line">        copy = []</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    // 遍历对象的key</span><br><span class="line">    for(let key in obj) &#123;</span><br><span class="line">        // 如果key是对象的自有属性</span><br><span class="line">        if(obj.hasOwnProperty(key)) &#123;</span><br><span class="line">            // 递归调用深拷贝方法</span><br><span class="line">            copy[key] = deepClone(obj[key])</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    return copy</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="装饰器模式"><a href="#装饰器模式" class="headerlink" title="装饰器模式"></a>装饰器模式</h3><ul>
+<li>一句话概括：只添加、不修改</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">class OpenButton &#123;</span><br><span class="line">    // 点击后展示弹框（旧逻辑）</span><br><span class="line">    onClick() &#123;</span><br><span class="line">        const modal = new Modal()</span><br><span class="line">    	modal.style.display = &apos;block&apos;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 定义按钮对应的装饰器</span><br><span class="line">class Decorator &#123;</span><br><span class="line">    // 将按钮实例传入</span><br><span class="line">    constructor(open_button) &#123;</span><br><span class="line">        this.open_button = open_button</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    onClick() &#123;</span><br><span class="line">        this.open_button.onClick()</span><br><span class="line">        // “包装”了一层新逻辑</span><br><span class="line">        this.changeButtonStatus()</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    changeButtonStatus() &#123;</span><br><span class="line">        this.changeButtonText()</span><br><span class="line">        this.disableButton()</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    disableButton() &#123;</span><br><span class="line">        const btn =  document.getElementById(&apos;open&apos;)</span><br><span class="line">        btn.setAttribute(&quot;disabled&quot;, true)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    changeButtonText() &#123;</span><br><span class="line">        const btn = document.getElementById(&apos;open&apos;)</span><br><span class="line">        btn.innerText = &apos;快去登录&apos;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const openButton = new OpenButton()</span><br><span class="line">const decorator = new Decorator(openButton)</span><br><span class="line"></span><br><span class="line">document.getElementById(&apos;open&apos;).addEventListener(&apos;click&apos;, function() &#123;</span><br><span class="line">    // openButton.onClick()</span><br><span class="line">    // 此处可以分别尝试两个实例的onClick方法，验证装饰器是否生效</span><br><span class="line">    decorator.onClick()</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h3 id="适配器模式"><a href="#适配器模式" class="headerlink" title="适配器模式"></a>适配器模式</h3><p>把一个类的接口变换成客户端所期待的另一种接口</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">axios.get(&apos;/user?ID=12345&apos;)</span><br><span class="line">  .then(function (response) &#123;</span><br><span class="line">    // handle success</span><br><span class="line">    console.log(response);</span><br><span class="line">  &#125;)</span><br><span class="line">  .catch(function (error) &#123;</span><br><span class="line">    // handle error</span><br><span class="line">    console.log(error);</span><br><span class="line">  &#125;)</span><br><span class="line">  .then(function () &#123;</span><br><span class="line">    // always executed</span><br><span class="line">  &#125;)</span><br><span class="line"></span><br><span class="line">axios.post(&apos;/user&apos;, &#123;</span><br><span class="line">    firstName: &apos;Fred&apos;,</span><br><span class="line">    lastName: &apos;Flintstone&apos;</span><br><span class="line">  &#125;)</span><br><span class="line">  .then(function (response) &#123;</span><br><span class="line">    console.log(response);</span><br><span class="line">  &#125;)</span><br><span class="line">  .catch(function (error) &#123;</span><br><span class="line">    console.log(error);</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">axios(&#123;</span><br><span class="line">  method: &apos;post&apos;,</span><br><span class="line">  url: &apos;/user/12345&apos;,</span><br><span class="line">  data: &#123;</span><br><span class="line">    firstName: &apos;Fred&apos;,</span><br><span class="line">    lastName: &apos;Flintstone&apos;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h3 id="代理模式"><a href="#代理模式" class="headerlink" title="代理模式"></a>代理模式</h3><ul>
+<li>es6 中的 proxy</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const proxy = new Proxy(obj, handler)</span><br></pre></td></tr></table></figure>
+
+<p>第一个参数是我们的目标对象,handler 也是一个对象，用来定义代理的行为。<br>当我们通过 proxy 去访问目标对象的时候，handler 会对我们的行为作一层拦截，我们的每次访问都需要经过 handler 这个第三方。</p>
+<ul>
+<li>代理模式的相关代码</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">// 普通私密信息</span><br><span class="line">const baseInfo = [&apos;age&apos;, &apos;career&apos;]</span><br><span class="line">// 最私密信息</span><br><span class="line">const privateInfo = [&apos;avatar&apos;, &apos;phone&apos;]</span><br><span class="line"></span><br><span class="line">// 用户（同事A）对象实例</span><br><span class="line">const user = &#123;</span><br><span class="line">    ...(一些必要的个人信息)</span><br><span class="line">    isValidated: true,</span><br><span class="line">    isVIP: false,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 掘金婚介所登场了</span><br><span class="line">const JuejinLovers = new Proxy(girl, &#123;</span><br><span class="line">  get: function(girl, key) &#123;</span><br><span class="line">      if(baseInfo.indexOf(key)!==-1 &amp;&amp; !user.isValidated) &#123;</span><br><span class="line">          alert(&apos;您还没有完成验证哦&apos;)</span><br><span class="line">          return</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      //...(此处省略其它有的没的各种校验逻辑)</span><br><span class="line"></span><br><span class="line">      // 此处我们认为只有验证过的用户才可以购买VIP</span><br><span class="line">      if(user.isValidated &amp;&amp; privateInfo.indexOf(key) &amp;&amp; !user.isVIP) &#123;</span><br><span class="line">          alert(&apos;只有VIP才可以查看该信息哦&apos;)</span><br><span class="line">          return</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li><p>事件代理<br>案例：希望鼠标点击每个 a 标签，都可以弹出“我是 xxx”这样的提示。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"> &lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</span><br><span class="line">&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;</span><br><span class="line">&lt;title&gt;事件代理&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;div id=&quot;father&quot;&gt;</span><br><span class="line"> &lt;a href=&quot;#&quot;&gt;链接1号&lt;/a&gt;</span><br><span class="line"> &lt;a href=&quot;#&quot;&gt;链接2号&lt;/a&gt;</span><br><span class="line"> &lt;a href=&quot;#&quot;&gt;链接3号&lt;/a&gt;</span><br><span class="line"> &lt;a href=&quot;#&quot;&gt;链接4号&lt;/a&gt;</span><br><span class="line"> &lt;a href=&quot;#&quot;&gt;链接5号&lt;/a&gt;</span><br><span class="line"> &lt;a href=&quot;#&quot;&gt;链接6号&lt;/a&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<p>思路：因为点击 a 链接后会冒泡，我们只需要在父元素上面进行监听，绑定事件进行代理即可</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">// 获取父元素</span><br><span class="line">const father = document.getElementById(&apos;father&apos;)</span><br><span class="line"> // 给父元素安装一次监听函数</span><br><span class="line">father.addEventListener(&apos;click&apos;, function(e) &#123;</span><br><span class="line">// 识别是否是目标子元素</span><br><span class="line">if(e.target.tagName === &apos;A&apos;) &#123;</span><br><span class="line">// 以下是监听函数的函数体</span><br><span class="line">e.preventDefault()</span><br><span class="line">alert(`我是$&#123;e.target.innerText&#125;`)</span><br><span class="line">&#125;</span><br><span class="line">&#125; )</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>虚拟代理</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"> class PreLoadImage &#123;</span><br><span class="line"> constructor(imgNode) &#123;</span><br><span class="line">     // 获取真实的DOM节点</span><br><span class="line">     this.imgNode = imgNode</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> // 操作img节点的src属性</span><br><span class="line"> setSrc(imgUrl) &#123;</span><br><span class="line">     this.imgNode.src = imgUrl</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br><span class="line">class ProxyImage &#123;</span><br><span class="line"> // 占位图的url地址</span><br><span class="line"> static LOADING_URL = &apos;xxxxxx&apos;</span><br><span class="line"> constructor(targetImage) &#123;</span><br><span class="line">     // 目标Image，即PreLoadImage实例</span><br><span class="line">     this.targetImage = targetImage</span><br><span class="line"> &#125;</span><br><span class="line"> // 该方法主要操作虚拟Image，完成加载</span><br><span class="line"> setSrc(targetUrl) &#123;</span><br><span class="line">    // 真实img节点初始化时展示的是一个占位图</span><br><span class="line">     this.targetImage.setSrc(ProxyImage.LOADING_URL)</span><br><span class="line">     // 创建一个帮我们加载图片的虚拟Image实例</span><br><span class="line">     const virtualImage = new Image()</span><br><span class="line">     // 监听目标图片加载的情况，完成时再将DOM上的真实img节点的src属性设置为目标图片的url</span><br><span class="line">     virtualImage.onload = () =&gt; &#123;</span><br><span class="line">         this.targetImage.setSrc(targetUrl)</span><br><span class="line">     &#125;</span><br><span class="line">     // 设置src属性，虚拟Image实例开始加载图片</span><br><span class="line">     virtualImage.src = targetUrl</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在这个实例中，virtualImage 这个对象是一个“幕后英雄”，它始终存在于 JavaScript 世界中、代替真实 DOM 发起了图片加载请求、完成了图片加载工作，却从未在渲染层面抛头露面。因此这种模式被称为“虚拟代理”模式。</p>
+<ul>
+<li>缓存代理<br>缓存代理比较好理解，它应用于一些计算量较大的场景里。在这种场景下，我们需要“用空间换时间”——当我们需要用到某个已经计算过的值的时候，不想再耗时进行二次计算，而是希望能从内存里去取出现成的计算结果。这种场景下，就需要一个代理来帮我们在进行计算的同时，进行计算结果的缓存了。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">// addAll方法会对你传入的所有参数做求和操作</span><br><span class="line">const addAll = function() &#123;</span><br><span class="line">    console.log(&apos;进行了一次新计算&apos;)</span><br><span class="line">    let result = 0</span><br><span class="line">    const len = arguments.length</span><br><span class="line">    for(let i = 0; i &lt; len; i++) &#123;</span><br><span class="line">        result += arguments[i]</span><br><span class="line">    &#125;</span><br><span class="line">    return result</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const proxyAddAll = (function()&#123;</span><br><span class="line"> // 求和结果的缓存池</span><br><span class="line"> const resultCache = &#123;&#125;</span><br><span class="line"> return function() &#123;</span><br><span class="line">     // 将入参转化为一个唯一的入参字符串</span><br><span class="line">     const args = Array.prototype.join.call(arguments, &apos;,&apos;)</span><br><span class="line"></span><br><span class="line">     // 检查本次入参是否有对应的计算结果</span><br><span class="line">     if(args in resultCache) &#123;</span><br><span class="line">         // 如果有，则返回缓存池里现成的结果</span><br><span class="line">         return resultCache[args]</span><br><span class="line">     &#125;</span><br><span class="line">     return resultCache[args] = addAll(...arguments)</span><br><span class="line"> &#125;</span><br><span class="line"> &#125;)()</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h3 id="观察者模式（发布-订阅模式）"><a href="#观察者模式（发布-订阅模式）" class="headerlink" title="观察者模式（发布-订阅模式）"></a>观察者模式（发布-订阅模式）</h3><p>发布者能操作订阅者的增删改查等，而订阅者只能控制自己的内容</p>
+<ul>
+<li><p>观察者</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">// 定义发布者类</span><br><span class="line">class Publisher &#123;</span><br><span class="line">constructor() &#123;</span><br><span class="line">    this.observers = []</span><br><span class="line">    console.log(&apos;Publisher created&apos;)</span><br><span class="line">&#125;</span><br><span class="line">// 增加订阅者</span><br><span class="line">add(observer) &#123;</span><br><span class="line">    console.log(&apos;Publisher.add invoked&apos;)</span><br><span class="line">    this.observers.push(observer)</span><br><span class="line">&#125;</span><br><span class="line">// 移除订阅者</span><br><span class="line">remove(observer) &#123;</span><br><span class="line">    console.log(&apos;Publisher.remove invoked&apos;)</span><br><span class="line">    this.observers.forEach((item, i) =&gt; &#123;</span><br><span class="line">    if (item === observer) &#123;</span><br><span class="line">        this.observers.splice(i, 1)</span><br><span class="line">    &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line">// 通知所有订阅者</span><br><span class="line">notify() &#123;</span><br><span class="line">    console.log(&apos;Publisher.notify invoked&apos;)</span><br><span class="line">    this.observers.forEach((observer) =&gt; &#123;</span><br><span class="line">    observer.update(this)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>订阅者</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">  // 定义订阅者类</span><br><span class="line">class Observer &#123;</span><br><span class="line">  constructor() &#123;</span><br><span class="line">      console.log(&apos;Observer created&apos;)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  update() &#123;</span><br><span class="line">      console.log(&apos;Observer.update invoked&apos;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>vue 双向绑定原理</p>
+<ul>
+<li>发布者</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"> // observe方法遍历并包装对象属性</span><br><span class="line">  function observe(target) &#123;</span><br><span class="line">      // 若target是一个对象，则遍历它</span><br><span class="line">      if(target &amp;&amp; typeof target === &apos;object&apos;) &#123;</span><br><span class="line">          Object.keys(target).forEach((key)=&gt; &#123;</span><br><span class="line">              // defineReactive方法会给目标属性装上“监听器”</span><br><span class="line">              defineReactive(target, key, target[key])</span><br><span class="line">          &#125;)</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  // 定义defineReactive方法</span><br><span class="line">function defineReactive(target, key, val) &#123;</span><br><span class="line">  const dep = new Dep()</span><br><span class="line">  // 监听当前属性</span><br><span class="line">  observe(val)</span><br><span class="line">  Object.defineProperty(target, key, &#123;</span><br><span class="line">      set: (value) =&gt; &#123;</span><br><span class="line">          // 通知所有订阅者</span><br><span class="line">          dep.notify()</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>订阅者</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">class Dep &#123;</span><br><span class="line">constructor() &#123;</span><br><span class="line">// 初始化订阅队列</span><br><span class="line">this.subs = []</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 增加订阅者</span><br><span class="line">addSub(sub) &#123;</span><br><span class="line">this.subs.push(sub)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 通知订阅者（是不是所有的代码都似曾相识？）</span><br><span class="line">notify() &#123;</span><br><span class="line">this.subs.forEach((sub)=&gt;&#123;</span><br><span class="line">sub.update()</span><br><span class="line">&#125;)</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+</li>
+</ul>
 
       
 
@@ -450,6 +1133,64 @@
 <h2 id="浏览器命令截图新姿势"><a href="#浏览器命令截图新姿势" class="headerlink" title="浏览器命令截图新姿势"></a>浏览器命令截图新姿势</h2><p>打开 Command 菜单 通过 Capture full size screenshot 命令 全屏截图</p>
 <h2 id="Array-prototype-reduce"><a href="#Array-prototype-reduce" class="headerlink" title="Array.prototype.reduce"></a>Array.prototype.reduce</h2><p>arr.reduce((sum, { total }) =&gt; {<br>return sum + total;<br>}, 0)<br>每次将此前的累计值加上当前项的 total 为此次回调函数的返回值，作为下次执行时 sum 的实参使用</p>
 <h2 id="React-memo"><a href="#React-memo" class="headerlink" title="React.memo"></a>React.memo</h2><p>它会检查接下来的渲染是否与前一次的渲染相同，如果两者是一样的，那么就会保留上一次的渲染结果</p>
+<h2 id="定义对象的方式"><a href="#定义对象的方式" class="headerlink" title="定义对象的方式"></a>定义对象的方式</h2><p>使用 object.prototype.方法的方式性能上强些。</p>
+<h2 id="webkit-和-bink-内核的区别"><a href="#webkit-和-bink-内核的区别" class="headerlink" title="webkit 和 bink 内核的区别"></a>webkit 和 bink 内核的区别</h2><p>最根本的区别：Chrome 浏览器基于开源引擎 WebKit 中 WebCore 元件的一个分支–Blink，也就是说 Blink 只是 Webkit 的一个分支。</p>
+<p>1、Webkit(Safari 内核,Chrome 内核原型,开源）</p>
+<p>Webkit:它是苹果公司自己的内核，也是苹果的 Safari 浏览器使用的内核，谷歌 chrome 浏览器最先开发或使用，也叫谷歌内核，2013 年分道扬镳了。WebKit 内核常见的浏览器：Apple Safari (Win/Mac/iPhone/iPad)、Symbian 手机浏览器、Android 默认浏览器。</p>
+<p>2、Blink(Google 的最新内核)</p>
+<p>2013 年 4 月 3 日，谷歌在 Chromium Blog 上发表博客，称将与苹果的开源浏览器核心 Webkit 分道扬镳，在 Chromium 项目中自主研发 Blink 渲染引擎（即浏览器核心），内置于 Chrome 浏览器之中。</p>
+<h3 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h3><p><em>正则表达式是匹配模式，要么匹配字符，要么匹配位置</em></p>
+<h4 id="横向模糊匹配"><a href="#横向模糊匹配" class="headerlink" title="横向模糊匹配"></a>横向模糊匹配</h4><p>譬如{m,n}，表示连续出现最少 m 次，最多 n 次</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var regex = /ab&#123;2,5&#125;c/g;</span><br><span class="line">var string = &quot;abc abbc abbbc abbbbc abbbbbc abbbbbbc&quot;;</span><br><span class="line">console.log( string.match(regex) );</span><br><span class="line">// =&gt; [&quot;abbc&quot;, &quot;abbbc&quot;, &quot;abbbbc&quot;, &quot;abbbbbc&quot;]</span><br></pre></td></tr></table></figure>
+
+<h4 id="纵向模糊匹配"><a href="#纵向模糊匹配" class="headerlink" title="纵向模糊匹配"></a>纵向模糊匹配</h4><p>[abc]，表示该字符是可以字符“a”、“b”、“c”中的任何一个</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">var regex = /a[123]b/g;</span><br><span class="line">var string = &quot;a0b a1b a2b a3b a4b&quot;;</span><br><span class="line">console.log( string.match(regex) );</span><br><span class="line">// =&gt; [&quot;a1b&quot;, &quot;a2b&quot;, &quot;a3b&quot;]</span><br></pre></td></tr></table></figure>
+
+<h4 id="范围表示法"><a href="#范围表示法" class="headerlink" title="范围表示法"></a>范围表示法</h4><p>比如[123456abcdefGHIJKLM]，可以写成[1-6a-fG-M]<br>要匹配“a”、“-”、“z”，可以写成如下的方式：[-az]或[az-]或[a-z]</p>
+<h4 id="排除字符组"><a href="#排除字符组" class="headerlink" title="排除字符组"></a>排除字符组</h4><p>例如[^abc]，表示是一个除”a”、”b”、”c”之外的任意一个字符。字符组的第一位放^（脱字符），表示求反的概念。</p>
+<h4 id="常见的简写方式"><a href="#常见的简写方式" class="headerlink" title="常见的简写方式"></a>常见的简写方式</h4><ul>
+<li>\d [0-9]</li>
+<li>\D [^0-9]</li>
+<li>\w [0-9a-zA-Z_] 表示数字、大小写字母和下划线</li>
+<li>\W [^0-9a-za-z_]</li>
+<li>\s [[^\t\v\n\r\f] 表示空白符，包括空格、水平制表符、垂直制表符、换行符、回车符、换页符</li>
+<li>. [^\n\r\u2028\u2029] 通配符，表示几乎任意字符。</li>
+</ul>
+<h3 id="简写形式"><a href="#简写形式" class="headerlink" title="简写形式"></a>简写形式</h3><ul>
+<li>{m,} 表示至少出现 m 次</li>
+<li>{m} 表示出现 M 次</li>
+<li>? 表示{0,1}，表示出现或不出现; +表示出现至少一次； *等价于{0,}</li>
+</ul>
+<h3 id="贪婪匹配和惰性匹配"><a href="#贪婪匹配和惰性匹配" class="headerlink" title="贪婪匹配和惰性匹配"></a>贪婪匹配和惰性匹配</h3><p>正则/\d{2,5}/ 会匹配 2 位、3 位、4 位、5 位连续数字</p>
+<p>正则/\d{2,5}?/ 表示，虽然 2 到 5 次都行，当 2 个就够的时候，就不在往下尝试了</p>
+<p>通过在量词后面加个问号就能实现惰性匹配</p>
+<h3 id="多选分支"><a href="#多选分支" class="headerlink" title="多选分支"></a>多选分支</h3><p>具体形式如下：(p1|p2|p3)，其中 p1、p2 和 p3 是子模式，用|（管道符）分隔，表示其中任何之一。<br>例如要匹配”good”和”nice”可以使用/good|nice/<br>分支结构也是惰性的，即当前面的匹配上了，后面的就不再尝试了</p>
+<h4 id="和"><a href="#和" class="headerlink" title="^和$"></a>^和$</h4><p>^（脱字符）匹配开头，在多行匹配中匹配行开头。</p>
+<p>$（美元符号）匹配结尾，在多行匹配中匹配行结尾。</p>
+<h4 id="b-和-B"><a href="#b-和-B" class="headerlink" title="\b 和\B"></a>\b 和\B</h4><p>\b 是单词边界，具体就是\w 和\W 之间的位置，也包括\w 和^之间的位置，也包括\w 和$之间的位置。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var result = &quot;[JS] Lesson_01.mp4&quot;.replace(/\b/g, &apos;#&apos;);</span><br><span class="line">console.log(result);</span><br><span class="line">// =&gt; &quot;[#JS#] #Lesson_01#.#mp4#&quot;</span><br></pre></td></tr></table></figure>
+
+<p>\B 就是\b 的反面的意思，非单词边界。例如在字符串中所有位置中，扣掉\b，剩下的都是\B 的。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var result = &quot;[JS] Lesson_01.mp4&quot;.replace(/\B/g, &apos;#&apos;);</span><br><span class="line">console.log(result);</span><br><span class="line">// =&gt; &quot;#[J#S]# L#e#s#s#o#n#_#0#1.m#p#4&quot;</span><br></pre></td></tr></table></figure>
+
+<h3 id="前端路由"><a href="#前端路由" class="headerlink" title="前端路由"></a>前端路由</h3><h4 id="hash-路由"><a href="#hash-路由" class="headerlink" title="hash 路由"></a>hash 路由</h4><p>hash 路由一个明显的标志是带有#,我们主要是通过监听 url 中的 hash 变化来进行路由跳转。<br>优势：兼容性好</p>
+<h4 id="history-路由"><a href="#history-路由" class="headerlink" title="history 路由"></a>history 路由</h4><p>history API =&gt;window.history.xxx</p>
+<ul>
+<li>主要 API<br>window.history.back(); // 后退<br>window.history.forward(); // 前进<br>window.history.go(-3); // 后退三个页面<br>history.pushState 用于在浏览历史中添加历史记录,但是并不触发跳转<br>history.replaceState 方法的参数与 pushState 方法一模一样，区别是它修改浏览历史中当前纪录,而非添加记录,同样不触发跳转。</li>
+</ul>
+<h3 id="apply-和-call"><a href="#apply-和-call" class="headerlink" title="apply 和 call"></a>apply 和 call</h3><p>作用一模一样 都是改变一个对象中的方法或者这个对象 this,到另一个中去<br>apply 接受的参数是一个数组，而 call 是按顺序传递的字符串<br>当传递的参数个数确定时候,一般用 call,反之用 apply</p>
+<h3 id="继承的几种方式"><a href="#继承的几种方式" class="headerlink" title="继承的几种方式"></a>继承的几种方式</h3><ol>
+<li><p>原型链继承<br>缺点：</p>
+<ol>
+<li>通过原型来实现继承时，原型会变成另一个类型的实例，原先的实例属性变成了现在的原型属性，该原型的引用类型属性会被所有的实例共享。</li>
+<li>在创建子类型的实例时，没有办法在不影响所有对象实例的情况下给超类型的构造函数中传递参数。</li>
+</ol>
+</li>
+<li><p>借用构造函数<br>缺点：<br>方法都在构造函数中定义，函数复用无从谈起，另外超类型原型中定义的方法对于子类型而言都是不可见的。</p>
+</li>
+<li><p>组合继承(原型链 + 借用构造函数)<br>无论什么情况下，都会调用两次超类型构造函数：一次是在创建子类型原型的时候，另一次是在子类型构造函数内部。</p>
+</li>
+</ol>
 
       
 
@@ -463,505 +1204,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/10/08/studySummarize/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-excellentLink" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/09/26/excellentLink/">优秀文章链接</a>
-    </h1>
-  
-
-        
-        <a href="/2019/09/26/excellentLink/" class="archive-article-date">
-  	<time datetime="2019-09-26T06:21:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-26</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>经常看到一些好的 github 链接或者掘金上的文章 怕自己记不住</p>
-        
-          <a class="article-more-a" href="/2019/09/26/excellentLink/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/09/26/excellentLink/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-MyComponents" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/09/06/MyComponents/">自己写的组件</a>
-    </h1>
-  
-
-        
-        <a href="/2019/09/06/MyComponents/" class="archive-article-date">
-  	<time datetime="2019-09-06T03:30:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-06</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Taro-amp-amp-Taro-UI"><a href="#Taro-amp-amp-Taro-UI" class="headerlink" title="Taro&amp;&amp;Taro UI"></a>Taro&amp;&amp;Taro UI</h2>
-        
-          <a class="article-more-a" href="/2019/09/06/MyComponents/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/09/06/MyComponents/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-learnReactHook" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/30/learnReactHook/">ReactHooks学习笔记</a>
-    </h1>
-  
-
-        
-        <a href="/2019/08/30/learnReactHook/" class="archive-article-date">
-  	<time datetime="2019-08-30T01:05:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-30</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="useState"><a href="#useState" class="headerlink" title="useState"></a>useState</h3><p>类似于 state 和 setState.</p>
-<ul>
-<li>相同点：也是异步的，例如在 onClick 事件中，调用两次 setState，数据只改变一次。</li>
-<li>不同点：类中的 setState 是合并，而函数组件中的 setState 是替换。</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">import React, &#123; useState &#125; from &apos;react&apos;;</span><br><span class="line"></span><br><span class="line">function Example() &#123;</span><br><span class="line">    // 声明一个名为“count”的新状态变量</span><br><span class="line">    const [count, setCount] = useState(0);</span><br><span class="line"></span><br><span class="line">    return (</span><br><span class="line">        &lt;div&gt;</span><br><span class="line">            &lt;p&gt;You clicked &#123;count&#125; times&lt;/p&gt;</span><br><span class="line">            &lt;button onClick=&#123;() =&gt; setCount(count + 1)&#125;&gt;</span><br><span class="line">                Click me</span><br><span class="line">            &lt;/button&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">    );</span><br><span class="line">&#125;</span><br><span class="line">export default Example;</span><br></pre></td></tr></table></figure>
-
-<h4 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h4><p>创建初始状态是比较昂贵的，所以我们可以在使用 useState API 时，传入一个函数，就可以避免重新创建忽略的初始状态。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// createRows 只会被执行一次</span><br><span class="line">const [rows, setRows] = useState(() =&gt; createRows(props.count));</span><br></pre></td></tr></table></figure>
-
-<h3 id="useEffect"><a href="#useEffect" class="headerlink" title="useEffect"></a>useEffect</h3><p>可以理解为将 componentDidMount 和 componentDidUpdate 合并起来</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">useEffect(() =&gt; &#123; doSomething &#125;,[]);</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>两个参数：<ol>
-<li>第一个是一个函数，是在第一次渲染以及之后更新渲染之后会进行的副作用。<ul>
-<li>这个函数可能会有返回值，倘若有返回值，返回值也必须是一个函数，会在组件被销毁时执行。</li>
-</ul>
-</li>
-<li>第二个参数是可选的，是一个数组，数组中存放的是第一个函数中使用的某些副作用属性。用来优化 useEffect<ul>
-<li>如果使用此优化，请确保该数组包含外部作用域中随时间变化且 effect 使用的任何值。 否则，您的代码将引用先前渲染中的旧值。</li>
-<li>如果要运行 effect 并仅将其清理一次（在装载和卸载时），则可以将空数组（[]）作为第二个参数传递。 这告诉 React 你的 effect 不依赖于来自 props 或 state 的任何值，所以它永远不需要重新运行。</li>
-</ul>
-</li>
-</ol>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">useEffect(() =&gt; &#123;</span><br><span class="line">    // 使用浏览器API更新文档标题</span><br><span class="line">    document.title = `You clicked $&#123;count&#125; times`;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">const handleClick = () =&gt; &#123;</span><br><span class="line">    console.log(&apos;鼠标点击&apos;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">useEffect(() =&gt; &#123;</span><br><span class="line">    // 给 window 绑定点击事件</span><br><span class="line">    window.addEventListener(&apos;click&apos;, handleClick);</span><br><span class="line"></span><br><span class="line">    return () =&gt; &#123;</span><br><span class="line">        // 给 window 移除点击事件</span><br><span class="line">        window.removeListener(&apos;click&apos;, handleClick);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<p>在组件销毁时候，移除监听器</p>
-<h4 id="优化-1"><a href="#优化-1" class="headerlink" title="优化"></a>优化</h4><p>useEffect 的第二个参数是一个数组，里面放入在 useEffect 使用到的 state 值，可以用作优化，只有当数组中 state 值发生变化时，才会执行这个 useEffect。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">useEffect(() =&gt; &#123;</span><br><span class="line">    // 使用浏览器API更新文档标题</span><br><span class="line">    document.title = `You clicked $&#123;count&#125; times`;</span><br><span class="line">&#125;, [ count ]);</span><br></pre></td></tr></table></figure>
-
-<p>useEffect 的第二个参数是空数组时，只会在首次渲染的时候进行，相当于 componentWillMount</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">useEffect(() =&gt; &#123;</span><br><span class="line">    // 使用浏览器API更新文档标题</span><br><span class="line">    document.title = `You clicked $&#123;count&#125; times`;</span><br><span class="line">&#125;, []);</span><br></pre></td></tr></table></figure>
-
-<h3 id="useContext"><a href="#useContext" class="headerlink" title="useContext"></a>useContext</h3><p>接受上下文对象（从中 React.createContext 返回的值）并返回该上下文的当前上下文值。当前上下文值由树中调用组件上方 value 最近的 prop 确定&lt;MyContext.Provider&gt;。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const value = useContext(MyContext);</span><br></pre></td></tr></table></figure>
-
-<p>首先要引入 createContext</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import React, &#123; createContext &#125; from &apos;react&apos;;</span><br></pre></td></tr></table></figure>
-
-<p>然后创建一个 Context</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export const ThemeContext = createContext(null);</span><br></pre></td></tr></table></figure>
-
-<p>这个 Context 应应要 export 之后的组件中需要用到它,之后将组件放到这个 Context 中，组件即可使用</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">import React, &#123; createContext &#125; from &apos;react&apos;;</span><br><span class="line">import Example from &apos;./Example&apos;;</span><br><span class="line"></span><br><span class="line">import &apos;./App.css&apos;;</span><br><span class="line"></span><br><span class="line">export const ThemeContext = createContext(null);</span><br><span class="line"></span><br><span class="line">export default () =&gt; &#123;</span><br><span class="line"></span><br><span class="line">    return (</span><br><span class="line">        &lt;ThemeContext.Provider value=&quot;light&quot;&gt;</span><br><span class="line">            &lt;Example /&gt;</span><br><span class="line">        &lt;/ThemeContext.Provider&gt;</span><br><span class="line">    )</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>在组件中的使用方式:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">import React, &#123; useContext &#125; from &apos;react&apos;;</span><br><span class="line"></span><br><span class="line">import &#123; ThemeContext &#125; from &apos;./App&apos;;</span><br><span class="line"></span><br><span class="line">export default () =&gt; &#123;</span><br><span class="line"></span><br><span class="line">    const context = useContext(ThemeContext);</span><br><span class="line"></span><br><span class="line">    return (</span><br><span class="line">        &lt;div&gt;Example 组件：当前 theme 是：&#123; context &#125;&lt;/div&gt;</span><br><span class="line">    )</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2019/08/30/learnReactHook/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">reactHooks</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/08/30/learnReactHook/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-learnTaro" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/29/learnTaro/">Taro学习笔记</a>
-    </h1>
-  
-
-        
-        <a href="/2019/08/29/learnTaro/" class="archive-article-date">
-  	<time datetime="2019-08-29T02:22:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-29</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>在我们设计组件时，有些组件通常不知道自己的子组件会有什么内容，例如 Sidebar 和 Dialog 这样的容器组件。</p>
-<p>我们建议在这样的情况使用 this.props.children 来传递子元素：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">class Dialog extends Component &#123;</span><br><span class="line">  render () &#123;</span><br><span class="line">    return (</span><br><span class="line">      &lt;View className=&apos;dialog&apos;&gt;</span><br><span class="line">        &lt;View className=&apos;header&apos;&gt;Welcome!&lt;/View&gt;</span><br><span class="line">        &lt;View className=&apos;body&apos;&gt;</span><br><span class="line">          &#123;this.props.children&#125;</span><br><span class="line">        &lt;/View&gt;</span><br><span class="line">        &lt;View className=&apos;footer&apos;&gt;-- divider --&lt;/View&gt;</span><br><span class="line">      &lt;/View&gt;</span><br><span class="line">    )</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>这样就能允许其它组件在 JSX 中嵌套任意子组件传递给 Dialog:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">class App extends Component &#123;</span><br><span class="line">  render () &#123;</span><br><span class="line">    return (</span><br><span class="line">      &lt;View className=&apos;container&apos;&gt;</span><br><span class="line">        &lt;Dialog&gt;</span><br><span class="line">          &lt;View className=&quot;dialog-message&quot;&gt;</span><br><span class="line">            Thank you for using Taro</span><br><span class="line">          &lt;/View&gt;</span><br><span class="line">        &lt;/Dialog&gt;</span><br><span class="line">      &lt;/View&gt;</span><br><span class="line">    )</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="useEffct-和-useDidShow"><a href="#useEffct-和-useDidShow" class="headerlink" title="useEffct 和 useDidShow"></a>useEffct 和 useDidShow</h3><p>useDidshow()中调接口会每次都在页面加载时候请求<br>useEffct 只会在首次加载，之后不加载</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">taro</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/08/29/learnTaro/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-work" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/17/work/">工作中遇见的问题</a>
-    </h1>
-  
-
-        
-        <a href="/2019/08/17/work/" class="archive-article-date">
-  	<time datetime="2019-08-17T04:10:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-17</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>总结了从参加实习到工作以来中遇见的问题，和可以改进的地方</p>
-        
-          <a class="article-more-a" href="/2019/08/17/work/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/08/17/work/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-reviewFrondEnd" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/14/reviewFrondEnd/">重学前端</a>
-    </h1>
-  
-
-        
-        <a href="/2019/08/14/reviewFrondEnd/" class="archive-article-date">
-  	<time datetime="2019-08-14T09:39:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-14</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="标签"><a href="#标签" class="headerlink" title="标签"></a>标签</h3><ol>
-<li>文档元信息：通常是出现在 head 标签中的元素，包含了描述文档自身的一些信息；</li>
-<li>语义相关：扩展了纯文本，表达文章结构、不同语言要素的标签；</li>
-<li>链接：提供到文档内和文档外的链接；</li>
-<li>替换型标签：引入声音、图片、视频等外部元素替换自身的一类标签；</li>
-<li>表单：用于填写和提交信息的一类标签；</li>
-<li>表格：表头、表尾、单元格等表格的结构。</li>
-</ol>
-<h3 id="HTML-语义"><a href="#HTML-语义" class="headerlink" title="HTML 语义"></a>HTML 语义</h3><p>如何运用语义类标签来呈现 Wiki 网页</p>
-<ol>
-<li>Abbr:缩写</li>
-<li>Hgourp:标题组</li>
-<li>hr 表示故事走向的转变或者话题的转变</li>
-<li>strong:表示重点</li>
-<li>blockquote 表示段落级引述内容</li>
-<li>q 表示行内的引述内容</li>
-<li>cite 表示引述的作品名</li>
-<li>time 表示时间</li>
-<li>figure 用于表示与主文章相关的图像、照片等流内容）</li>
-<li>dfn 标签是用来包裹被定义的名词。</li>
-<li>nav 导航、目录</li>
-<li>pre 标签表示这部分内容是预先排版过的，不需要浏览器进行排版。（超级好用）</li>
-<li>samp 标签表示一段算机程序的示例输出</li>
-<li>code 标签 表示 HTML 代码</li>
-<li>section 标签，这个标签可不仅仅是一个“有语义的 div”，它会改变 h1-h6 的语义。section 的嵌套会使得其中的 h1-h6 下降一级</li>
-</ol>
-<pre><code>
-&lt;html&gt;
-  &lt;head&gt;
-    &lt;title&gt;Example.org – The World Wide Web&lt;/title&gt;
-  &lt;/head&gt;
-  &lt;body&gt;
-    &lt;p&gt;The World Wide Web, abbreviated as WWW and commonly known ...&lt;/p&gt;
-  &lt;/body&gt;
-&lt;/html&gt;
-16.    其他标签
-</code></pre>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/08/14/reviewFrondEnd/">展开全文 >></a>
         </p>
       
 

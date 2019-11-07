@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>回顾ES6 | 程亮的个人博客</title>
+  <title>react最佳实践 | 程亮的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="执行上下文当有两个相同函数名时候，后面的会覆盖前面的函数 1234567891011function foo() &amp;#123;  console.log(&amp;apos;foo1&amp;apos;);&amp;#125;foo(); // foo2function foo() &amp;#123;  console.log(&amp;apos;foo2&amp;apos;);&amp;#125;foo(); // foo2  actionScop">
+  <meta name="description" content="定义清晰可维护的接口 保持接口小，props 数量要少； 根据数据边界来划分组件，充分利用组合（composition）； 把 state 往上层组件提取，让下层组件只需要实现为纯函数。  给组件默认赋初始值123const MajorClock = (&amp;#123;milliseconds=0&amp;#125;) =&amp;gt; &amp;#123;  return &amp;lt;h1&amp;gt;&amp;#123;ms2Time(">
 <meta property="og:type" content="article">
-<meta property="og:title" content="回顾ES6">
-<meta property="og:url" content="http://yoursite.com/2019/08/13/reviewEs6/index.html">
+<meta property="og:title" content="react最佳实践">
+<meta property="og:url" content="http://yoursite.com/2019/10/18/react最佳实践/index.html">
 <meta property="og:site_name" content="程亮的个人博客">
-<meta property="og:description" content="执行上下文当有两个相同函数名时候，后面的会覆盖前面的函数 1234567891011function foo() &amp;#123;  console.log(&amp;apos;foo1&amp;apos;);&amp;#125;foo(); // foo2function foo() &amp;#123;  console.log(&amp;apos;foo2&amp;apos;);&amp;#125;foo(); // foo2  actionScop">
+<meta property="og:description" content="定义清晰可维护的接口 保持接口小，props 数量要少； 根据数据边界来划分组件，充分利用组合（composition）； 把 state 往上层组件提取，让下层组件只需要实现为纯函数。  给组件默认赋初始值123const MajorClock = (&amp;#123;milliseconds=0&amp;#125;) =&amp;gt; &amp;#123;  return &amp;lt;h1&amp;gt;&amp;#123;ms2Time(">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-10-16T01:52:00.760Z">
+<meta property="og:updated_time" content="2019-10-21T08:46:40.515Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="回顾ES6">
-<meta name="twitter:description" content="执行上下文当有两个相同函数名时候，后面的会覆盖前面的函数 1234567891011function foo() &amp;#123;  console.log(&amp;apos;foo1&amp;apos;);&amp;#125;foo(); // foo2function foo() &amp;#123;  console.log(&amp;apos;foo2&amp;apos;);&amp;#125;foo(); // foo2  actionScop">
+<meta name="twitter:title" content="react最佳实践">
+<meta name="twitter:description" content="定义清晰可维护的接口 保持接口小，props 数量要少； 根据数据边界来划分组件，充分利用组合（composition）； 把 state 往上层组件提取，让下层组件只需要实现为纯函数。  给组件默认赋初始值123const MajorClock = (&amp;#123;milliseconds=0&amp;#125;) =&amp;gt; &amp;#123;  return &amp;lt;h1&amp;gt;&amp;#123;ms2Time(">
   
     <link rel="alternative" href="/atom.xml" title="程亮的个人博客" type="application/atom+xml">
   
@@ -175,112 +175,47 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-reviewEs6" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-react最佳实践" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      回顾ES6
+      react最佳实践
     </h1>
   
 
         
-        <a href="/2019/08/13/reviewEs6/" class="archive-article-date">
-  	<time datetime="2019-08-13T07:23:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-13</time>
+        <a href="/2019/10/18/react最佳实践/" class="archive-article-date">
+  	<time datetime="2019-10-18T07:15:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-18</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="执行上下文"><a href="#执行上下文" class="headerlink" title="执行上下文"></a>执行上下文</h3><p>当有两个相同函数名时候，后面的会覆盖前面的函数</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">function foo() &#123;</span><br><span class="line">  console.log(&apos;foo1&apos;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">foo(); // foo2</span><br><span class="line"></span><br><span class="line">function foo() &#123;</span><br><span class="line">  console.log(&apos;foo2&apos;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">foo(); // foo2</span><br></pre></td></tr></table></figure>
-
-<h3 id="actionScope"><a href="#actionScope" class="headerlink" title="actionScope"></a>actionScope</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">var value = 1;</span><br><span class="line"></span><br><span class="line">function foo() &#123;</span><br><span class="line">  // console.log(this);</span><br><span class="line">  console.log(1);</span><br><span class="line">  console.log(value);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function bar() &#123;</span><br><span class="line">  var value = 2;</span><br><span class="line">  // console.log(this);</span><br><span class="line">  foo();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">bar();</span><br></pre></td></tr></table></figure>
-
-<p>输出 1</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var scope = &apos;global scope&apos;;</span><br><span class="line">function checkscope() &#123;</span><br><span class="line">  var scope = &apos;local scope&apos;;</span><br><span class="line">  // console.log(scope);</span><br><span class="line">  function f() &#123;</span><br><span class="line">    return scope;</span><br><span class="line">  &#125;</span><br><span class="line">  return f();</span><br><span class="line">&#125;</span><br><span class="line">checkscope();</span><br></pre></td></tr></table></figure>
-
-<p>输出 local scope</p>
-<h3 id="解构赋值"><a href="#解构赋值" class="headerlink" title="解构赋值"></a>解构赋值</h3><ul>
-<li>获取数组中的值</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var foo = [&quot;one&quot;, &quot;two&quot;, &quot;three&quot;, &quot;four&quot;];</span><br><span class="line">var [one, two, three] = foo;</span><br><span class="line">console.log(one); // &quot;one&quot;</span><br><span class="line">console.log(two); // &quot;two&quot;</span><br><span class="line">console.log(three); // &quot;three&quot;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>如果要忽略掉某些值</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var [first, , , last] = foo;</span><br><span class="line">console.log(first); // &quot;one&quot;</span><br><span class="line">console.log(last); // &quot;four&quot;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>如果没有从数组中拿到值，可以为变量设置一个默认值</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[a=5, b=7] = [1];</span><br><span class="line">console.log(a); // 1</span><br><span class="line">console.log(b); // 7</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>交换两数</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var a = 1;</span><br><span class="line">var b = 3;</span><br><span class="line">[a, b] = [b, a];</span><br><span class="line">console.log(a); // 3</span><br><span class="line">console.log(b); // 1</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>获取对象的值</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">const student = &#123;</span><br><span class="line">  name:&apos;Ming&apos;,</span><br><span class="line">  age:&apos;18&apos;,</span><br><span class="line">  city:&apos;Shanghai&apos;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">const &#123;name,age,city&#125; = student;</span><br><span class="line">console.log(name); // &quot;Ming&quot;</span><br><span class="line">console.log(age); // &quot;18&quot;</span><br><span class="line">console.log(city); // &quot;Shanghai&quot;</span><br></pre></td></tr></table></figure>
-
-<a id="more"></a>
-
-<h3 id="延展操作符"><a href="#延展操作符" class="headerlink" title="延展操作符"></a>延展操作符</h3><ul>
-<li>对象延展<br>合并后，后合并的对象中如果有和前面对象相同的键名，将会覆盖掉前面的键值对</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var obj1 = &#123; foo: &apos;bar&apos;, x: 42 &#125;;</span><br><span class="line">var obj2 = &#123; foo: &apos;baz&apos;, y: 13 &#125;;</span><br><span class="line">var clonedObj = &#123; ...obj1 &#125;;</span><br><span class="line">// 克隆后的对象: &#123; foo: &quot;bar&quot;, x: 42 &#125;</span><br><span class="line">var mergedObj = &#123; ...obj1, ...obj2 &#125;;</span><br><span class="line">// 合并后的对象: &#123; foo: &quot;baz&quot;, x: 42, y: 13 &#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>react 延展操作符的用法<br>使用 … ，等同于上面的写法</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">const params = &#123;name: &apos;Jine&apos;,age: 21&#125;</span><br><span class="line">&lt;CustomComponent &#123;...params&#125; /&gt;</span><br></pre></td></tr></table></figure>
-
-<p>配合解构赋值避免传入一些不需要的参数</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var params = &#123;name: &apos;123&apos;,title: &apos;456&apos;,type: &apos;aaa&apos;&#125;</span><br><span class="line">var &#123; type, ...other &#125; = params;</span><br><span class="line">&lt;CustomComponent type=&apos;normal&apos; number=&#123;2&#125; &#123;...other&#125; /&gt;</span><br><span class="line">//等同于</span><br><span class="line">&lt;CustomComponent type=&apos;normal&apos; number=&#123;2&#125; name=&apos;123&apos; title=&apos;456&apos; /&gt;</span><br></pre></td></tr></table></figure>
-
-<h3 id="Promise-all"><a href="#Promise-all" class="headerlink" title="Promise.all()"></a>Promise.all()</h3><p>Promise.all()有如下两种情况</p>
-<ul>
-<li><p>完成（Fulfillment）:<br>如果传入的可迭代对象为空，Promise.all 会同步地返回一个已完成（resolved）状态的 promise。<br>如果所有传入的 promise 都变为完成状态，或者传入的可迭代对象内没有 promise，Promise.all 返回的 promise 异步地变为完成。<br>在任何情况下，Promise.all 返回的 promise 的完成状态的结果都是一个数组，它包含所有的传入迭代参数对象的值（也包括非 promise 值）。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">const promises = [</span><br><span class="line">  Promise.resolve(&apos;a&apos;),</span><br><span class="line">  Promise.resolve(&apos;b&apos;),</span><br><span class="line">  Promise.resolve(&apos;c&apos;),</span><br><span class="line">];</span><br><span class="line">Promise.all(promises)</span><br><span class="line">  .then((arr) =&gt; console.log(arr));</span><br></pre></td></tr></table></figure>
-
-<p>输出为(‘a’,’b’,’c’)</p>
-</li>
-<li><p>失败(Rejection):<br>如果传入的 promise 中有一个失败（rejected），Promise.all 异步地将失败的那个结果给失败状态的回调函数，而不管其它 promise 是否完成。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">const promises = [</span><br><span class="line">Promise.resolve(&apos;a&apos;),</span><br><span class="line">Promise.reject(&apos;b&apos;),</span><br><span class="line">Promise.reject(&apos;ERROR&apos;)</span><br><span class="line">];</span><br><span class="line">Promise.all(promises)</span><br><span class="line">.then(res =&gt; console.log(res))</span><br><span class="line">.catch(err =&gt; console.log(err));</span><br></pre></td></tr></table></figure>
-
-<p>输出为’b’</p>
-</li>
-</ul>
-<h3 id="Promise-race"><a href="#Promise-race" class="headerlink" title="Promise.race()"></a>Promise.race()</h3><p>Promise.race(iterable) 方法返回一个 promise，一旦迭代器中的某个 promise 解决或拒绝，返回的 promise 就会解决或拒绝。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">const promises = [</span><br><span class="line">  new Promise((resolve, reject) =&gt;</span><br><span class="line">    setTimeout(() =&gt; resolve(&apos;result&apos;), 100)),</span><br><span class="line">  new Promise((resolve, reject) =&gt;</span><br><span class="line">    setTimeout(() =&gt; reject(&apos;ERROR&apos;), 200)),</span><br><span class="line">];</span><br><span class="line">Promise.race(promises)</span><br><span class="line">  .then((result) =&gt; assert.equal(</span><br><span class="line">    result, &apos;result&apos;));</span><br></pre></td></tr></table></figure>
-
-<p>返回的是 result</p>
-<h3 id="cookie"><a href="#cookie" class="headerlink" title="cookie"></a>cookie</h3><ul>
-<li><p>什么是 cookie</p>
-<ol>
-<li>存储在浏览器的一段字符串（最大 5kb）</li>
-<li>跨域不共享</li>
-<li>每次发送 http 请求，会将请求与的 cookie 一起发送给 server</li>
-<li>server 可以修改 cookie 并返回给浏览器</li>
-<li>浏览器中也可以用 js 修改 cookie</li>
+        <h3 id="定义清晰可维护的接口"><a href="#定义清晰可维护的接口" class="headerlink" title="定义清晰可维护的接口"></a>定义清晰可维护的接口</h3><ol>
+<li>保持接口小，props 数量要少；</li>
+<li>根据数据边界来划分组件，充分利用组合（composition）；</li>
+<li>把 state 往上层组件提取，让下层组件只需要实现为纯函数。</li>
 </ol>
-</li>
-</ul>
-<h3 id="异步请求-async-和-await"><a href="#异步请求-async-和-await" class="headerlink" title="异步请求 async 和 await"></a>异步请求 async 和 await</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">function getSomething() &#123;</span><br><span class="line">  return &apos;something&apos;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">async function testAsnyc() &#123;</span><br><span class="line">  return &apos;hello async&apos;;</span><br><span class="line">&#125;</span><br><span class="line">async function test() &#123;</span><br><span class="line">  const v1 = await getSomething();</span><br><span class="line">  zzzz;</span><br><span class="line">&#125;</span><br><span class="line">// await :async wait</span><br><span class="line">const result = testAsnyc();</span><br><span class="line">console.log(result);</span><br></pre></td></tr></table></figure>
+<h3 id="给组件默认赋初始值"><a href="#给组件默认赋初始值" class="headerlink" title="给组件默认赋初始值"></a>给组件默认赋初始值</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">const MajorClock = (&#123;milliseconds=0&#125;) =&gt; &#123;</span><br><span class="line">  return &lt;h1&gt;&#123;ms2Time(milliseconds)&#125;&lt;/h1&gt;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
-<h2 id="删除数组中的某个元素也可以这样使用"><a href="#删除数组中的某个元素也可以这样使用" class="headerlink" title="删除数组中的某个元素也可以这样使用"></a>删除数组中的某个元素也可以这样使用</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">remove(observer) &#123;</span><br><span class="line">  console.log(&apos;Publisher.remove invoked&apos;)</span><br><span class="line">  this.observers.forEach((item, i) =&gt; &#123;</span><br><span class="line">    if (item === observer) &#123;</span><br><span class="line">      this.observers.splice(i, 1)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>如果使用 MajorClock 时没有传入 milliseconds 这个 props，那么 milliseconds 的值就是 0。</p>
+<h3 id="父子组件关系"><a href="#父子组件关系" class="headerlink" title="父子组件关系"></a>父子组件关系</h3><p>父组件负责逻辑层数据管理，子组件负责 UI 的渲染（有状态组件和无状态组件）</p>
+<h3 id="PureComponent"><a href="#PureComponent" class="headerlink" title="PureComponent"></a>PureComponent</h3><p>React.PureComponent 与 React.Component 很相似。两者的区别在于 React.Component 并未实现 shouldComponentUpdate()，而 React.PureComponent 中以浅层对比 prop 和 state 的方式来实现了该函数。</p>
+<p>如果赋予 React 组件相同的 props 和 state，render() 函数会渲染相同的内容，那么在某些情况下使用 React.PureComponent 可提高性能。</p>
+<h3 id="React-memo"><a href="#React-memo" class="headerlink" title="React.memo"></a>React.memo</h3><p>React.memo 为高阶组件。它与 React.PureComponent 非常相似，但它适用于函数组件，但不适用于 class 组件。</p>
+<h3 id="render-props-模式"><a href="#render-props-模式" class="headerlink" title="render props 模式"></a>render props 模式</h3><p>所谓 render props，指的是让 React 组件的 props 支持函数这种模式。因为作为 props 传入的函数往往被用来渲染一部分界面，所以这种模式被称为 render props。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">const RenderAll = (props) =&gt; &#123;</span><br><span class="line">  return(</span><br><span class="line">     &lt;React.Fragment&gt;</span><br><span class="line">     	&#123;props.children(props)&#125;</span><br><span class="line">     &lt;/React.Fragment&gt;</span><br><span class="line">  );</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
-<h2 id="JS-中的作用域链"><a href="#JS-中的作用域链" class="headerlink" title="JS 中的作用域链"></a>JS 中的作用域链</h2><p>分析阶段创 AO，参数看完找变量，变量不顶函数顶，顶完之后定乾坤。</p>
-<p>执行阶段看 LR，内层不行找外层，翻遍楼层找不到，抛个异常连连看。</p>
-<blockquote>
-<p><a href="https://juejin.im/post/5c8efeb1e51d45614372addd" target="_blank" rel="noopener">https://juejin.im/post/5c8efeb1e51d45614372addd</a></p>
-</blockquote>
+<p>传递 props</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;RenderAll&gt;</span><br><span class="line">  &#123;() =&gt; &lt;h1&gt;hello world&lt;/h1&gt;&#125;</span><br><span class="line">&lt;/RenderAll&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="适合-Redux-的场景"><a href="#适合-Redux-的场景" class="headerlink" title="适合 Redux 的场景"></a>适合 Redux 的场景</h3><p>第一步，看这个状态是否会被多个 React 组件共享。<br>第二步，看这个组件被 unmount 之后重新被 mount，之前的状态是否需要保留。</p>
+<h3 id="为什么不在-componentWillMount-里去做-AJAX？"><a href="#为什么不在-componentWillMount-里去做-AJAX？" class="headerlink" title="为什么不在 componentWillMount 里去做 AJAX？"></a>为什么不在 componentWillMount 里去做 AJAX？</h3><p>一个组件的 componentWillMount 比 componentDidMount 也早调用不了几微秒，性能没啥提高；而且，等到异步渲染开启的时候，componentWillMount 就可能被中途打断，中断之后渲染又要重做一遍，想一想，在 componentWillMount 中做 AJAX 调用，代码里看到只有调用一次，但是实际上可能调用 N 多次，这明显不合适。相反，若把 AJAX 放在 componentDidMount，因为 componentDidMount 在第二阶段，所以绝对不会多次重复调用，这才是 AJAX 合适的位置</p>
+<h3 id="异步渲染：两阶段渲染"><a href="#异步渲染：两阶段渲染" class="headerlink" title="异步渲染：两阶段渲染"></a>异步渲染：两阶段渲染</h3><p>根据 React Fiber 的设计，一个组件的渲染被分为两个阶段：第一个阶段（也叫做 render 阶段）是可以被 React 打断的，一旦被打断，这阶段所做的所有事情都被废弃，当 React 处理完紧急的事情回来，依然会重新渲染这个组件，这时候第一阶段的工作会重做一遍；第二个阶段叫做 commit 阶段，一旦开始就不能中断，也就是说第二个阶段的工作会稳稳当当地做到这个组件的渲染结束。</p>
 
       
 
@@ -360,7 +295,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/08/13/reviewEs6/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/10/18/react最佳实践/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -374,18 +309,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/08/14/reviewFrondEnd/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/10/22/react源码/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          重学前端
+          react源码笔记
         
       </div>
     </a>
   
   
-    <a href="/2019/08/12/learnNode/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Node.js学习</div>
+    <a href="/2019/10/16/performance/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">前端性能</div>
       <i class="icon-circle-right"></i>
     </a>
   
