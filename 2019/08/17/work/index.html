@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="程亮的个人博客">
 <meta property="og:description" content="总结了从参加实习到工作以来中遇见的问题，和可以改进的地方">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-10-30T03:55:19.182Z">
+<meta property="og:updated_time" content="2019-11-08T07:51:55.425Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="工作中遇见的问题">
 <meta name="twitter:description" content="总结了从参加实习到工作以来中遇见的问题，和可以改进的地方">
@@ -307,6 +307,12 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">Calc = (value, data, item, index) =&gt; &#123;</span><br><span class="line">   return (</span><br><span class="line">     &lt;div key=&#123;index&#125; className=&quot;torsio-item1&quot;&gt;</span><br><span class="line">       &lt;p&gt;</span><br><span class="line">         &#123;item.name&#125;</span><br><span class="line">         &lt;span className=&quot;torque-value&quot;&gt;</span><br><span class="line">           &#123;value&#125;=&#123;this.state[value]&#125;</span><br><span class="line">         &lt;/span&gt;</span><br><span class="line">       &lt;/p&gt;</span><br><span class="line">       &lt;CascaderSelect</span><br><span class="line">         listStyle=&#123;item.listStyle&#125;</span><br><span class="line">         onChange=&#123;v =&gt; &#123;</span><br><span class="line">           this.setState(&#123; [value]: v &#125;);</span><br><span class="line">         &#125;&#125;</span><br><span class="line">         dataSource=&#123;data&#125;</span><br><span class="line">       /&gt;</span><br><span class="line">     &lt;/div&gt;</span><br><span class="line">   );</span><br><span class="line"> &#125;;</span><br></pre></td></tr></table></figure>
 
 <h3 id="withRouter-的作用"><a href="#withRouter-的作用" class="headerlink" title="withRouter 的作用"></a>withRouter 的作用</h3><p>将该组件使用 withRouter 包裹，将可以使用 this.props.history/match 等功能呢</p>
+<h3 id="浅拷贝深拷贝的思考"><a href="#浅拷贝深拷贝的思考" class="headerlink" title="浅拷贝深拷贝的思考"></a>浅拷贝深拷贝的思考</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">const a=[1,2,3,4,5,6]</span><br><span class="line">const b=a;</span><br><span class="line">a==b  //true</span><br><span class="line">const c=[...a]</span><br><span class="line">a==c //false</span><br><span class="line">a[0]==c[0]  //true</span><br></pre></td></tr></table></figure>
+
+<p>当使用扩展运算符时候，只是新建了一个数组，但是里面的指针还是没有变化<br>因此只能使用更加深拷贝的方式进行拷贝<br>arr.splice()方法会修改原数组</p>
+<h3 id="判断一个对象中是否存在某个键"><a href="#判断一个对象中是否存在某个键" class="headerlink" title="判断一个对象中是否存在某个键"></a>判断一个对象中是否存在某个键</h3><p>obj.hasOwnProperty()</p>
+<h3 id="delete-关键字"><a href="#delete-关键字" class="headerlink" title="delete 关键字"></a>delete 关键字</h3><p>删除一个对象上的属性</p>
+<h3 id="intersection"><a href="#intersection" class="headerlink" title="_.intersection"></a>_.intersection</h3><p>获取多个数组中相同的元素，并返回这个元素的数组</p>
 
       
 
