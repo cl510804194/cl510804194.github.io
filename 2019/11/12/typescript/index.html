@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>typescript笔记与总结 | 程亮的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="原始类型ts 一共包含 8 种基本类型boolean、number、string、void、undefined、null、symbol、bigint void 表示没有任何类型1234function warnUser(): void &amp;#123;    alert(&amp;quot;This is my warning message&amp;quot;);&amp;#125;  BigIntBigInt 类型在 T">
+  <meta name="description" content="typescript 学习过程和总结">
 <meta name="keywords" content="typescript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="typescript笔记与总结">
 <meta property="og:url" content="http://yoursite.com/2019/11/12/typescript/index.html">
 <meta property="og:site_name" content="程亮的个人博客">
-<meta property="og:description" content="原始类型ts 一共包含 8 种基本类型boolean、number、string、void、undefined、null、symbol、bigint void 表示没有任何类型1234function warnUser(): void &amp;#123;    alert(&amp;quot;This is my warning message&amp;quot;);&amp;#125;  BigIntBigInt 类型在 T">
+<meta property="og:description" content="typescript 学习过程和总结">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-11-12T08:03:39.871Z">
+<meta property="og:updated_time" content="2019-11-17T06:36:32.480Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="typescript笔记与总结">
-<meta name="twitter:description" content="原始类型ts 一共包含 8 种基本类型boolean、number、string、void、undefined、null、symbol、bigint void 表示没有任何类型1234function warnUser(): void &amp;#123;    alert(&amp;quot;This is my warning message&amp;quot;);&amp;#125;  BigIntBigInt 类型在 T">
+<meta name="twitter:description" content="typescript 学习过程和总结">
   
     <link rel="alternative" href="/atom.xml" title="程亮的个人博客" type="application/atom+xml">
   
@@ -196,7 +196,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="原始类型"><a href="#原始类型" class="headerlink" title="原始类型"></a>原始类型</h2><p>ts 一共包含 8 种基本类型<br>boolean、number、string、void、undefined、null、symbol、bigint</p>
+        <p>typescript 学习过程和总结</p>
+<a id="more"></a>
+
+<h2 id="原始类型"><a href="#原始类型" class="headerlink" title="原始类型"></a>原始类型</h2><p>ts 一共包含 8 种基本类型<br>boolean、number、string、void、undefined、null、symbol、bigint</p>
 <h3 id="void-表示没有任何类型"><a href="#void-表示没有任何类型" class="headerlink" title="void 表示没有任何类型"></a>void 表示没有任何类型</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">function warnUser(): void &#123;</span><br><span class="line">    alert(&quot;This is my warning message&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h3 id="BigInt"><a href="#BigInt" class="headerlink" title="BigInt"></a>BigInt</h3><p>BigInt 类型在 TypeScript3.2 版本被内置，使用 BigInt 可以安全地存储和操作大整数，即使这个数已经超出了 JavaScript 构造函数 Number 能够表示的安全整数范围。<br><em>在使用该类型时候，需要在加的数字后面添加一个 n</em></p>
@@ -207,7 +210,7 @@
 <h3 id="元组-tuple"><a href="#元组-tuple" class="headerlink" title="元组 tuple"></a>元组 tuple</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let x: [string, number];</span><br><span class="line">x = [&apos;hello&apos;, 10]; // OK</span><br><span class="line">x = [10, &apos;hello&apos;]; // Error</span><br></pre></td></tr></table></figure>
 
 <p>元组中包含的元素，必须与声明的类型一致，而且不能多、不能少，甚至顺序不能不符</p>
-<h3 id="枚举"><a href="#枚举" class="headerlink" title="枚举"></a>枚举</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">const enum Direction &#123;</span><br><span class="line">  Up =0,</span><br><span class="line">  Down = 1,</span><br><span class="line">  Left = 2,</span><br><span class="line">  Right = 3</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const a = Direction.Up;</span><br></pre></td></tr></table></figure>
+<h2 id="枚举"><a href="#枚举" class="headerlink" title="枚举"></a>枚举</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">const enum Direction &#123;</span><br><span class="line">  Up =0,</span><br><span class="line">  Down = 1,</span><br><span class="line">  Left = 2,</span><br><span class="line">  Right = 3</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const a = Direction.Up;</span><br></pre></td></tr></table></figure>
 
 <p>枚举的值是第一个被定义的值，如果后面定义的没有赋值，则为第一个被定义的值+n<br>枚举是可以反向映射的。键值对可以相互转化，比如 Direction[0]值为 Up,Direction.Up=0<br>枚举的本质是对象<br>常量枚举可以提高性能</p>
 <h2 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h2><p>接口 interface 是非常常用的属性<br>在接口中可以定义可选属性，只读属性，函数类型</p>
@@ -222,7 +225,7 @@
 <h2 id="类"><a href="#类" class="headerlink" title="类"></a>类</h2><h3 id="抽象类"><a href="#抽象类" class="headerlink" title="抽象类"></a>抽象类</h3><p>抽象类不能被直接实例化，只能通过子类的实例化调用该类的方法</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">abstract class Animal &#123;</span><br><span class="line">  abstract makeSound(): void;</span><br><span class="line">  move(): void &#123;</span><br><span class="line">    console.log(&quot;roaming the earch...&quot;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">class Cat extends Animal &#123;</span><br><span class="line">  makeSound() &#123;</span><br><span class="line">    console.log(&quot;miao miao&quot;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">const cat=new Cat()</span><br><span class="line">cat.makeSound()</span><br><span class="line">cat.move()</span><br></pre></td></tr></table></figure>
 
-<h3 id="访问修饰符"><a href="#访问修饰符" class="headerlink" title="访问修饰符"></a>访问修饰符</h3><p>private 只能访问该类的属性<br>protected 只能访问该类和其子类的属性<br>public 任意元素都可以访问</p>
+<h2 id="访问修饰符"><a href="#访问修饰符" class="headerlink" title="访问修饰符"></a>访问修饰符</h2><p>private 只能访问该类的属性<br>protected 只能访问该类和其子类的属性<br>public 任意元素都可以访问</p>
 <h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><p>函数类型不需要刻意去定义，会根据传递的参数进行类型推断</p>
 <h3 id="可选参数"><a href="#可选参数" class="headerlink" title="可选参数"></a>可选参数</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const add = (a: number, b?: number) =&gt; a + (b ? b : 0)</span><br></pre></td></tr></table></figure>
 
@@ -231,6 +234,26 @@
 <h3 id="重载"><a href="#重载" class="headerlink" title="重载"></a>重载</h3><p>当需要确定该函数的参数有几个时候需要使用重载</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">interface Direction &#123;</span><br><span class="line">    top: number</span><br><span class="line">    right: number</span><br><span class="line">    bottom: number</span><br><span class="line">    left: number</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function assigned(all: number): Direction</span><br><span class="line">function assigned(topAndBottom: number, leftAndRight: number): Direction</span><br><span class="line">function assigned(top: number, right: number, bottom: number, left: number): Direction</span><br><span class="line"></span><br><span class="line">// 代码实现函数不可被调用</span><br><span class="line">function assigned (a: number, b?: number, c?: number, d?: any) &#123;</span><br><span class="line">    if (b === undefined &amp;&amp; c === undefined &amp;&amp; d === undefined) &#123;</span><br><span class="line">      b = c = d = a</span><br><span class="line">    &#125; else if (c === undefined &amp;&amp; d === undefined) &#123;</span><br><span class="line">      c = a</span><br><span class="line">      d = b</span><br><span class="line">    &#125;</span><br><span class="line">    return &#123;</span><br><span class="line">      top: a,</span><br><span class="line">      right: b,</span><br><span class="line">      bottom: c,</span><br><span class="line">      left: d</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<h2 id="类型断言与类型守卫"><a href="#类型断言与类型守卫" class="headerlink" title="类型断言与类型守卫"></a>类型断言与类型守卫</h2><h3 id="类型断言"><a href="#类型断言" class="headerlink" title="类型断言"></a>类型断言</h3><p>typescript 是严格模式，当对象中不存在该属性时，会报错</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">const person = &#123;&#125;;</span><br><span class="line"></span><br><span class="line">person.name = &apos;xiaomuzhu&apos;; // Error: &apos;name&apos; 属性不存在于 ‘&#123;&#125;’</span><br><span class="line">person.age = 20; // Error: &apos;age&apos; 属性不存在于 ‘&#123;&#125;’</span><br></pre></td></tr></table></figure>
+
+<p>因此可以使用类型断言来声明</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">interface Person &#123;</span><br><span class="line">	name: string;</span><br><span class="line">	age: number;</span><br><span class="line">&#125;</span><br><span class="line">const person = &#123;&#125; as Person;  //该方法为类型断言 没有给age属性赋值，但是没有报错</span><br><span class="line">const person:Person=&#123;&#125; //这是正确做法 没有给age属性赋值，报错</span><br><span class="line">person.name = &apos;xiaomuzhu&apos;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="类型守卫"><a href="#类型守卫" class="headerlink" title="类型守卫"></a>类型守卫</h3><ol>
+<li>instanceof</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">class Person &#123;</span><br><span class="line">	name = &apos;xiaomuzhu&apos;;</span><br><span class="line">	age = 20;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Animal &#123;</span><br><span class="line">	name = &apos;petty&apos;;</span><br><span class="line">	color = &apos;pink&apos;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function getSometing(arg: Person | Animal) &#123;</span><br><span class="line">	if (arg instanceof Animal) &#123;</span><br><span class="line">		console.log(arg.color); // ok</span><br><span class="line">		console.log(arg.age); // Error</span><br><span class="line">	&#125;</span><br><span class="line">	if (arg instanceof Person) &#123;</span><br><span class="line">		console.log(arg.age); // Error</span><br><span class="line">		console.log(arg.color); // ok</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>in</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">class Person &#123;</span><br><span class="line">	name = &apos;xiaomuzhu&apos;;</span><br><span class="line">	age = 20;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Animal &#123;</span><br><span class="line">	name = &apos;petty&apos;;</span><br><span class="line">	color = &apos;pink&apos;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function getSometing(arg: Person | Animal) &#123;</span><br><span class="line">	if (&apos;age&apos; in arg) &#123;</span><br><span class="line">		console.log(arg.color); // ok</span><br><span class="line">		console.log(arg.age); // Error</span><br><span class="line">	&#125;</span><br><span class="line">	if (&apos;color&apos; in arg) &#123;</span><br><span class="line">		console.log(arg.age); // Error</span><br><span class="line">		console.log(arg.color); // ok</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="字面量类型守卫"><a href="#字面量类型守卫" class="headerlink" title="字面量类型守卫"></a>字面量类型守卫</h3><p>使用 type 声明</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">type Foo = &#123;</span><br><span class="line">  kind: &apos;foo&apos;; // 字面量类型</span><br><span class="line">  foo: number;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">type Bar = &#123;</span><br><span class="line">  kind: &apos;bar&apos;; // 字面量类型</span><br><span class="line">  bar: number;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">function doStuff(arg: Foo | Bar) &#123;</span><br><span class="line">  if (arg.kind === &apos;foo&apos;) &#123;</span><br><span class="line">    console.log(arg.foo); // ok</span><br><span class="line">    console.log(arg.bar); // Error</span><br><span class="line">  &#125; else &#123;</span><br><span class="line">    console.log(arg.foo); // Error</span><br><span class="line">    console.log(arg.bar); // ok</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="类型兼容性"><a href="#类型兼容性" class="headerlink" title="类型兼容性"></a>类型兼容性</h2><p>一个类和一个接口，若该类的属性包含接口的属性，则称该接口兼容该类</p>
 
       
 
@@ -334,6 +357,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2019/11/15/前端面试之道/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          前端面试之道
+        
+      </div>
+    </a>
   
   
     <a href="/2019/11/01/egg-js/" id="article-nav-older" class="article-nav-link-wrap">

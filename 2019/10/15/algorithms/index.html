@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>算法与数据结构 | 程亮的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="栈 后进先出 往一个栈插入新元素被称作进栈、入栈、压栈 从一个栈删除元素又称作出栈或退栈 函数调用栈 相关代码（栈的基本方法、10 进制转化成 2 进制）  123456789101112131415161718192021222324252627282930313233343536373839404142434445464748class Stack &amp;#123;  //栈的属性  constr">
+  <meta name="description" content="栈 后进先出 往一个栈插入新元素被称作进栈、入栈、压栈 从一个栈删除元素又称作出栈或退栈 函数调用栈 相关代码（栈的基本方法、10 进制转化成 2 进制）  123456789101112131415161718192021222324252627282930313233343536373839404142434445464748class Stack &amp;#123;  //栈的属性  cons">
 <meta property="og:type" content="article">
 <meta property="og:title" content="算法与数据结构">
 <meta property="og:url" content="http://yoursite.com/2019/10/15/algorithms/index.html">
 <meta property="og:site_name" content="程亮的个人博客">
-<meta property="og:description" content="栈 后进先出 往一个栈插入新元素被称作进栈、入栈、压栈 从一个栈删除元素又称作出栈或退栈 函数调用栈 相关代码（栈的基本方法、10 进制转化成 2 进制）  123456789101112131415161718192021222324252627282930313233343536373839404142434445464748class Stack &amp;#123;  //栈的属性  constr">
+<meta property="og:description" content="栈 后进先出 往一个栈插入新元素被称作进栈、入栈、压栈 从一个栈删除元素又称作出栈或退栈 函数调用栈 相关代码（栈的基本方法、10 进制转化成 2 进制）  123456789101112131415161718192021222324252627282930313233343536373839404142434445464748class Stack &amp;#123;  //栈的属性  cons">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-11-11T08:47:50.291Z">
+<meta property="og:updated_time" content="2019-11-14T03:18:54.843Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="算法与数据结构">
-<meta name="twitter:description" content="栈 后进先出 往一个栈插入新元素被称作进栈、入栈、压栈 从一个栈删除元素又称作出栈或退栈 函数调用栈 相关代码（栈的基本方法、10 进制转化成 2 进制）  123456789101112131415161718192021222324252627282930313233343536373839404142434445464748class Stack &amp;#123;  //栈的属性  constr">
+<meta name="twitter:description" content="栈 后进先出 往一个栈插入新元素被称作进栈、入栈、压栈 从一个栈删除元素又称作出栈或退栈 函数调用栈 相关代码（栈的基本方法、10 进制转化成 2 进制）  123456789101112131415161718192021222324252627282930313233343536373839404142434445464748class Stack &amp;#123;  //栈的属性  cons">
   
     <link rel="alternative" href="/atom.xml" title="程亮的个人博客" type="application/atom+xml">
   
@@ -195,7 +195,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h3><ol>
+        <a id="more"></a>
+
+<h3 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h3><ol>
 <li>后进先出</li>
 <li>往一个栈插入新元素被称作进栈、入栈、压栈</li>
 <li>从一个栈删除元素又称作出栈或退栈</li>
@@ -273,6 +275,24 @@
 <ol>
 <li>快速 2. 均匀的分布</li>
 </ol>
+<p>哈希表结构<br>类似于[[[k,v],k,v],k,v]],[[k,v],k,v],k,v]],[[k,v],k,v],k,v]]]</p>
+<p>霍纳算法<br>规则<br>先将字符转化成数字(通常是 unicode 码)<br>再对该数字取余，转化成 js 能接受的小数字<br>简单的算法代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">hashFunc(str, size) &#123;</span><br><span class="line">    // 1.定义hashCode变量</span><br><span class="line">    let hashCode = 0;</span><br><span class="line">    // 2.霍纳算法，来计算hashCode得值</span><br><span class="line">    for (let i = 0; i &lt; str.length; i++) &#123;</span><br><span class="line">      hashCode = 37 * hashCode + str.charCodeAt(i);</span><br><span class="line">      //   str.charCodeAt(i); //获取某个字符unicode编码</span><br><span class="line">      //3.取余操作</span><br><span class="line">      const index = hashCode % size;</span><br><span class="line">      return index;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<p>插入和修改方法<br>步骤：</p>
+<ol>
+<li>根据 key 值获取到 bucket 的索引</li>
+<li>根据 bucket 的索引找到该 bucket,如果该 bucket 不存在，就创建该 bucket</li>
+<li>遍历该 bucket,如果该 bucket 存在该 key,就将该 tuple 修改，如果不存在该 key,将该 tuple 插入到 bucket</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">put(key, value) &#123;</span><br><span class="line">   //根据key获取索引值</span><br><span class="line">   const index = this.hashFunc(key, this.limit);</span><br><span class="line">   // 根据index取出对应的bucket</span><br><span class="line">   let bucket = this.storage[index];</span><br><span class="line">   // 判断该bucket是否为null</span><br><span class="line">   if (bucket == null) &#123;</span><br><span class="line">     bucket = [];</span><br><span class="line">     this.storage[index] = bucket;</span><br><span class="line">   &#125;</span><br><span class="line">   for (let i = 0; i &lt; bucket.length; i++) &#123;</span><br><span class="line">     let tuple = bucket[i];</span><br><span class="line">     if (tuple[0] == key) &#123;</span><br><span class="line">       tuple[1] == value;</span><br><span class="line">       return;</span><br><span class="line">     &#125;</span><br><span class="line">   &#125;</span><br><span class="line">   // 5.不是修改，进行添加操作</span><br><span class="line">   bucket.push([key, value]);</span><br><span class="line">   this.count += 1;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+
+<p>扩容与缩减<br>如果数据数量超过了某一阀值就需要进行扩容<br>一般来说数据如果超过了阀值的 0.75 或者缩小到了 0.25，就应扩容与缩减</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">resize(newLimit) &#123;</span><br><span class="line">  // 保存旧的数组内容</span><br><span class="line">  const oldStorage = this.storage;</span><br><span class="line">  // 重置所有属性</span><br><span class="line">  this.storage = [];</span><br><span class="line">  this.count = 0;</span><br><span class="line">  this.limit = newLimit;</span><br><span class="line">  // 遍历oldStorage中所有的桶</span><br><span class="line">  for (let i = 0; i &lt; oldStorage.length; i++) &#123;</span><br><span class="line">    let bucket = oldStorage[i];</span><br><span class="line">    if (bucket == null) &#123;</span><br><span class="line">      continue;</span><br><span class="line">    &#125;</span><br><span class="line">    for (let j = 0; j &lt; bucket.length; j++) &#123;</span><br><span class="line">      const tuple = bucket[j];</span><br><span class="line">      this.put(tuple[0], tuple[1]);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>判断质数<br>优化算法，如果一个数不是质数，那么分解出来的两个值必然小于等于该数的平方根，因此在循环时候，只需小于该平方根就可以了</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">isPrime(num) &#123;</span><br><span class="line">  const temp = parseInt(Math.sqrt(num));</span><br><span class="line">  for (let i = 2; i &lt;= temp; i++) &#123;</span><br><span class="line">    if (num % i == 0) &#123;</span><br><span class="line">      return false;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  return true;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 
       
 
