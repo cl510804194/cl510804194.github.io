@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="程亮的个人博客">
 <meta property="og:description" content="typescript 学习过程和总结">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-11-17T06:36:32.480Z">
+<meta property="og:updated_time" content="2019-11-19T08:35:38.712Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="typescript笔记与总结">
 <meta name="twitter:description" content="typescript 学习过程和总结">
@@ -253,7 +253,26 @@
 <h3 id="字面量类型守卫"><a href="#字面量类型守卫" class="headerlink" title="字面量类型守卫"></a>字面量类型守卫</h3><p>使用 type 声明</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">type Foo = &#123;</span><br><span class="line">  kind: &apos;foo&apos;; // 字面量类型</span><br><span class="line">  foo: number;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">type Bar = &#123;</span><br><span class="line">  kind: &apos;bar&apos;; // 字面量类型</span><br><span class="line">  bar: number;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">function doStuff(arg: Foo | Bar) &#123;</span><br><span class="line">  if (arg.kind === &apos;foo&apos;) &#123;</span><br><span class="line">    console.log(arg.foo); // ok</span><br><span class="line">    console.log(arg.bar); // Error</span><br><span class="line">  &#125; else &#123;</span><br><span class="line">    console.log(arg.foo); // Error</span><br><span class="line">    console.log(arg.bar); // ok</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h2 id="类型兼容性"><a href="#类型兼容性" class="headerlink" title="类型兼容性"></a>类型兼容性</h2><p>一个类和一个接口，若该类的属性包含接口的属性，则称该接口兼容该类</p>
+<h2 id="类型兼容性"><a href="#类型兼容性" class="headerlink" title="类型兼容性"></a>类型兼容性</h2><ol>
+<li>一个类和一个接口，若该类的属性包含接口的属性，则称该接口兼容该类</li>
+<li>对于函数，如果函数 A 的传参包含函数 B 的传参，则 A=B,而 B!=A</li>
+<li>枚举与数字类型相互兼容</li>
+<li>仅仅只有实例成员和方法会相比较，构造函数和静态成员不会被检查</li>
+<li>私有的和受保护的成员必须来自于相同的类</li>
+<li>泛型本身就是不确定的类型,它的表现根据是否被成员使用而不同</li>
+</ol>
+<h2 id="高级类型"><a href="#高级类型" class="headerlink" title="高级类型"></a>高级类型</h2><h3 id="交叉类型"><a href="#交叉类型" class="headerlink" title="交叉类型"></a>交叉类型</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function mixin&lt;T, U&gt;(first: T, second: U): T &amp; U &#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="联合类型"><a href="#联合类型" class="headerlink" title="联合类型"></a>联合类型</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">function formatCommandline(command: string[] | string) &#123;</span><br><span class="line">  let line = &apos;&apos;;</span><br><span class="line">  if (typeof command === &apos;string&apos;) &#123;</span><br><span class="line">    line = command.trim();</span><br><span class="line">  &#125; else &#123;</span><br><span class="line">    line = command.join(&apos; &apos;).trim();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="类型别名"><a href="#类型别名" class="headerlink" title="类型别名"></a>类型别名</h3><p>类型别名会给一个类型起个新名字,类型别名有时和接口很像,但是可以作用于原始值、联合类型、元组以及其它任何你需要手写的类型.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">type some = boolean | string</span><br><span class="line"></span><br><span class="line">const b: some = true // ok</span><br><span class="line">const c: some = &apos;hello&apos; // ok</span><br><span class="line">const d: some = 123 // 不能将类型“123”分配给类型“some”</span><br></pre></td></tr></table></figure>
+
+<h2 id="可辨识联合类型"><a href="#可辨识联合类型" class="headerlink" title="可辨识联合类型"></a>可辨识联合类型</h2><h3 id="字面量类型"><a href="#字面量类型" class="headerlink" title="字面量类型"></a>字面量类型</h3><p>字面量（Literal Type）主要分为 真值字面量类型（boolean literal types）,数字字面量类型（numeric literal types）,枚举字面量类型（enum literal types）,大整数字面量类型（bigInt literal types）和字符串字面量类型（string literal types）。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">const a: 2333 = 2333 // ok</span><br><span class="line">const ab : 0b10 = 2 // ok</span><br><span class="line">const ao : 0o114 = 0b1001100 // ok</span><br><span class="line">const ax : 0x514 = 0x514 // ok</span><br><span class="line">const b : 0x1919n = 6425n // ok</span><br><span class="line">const c : &apos;xiaomuzhu&apos; = &apos;xiaomuzhu&apos; // ok</span><br><span class="line">const d : false = false // ok</span><br><span class="line"></span><br><span class="line">const g: &apos;github&apos; = &apos;pronhub&apos; // 不能将类型“&quot;pronhub&quot;”分配给类型“&quot;github&quot;”</span><br></pre></td></tr></table></figure>
+
+<h3 id="类型字面量"><a href="#类型字面量" class="headerlink" title="类型字面量"></a>类型字面量</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">type Foo = &#123;</span><br><span class="line">  baz: [</span><br><span class="line">    number,</span><br><span class="line">    &apos;xiaomuzhu&apos;</span><br><span class="line">  ];</span><br><span class="line">  toString(): string;</span><br><span class="line">  readonly [Symbol.iterator]: &apos;github&apos;;</span><br><span class="line">  0x1: &apos;foo&apos;;</span><br><span class="line">  &quot;bar&quot;: 12n;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
 
       
 
@@ -362,7 +381,7 @@
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          前端面试之道
+          面试
         
       </div>
     </a>
