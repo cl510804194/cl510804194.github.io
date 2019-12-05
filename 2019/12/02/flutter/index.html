@@ -6,15 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>程亮的个人博客</title>
+  <title>flutter | 程亮的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="程亮的个人博客">
-<meta property="og:url" content="http://yoursite.com/page/3/index.html">
+  <meta name="description" content="Text 组件属性与方法https://api.flutter.dev/flutter/painting/TextStyle-class.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="flutter">
+<meta property="og:url" content="http://yoursite.com/2019/12/02/flutter/index.html">
 <meta property="og:site_name" content="程亮的个人博客">
+<meta property="og:description" content="Text 组件属性与方法https://api.flutter.dev/flutter/painting/TextStyle-class.html">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-12-02T07:33:02.219Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="程亮的个人博客">
+<meta name="twitter:title" content="flutter">
+<meta name="twitter:description" content="Text 组件属性与方法https://api.flutter.dev/flutter/painting/TextStyle-class.html">
   
     <link rel="alternative" href="/atom.xml" title="程亮的个人博客" type="application/atom+xml">
   
@@ -171,68 +175,128 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-learnNode" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-flutter" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/12/learnNode/">Node.js学习</a>
+    <h1 class="article-title" itemprop="name">
+      flutter
     </h1>
   
 
         
-        <a href="/2019/08/12/learnNode/" class="archive-article-date">
-  	<time datetime="2019-08-12T03:05:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-12</time>
+        <a href="/2019/12/02/flutter/" class="archive-article-date">
+  	<time datetime="2019-12-02T03:07:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-02</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Node.js 的学习笔记</p>
-<h3 id="创建基类-model"><a href="#创建基类-model" class="headerlink" title="创建基类 model"></a>创建基类 model</h3><p>当成功返回时和失败返回时，返回信息</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">class BaseModel &#123;</span><br><span class="line">  constructor(data, message) &#123;</span><br><span class="line">    <span class="keyword">if</span> (typeof data === <span class="string">'string'</span>) &#123;</span><br><span class="line">      this.message = data;</span><br><span class="line">      data = null;</span><br><span class="line">      message = null;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (data) &#123;</span><br><span class="line">      this.data = data;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (message) &#123;</span><br><span class="line">      this.message = message;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">class SuccessModel extends BaseModel &#123;</span><br><span class="line">  constructor(data, message) &#123;</span><br><span class="line">    super(data, message);</span><br><span class="line">    this.errno = 0;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">class ErrorModel extends BaseModel &#123;</span><br><span class="line">  constructor(data, message) &#123;</span><br><span class="line">    super(data, message);</span><br><span class="line">    this.errno = -1;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">module.exports = &#123;</span><br><span class="line">  SuccessModel,</span><br><span class="line">  ErrorModel</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+        <h3 id="Text-组件"><a href="#Text-组件" class="headerlink" title="Text 组件"></a>Text 组件</h3><p>属性与方法<br><a href="https://api.flutter.dev/flutter/painting/TextStyle-class.html" target="_blank" rel="noopener">https://api.flutter.dev/flutter/painting/TextStyle-class.html</a></p>
 
-<h3 id="拆分-URL"><a href="#拆分-URL" class="headerlink" title="拆分 URL"></a>拆分 URL</h3><p>将 url 拆分成一个数组，分成 path 和参数</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">const url = req.url;</span><br><span class="line">req.path = url.split(<span class="string">'?'</span>)[0];</span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2019/08/12/learnNode/#more">more >></a>
-        
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
       
       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">node.js express</a>
-        		</li>
-      		
-		</ul>
-	</div>
+      
 
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/08/12/learnNode/">展开全文 >></a>
-        </p>
-      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
 
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/12/02/flutter/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2019/11/15/前端面试之道/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">前端综合知识</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -252,100 +316,14 @@
 
 
 
-
-  
-    <article id="post-learnHTTP" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/12/learnHTTP/">HTTP学习笔记</a>
-    </h1>
-  
-
-        
-        <a href="/2019/08/12/learnHTTP/" class="archive-article-date">
-  	<time datetime="2019-08-12T03:05:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-12</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>http 的学习笔记</p>
-<p>参考来自：</p>
-<blockquote><p>HTTP 权威指南学习笔记</p>
-<footer><strong>@woai30231</strong><cite><a href="https://github.com/woai30231/http/tree/master" target="_blank" rel="noopener">github.com/woai30231/http/tree/master</a></cite></footer></blockquote>
-
-<h2 id="URL-与资源"><a href="#URL-与资源" class="headerlink" title="URL 与资源"></a>URL 与资源</h2><p>URI（统一资源标识符）由 URL（统一资源定位符）和 URN（统一资源名）两个子集构成。</p>
-<h3 id="URL-以位置定位"><a href="#URL-以位置定位" class="headerlink" title="URL 以位置定位"></a>URL 以位置定位</h3><p>URL 是从资源的位置来定义一个资源的，比如在“中国山东的一只小狗”和在“中国广东的一只小狗”就分别定义了两只不同的狗<br>缺点：如果资源的位置发生了改变，那么资源也就找不到了</p>
-<h3 id="URN-以名字定位"><a href="#URN-以名字定位" class="headerlink" title="URN 以名字定位"></a>URN 以名字定位</h3><p>URN 是从资源的名字来定义的，比如小明和小李就分别定义了两个人</p>
-<h3 id="URL-和-URN-对比"><a href="#URL-和-URN-对比" class="headerlink" title="URL 和 URN 对比"></a>URL 和 URN 对比</h3><p>URL 的缺点就是如果资源的位置发生了改变，那么资源也就找不到了，而 URN 正是解决这个问题的，因为 URN 不受位置的限制，它只受名字的管理，因为对于 URN 来说，一个资源的名字是唯一的，所以无论资源移动到什么地方，都能通过名字定位到资源。从某种意义上来说，URN 是 URI 的未来趋势，但是 URN 的实现需要一个中间架构来满足这种位置到名字的映射，所以要完成从 URL 到 URN 的过度，显然是一个工程量的过程，如果不是 URL 到了不能用的时候，URN 的实现需要很长的时间，幸运的是现在 URL 架构还是很好的满足网络需求的！</p>
-<h2 id="URL-的语法"><a href="#URL-的语法" class="headerlink" title="URL 的语法"></a>URL 的语法</h2><p>URL 的语法描述的是 URL 由哪些组件构成，以及这些组件是怎么组合成一个 URL，中间由什么符号连接，每个组件代表什么等！其格式如下：</p>
-<blockquote><p><code>&lt;scheme&gt;://&lt;user&gt;:&lt;password&gt;@&lt;host&gt;:&lt;port&gt;/&lt;path&gt;;&lt;params&gt;?&lt;query&gt;#&lt;frag&gt;</code></p>
-</blockquote>
-<p>其中：<br>scheme:方法描述了请求资源时用了什么协议，用“:”与 url 其它部分隔开；<br>user:用户名描述了访问是带的用户名；<br>password:密码描述了用户名后面可能跟的密码，用“:”跟用户名隔开；<br>host:主机描述了网站主机名或 ip 地址，如果前面有用户名和密码，用@分开；<br>post:服务器当前正在监听的端口，http 默认为 80，https 默认为 443;<br>path:路劲描述了资源在服务器上的位置，用‘/’跟前面部分隔开；<br>params:参数描述了请求需要附加的参数，用“;”与其他部分隔开；<br>query:查询是用来激活服务器程序去执行某些操作，比如查询数据库等，用“?”与其余部分隔开；<br>frag:片段只在客户端使用，不发送到服务器端；</p>
-        
-          <a class="article-more-a" href="/2019/08/12/learnHTTP/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">http</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/08/12/learnHTTP/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
   
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
-    </nav>
+  
+
+  
+
+  
+
   
 
 
@@ -368,8 +346,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

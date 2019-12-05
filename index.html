@@ -173,6 +173,69 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-flutter" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/12/02/flutter/">flutter</a>
+    </h1>
+  
+
+        
+        <a href="/2019/12/02/flutter/" class="archive-article-date">
+  	<time datetime="2019-12-02T03:07:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-02</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="Text-组件"><a href="#Text-组件" class="headerlink" title="Text 组件"></a>Text 组件</h3><p>属性与方法<br><a href="https://api.flutter.dev/flutter/painting/TextStyle-class.html" target="_blank" rel="noopener">https://api.flutter.dev/flutter/painting/TextStyle-class.html</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/12/02/flutter/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-前端面试之道" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -180,7 +243,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/15/前端面试之道/">面试</a>
+      <a class="article-title" href="/2019/11/15/前端面试之道/">前端综合知识</a>
     </h1>
   
 
@@ -193,7 +256,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>前端面试题总结</p>
+        <p>前端综合笔记</p>
         
           <a class="article-more-a" href="/2019/11/15/前端面试之道/#more">more >></a>
         
@@ -336,11 +399,25 @@
       
         <a id="more"></a>
 
-<h3 id="获取动态传值"><a href="#获取动态传值" class="headerlink" title="获取动态传值"></a>获取动态传值</h3><p>router.js</p>
+<h3 id="获取动态传值"><a href="#获取动态传值" class="headerlink" title="获取动态传值"></a>获取动态传值</h3><p>const { ctx } = this;<br>const query = ctx.query;</p>
+<p>const { ctx } = this;<br>const params = ctx.params;</p>
+<p>router.js</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">router.get(&apos;/api/datails/page&apos;, controller.deafault.details.page); // 获取详情历史信息分页</span><br></pre></td></tr></table></figure>
 
 <p>controller.js</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">async page() &#123;</span><br><span class="line">    // const &#123; ctx &#125; = this;</span><br><span class="line">    const gid = this.ctx.query.gid;</span><br><span class="line">    const number = this.ctx.query.number;</span><br><span class="line">    const result = await this.service.search.page(gid, number);</span><br><span class="line">    // console.log(this.ctx.query);</span><br><span class="line">    this.ctx.body = result;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="模板引擎"><a href="#模板引擎" class="headerlink" title="模板引擎"></a>模板引擎</h3><p>使用的是 egg-view-ejs<br>controller.js</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">async index() &#123;</span><br><span class="line">    const &#123; ctx &#125; = this;</span><br><span class="line">    //</span><br><span class="line">    const msg = &apos;msg&apos;;</span><br><span class="line">    const list = [ &apos;1111&apos;, &apos;2222&apos;, &apos;3333&apos; ];</span><br><span class="line">    await ctx.render(&apos;news&apos;, &#123;</span><br><span class="line">      msg,</span><br><span class="line">      list,</span><br><span class="line">    &#125;);</span><br><span class="line">    // ctx.body = &apos;hi, egg&apos;;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<p>view/news.html</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">  &lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot; /&gt;</span><br><span class="line">    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot; /&gt;</span><br><span class="line">    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot; /&gt;</span><br><span class="line">    &lt;title&gt;Document&lt;/title&gt;</span><br><span class="line">  &lt;/head&gt;</span><br><span class="line">  &lt;body&gt;</span><br><span class="line">    &lt;h2&gt;&lt;%=msg%&gt;&lt;/h2&gt;</span><br><span class="line">    &lt;img src=&quot;public/images/首页.png&quot; alt=&quot;&quot; /&gt;</span><br><span class="line">  &lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="模拟-http-请求"><a href="#模拟-http-请求" class="headerlink" title="模拟 http 请求"></a>模拟 http 请求</h3><p>this.ctx.curl</p>
+<h3 id="中间件"><a href="#中间件" class="headerlink" title="中间件"></a>中间件</h3><p>在访问路由器和访问路由后，对所有路由进行中间处理</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">module.exports = (option, app) =&gt; &#123;</span><br><span class="line">  // 返回一个异步的方法</span><br><span class="line">  return async function printeDate(ctx, next) &#123;</span><br><span class="line">    console.log(new Date());</span><br><span class="line">    await next();</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h4 id="屏蔽-IP-地址"><a href="#屏蔽-IP-地址" class="headerlink" title="屏蔽 IP 地址"></a>屏蔽 IP 地址</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&apos;use strict&apos;;</span><br><span class="line">/* options:中间件配置项 */</span><br><span class="line">module.exports = (options, app) =&gt; &#123;</span><br><span class="line">  // 返回一个异步的方法</span><br><span class="line">  //   药屏蔽的id,</span><br><span class="line">  // 从数据库中获取</span><br><span class="line">  // 从参数传入</span><br><span class="line"></span><br><span class="line">  return async function printeDate(ctx, next) &#123;</span><br><span class="line">    // console.log(new Date());</span><br><span class="line">    //   要屏蔽的ip</span><br><span class="line">    const forbidip = options;</span><br><span class="line">    console.log(&apos;这是forbidip&apos;);</span><br><span class="line">    console.log(ctx.request.ip);</span><br><span class="line">    if (ctx.request.ip == forbidip) &#123;</span><br><span class="line">      ctx.status = 403;</span><br><span class="line">      // ctx.body = &apos;您的IP已经被拼比&apos;;</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">      await next();</span><br><span class="line">    &#125;</span><br><span class="line">    await next();</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
 
       
@@ -957,7 +1034,7 @@
 <li>非空右子树的所有键值大于其根节点的键值</li>
 <li>左右子树本身也都是二叉搜索树</li>
 </ol>
-<h3 id="二叉树的遍历"><a href="#二叉树的遍历" class="headerlink" title="二叉树的遍历"></a>二叉树的遍历</h3><ul>
+<h4 id="二叉树的遍历"><a href="#二叉树的遍历" class="headerlink" title="二叉树的遍历"></a>二叉树的遍历</h4><ul>
 <li>先序遍历<ol>
 <li>访问根节点</li>
 <li>遍历其左子树</li>
@@ -970,8 +1047,22 @@
 <li>遍历其右子树</li>
 </ol>
 </li>
-<li>后序遍历<br>1.</li>
+<li>后序遍历<ol>
+<li>遍历其左子树</li>
+<li>遍历其右子树</li>
+<li>访问根节点</li>
+</ol>
+</li>
 </ul>
+<h4 id="最大值和最小值"><a href="#最大值和最小值" class="headerlink" title="最大值和最小值"></a>最大值和最小值</h4><p>最大值即为二叉搜索树最右下方的值<br>最小值即为二叉搜索树最左下方的值</p>
+<h4 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h4><ol>
+<li>先找到要删除的节点<br>如果没有找到，不需要删除<br>如果找到删除节点<ol>
+<li>删除叶节点</li>
+<li>删除只有一个子节点的节点</li>
+<li>删除有两个子节点的节点</li>
+</ol>
+</li>
+</ol>
 
       
 
@@ -1138,93 +1229,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/10/14/learnDesignPattern/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-learnNext" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/10/learnNext/">nextJs学习笔记</a>
-    </h1>
-  
-
-        
-        <a href="/2019/10/10/learnNext/" class="archive-article-date">
-  	<time datetime="2019-10-10T03:14:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-10</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>学习 next.js 所做笔记</p>
-<h2 id="路由"><a href="#路由" class="headerlink" title="路由"></a>路由</h2><ol>
-<li>使用 Link 标签</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;Link href=&#123;&#123;pathname:&apos;/xiaojiejie&apos;,query:&#123;name:&apos;结衣&apos;&#125;&#125;&#125;&gt;&lt;a&gt;选结衣&lt;/a&gt;&lt;/Link&gt;&lt;br/&gt;</span><br></pre></td></tr></table></figure>
-
-<ol start="2">
-<li>使用 router 进行编程式跳转</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">function gotoXiaojiejie()&#123;</span><br><span class="line">    Router.push(&#123;</span><br><span class="line">      pathname:&apos;/xiaojiejie&apos;,</span><br><span class="line">      query:&#123;</span><br><span class="line">        name:&apos;井空&apos;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>next.js 中只有 query 传参</p>
-</blockquote>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">next.js</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/10/10/learnNext/">展开全文 >></a>
         </p>
       
 

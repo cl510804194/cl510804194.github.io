@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>面试 | 程亮的个人博客</title>
+  <title>前端综合知识 | 程亮的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="前端面试题总结">
+  <meta name="description" content="前端综合笔记">
 <meta property="og:type" content="article">
-<meta property="og:title" content="面试">
+<meta property="og:title" content="前端综合知识">
 <meta property="og:url" content="http://yoursite.com/2019/11/15/前端面试之道/index.html">
 <meta property="og:site_name" content="程亮的个人博客">
-<meta property="og:description" content="前端面试题总结">
+<meta property="og:description" content="前端综合笔记">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-11-19T06:29:00.568Z">
+<meta property="og:updated_time" content="2019-12-04T09:16:33.920Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="面试">
-<meta name="twitter:description" content="前端面试题总结">
+<meta name="twitter:title" content="前端综合知识">
+<meta name="twitter:description" content="前端综合笔记">
   
     <link rel="alternative" href="/atom.xml" title="程亮的个人博客" type="application/atom+xml">
   
@@ -182,7 +182,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      面试
+      前端综合知识
     </h1>
   
 
@@ -195,7 +195,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>前端面试题总结</p>
+        <p>前端综合笔记</p>
 <a id="more"></a>
 
 <h3 id="原始类型"><a href="#原始类型" class="headerlink" title="原始类型"></a>原始类型</h3><p>number、symbol、bool、null、undefind、string</p>
@@ -257,6 +257,102 @@
 </ul>
 <h3 id="并发和并行的区别"><a href="#并发和并行的区别" class="headerlink" title="并发和并行的区别"></a>并发和并行的区别</h3><p>并发是宏观概念，我分别有任务 A 和任务 B，在一段时间内通过任务间的切换完成了这两个任务，这种情况就可以称之为并发。</p>
 <p>并行是微观概念，假设 CPU 中存在两个核心，那么我就可以同时完成任务 A、B。同时完成多个任务的情况就可以称之为并行。</p>
+<h3 id="回调函数"><a href="#回调函数" class="headerlink" title="回调函数"></a>回调函数</h3><p>回调地狱的根本原因：</p>
+<ol>
+<li>嵌套函数存在耦合性，一旦有所改动，就会牵一发而动全身</li>
+<li>嵌套函数一多，就很难处理错误</li>
+</ol>
+<h3 id="Iterator"><a href="#Iterator" class="headerlink" title="Iterator"></a>Iterator</h3><p>Iterator 的遍历过程是这样的。</p>
+<p>（1）创建一个指针对象，指向当前数据结构的起始位置。也就是说，遍历器对象本质上，就是一个指针对象。</p>
+<p>（2）第一次调用指针对象的 next 方法，可以将指针指向数据结构的第一个成员。</p>
+<p>（3）第二次调用指针对象的 next 方法，指针就指向数据结构的第二个成员。</p>
+<p>（4）不断调用指针对象的 next 方法，直到它指向数据结构的结束位置。</p>
+<p>一个数据结构只要具有 Symbol.iterator 属性，就可以认为是“可遍历的”</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">const obj = &#123;</span><br><span class="line">  [Symbol.iterator] : function () &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">      next: function () &#123;</span><br><span class="line">        return &#123;</span><br><span class="line">          value: 1,</span><br><span class="line">          done: true</span><br><span class="line">        &#125;;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>只要某个数据结构部署了 Iterator 接口，就可以对它使用扩展运算符，将其转为数组</p>
+<h3 id="promise"><a href="#promise" class="headerlink" title="promise"></a>promise</h3><p>Promise 实现了链式调用，也就是说每次调用 then 之后返回的都是一个 Promise，并且是一个全新的 Promise，原因也是因为状态不可变。如果你在 then 中 使用了 return，那么 return 的值会被 Promise.resolve() 包装</p>
+<p>一旦从等待状态变成为其他状态就永远不能更改状态了，也就是说一旦状态变为 resolved 后，就不能再次改变</p>
+<h3 id="async-及-await"><a href="#async-及-await" class="headerlink" title="async 及 await"></a>async 及 await</h3><p>一个函数如果加上 async ，那么该函数就会返回一个 Promise</p>
+<h3 id="进程与线程"><a href="#进程与线程" class="headerlink" title="进程与线程"></a>进程与线程</h3><p>进程描述了 CPU 在运行指令及加载和保存上下文所需的时间，放在应用上来说就代表了一个程序<br>线程是进程的更小的单位，描述了执行一段指令需要的时间</p>
+<h4 id="单线程的好处"><a href="#单线程的好处" class="headerlink" title="单线程的好处"></a>单线程的好处</h4><p>得益于 JS 是单线程运行的，可以达到节省内存，节约上下文切换时间，没有锁的问题的好处。</p>
+<h3 id="执行栈"><a href="#执行栈" class="headerlink" title="执行栈"></a>执行栈</h3><p>可以把执行栈认为是一个存储函数调用的栈结构，遵循先进后出的原则。</p>
+<h3 id="浏览器中的-Event-Loop"><a href="#浏览器中的-Event-Loop" class="headerlink" title="浏览器中的 Event Loop"></a>浏览器中的 Event Loop</h3><h4 id="顺序"><a href="#顺序" class="headerlink" title="顺序"></a>顺序</h4><ol>
+<li>首先执行同步代码，这属于宏任务</li>
+<li>当执行完所有同步代码后，执行栈为空，查询是否有异步代码需要执行</li>
+<li>执行所有微任务</li>
+<li>当执行完所有微任务后，如有必要会渲染页面</li>
+<li>然后开始下一轮 Event Loop，执行宏任务中的异步代码</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">console.log(&apos;script start&apos;)</span><br><span class="line"></span><br><span class="line">async function async1() &#123;</span><br><span class="line">await async2()</span><br><span class="line">console.log(&apos;async1 end&apos;)</span><br><span class="line">&#125;</span><br><span class="line">async function async2() &#123;</span><br><span class="line">console.log(&apos;async2 end&apos;)</span><br><span class="line">&#125;</span><br><span class="line">async1()</span><br><span class="line"></span><br><span class="line">setTimeout(function() &#123;</span><br><span class="line">console.log(&apos;setTimeout&apos;)</span><br><span class="line">&#125;, 0)</span><br><span class="line"></span><br><span class="line">new Promise(resolve =&gt; &#123;</span><br><span class="line">console.log(&apos;Promise&apos;)</span><br><span class="line">resolve()</span><br><span class="line">&#125;)</span><br><span class="line">.then(function() &#123;</span><br><span class="line">console.log(&apos;promise1&apos;)</span><br><span class="line">&#125;)</span><br><span class="line">.then(function() &#123;</span><br><span class="line">console.log(&apos;promise2&apos;)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">console.log(&apos;script end&apos;)</span><br><span class="line">// script start =&gt; async2 end =&gt; Promise =&gt; script end =&gt; promise1 =&gt; promise2 =&gt; async1 end =&gt; setTimeout</span><br></pre></td></tr></table></figure>
+
+<p>如果 await 后面跟着 Promise 的话，async1 end 需要等待三个 tick 才能执行到</p>
+<h3 id="手写-call"><a href="#手写-call" class="headerlink" title="手写 call"></a>手写 call</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">(function(window) &#123;</span><br><span class="line">  window.color = &quot;blue&quot;;</span><br><span class="line">  Function.prototype.myCall = function(context) &#123;</span><br><span class="line">    if (typeof this !== &quot;function&quot;) &#123;</span><br><span class="line">      throw new TypeError(&quot;Error&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">    context = context || window;</span><br><span class="line">    context.fn = this;</span><br><span class="line">    //this指向调用者</span><br><span class="line">    console.log(arguments);</span><br><span class="line">    const args = [...arguments].slice(1);</span><br><span class="line">    console.log(args);</span><br><span class="line">    const result = context.fn(...args);</span><br><span class="line">    delete context.fn;</span><br><span class="line">    return result;</span><br><span class="line">    // console.log(this);</span><br><span class="line">  &#125;;</span><br><span class="line">  const testObj = &#123;</span><br><span class="line">    color: &quot;greens&quot;</span><br><span class="line">  &#125;;</span><br><span class="line">  function testCall() &#123;</span><br><span class="line">    console.log(this.color);</span><br><span class="line">  &#125;</span><br><span class="line">  testCall.myCall(testObj, 1, 2, 3, 4);</span><br><span class="line">&#125;)(this);</span><br></pre></td></tr></table></figure>
+
+<h3 id="手写-call-方法"><a href="#手写-call-方法" class="headerlink" title="手写 call 方法"></a>手写 call 方法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">Function.prototype.myApply = function(context) &#123;</span><br><span class="line">  if (typeof this !== &apos;function&apos;) &#123;</span><br><span class="line">    throw new TypeError(&apos;Error&apos;)</span><br><span class="line">  &#125;</span><br><span class="line">  context = context || window</span><br><span class="line">  context.fn = this</span><br><span class="line">  let result</span><br><span class="line">  // 处理参数和 call 有区别</span><br><span class="line">  if (arguments[1]) &#123;</span><br><span class="line">    result = context.fn(...arguments[1])</span><br><span class="line">  &#125; else &#123;</span><br><span class="line">    result = context.fn()</span><br><span class="line">  &#125;</span><br><span class="line">  delete context.fn</span><br><span class="line">  return result</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="new"><a href="#new" class="headerlink" title="new"></a>new</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">function create() &#123;</span><br><span class="line">  //创建空对象</span><br><span class="line">  let obj = &#123;&#125;</span><br><span class="line">  //获取构造函数</span><br><span class="line">  let Con = [].shift.call(arguments)</span><br><span class="line">  //设置空对象的原型</span><br><span class="line">  obj.__proto__ = Con.prototype</span><br><span class="line">  //绑定this并执行构造函数</span><br><span class="line">  let result = Con.apply(obj, arguments)</span><br><span class="line">  //确保返回值为对象</span><br><span class="line">  return result instanceof Object ? result : obj</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="为什么-0-1-0-2-0-3"><a href="#为什么-0-1-0-2-0-3" class="headerlink" title="为什么 0.1+0.2!=0.3"></a>为什么 0.1+0.2!=0.3</h3><p>因为 JS 采用 IEEE 754 双精度版本（64 位），并且只要采用 IEEE 754 的语言都有该问题</p>
+<h3 id="UDP-和-TCP"><a href="#UDP-和-TCP" class="headerlink" title="UDP 和 TCP"></a>UDP 和 TCP</h3><p>UDP：相当于发信息，不需要对方同意就可以发，也不知道对方看了短信没有。<br>TCP：相当于打电话，需要对方同意了接听电话，可靠，知道对方接了电话</p>
+<h4 id="UDP"><a href="#UDP" class="headerlink" title="UDP"></a>UDP</h4><ol>
+<li>面向无连接<br>首先 UDP 是不需要和 TCP 一样在发送数据前进行三次握手建立连接的，想发数据就可以开始发送了。并且也只是数据报文的搬运工，不会对数据报文进行任何拆分和拼接操作。</li>
+<li>不可靠性<br>首先不可靠性体现在无连接上，通信都不需要建立连接，想发就发，这样的情况肯定不可靠。<br>并且收到什么数据就传递什么数据，并且也不会备份数据，发送数据也不会关心对方是否已经正确接收到数据了。</li>
+<li>传输方式<br>UDP 不止支持一对一的传输方式，同样支持一对多，多对多，多对一的方式，也就是说 UDP 提供了单播，多播，广播的功能。</li>
+<li>适合使用的场景<br>直播，MOBA 类游戏等</li>
+</ol>
+<h4 id="TCP"><a href="#TCP" class="headerlink" title="TCP"></a>TCP</h4><p>基本是和 UDP 反着来，建立连接断开连接都需要先需要进行握手。在传输数据的过程中，通过各种算法保证数据的可靠性，当然带来的问题就是相比 UDP 来说不那么的高效。</p>
+<h3 id="事件触发三阶段"><a href="#事件触发三阶段" class="headerlink" title="事件触发三阶段"></a>事件触发三阶段</h3><ol>
+<li>window 往事件触发处传播，遇到注册的捕获事件会触发</li>
+<li>传播到事件触发处时触发注册的事件</li>
+<li>从事件触发处往 window 传播，遇到注册的冒泡事件会触发</li>
+</ol>
+<h3 id="事件代理"><a href="#事件代理" class="headerlink" title="事件代理"></a>事件代理</h3><p>如果有多个标签绑定相同的事件，则需要将该事件绑定到父节点，同时通过 event.target 获取触发事件的对象即可<br>好处：</p>
+<ol>
+<li>节省内存</li>
+<li>不需要给子节点注销事件</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;ul id=&quot;ul&quot;&gt;</span><br><span class="line">	&lt;li&gt;1&lt;/li&gt;</span><br><span class="line">    &lt;li&gt;2&lt;/li&gt;</span><br><span class="line">	&lt;li&gt;3&lt;/li&gt;</span><br><span class="line">	&lt;li&gt;4&lt;/li&gt;</span><br><span class="line">	&lt;li&gt;5&lt;/li&gt;</span><br><span class="line">&lt;/ul&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">	let ul = document.querySelector(&apos;#ul&apos;)</span><br><span class="line">	ul.addEventListener(&apos;click&apos;, (event) =&gt; &#123;</span><br><span class="line">		console.log(event.target);</span><br><span class="line">	&#125;)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="跨域"><a href="#跨域" class="headerlink" title="跨域"></a>跨域</h3><h4 id="同源策略"><a href="#同源策略" class="headerlink" title="同源策略"></a>同源策略</h4><p>只有在同协议、同 IP、同端口号下，ajax 才能请求成功</p>
+<h4 id="为什么引入同源策略"><a href="#为什么引入同源策略" class="headerlink" title="为什么引入同源策略"></a>为什么引入同源策略</h4><p>防范 csrf 攻击<br>如果不是同源，请求会被成功发出，但是会被浏览器拦截</p>
+<h4 id="防范措施"><a href="#防范措施" class="headerlink" title="防范措施"></a>防范措施</h4><ol>
+<li>jsonp<br>利用的是 script 标签没有同源策略的限制,只能用于 get 请求</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=&quot;http://domain/api?param1=a&amp;param2=b&amp;callback=jsonp&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">   function jsonp(url, jsonpCallback, success) &#123;</span><br><span class="line">  let script = document.createElement(&apos;script&apos;)</span><br><span class="line">  script.src = url</span><br><span class="line">  script.async = true</span><br><span class="line">  script.type = &apos;text/javascript&apos;</span><br><span class="line">  window[jsonpCallback] = function(data) &#123;</span><br><span class="line">    success &amp;&amp; success(data)</span><br><span class="line">  &#125;</span><br><span class="line">  document.body.appendChild(script)</span><br><span class="line">&#125;</span><br><span class="line">jsonp(&apos;http://xxx&apos;, &apos;callback&apos;, function(value) &#123;</span><br><span class="line">  console.log(value)</span><br><span class="line">&#125;)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>CORS<br>服务端设置 Access-Control-Allow-Origin 就可以开启 CORS。 该属性表示哪些域名可以访问资源，如果设置通配符则表示所有网站都可以访问资源。</li>
+</ol>
+<h3 id="缓存位置"><a href="#缓存位置" class="headerlink" title="缓存位置"></a>缓存位置</h3><p>缓存位置有着优先级</p>
+<ol>
+<li>Service Worker<br>Service Worker 的缓存与浏览器其他内建的缓存机制不同，它可以让我们自由控制缓存哪些文件、如何匹配缓存、如何读取缓存，并且缓存是持续性的</li>
+<li>Memory Cache<br>Memory Cache 也就是内存中的缓存，读取内存中的数据肯定比磁盘快。但是内存缓存虽然读取高效，可是缓存持续性很短，会随着进程的释放而释放</li>
+<li>Disk Cache<br>Disk Cache 也就是存储在硬盘中的缓存，读取速度慢点，但是什么都能存储到磁盘中，比之 Memory Cache 胜在容量和存储时效性上。</li>
+<li>Push Cache<br>Push Cache 是 HTTP/2 中的内容，当以上三种缓存都没有命中时，它才会被使用</li>
+<li>网络请求</li>
+</ol>
+<h3 id="缓存策略"><a href="#缓存策略" class="headerlink" title="缓存策略"></a>缓存策略</h3><h4 id="强缓存"><a href="#强缓存" class="headerlink" title="强缓存"></a>强缓存</h4><ol>
+<li>expires</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Expires: Wed, 22 Oct 2018 08:41:00 GMT</span><br></pre></td></tr></table></figure>
+
+<p>expires 是 http/1.0 的产物，如上代码表示资源会在 Wed, 22 Oct 2018 08:41:00 GMT 后过期，需要再次请求。并且 Expires 受限于本地时间，如果修改了本地时间，可能会造成缓存失效</p>
+<ol start="2">
+<li>Cache-control</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Cache-control: max-age=30</span><br></pre></td></tr></table></figure>
+
+<p>出现于 http1.1,优先级高于 expires,可以在请求头或者响应头中设置</p>
+<h4 id="协商缓存"><a href="#协商缓存" class="headerlink" title="协商缓存"></a>协商缓存</h4><p>如果缓存过期了，就需要发起请求验证资源是否有更新。协商缓存可以通过设置两种 HTTP Header 实现：Last-Modified 和 ETag<br>当浏览器发起请求验证资源时，如果资源没有做改变，那么服务端就会返回 304 状态码，并且更新浏览器缓存有效期</p>
+<ol>
+<li>Last-Modified 和 If-Modified-Since<br>Last-Modified 表示本地文件最后修改日期，If-Modified-Since 会将 Last-Modified 的值发送给服务器，询问服务器在该日期后资源是否有更新，有更新的话就会将新的资源发送回来，否则返回 304 状态码。<br>弊端：<ol>
+<li>如果本地打开缓存文件，即使没有对文件进行修改，但还是会造成 Last-Modified 被修改，服务端不能命中缓存导致发送相同的资源</li>
+<li>因为 Last-Modified 只能以秒计时，如果在不可感知的时间内修改完成文件，那么服务端会认为资源还是命中了，不会返回正确的资源</li>
+</ol>
+</li>
+<li>ETag 和 If-None-Match<br>ETag 类似于文件指纹，If-None-Match 会将当前 ETag 发送给服务器，询问该资源 ETag 是否变动，有变动的话就将新的资源发送回来。并且 ETag 优先级比 Last-Modified 高。</li>
+</ol>
 
       
 
@@ -349,6 +445,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2019/12/02/flutter/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          flutter
+        
+      </div>
+    </a>
   
   
     <a href="/2019/11/12/typescript/" id="article-nav-older" class="article-nav-link-wrap">
