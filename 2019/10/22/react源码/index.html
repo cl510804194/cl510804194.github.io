@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="程亮的个人博客">
 <meta property="og:description" content="react.createElement如果是大写，react.createElement 第一个参数是变量，小写则是一个字符串 component1234567891011function Component(props, context, updater) &amp;#123;  this.props = props;  this.context = context;  // If a componen">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-10-24T09:48:33.232Z">
+<meta property="og:updated_time" content="2019-12-30T01:41:24.095Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="react源码笔记">
 <meta name="twitter:description" content="react.createElement如果是大写，react.createElement 第一个参数是变量，小写则是一个字符串 component1234567891011function Component(props, context, updater) &amp;#123;  this.props = props;  this.context = context;  // If a componen">
@@ -206,6 +206,7 @@
 </ol>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">export function createRef(): RefObject &#123;</span><br><span class="line">  const refObject = &#123;</span><br><span class="line">    current: null,</span><br><span class="line">  &#125;;</span><br><span class="line">  if (__DEV__) &#123;</span><br><span class="line">    Object.seal(refObject);   //密封该对象</span><br><span class="line">  &#125;</span><br><span class="line">  return refObject;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<h3 id="Component-amp-PureComponent"><a href="#Component-amp-PureComponent" class="headerlink" title="Component &amp; PureComponent"></a>Component &amp; PureComponent</h3><p>在 pureComponent 中会添加标记，如果 state 和 props 变化，则更新组件</p>
 
       
 

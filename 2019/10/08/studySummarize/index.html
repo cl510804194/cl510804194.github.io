@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="程亮的个人博客">
 <meta property="og:description" content="浏览器渲染页面 浏览器通过 HTMLParser 根据深度遍历的原则把 HTML 解析成 DOM Tree。 浏览器通过 CSSParser 将 CSS 解析成 CSS Rule Tree（CSSOM Tree）。 浏览器将 JavaScript 通过 DOM API 或者 CSSOM API 将 JS 代码解析并应用到布局中，按要求呈现响应的结果。 根据 DOM 树和 CSSOM 树来构造 re">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-11-14T09:13:44.438Z">
+<meta property="og:updated_time" content="2019-12-27T02:23:55.297Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="前端学习总结">
 <meta name="twitter:description" content="浏览器渲染页面 浏览器通过 HTMLParser 根据深度遍历的原则把 HTML 解析成 DOM Tree。 浏览器通过 CSSParser 将 CSS 解析成 CSS Rule Tree（CSSOM Tree）。 浏览器将 JavaScript 通过 DOM API 或者 CSSOM API 将 JS 代码解析并应用到布局中，按要求呈现响应的结果。 根据 DOM 树和 CSSOM 树来构造 re">
@@ -265,7 +265,17 @@
 <li><p>组合继承(原型链 + 借用构造函数)<br>无论什么情况下，都会调用两次超类型构造函数：一次是在创建子类型原型的时候，另一次是在子类型构造函数内部。</p>
 </li>
 </ol>
-<p>###</p>
+<h3 id="单处理进程调度"><a href="#单处理进程调度" class="headerlink" title="单处理进程调度"></a>单处理进程调度</h3><ol>
+<li>先到先得<br>不利于：<ul>
+<li>一次任务执行很长的（类似于食堂打饭，打包一分的对于打包几份的来说不公平）</li>
+<li>需要条件的</li>
+</ul>
+</li>
+<li>轮转</li>
+<li>最短进程优先</li>
+<li>最短剩余时间优先<br>SRT 进一步优化了 SPN，增加了抢占机制。在 SPN 的基础上，当一个进程添加到就绪队列时，操作系统会比较刚添加的新进程和当前正在执行的老进程的‘剩余时间’，如果新进程剩余时间更短，新进程就会抢占老进程</li>
+<li>最高响应比优先(HRRN)</li>
+</ol>
 
       
 
