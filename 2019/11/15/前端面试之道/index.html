@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="程亮的个人博客">
 <meta property="og:description" content="前端综合笔记">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-12-18T09:09:26.023Z">
+<meta property="og:updated_time" content="2020-01-02T07:37:36.969Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="前端综合知识">
 <meta name="twitter:description" content="前端综合笔记">
@@ -353,7 +353,7 @@
 </li>
 <li>ETag 和 If-None-Match<br>ETag 类似于文件指纹，If-None-Match 会将当前 ETag 发送给服务器，询问该资源 ETag 是否变动，有变动的话就将新的资源发送回来。并且 ETag 优先级比 Last-Modified 高。</li>
 </ol>
-<h3 id="浏览器渲染原理"><a href="#浏览器渲染原理" class="headerlink" title="浏览器渲染原理"></a>浏览器渲染原理</h3><h4 id="HTML-渲染过程"><a href="#HTML-渲染过程" class="headerlink" title="HTML 渲染过程"></a>HTML 渲染过程</h4><p>字节数据（二维码）-&gt;字符串-&gt;token=&gt;node(节点)=&gt;dom</p>
+<h3 id="浏览器渲染原理"><a href="#浏览器渲染原理" class="headerlink" title="浏览器渲染原理"></a>浏览器渲染原理</h3><h4 id="HTML-渲染过程"><a href="#HTML-渲染过程" class="headerlink" title="HTML 渲染过程"></a>HTML 渲染过程</h4><p>字节数据-&gt;字符串-&gt;token(标记)-&gt;node(节点)=&gt;dom</p>
 <h4 id="什么情况阻塞渲染"><a href="#什么情况阻塞渲染" class="headerlink" title="什么情况阻塞渲染"></a>什么情况阻塞渲染</h4><ol>
 <li>HTML 和 css 会阻塞渲染</li>
 <li>因为 JS 是单线程的，遇到 script 标签时候，会执行 script 标签的内容，之后才会渲染，因为要将 script 放在 body 标签底部,当然也可以添加 defer 或者 async<br>defer:并行，但是会放到 html 解析完成后顺序执行<br>async:表示 js 文件下载和解析不会阻塞渲染</li>
@@ -362,6 +362,7 @@
 <li>重绘<br>更改外观而不影响布局</li>
 <li>布局或者几何属性改变<br>回流必定触发重绘，而重绘不一定引发回流</li>
 </ol>
+<h4 id="为什么操作-DOM-慢"><a href="#为什么操作-DOM-慢" class="headerlink" title="为什么操作 DOM 慢"></a>为什么操作 DOM 慢</h4><p>因为 DOM 是属于渲染引擎中的东西，而 JS 又是 JS 引擎中的东西，这个操作涉及到了两个线程之间的通信，势必会带来一些性能上的损耗。操作次数一多，就等同于一直在进行线程之间的通信，并且操作 DOM 可能会带来重绘回流的情况，所以也导致了性能上的问题</p>
 <h3 id="安全防范"><a href="#安全防范" class="headerlink" title="安全防范"></a>安全防范</h3><h4 id="xss"><a href="#xss" class="headerlink" title="xss"></a>xss</h4><p>攻击者想尽一切办法将可以执行的代码注入到网页中</p>
 <h4 id="转义字符"><a href="#转义字符" class="headerlink" title="转义字符"></a>转义字符</h4><p>转义输入输出的内容，对于引号、尖括号、斜杠进行转义</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">function escape(str) &#123;</span><br><span class="line">  str = str.replace(/&amp;/g, &apos;&amp;amp;&apos;)</span><br><span class="line">  str = str.replace(/&lt;/g, &apos;&amp;lt;&apos;)</span><br><span class="line">  str = str.replace(/&gt;/g, &apos;&amp;gt;&apos;)</span><br><span class="line">  str = str.replace(/&quot;/g, &apos;&amp;quto;&apos;)</span><br><span class="line">  str = str.replace(/&apos;/g, &apos;&amp;#39;&apos;)</span><br><span class="line">  str = str.replace(/`/g, &apos;&amp;#96;&apos;)</span><br><span class="line">  str = str.replace(/\//g, &apos;&amp;#x2F;&apos;)</span><br><span class="line">  return str</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -405,6 +406,70 @@
 <li>三次握手过程中可以携带数据吗？<br>第一二次不可以接待数据，否则连接尚未建立成功，就将数据发送了过去，因此可能存在安全问题<br>如果第三次握手丢失了，客户端服务端会如何处理？</li>
 <li>SYN 攻击是什么？<br>SYN 攻击即是伪造大量不存在的 IP，这些 IP 发送请求与服务端建立第一次握手，由于服务端第二次握手时候这些 IP 不存在，因此会失败，会重复第二次握手，半连接队列被沾满，导致网络瘫痪</li>
 <li>挥手为什么需要四次？<br>在第一二次握手完成后，服务端需要确认数据已经发完了，发完后才又给客户端进行确认，因此这里多出了一次。</li>
+</ol>
+<h3 id="v8-引擎优化"><a href="#v8-引擎优化" class="headerlink" title="v8 引擎优化"></a>v8 引擎优化</h3><p>V8 在特定的情况下会进行优化，将代码编译成执行效率更高的 Machine Code</p>
+<p>尽可能避免声明嵌套函数（类也是函数），因为这样会造成函数的重复解析。如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">function test1() &#123;</span><br><span class="line">  // 会被重复解析</span><br><span class="line">  function test2() &#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>什么情况下代码会编译为 Machine Code？<br>如果一个函数被多次调用并且参数一直传入 number 类型，那么 V8 就会认为该段代码可以编译为 Machine Code，因为你固定了类型，不需要再执行很多判断逻辑了。但是一旦传入的参数类型改变，那么 Machine Code 就会被 DeOptimized 为 Bytecode，这样就有性能上的一个损耗了</p>
+<h3 id="性能优化"><a href="#性能优化" class="headerlink" title="性能优化"></a>性能优化</h3><h4 id="图片优化"><a href="#图片优化" class="headerlink" title="图片优化"></a>图片优化</h4><ol>
+<li>小图可以用 Icon 加载</li>
+<li>对于移动端，可以用 CDN 记载，计算出适配屏幕的宽度，然后取请求相应裁剪好的图片</li>
+<li>小图用 base64 格式</li>
+<li>雪碧图</li>
+<li>选择正确的图片格式</li>
+</ol>
+<h4 id="DNS-预解析"><a href="#DNS-预解析" class="headerlink" title="DNS 预解析"></a>DNS 预解析</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;link rel=&quot;dns-prefetch&quot; href=&quot;//yuchengkai.cn&quot;&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="预加载"><a href="#预加载" class="headerlink" title="预加载"></a>预加载</h4><p>预加载可以一定程度上降低首屏的加载时间，因为可以将一些不影响首屏但重要的文件延后加载，唯一缺点就是兼容性不好</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;link rel=&quot;preload&quot; href=&quot;http://example.com&quot;&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="预渲染"><a href="#预渲染" class="headerlink" title="预渲染"></a>预渲染</h4><p>可以通过预渲染将下载的文件预先在后台渲染，可以使用以下代码开启预渲染</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;link rel=&quot;prerender&quot; href=&quot;http://example.com&quot;&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="懒执行"><a href="#懒执行" class="headerlink" title="懒执行"></a>懒执行</h4><p>懒执行就是将某些逻辑延迟到使用时再计算。该技术可以用于首屏优化，对于某些耗时逻辑并不需要在首屏就使用的，就可以使用懒执行。懒执行需要唤醒，一般可以通过定时器或者事件的调用来唤醒。</p>
+<h3 id="Mvvm"><a href="#Mvvm" class="headerlink" title="Mvvm"></a>Mvvm</h3><p>对于 MVVM 来说，其实最重要的并不是通过双向绑定或者其他的方式将 View 与 ViewModel 绑定起来，而是通过 ViewModel 将视图中的状态和用户的行为分离出一个抽象，这才是 MVVM 的精髓</p>
+<h3 id="虚拟-DOM"><a href="#虚拟-DOM" class="headerlink" title="虚拟 DOM"></a>虚拟 DOM</h3><p>首先从上至下，从左往右遍历对象，也就是树的深度遍历，这一步中会给每个节点添加索引，便于最后渲染差异<br>一旦节点有子元素，就去判断子元素是否有不同<br>优势：</p>
+<ul>
+<li>将 Virtual DOM 作为一个兼容层，让我们还能对接非 Web 端的系统，实现跨端开发。</li>
+<li>同样的，通过 Virtual DOM 我们可以渲染到其他的平台，比如实现 SSR、同构渲染等等。</li>
+<li>实现组件的高度抽象化</li>
+</ul>
+<h3 id="hash-模式"><a href="#hash-模式" class="headerlink" title="hash 模式"></a>hash 模式</h3><p><a href="http://www.test.com/#/" target="_blank" rel="noopener">www.test.com/#/</a> 就是 Hash URL，当 # 后面的哈希值发生变化时，可以通过 hashchange 事件来监听到 URL 的变化，从而进行跳转页面，并且无论哈希值如何变化，服务端接收到的 URL 请求永远是 <a href="http://www.test.com。" target="_blank" rel="noopener">www.test.com。</a></p>
+<h3 id="history-模式"><a href="#history-模式" class="headerlink" title="history 模式"></a>history 模式</h3><p>History 模式是 HTML5 新推出的功能，主要使用 history.pushState 和 history.replaceState 改变 URL。</p>
+<p>通过 History 模式改变 URL 同样不会引起页面的刷新，只会更新浏览器的历史记录。</p>
+<h3 id="hash-模式和-history-模式"><a href="#hash-模式和-history-模式" class="headerlink" title="hash 模式和 history 模式"></a>hash 模式和 history 模式</h3><ol>
+<li>Hash 模式只可以更改 # 后面的内容，History 模式可以通过 API 设置任意的同源 URL</li>
+<li>History 模式可以通过 API 添加任意类型的数据到历史记录中，Hash 模式只能更改哈希值，也就是字符串</li>
+<li>Hash 模式无需后端配置，并且兼容性好。History 模式在用户手动输入地址或者刷新页面的时候会发起 URL 请求，后端需要配置 index.html 页面用于匹配不到静态资源的时候</li>
+</ol>
+<h3 id="react-生命周期"><a href="#react-生命周期" class="headerlink" title="react 生命周期"></a>react 生命周期</h3><h4 id="Reconciliation-阶段"><a href="#Reconciliation-阶段" class="headerlink" title="Reconciliation 阶段"></a>Reconciliation 阶段</h4><ol>
+<li>componentWillMount</li>
+<li>componentWillReceiveProps -&gt; 16 版本已经切换为 getDerivedStateFromProps，该函数会在初始化和 update 时被调用</li>
+<li>shouldComponentUpdate</li>
+<li>componentWillUpdate<br>该阶段的生命周期尽量避免使用，该阶段可以被打断</li>
+</ol>
+<h4 id="Commit-阶段"><a href="#Commit-阶段" class="headerlink" title="Commit 阶段"></a>Commit 阶段</h4><p>Commit 阶段</p>
+<ol>
+<li>componentDidMount</li>
+<li>componentDidUpdate</li>
+<li>componentWillUnmount</li>
+</ol>
+<h4 id="setState"><a href="#setState" class="headerlink" title="setState"></a>setState</h4><p>这个 API 是异步的<br>setState 的调用并不会马上引起 state 的改变</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">handle() &#123;</span><br><span class="line">  // 初始化 `count` 为 0</span><br><span class="line">  console.log(this.state.count) // -&gt; 0</span><br><span class="line">  this.setState(&#123; count: this.state.count + 1 &#125;)</span><br><span class="line">  this.setState(&#123; count: this.state.count + 1 &#125;)</span><br><span class="line">  this.setState(&#123; count: this.state.count + 1 &#125;)</span><br><span class="line">  console.log(this.state.count) // -&gt; 0</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>接受一个回调，该回调可以在该 state 变化后执行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">handle() &#123;</span><br><span class="line">    this.setState((prevState) =&gt; (&#123; count: prevState.count + 1 &#125;), () =&gt; &#123;</span><br><span class="line">        console.log(this.state)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="react-性能优化"><a href="#react-性能优化" class="headerlink" title="react 性能优化"></a>react 性能优化</h3><ol>
+<li>利用 shouldComponentUpdate，对比 props 和 state</li>
+<li>利用 pureComponent</li>
+<li>react-hooks 提供的 React.memo() -&gt;等同于 pureComponent</li>
+</ol>
+<h3 id="react-通信"><a href="#react-通信" class="headerlink" title="react 通信"></a>react 通信</h3><ol>
+<li>父子组件<br>父组件通过 props 传递给子组件，子组件必须通过事件传给父组件</li>
+<li>兄弟组件<br>子（事件）-&gt;父-&gt;另外一个子</li>
+<li>跨多层次组件通信<br>contextAPI,redux,mobx ….</li>
 </ol>
 
       
@@ -553,7 +618,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2019 程亮
+    		&copy; 2020 程亮
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
