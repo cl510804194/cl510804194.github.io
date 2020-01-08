@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>react源码笔记 | 程亮的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="react.createElement如果是大写，react.createElement 第一个参数是变量，小写则是一个字符串 component1234567891011function Component(props, context, updater) &amp;#123;  this.props = props;  this.context = context;  // If a componen">
+  <meta name="description" content="react 源码笔记">
 <meta property="og:type" content="article">
 <meta property="og:title" content="react源码笔记">
 <meta property="og:url" content="http://yoursite.com/2019/10/22/react源码/index.html">
 <meta property="og:site_name" content="程亮的个人博客">
-<meta property="og:description" content="react.createElement如果是大写，react.createElement 第一个参数是变量，小写则是一个字符串 component1234567891011function Component(props, context, updater) &amp;#123;  this.props = props;  this.context = context;  // If a componen">
+<meta property="og:description" content="react 源码笔记">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-12-30T01:41:24.095Z">
+<meta property="og:updated_time" content="2020-01-07T01:19:36.056Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="react源码笔记">
-<meta name="twitter:description" content="react.createElement如果是大写，react.createElement 第一个参数是变量，小写则是一个字符串 component1234567891011function Component(props, context, updater) &amp;#123;  this.props = props;  this.context = context;  // If a componen">
+<meta name="twitter:description" content="react 源码笔记">
   
     <link rel="alternative" href="/atom.xml" title="程亮的个人博客" type="application/atom+xml">
   
@@ -195,7 +195,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="react-createElement"><a href="#react-createElement" class="headerlink" title="react.createElement"></a>react.createElement</h3><p>如果是大写，react.createElement 第一个参数是变量，小写则是一个字符串</p>
+        <p>react 源码笔记</p>
+<a id="more"></a>
+
+<h3 id="react-createElement"><a href="#react-createElement" class="headerlink" title="react.createElement"></a>react.createElement</h3><p>如果是大写，react.createElement 第一个参数是变量，小写则是一个字符串</p>
 <h3 id="component"><a href="#component" class="headerlink" title="component"></a>component</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">function Component(props, context, updater) &#123;</span><br><span class="line">  this.props = props;</span><br><span class="line">  this.context = context;</span><br><span class="line">  // If a component has string refs, we will assign a different object later.</span><br><span class="line">  this.refs = emptyObject;</span><br><span class="line">  // We initialize the default updater but the real one gets injected by the</span><br><span class="line">  // renderer.</span><br><span class="line">  this.updater = updater || ReactNoopUpdateQueue;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Component.prototype.isReactComponent = &#123;&#125;;</span><br></pre></td></tr></table></figure>
 
 <h3 id="createRef"><a href="#createRef" class="headerlink" title="createRef"></a>createRef</h3><p>创建的三种方式</p>

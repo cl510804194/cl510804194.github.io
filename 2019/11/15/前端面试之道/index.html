@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="程亮的个人博客">
 <meta property="og:description" content="前端综合笔记">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-01-02T07:37:36.969Z">
+<meta property="og:updated_time" content="2020-01-08T07:01:48.598Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="前端综合知识">
 <meta name="twitter:description" content="前端综合笔记">
@@ -302,6 +302,19 @@
 <li>适合使用的场景<br>直播，MOBA 类游戏等</li>
 </ol>
 <h4 id="TCP"><a href="#TCP" class="headerlink" title="TCP"></a>TCP</h4><p>基本是和 UDP 反着来，建立连接断开连接都需要先需要进行握手。在传输数据的过程中，通过各种算法保证数据的可靠性，当然带来的问题就是相比 UDP 来说不那么的高效。</p>
+<h5 id="三次握手"><a href="#三次握手" class="headerlink" title="三次握手"></a>三次握手</h5><ol>
+<li>为什么连接的时候是三次握手？<br>第一次握手：确定客户端发送、服务端接受能力没有问题<br>第二次握手：确定客户端接受、服务端发送能力没有问题<br>第三次握手：建立连接</li>
+<li>主要还是因为要确保客户端和服务器的状态良好，如果二次握手可能服务器的接受能力出现问题后没有处理，导致报文丢失</li>
+<li>什么是半连接队列？<br>第一次握手后，服务器端会有一个队列，即为半连接队列<br>ISN(Initial Sequence Number)是固定的吗？<br>不是，固定的话，易遭受攻击</li>
+<li>三次握手过程中可以携带数据吗？<br>第一二次不可以接待数据，否则连接尚未建立成功，就将数据发送了过去，因此可能存在安全问题<br>如果第三次握手丢失了，客户端服务端会如何处理？</li>
+<li>SYN 攻击是什么？<br>SYN 攻击即是伪造大量不存在的 IP，这些 IP 发送请求与服务端建立第一次握手，由于服务端第二次握手时候这些 IP 不存在，因此会失败，会重复第二次握手，半连接队列被沾满，导致网络瘫痪</li>
+<li>挥手为什么需要四次？<br>在第一二次握手完成后，服务端需要确认数据已经发完了，发完后才又给客户端进行确认，因此这里多出了一次。</li>
+</ol>
+<h5 id="ARQ-协议"><a href="#ARQ-协议" class="headerlink" title="ARQ 协议"></a>ARQ 协议</h5><p>ARQ 协议也就是超时重传机制。通过确认和超时机制保证了数据的正确送达，ARQ 协议包含停止等待 ARQ 和连续 ARQ 两种协议。</p>
+<ul>
+<li>正常情况<br>只要 A 向 B 发送一段报文，都要停止发送并启动一个定时器，等待对端回应，在定时器时间内接收到对端应答就取消定时器并发送下一段报文。</li>
+<li>报文丢失或出错<br>在报文传输的过程中可能会出现丢包。这时候超过定时器设定的时间就会再次发送丢失的数据直到对端响应，所以需要每次都备份发送的数据。<br>即使报文正常的传输到对端，也可能出现在传输过程中报文出错的问题。这时候对端会抛弃该报文并等待 A 端重传。</li>
+</ul>
 <h3 id="事件触发三阶段"><a href="#事件触发三阶段" class="headerlink" title="事件触发三阶段"></a>事件触发三阶段</h3><ol>
 <li>window 往事件触发处传播，遇到注册的捕获事件会触发</li>
 <li>传播到事件触发处时触发注册的事件</li>
@@ -393,19 +406,27 @@
 </li>
 </ol>
 <h4 id="中间人攻击"><a href="#中间人攻击" class="headerlink" title="中间人攻击"></a>中间人攻击</h4><p>中间人攻击是攻击方同时与服务端和客户端建立起了连接，并让对方认为连接是安全的，但是实际上整个通信过程都被攻击者控制了。攻击者不仅能获得双方的通信信息，还能修改通信信息<br>防御措施<br>使用 https 协议</p>
-<h3 id="webpack-相关"><a href="#webpack-相关" class="headerlink" title="webpack 相关"></a>webpack 相关</h3><p>优化 babel,只处理 src 文件下</p>
+<h3 id="webpack-相关"><a href="#webpack-相关" class="headerlink" title="webpack 相关"></a>webpack 相关</h3><ol>
+<li>优化 Loader<br>优化 babel,只处理 src 文件下</li>
+</ol>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">module.exports = &#123;</span><br><span class="line">  module: &#123;</span><br><span class="line">    rules: [</span><br><span class="line">      &#123;</span><br><span class="line">        // js 文件才使用 babel</span><br><span class="line">        test: /\.js$/,</span><br><span class="line">        loader: &apos;babel-loader&apos;,</span><br><span class="line">        // 只在 src 文件夹下查找</span><br><span class="line">        include: [resolve(&apos;src&apos;)],</span><br><span class="line">        // 不会去查找的路径</span><br><span class="line">        exclude: /node_modules/</span><br><span class="line">      &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>还可以将 Babel 编译过的文件缓存起来，下次只需要编译更改过的代码文件即可，这样可以大幅度加快打包时间</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">loader: &apos;babel-loader?cacheDirectory=true&apos;</span><br></pre></td></tr></table></figure>
 
-<h3 id="三次握手"><a href="#三次握手" class="headerlink" title="三次握手"></a>三次握手</h3><ol>
-<li>为什么连接的时候是三次握手？<br>第一次握手：确定客户端发送、服务端接受能力没有问题<br>第二次握手：确定客户端接受、服务端发送能力没有问题<br>第三次握手：建立连接</li>
-<li>主要还是因为要确保客户端和服务器的状态良好，如果二次握手可能服务器的接受能力出现问题后没有处理，导致报文丢失</li>
-<li>什么是半连接队列？<br>第一次握手后，服务器端会有一个队列，即为半连接队列<br>ISN(Initial Sequence Number)是固定的吗？<br>不是，固定的话，易遭受攻击</li>
-<li>三次握手过程中可以携带数据吗？<br>第一二次不可以接待数据，否则连接尚未建立成功，就将数据发送了过去，因此可能存在安全问题<br>如果第三次握手丢失了，客户端服务端会如何处理？</li>
-<li>SYN 攻击是什么？<br>SYN 攻击即是伪造大量不存在的 IP，这些 IP 发送请求与服务端建立第一次握手，由于服务端第二次握手时候这些 IP 不存在，因此会失败，会重复第二次握手，半连接队列被沾满，导致网络瘫痪</li>
-<li>挥手为什么需要四次？<br>在第一二次握手完成后，服务端需要确认数据已经发完了，发完后才又给客户端进行确认，因此这里多出了一次。</li>
+<ol start="2">
+<li><p>happyPack<br>HappyPack 可以将 loader 的同步执行转换为并行的</p>
+</li>
+<li><p>DllPlugin DllPlugin 可以将特定的类库提前打包然后引入</p>
+</li>
+<li><p>代码压缩,webpack3 使用 uglifyJS,webpack4 只需要将 mode 设置为 production 即可</p>
+</li>
+<li><p>按需加载实质：当使用的时候再去下载对应文件，返回一个 Promise，当 Promise 成功以后去执行回调</p>
+</li>
+<li><p>Scope Hoisting，Scope Hoisting 会分析出模块之间的依赖关系，尽可能的把打包出来的模块合并到一个函数中去。</p>
+</li>
+<li><p>Tree Shaking 可以实现删除项目中未被引用的代码</p>
+</li>
 </ol>
 <h3 id="v8-引擎优化"><a href="#v8-引擎优化" class="headerlink" title="v8 引擎优化"></a>v8 引擎优化</h3><p>V8 在特定的情况下会进行优化，将代码编译成执行效率更高的 Machine Code</p>
 <p>尽可能避免声明嵌套函数（类也是函数），因为这样会造成函数的重复解析。如下</p>
@@ -471,6 +492,176 @@
 <li>兄弟组件<br>子（事件）-&gt;父-&gt;另外一个子</li>
 <li>跨多层次组件通信<br>contextAPI,redux,mobx ….</li>
 </ol>
+<h3 id="性能监控"><a href="#性能监控" class="headerlink" title="性能监控"></a>性能监控</h3><p>使用 performanceAPI<br>调用 performance.getEntriesByType(‘navigation’)可以获得页面中各种详细的性能相关信息。</p>
+<h3 id="异常监控"><a href="#异常监控" class="headerlink" title="异常监控"></a>异常监控</h3><p>对于代码运行错误，使用 window.onerror 拦截<br>对于异步代码，可以使用 catch 捕获</p>
+<h3 id="http-请求"><a href="#http-请求" class="headerlink" title="http 请求"></a>http 请求</h3><p>http 由三部分组成：1.请求行，2.首部，3.实体<br>请求行：GET /images/logo.gif HTTP/1.1<br>get 和 post 的区别：</p>
+<ul>
+<li>Get 请求能缓存，Post 不能</li>
+<li>Post 相对 Get 安全一点点，因为 Get 请求都包含在 URL 里（当然你想写到 body 里也是可以的），且会被浏览器保存历史纪录。Post 不会，但是在抓包的情况下都是一样的。</li>
+<li>URL 有长度限制，会影响 Get 请求，但是这个长度限制是浏览器规定的，不是 RFC 规定的</li>
+<li>Post 支持更多的编码类型且不对数据类型限制</li>
+</ul>
+<p>首部：<br>首部分为实体首部和响应首部</p>
+<h3 id="状态码"><a href="#状态码" class="headerlink" title="状态码"></a>状态码</h3><ul>
+<li>2XX 成功</li>
+<li>3XX 重定向</li>
+<li>4XX 客户端错误</li>
+<li>5XX 服务端错误</li>
+</ul>
+<h3 id="TLS"><a href="#TLS" class="headerlink" title="TLS"></a>TLS</h3><p>HTTPS 还是通过了 HTTP 来传输信息，但是信息通过 TLS 协议进行了加密。</p>
+<p>TLS 协议位于传输层之上，应用层之下。首次进行 TLS 协议传输需要两个 RTT ，接下来可以通过 Session Resumption 减少到一个 RTT。</p>
+<p>在 TLS 中使用了两种加密技术，分别为：对称加密和非对称加密。</p>
+<h4 id="对称加密"><a href="#对称加密" class="headerlink" title="对称加密"></a>对称加密</h4><p>两边都有相同的秘钥，都知道如何将密文加密解密<br>但是仍然存在安全问题</p>
+<h4 id="非对称加密"><a href="#非对称加密" class="headerlink" title="非对称加密"></a>非对称加密</h4><p>有公钥私钥之分，公钥所有人都可以知道，可以将数据用公钥加密，但是将数据解密必须使用私钥解密，私钥只有分发公钥的一方才知道<br>TLS 握手过程：</p>
+<ol>
+<li>客户端发送一个随机值，以及协议和加密方式</li>
+<li>服务端接到客户端的随机值，自己也产生一个随机数，并且根据发来的协议和加密方式使用对应的方式，再发送自己的证书</li>
+<li>客户端验证证书是否有效，验证通过后会再产生一个随机值，通过证书的公钥去加密发来的随机值，并发送给服务端，如果服务端需要验证客户端的证书则还需要发送证书</li>
+<li>服务端收到加密过得随机值并使用私钥解密获得第三个随机值，这时候两端都拥有了三个随机值，按照约定的方式生成密钥，接下来的通信就可以通过秘钥来加密解密</li>
+</ol>
+<h3 id="HTTP2"><a href="#HTTP2" class="headerlink" title="HTTP2"></a>HTTP2</h3><h4 id="对头堵塞问题"><a href="#对头堵塞问题" class="headerlink" title="对头堵塞问题"></a>对头堵塞问题</h4><p>对比于 HTTP1,大幅度提升网页的性能<br>在 http1 中，浏览器会限制同一个域名下的请求数量（一般是 6 个），队头会导致堵塞。<br>在 http2 中引入了多路复用的技术，这个技术可以只通过一个 TCP 连接就可以传输所有的请求数据。</p>
+<h4 id="二进制传输"><a href="#二进制传输" class="headerlink" title="二进制传输"></a>二进制传输</h4><p>在之前的 HTTP 版本中，我们是通过文本的方式传输数据</p>
+<p>在 HTTP2 中，引入了新的编码机制，所有传输的数据都会被分割，并采用二进制格式编码</p>
+<h4 id="帧与流"><a href="#帧与流" class="headerlink" title="帧与流"></a>帧与流</h4><p>帧代表着最小的数据单位，每个帧会标识出该帧属于哪个流，流也就是多个帧组成。<br>多路复用：在一个 TCP 链接中可以存在多条流，对端可以通过帧中的标识知道属于哪个请求。通过这个技术，可以避免 HTTP 旧版本中的队头阻塞问题，极大的提高传输性能。</p>
+<h4 id="Header-压缩"><a href="#Header-压缩" class="headerlink" title="Header 压缩"></a>Header 压缩</h4><p>在 HTTP/1 中，我们使用文本的形式传输 header，在 header 携带 cookie 的情况下，可能每次都需要重复传输几百到几千的字节。</p>
+<p>在 HTTP /2 中，使用了 HPACK 压缩格式对传输的 header 进行编码，减少了 header 的大小。并在两端维护了索引表，用于记录出现过的 header ，后面在传输过程中就可以传输已经记录过的 header 的键名，对端收到数据后就可以通过键名找到对应的值。</p>
+<h4 id="服务端-push"><a href="#服务端-push" class="headerlink" title="服务端 push"></a>服务端 push</h4><p>在 HTTP/2 中，服务端可以在客户端某个请求后，主动推送其他资源。</p>
+<p>可以想象以下情况，某些资源客户端是一定会请求的，这时就可以采取服务端 push 的技术，提前给客户端推送必要的资源，这样就可以相对减少一点延迟时间。当然在浏览器兼容的情况下你也可以使用 prefetch 。</p>
+<h4 id="HTTP2-缺陷"><a href="#HTTP2-缺陷" class="headerlink" title="HTTP2 缺陷"></a>HTTP2 缺陷</h4><p>因为 HTTP2 是多路复用，同一个域名下一般只会存在一个 TCP，如果出现丢包情况，就会导致性能比 HTTP1 差</p>
+<h3 id="QUIC"><a href="#QUIC" class="headerlink" title="QUIC"></a>QUIC</h3><p>基于 UDP，以下是它的优点：</p>
+<ol>
+<li>多路复用<br>HTTP/2 支持了多路复用，但是 TCP 协议没有这个功能，QUIC 原生就实现了这个功能，并且传输的单个数据流可以有序交付且不会影响其他数据流，这样就解决了之前的 TCP 存在的问题</li>
+<li>0-RTT<br>通过使用类似 TCP 快速打开的技术，缓存当前会话的上下文，在下次恢复会话的时候，只需要将之前的缓存传递给服务端验证通过就可以进行传输了</li>
+<li>纠错机制<br>假如说这次我要发送三个包，那么协议会算出这三个包的异或值并单独发出一个校验包，也就是总共发出了四个包。<br>当出现其中的非校验包丢包的情况时，可以通过另外三个包计算出丢失的数据包的内容。<br>当然这种技术只能使用在丢失一个包的情况下，如果出现丢失多个包就不能使用纠错机制了，只能使用重传的方式了。</li>
+</ol>
+<h3 id="输入-URL-到页面渲染的整个流程"><a href="#输入-URL-到页面渲染的整个流程" class="headerlink" title="输入 URL 到页面渲染的整个流程"></a>输入 URL 到页面渲染的整个流程</h3><ol>
+<li>DNS 查询<br>通过域名查询到相应的 IP</li>
+<li>TCP 握手<br>应用层-&gt;传输层-&gt;网络层<br>期间有 TCP 三次握手<br>如果是 https，则会进行 TLS 握手<br>数据在进入服务端之前，可能还会先经过负责负载均衡的服务器，它的作用就是将请求合理的分发到多台服务器上，这时假设服务端会响应一个 HTML 文件</li>
+<li>判断状态码<br>200 就继续解析<br>400 或 500 就会报错<br>300 的话会进行重定向，这里会有个重定向计数器，避免过多次的重定向，超过次数也会报错</li>
+<li>解析文件<br>根据 HTML 构建 DOM 树，有 CSS 的话会去构建 CSSOM 树<br>遇到 script 标签，会判断是否存在 async 和 defer<br>async 并行进行下载并执行 js<br>defer 先下载文件，然后等待 HTML 解析完成后顺序执行<br>没有 async 和 defer 阻塞住渲染流程直到 JS 执行完毕。遇到文件下载的会去下载文件，这里如果使用 HTTP/2 协议的话会极大的提高多图的下载效率。<br>CSSOM 和 DOM 树构建完成后会开始生成 render 树<br>render 树生成后，就会根据渲染书来进行布局，调用 GPU 绘制，合成图层</li>
+</ol>
+<h3 id="设计模式"><a href="#设计模式" class="headerlink" title="设计模式"></a>设计模式</h3><ol>
+<li>工厂模式</li>
+<li>单例模式<br>单例模式的核心就是保证全局只有一个对象可以访问</li>
+<li>适配器模式<br>不需要改变已有的接口，通过包装一层的方式实现两个接口的正常协作</li>
+<li>装饰模式<br>装饰模式不需要改变已有的接口，作用是给对象添加功能</li>
+<li>发布-订阅模式<br>发布-订阅模式也叫做观察者模式。通过一对一或者一对多的依赖关系，当对象发生改变时，订阅方都会收到通知。</li>
+</ol>
+<h3 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h3><h4 id="位运算"><a href="#位运算" class="headerlink" title="位运算"></a>位运算</h4><p>基于二进制</p>
+<ol>
+<li>左移<br>10&lt;&lt;1 20<br>将二进制全部往左移动，10 在二进制中表示为 1010 ，左移一位后变成 10100 ，转换为十进制也就是 20，所以基本可以把左移看成以下公式 a * (2 ^ b)</li>
+<li>右移<br>13&gt;&gt;1 6<br>将二进制全部往右移动并去除多余的右边，10 在二进制中表示为 1010 ，右移一位后变成 101 ，转换为十进制也就是 5，所以基本可以把右移看成以下公式 int v = a / (2 ^ b)</li>
+</ol>
+<h4 id="按位操作"><a href="#按位操作" class="headerlink" title="按位操作"></a>按位操作</h4><ol>
+<li>按位与<br>每一位都为 1，结果才为 1</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">8 &amp; 7 // -&gt; 0</span><br><span class="line">// 1000 &amp; 0111 -&gt; 0000 -&gt; 0</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>按位或<br>其中一位为 1，结果就是 1</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">8 | 7 // -&gt; 15</span><br><span class="line">// 1000 | 0111 -&gt; 1111 -&gt; 15</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>按位异或<br>每一位都不同，结果才为 1，其实就是不进位加法</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">8 ^ 7 // -&gt; 15</span><br><span class="line">8 ^ 8 // -&gt; 0</span><br><span class="line">// 1000 ^ 0111 -&gt; 1111 -&gt; 15</span><br><span class="line">// 1000 ^ 1000 -&gt; 0000 -&gt; 0</span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>两个数不使用四则运算得出和</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function sum(a, b) &#123;</span><br><span class="line">    if (a == 0) return b</span><br><span class="line">    if (b == 0) return a</span><br><span class="line">    let newA = a ^ b</span><br><span class="line">    let newB = (a &amp; b) &lt;&lt; 1</span><br><span class="line">    return sum(newA, newB)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="移动端-1PX-的问题"><a href="#移动端-1PX-的问题" class="headerlink" title="移动端 1PX 的问题"></a>移动端 1PX 的问题</h3><p>产生原因：DPR 设备像素比的不同，设备像素和 CSS 像素的比值<br>window.devicePixelRatio=物理像素 /CSS 像素<br>主流的 DPR=2，或者 3，而且 CSS 像素是固定的 0.5</p>
+<h4 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h4><ol>
+<li>WWDC 对 iOS 统给出的方案</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">border:0.5px solid #E5E5E5</span><br></pre></td></tr></table></figure>
+
+<p>缺点不支持安卓</p>
+<ol start="2">
+<li>使用边框图片</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">border: 1px solid transparent;</span><br><span class="line">border-image: url(&apos;./../../image/96.jpg&apos;) 2 repeat;</span><br></pre></td></tr></table></figure>
+
+<p>缺点是 border 颜色变化了就得重新绘制图片，圆角比较模糊</p>
+<ol start="3">
+<li>利用 box-shadow</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">box-shadow: 0  -1px 1px -1px #e5e5e5,   //上边线</span><br><span class="line">            1px  0  1px -1px #e5e5e5,   //右边线</span><br><span class="line">            0  1px  1px -1px #e5e5e5,   //下边线</span><br><span class="line">            -1px 0  1px -1px #e5e5e5;   //左边线</span><br></pre></td></tr></table></figure>
+
+<p>缺点：模拟的实现方法，仔细看谁看不出来这是阴影不是边框。</p>
+<ol start="4">
+<li>使用伪类</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">.setBorderAll&#123;</span><br><span class="line">     position: relative;</span><br><span class="line">       &amp;:after&#123;</span><br><span class="line">           content:&quot; &quot;;</span><br><span class="line">           position:absolute;</span><br><span class="line">           top: 0;</span><br><span class="line">           left: 0;</span><br><span class="line">           width: 200%;</span><br><span class="line">           height: 200%;</span><br><span class="line">           transform: scale(0.5);</span><br><span class="line">           transform-origin: left top;</span><br><span class="line">           box-sizing: border-box;</span><br><span class="line">           border: 1px solid #E5E5E5;</span><br><span class="line">           border-radius: 4px;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>为伪元素设置绝对定位，并且和父元素左上角对其。将伪元素的长和宽先放大 2 倍，然后再设置一个边框，以左上角为中心，缩放到原来的 0.5 倍<br>缺点：暂用了 after 伪元素，可能影响清除浮动。</p>
+<ol start="5">
+<li>设置 viewport 的 scale 值</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">          var viewport = document.querySelector(&quot;meta[name=viewport]&quot;);</span><br><span class="line">          //下面是根据设备像素设置viewport</span><br><span class="line">          if (window.devicePixelRatio == 1) &#123;</span><br><span class="line">              viewport.setAttribute(&apos;content&apos;, &apos;width=device-width,initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no&apos;);</span><br><span class="line">          &#125;</span><br><span class="line">          if (window.devicePixelRatio == 2) &#123;</span><br><span class="line">              viewport.setAttribute(&apos;content&apos;, &apos;width=device-width,initial-scale=0.5, maximum-scale=0.5, minimum-scale=0.5, user-scalable=no&apos;);</span><br><span class="line">          &#125;</span><br><span class="line">          if (window.devicePixelRatio == 3) &#123;</span><br><span class="line">              viewport.setAttribute(&apos;content&apos;, &apos;width=device-width,initial-scale=0.3333333333333333, maximum-scale=0.3333333333333333, minimum-scale=0.3333333333333333, user-scalable=no&apos;);</span><br><span class="line">          &#125;</span><br><span class="line">          var docEl = document.documentElement;</span><br><span class="line">          var fontsize = 32* (docEl.clientWidth / 750) + &apos;px&apos;;</span><br><span class="line">          docEl.style.fontSize = fontsize;</span><br><span class="line">      &lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p>缺点：适用于新的项目，老项目可能改动大</p>
+<h3 id="promise-all-并发限制"><a href="#promise-all-并发限制" class="headerlink" title="promise.all 并发限制"></a>promise.all 并发限制</h3><p>可以使用第三方 async-pool、es6-promise-pool、p-limit</p>
+<h3 id="src-和-href-的区别"><a href="#src-和-href-的区别" class="headerlink" title="src 和 href 的区别"></a>src 和 href 的区别</h3><p>href 标识超文本引用，用在 link 和 a 标签上<br>src 标识引用资源，用在 image,script,iframe 上</p>
+<h3 id="react-router"><a href="#react-router" class="headerlink" title="react-router"></a>react-router</h3><h4 id="的区别"><a href="#的区别" class="headerlink" title=",的区别"></a><link>,<a>的区别</a></h4><p><a>标签是重渲染，整页渲染，具体表现为重渲染</a></p>
+<link>会局部渲染，只渲染改变的部分
+
+<h4 id="Router-和-Route-的区别"><a href="#Router-和-Route-的区别" class="headerlink" title="Router 和 Route 的区别"></a>Router 和 Route 的区别</h4><ol>
+<li>Router 组件<br>位于最外层，作用是 UI 和 URL 保持同步，需要写入 histroy 值：browerHistory 或 hashHistory<br>browerHistory 使用的是 HTL5pushState API 来修改浏览器的历史记录<br>hashHistory 改变#后的值<br>History API 提供了 pushState()和 replaceState()方法来增加或替换历史记录，因此 browserHistory 有替换历史记录的功能，hashHistroy 没有<br>hashHistory 实现简单，不需要额外改造</li>
+<li>Route 组件<br>包含 path 和 component 属性<br>path 的路径：<br>paramName –&gt;匹配一段位于 /、? 或 # 之后的 URL<br>（）–&gt;匹配可选字段 * –&gt;匹配任意字段</li>
+</ol>
+<h3 id="react-事件机制"><a href="#react-事件机制" class="headerlink" title="react 事件机制"></a>react 事件机制</h3><p>react 中所有的事件根据不同的事件类型都绑定在了 document 上，触发函数统一是 dispatchEvent。<br>原生事件阻止冒泡肯定会阻止合成事件的触发。<br>合成事件的阻止冒泡不会影响原生事件。</p>
+<h4 id="意义"><a href="#意义" class="headerlink" title="意义"></a>意义</h4><ul>
+<li>减少内存消耗，提升性能，不需要注册那么多的事件了，一种事件类型只在 document 上注册一次</li>
+<li>统一规范，解决 ie 事件兼容问题，简化事件逻辑</li>
+<li>对开发者友好</li>
+</ul>
+<h4 id="合成事件"><a href="#合成事件" class="headerlink" title="合成事件"></a>合成事件</h4><ul>
+<li>在 react 绑定的 click 事件不是原生的事件对象而是 react 包装过的对象</li>
+<li>SyntheticEvent 是 react 合成事件的基类，定义了合成事件的基础公共属性和方法。<br>react 会根据当前的事件类型来使用不同的合成事件对象，比如鼠标单机事件 - SyntheticMouseEvent，焦点事件-SyntheticFocusEvent 等，但是都是继承自 SyntheticEvent。</li>
+<li>对原生事件的改造<br>比如 onChange 事件，在绑定 onChange 事件时候会给节点绑定其他事件，以达到实时获取内容的目的<br>而原生的 onChange 事件只会在失去焦点的时候触发</li>
+<li>浏览器事件也对 IE 进行了处理，增加了兼容性</li>
+</ul>
+<h4 id="事件注册机制流程"><a href="#事件注册机制流程" class="headerlink" title="事件注册机制流程"></a>事件注册机制流程</h4><ol>
+<li>事件注册<br>根据组件内的声明的事件类型-onclick，onchange 等，给 document 上添加事件 -addEventListener，并指定统一的事件处理程序 dispatchEvent</li>
+<li>事件存储<br>就是把 react 组件内的所有事件统一的存放到一个对象里，缓存起来，为了在触发事件的时候可以查找到对应的方法去执行</li>
+<li>关键步骤<br>首先 react 拿到将要挂载的组件的虚拟 dom（其实就是 react element 对象），然后处理 react dom 的 props ，判断属性内是否有声明为事件的属性，比如 onClick,onChange,这个时候得到事件类型 click,change 和对应的事件处理程序 fn，然后执行后面 3 步<br>a. 完成事件注册<br>b. 将 react dom ，事件类型，处理函数 fn 放入数组存储<br>c. 组件挂载完成后，处理 b 步骤生成的数组，经过遍历把事件处理函数存储到 listenerBank(一个对象)中</li>
+</ol>
+<h3 id="事件执行机制"><a href="#事件执行机制" class="headerlink" title="事件执行机制"></a>事件执行机制</h3><p>事件触发过程总结为主要下面几个步骤：</p>
+<ol>
+<li>进入统一的事件分发函数(dispatchEvent)</li>
+<li>结合原生事件找到当前节点对应的 ReactDOMComponent 对象</li>
+<li>开始事件的合成</li>
+<li>根据当前事件类型生成指定的合成对象</li>
+<li>封装原生事件和冒泡机制</li>
+<li>查找当前元素以及他所有父级</li>
+<li>在 listenerBank 查找事件回调并合成到 event(合成事件结束)</li>
+<li>批量处理合成事件内的回调事件（事件触发完成 end）</li>
+</ol>
+<h3 id="css-sticky-属性"><a href="#css-sticky-属性" class="headerlink" title="css sticky 属性"></a>css sticky 属性</h3><p>position 属性中最有意思的就是 sticky 了，设置了 sticky 的元素，在屏幕范围（viewport）时该元素的位置并不受到定位影响（设置是 top、left 等属性无效），当该元素的位置将要移出偏移范围时，定位又会变成 fixed，根据设置的 left、top 等属性成固定位置的效果。<br>特点：</p>
+<ul>
+<li>该元素并不脱离文档流，仍然保留元素原本在文档流中的位置。</li>
+<li>当元素在容器中被滚动超过指定的偏移值时，元素在容器内固定在指定位置。亦即如果你设置了 top: 50px，那么在 sticky 元素到达距离相对定位的元素顶部 50px 的位置时固定，不再向上移动。</li>
+<li>元素固定的相对偏移是相对于离它最近的具有滚动框的祖先元素，如果祖先元素都不可以滚动，那么是相对于 viewport 来计算元素的偏移量</li>
+</ul>
+<h3 id="如何优雅的谈论-HTTP／1-0／1-1／2-0"><a href="#如何优雅的谈论-HTTP／1-0／1-1／2-0" class="headerlink" title="如何优雅的谈论 HTTP／1.0／1.1／2.0"></a>如何优雅的谈论 HTTP／1.0／1.1／2.0</h3><ul>
+<li><p>HTTP 定义在七层协议中的应用层，TCP 解决的是传输层的逻辑</p>
+</li>
+<li><p>HTTP 协议使用 TCP 而不同 UDP 的原因<br>TCP 发送连接请求不成功就重传,这样的话如果不超时总能保证连接请求被服务器接收,并且不会丢包保证传输无错误。UDP 发后不管,可能存在服务器接收到的信息存在缺失或者错误。但也并不是不能用 UDP,UDP 有速度的优势。</p>
+</li>
+<li><p>HTTP 各版本现状<br>HTTP/1.0 是第一个在通讯中指定版本号的 HTTP 协议版本，至今仍被广泛采用，特别是在代理服务器中<br>HTTP/1.1 是当前版本，持久连接被默认采用，并能很好地配合代理服务器工作，还支持以管道方式同时发送多个请求，以便降低线路负载，提高传输速度<br>HTTP／2.0 在 HTTP 1.x 的基础上，大幅度的提高了 web 性能，减少了网络延迟。HTTP1.0 和 1.1 在之后很长的一段时间内会一直并存，这是由于网络基础设施更新缓慢所决定的</p>
+</li>
+<li><p>HTTP1.0<br>HTTP 协议老的标准是 HTTP/1.0，为了提高系统的效率，HTTP 1.0 规定浏览器与服务器只保持短暂的连接，浏览器的每次请求都需要与服务器建立一个 TCP 连接，服务器完成请求处理后立即断开 TCP 连接，服务器不跟踪每个客户也不记录过去的请求。<br>缺点：http1.0 被抱怨最多的就是<strong>连接无法复用</strong>，和<strong>head of line blocking</strong>这两个问题</p>
+<ol>
+<li>连接无法复用<br>一个包含有许多图像的网页文件中并没有包含真正的图像数据内容，而只是指明了这些图像的 URL 地址，当 WEB 浏览器访问这个网页文件时，浏览器首先要发出针对该网页文件的请求，当浏览器解析 WEB 服务器返回的该网页文档中的 HTML 内容时，发现其中的图像标签后，浏览器将根据标签中的 src 属性所指定的 URL 地址再次向服务器发出下载图像数据的请求。显 然，访问一个包含有许多图像的网页文件的整个过程包含了多次请求和响应，每次请求和响应都需要建立一个单独的连接，每次连接只是传输一个文档和图像，上一次和下一次请求完全分离。即使图像文件都很小，但是客户端和服务器端每次建立和关闭连接却是一个相对比较费时的过程，并且会严重影响客户机和服务器的性能。当一个网页文件中包含 JavaScript 文件，CSS 文件等内容时，也会出现类似上述的情况。</li>
+<li>head of line blocking<br>head of line blocking(holb)会导致健康的请求会被不健康的请求影响，而且这种体验的损耗受网络环境影响，出现随机且难以监控。</li>
+</ol>
+</li>
+<li><p>HTTP1.1<br>为了克服 HTTP 1.0 的这个缺陷，HTTP 1.1 支持持久连接（HTTP/1.1 的默认模式使用带流水线的持久连接），在一个 TCP 连接上可以传送多个 HTTP 请求和响应，减少了建立和关闭连接的消耗和延迟。</p>
+</li>
+</ul>
 
       
 

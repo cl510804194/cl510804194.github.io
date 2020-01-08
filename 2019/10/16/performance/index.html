@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>前端性能 | 程亮的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="关于前端性能方面的总结 Happypack——将 loader 由单进程转为多进程123456789101112131415161718192021222324252627const HappyPack = require(&amp;apos;happypack&amp;apos;)// 手动创建进程池const happyThreadPool =  HappyPack.ThreadPool(&amp;#123; siz">
+  <meta name="description" content="关于前端性能方面的总结">
 <meta property="og:type" content="article">
 <meta property="og:title" content="前端性能">
 <meta property="og:url" content="http://yoursite.com/2019/10/16/performance/index.html">
 <meta property="og:site_name" content="程亮的个人博客">
-<meta property="og:description" content="关于前端性能方面的总结 Happypack——将 loader 由单进程转为多进程123456789101112131415161718192021222324252627const HappyPack = require(&amp;apos;happypack&amp;apos;)// 手动创建进程池const happyThreadPool =  HappyPack.ThreadPool(&amp;#123; siz">
+<meta property="og:description" content="关于前端性能方面的总结">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-10-18T03:43:22.894Z">
+<meta property="og:updated_time" content="2020-01-07T01:18:23.887Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="前端性能">
-<meta name="twitter:description" content="关于前端性能方面的总结 Happypack——将 loader 由单进程转为多进程123456789101112131415161718192021222324252627const HappyPack = require(&amp;apos;happypack&amp;apos;)// 手动创建进程池const happyThreadPool =  HappyPack.ThreadPool(&amp;#123; siz">
+<meta name="twitter:description" content="关于前端性能方面的总结">
   
     <link rel="alternative" href="/atom.xml" title="程亮的个人博客" type="application/atom+xml">
   
@@ -196,6 +196,8 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>关于前端性能方面的总结</p>
+<a id="more"></a>
+
 <h3 id="Happypack——将-loader-由单进程转为多进程"><a href="#Happypack——将-loader-由单进程转为多进程" class="headerlink" title="Happypack——将 loader 由单进程转为多进程"></a>Happypack——将 loader 由单进程转为多进程</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">const HappyPack = require(&apos;happypack&apos;)</span><br><span class="line">// 手动创建进程池</span><br><span class="line">const happyThreadPool =  HappyPack.ThreadPool(&#123; size: os.cpus().length &#125;)</span><br><span class="line"></span><br><span class="line">module.exports = &#123;</span><br><span class="line">  module: &#123;</span><br><span class="line">    rules: [</span><br><span class="line">      ...</span><br><span class="line">      &#123;</span><br><span class="line">        test: /\.js$/,</span><br><span class="line">        // 问号后面的查询参数指定了处理这类文件的HappyPack实例的名字</span><br><span class="line">        loader: &apos;happypack/loader?id=happyBabel&apos;,</span><br><span class="line">        ...</span><br><span class="line">      &#125;,</span><br><span class="line">    ],</span><br><span class="line">  &#125;,</span><br><span class="line">  plugins: [</span><br><span class="line">    ...</span><br><span class="line">    new HappyPack(&#123;</span><br><span class="line">      // 这个HappyPack的“名字”就叫做happyBabel，和楼上的查询参数遥相呼应</span><br><span class="line">      id: &apos;happyBabel&apos;,</span><br><span class="line">      // 指定进程池</span><br><span class="line">      threadPool: happyThreadPool,</span><br><span class="line">      loaders: [&apos;babel-loader?cacheDirectory&apos;]</span><br><span class="line">    &#125;)</span><br><span class="line">  ],</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h3 id="webpack-bundle-analyzer-构建结果体积压缩"><a href="#webpack-bundle-analyzer-构建结果体积压缩" class="headerlink" title="webpack-bundle-analyzer 构建结果体积压缩"></a>webpack-bundle-analyzer 构建结果体积压缩</h3><p>文件结构可视化，找出导致体积过大的原因</p>
