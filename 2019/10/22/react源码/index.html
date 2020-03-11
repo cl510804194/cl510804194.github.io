@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="程亮的个人博客">
 <meta property="og:description" content="react 源码笔记">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-01-07T01:19:36.056Z">
+<meta property="og:updated_time" content="2020-03-05T06:40:37.713Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="react源码笔记">
 <meta name="twitter:description" content="react 源码笔记">
@@ -198,18 +198,50 @@
         <p>react 源码笔记</p>
 <a id="more"></a>
 
-<h3 id="react-createElement"><a href="#react-createElement" class="headerlink" title="react.createElement"></a>react.createElement</h3><p>如果是大写，react.createElement 第一个参数是变量，小写则是一个字符串</p>
-<h3 id="component"><a href="#component" class="headerlink" title="component"></a>component</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">function Component(props, context, updater) &#123;</span><br><span class="line">  this.props = props;</span><br><span class="line">  this.context = context;</span><br><span class="line">  // If a component has string refs, we will assign a different object later.</span><br><span class="line">  this.refs = emptyObject;</span><br><span class="line">  // We initialize the default updater but the real one gets injected by the</span><br><span class="line">  // renderer.</span><br><span class="line">  this.updater = updater || ReactNoopUpdateQueue;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Component.prototype.isReactComponent = &#123;&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="jsx-到-js-的转换"><a href="#jsx-到-js-的转换" class="headerlink" title="jsx 到 js 的转换"></a>jsx 到 js 的转换</h3><h3 id="react-createElement"><a href="#react-createElement" class="headerlink" title="react.createElement"></a>react.createElement</h3><p>如果是大写，react.createElement 第一个参数是变量，则为一个组件，小写则是一个字符串，则为一个原生 html 标签，因此自定义组件必须大写开头。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">export function createElement(type, config, children) &#123;&#125;</span><br></pre></td></tr></table></figure>
 
+<p>流程：</p>
+<ol>
+<li>判断是否包含 config,有则对 config 进行处理(剔除 key,ref 等，然后添加到 props),没有则对 children 进行处理。</li>
+<li>判断 children 接受的参数个数，若参数为 1，则为对象，若参数大于 1，则为数组。</li>
+</ol>
+<h3 id="reactBaseClass"><a href="#reactBaseClass" class="headerlink" title="reactBaseClass"></a>reactBaseClass</h3><h4 id="component"><a href="#component" class="headerlink" title="component"></a>component</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">function Component(props, context, updater) &#123;</span><br><span class="line">  this.props = props;</span><br><span class="line">  this.context = context;</span><br><span class="line">  // If a component has string refs, we will assign a different object later.</span><br><span class="line">  this.refs = emptyObject;</span><br><span class="line">  // We initialize the default updater but the real one gets injected by the</span><br><span class="line">  // renderer.</span><br><span class="line">  this.updater = updater || ReactNoopUpdateQueue;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Component.prototype.isReactComponent = &#123;&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>setState 会触发 updater 的方法<br>forceUpdate 是强制触发更新</p>
+<h4 id="pureComponent"><a href="#pureComponent" class="headerlink" title="pureComponent"></a>pureComponent</h4><p>在 pureComponent 中会添加标记，如果 state 和 props 变化，则更新组件。<br>pureComponent 使用了寄生组合式继承于 component<br>都有 ISXXX 来标志自身的是什么属性</p>
 <h3 id="createRef"><a href="#createRef" class="headerlink" title="createRef"></a>createRef</h3><p>创建的三种方式</p>
 <ol>
 <li>stringRef 已经被废弃</li>
 <li>react.createRef()</li>
 <li>function 方式 {ele=&gt;{this.methodRef=lel}}<br>方法使用</li>
+<li>不能在函数组件上使用 ref 属性，因为他们没有实例</li>
 </ol>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">export function createRef(): RefObject &#123;</span><br><span class="line">  const refObject = &#123;</span><br><span class="line">    current: null,</span><br><span class="line">  &#125;;</span><br><span class="line">  if (__DEV__) &#123;</span><br><span class="line">    Object.seal(refObject);   //密封该对象</span><br><span class="line">  &#125;</span><br><span class="line">  return refObject;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h3 id="Component-amp-PureComponent"><a href="#Component-amp-PureComponent" class="headerlink" title="Component &amp; PureComponent"></a>Component &amp; PureComponent</h3><p>在 pureComponent 中会添加标记，如果 state 和 props 变化，则更新组件</p>
+<h3 id="forwardRef"><a href="#forwardRef" class="headerlink" title="forwardRef"></a>forwardRef</h3><p>获取函数组件需要使用该方法，因为函数组件没有实例<br>返回的是对象</p>
+<h3 id="context"><a href="#context" class="headerlink" title="context"></a>context</h3><ol>
+<li>childContextType(已废弃)<br>上层组件不一定只有一个，因此需要在组件中声明需要使用哪几个 Context</li>
+<li>createContext<br>使用 provider 和 consumer 进行值传递</li>
+</ol>
+<h3 id="ConcurrentMode"><a href="#ConcurrentMode" class="headerlink" title="ConcurrentMode"></a>ConcurrentMode</h3><p>在 ConcurrentMode 包裹下的组件，更新都是低优先级更新<br>ConcurrentMode 是一个 symbol 标志<br>使用 flushSync 可以提高优先级</p>
+<h3 id="Suspense-与-lazy"><a href="#Suspense-与-lazy" class="headerlink" title="Suspense 与 lazy"></a>Suspense 与 lazy</h3><p>在 Susponse 中所有组件都 resolve 后，才会显示。<br>Susponse 依然是个 symbol<br>lazy 是个方法<br>lazy()方法是用来对项目代码进行分割,懒加载用的.只有当组件被加载,内部的资源才会导入</p>
+<h3 id="hooks"><a href="#hooks" class="headerlink" title="hooks"></a>hooks</h3><h3 id="children"><a href="#children" class="headerlink" title="children"></a>children</h3><p>一共含有 5 个属性<br>map 属性如果返回了多层的数组，将只返回展开的一层数组[c,[c,c]]=&gt;[c,c,c]<br>如果是单个节点 直接调用 callback<br>如果是数组，会递归调用</p>
+<h3 id="others"><a href="#others" class="headerlink" title="others"></a>others</h3><ol>
+<li>memo<br>给函数式组件也能有个类似 pureComponent 功能</li>
+<li>fragment<br>symbol 类型</li>
+<li>sctrictMode<br>过气 API 提醒</li>
+<li>cloneElement<br>复制 props,key,ref,children</li>
+</ol>
+<h3 id="创建更新的方式"><a href="#创建更新的方式" class="headerlink" title="创建更新的方式"></a>创建更新的方式</h3><ol>
+<li>reactDom.render<br>第一个参数其实是传的,createElement<ol>
+<li>创建 ReactRoot<br>通过 domRender.createContainer 创建一个 root,<br>createContainer 创建了一个 fiberRoot</li>
+<li>创建 FiberRoot 和 RootFiber</li>
+</ol>
+</li>
+<li>setState</li>
+<li>forceUpdate</li>
+</ol>
 
       
 

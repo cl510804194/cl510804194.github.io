@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="程亮的个人博客">
 <meta property="og:description" content="linux 笔记">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-01-07T01:17:08.326Z">
+<meta property="og:updated_time" content="2020-01-10T01:55:21.428Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="linux">
 <meta name="twitter:description" content="linux 笔记">
@@ -216,6 +216,19 @@
 <p><strong>当我们关机或者重启时候，都应该先执行一下 sync，防止数据丢失</strong></p>
 <h3 id="用户登录和注销"><a href="#用户登录和注销" class="headerlink" title="用户登录和注销"></a>用户登录和注销</h3><p>logout 注销 在图形界面下无效</p>
 <h3 id="用户管理"><a href="#用户管理" class="headerlink" title="用户管理"></a>用户管理</h3><h4 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h4><p>基本语法<br>useradd [选项] 用户名 //添加用户<br>当创建用户成功后会自动的创建文件夹</p>
+<h4 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h4><p>基本语法<br>userdel</p>
+<ol>
+<li>保留家目录 userdel XX</li>
+<li>不保留家目录 userdel -r XX</li>
+</ol>
+<p>删除用户时，一般保留家目录</p>
+<h4 id="查询用户信息"><a href="#查询用户信息" class="headerlink" title="查询用户信息"></a>查询用户信息</h4><p>基本用法<br>id 用户名</p>
+<h4 id="切换用户"><a href="#切换用户" class="headerlink" title="切换用户"></a>切换用户</h4><p>通过 su- XX ，切换到高级用户</p>
+<h4 id="用户组"><a href="#用户组" class="headerlink" title="用户组"></a>用户组</h4><p>类似于角色，系统可以对有共性的多个用户进行统一的管理</p>
+<p>新增组<br>groupadd 组名</p>
+<p>删除组<br>groupdel 组名</p>
+<p>增加用户时候直接加上组<br>useradd -g 用户组 用户名</p>
+<p>修改组<br>usermod -g 用户组 用户名</p>
 
       
 

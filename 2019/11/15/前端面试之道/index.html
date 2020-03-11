@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="程亮的个人博客">
 <meta property="og:description" content="前端综合笔记">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-01-08T07:01:48.598Z">
+<meta property="og:updated_time" content="2020-03-05T06:23:06.968Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="前端综合知识">
 <meta name="twitter:description" content="前端综合笔记">
@@ -659,9 +659,23 @@
 <li>head of line blocking<br>head of line blocking(holb)会导致健康的请求会被不健康的请求影响，而且这种体验的损耗受网络环境影响，出现随机且难以监控。</li>
 </ol>
 </li>
-<li><p>HTTP1.1<br>为了克服 HTTP 1.0 的这个缺陷，HTTP 1.1 支持持久连接（HTTP/1.1 的默认模式使用带流水线的持久连接），在一个 TCP 连接上可以传送多个 HTTP 请求和响应，减少了建立和关闭连接的消耗和延迟。</p>
+<li><p>HTTP1.1<br>为了克服 HTTP 1.0 的这个缺陷，HTTP 1.1 支持持久连接（HTTP/1.1 的默认模式使用带流水线的持久连接），在一个 TCP 连接上可以传送多个 HTTP 请求和响应，减少了建立和关闭连接的消耗和延迟。<br>在 http1.1 中，client 和 server 都是默认对方支持长链接的,如果 client 使用 http1.1 协议，但又不希望使用长链接，则需要在 header 中指明 connection 的值为 close；如果 server 方也不想支持长链接，则在 response 中也需要明确说明 connection 的值为 close</p>
+</li>
+<li><p>HTTP2.0<br>多路复用 (Multiplexing)<br>在 HTTP/1.1 协议中浏览器客户端在同一时间，针对同一域名下的请求有一定数量限制。超过限制数目的请求会被阻塞。<br>而 HTTP/2 的多路复用(Multiplexing) 则允许同时通过单一的 HTTP/2 连接发起多重的请求-响应消息<br>二进制分帧</p>
 </li>
 </ul>
+<h3 id="为什么-JS-是单线程的"><a href="#为什么-JS-是单线程的" class="headerlink" title="为什么 JS 是单线程的"></a>为什么 JS 是单线程的</h3><p>如果 JavaScript 是多线程的方式来操作这些 UI DOM,则可能出现 UI 操作的冲突。</p>
+<p>如果 Javascript 是多线程的话,在多线程的交互下,处于 UI 中的 DOM 节点就可能成为一个临界资源,</p>
+<h3 id="为什么-JS-阻塞页面加载"><a href="#为什么-JS-阻塞页面加载" class="headerlink" title="为什么 JS 阻塞页面加载"></a>为什么 JS 阻塞页面加载</h3><p>由于 JavaScript 是可操纵 DOM 的,如果在修改这些元素属性同时渲染界面（即 JavaScript 线程和 UI 线程同时运行）,那么渲染线程前后获得的元素数据就可能不一致了</p>
+<p>因此为了防止渲染出现不可预期的结果,浏览器设置 GUI 渲染线程与 JavaScript 引擎为互斥的关系</p>
+<h3 id="css-加载会造成阻塞吗"><a href="#css-加载会造成阻塞吗" class="headerlink" title="css 加载会造成阻塞吗"></a>css 加载会造成阻塞吗</h3><p>DOM 解析和 CSS 解析是两个并行的进程,所以 CSS 加载不会阻塞 DOM 的解析</p>
+<p>CSS 加载会阻塞 Dom 的渲染</p>
+<p>css 会阻塞后面 js 的执行</p>
+<h2 id="其他的问题"><a href="#其他的问题" class="headerlink" title="其他的问题"></a>其他的问题</h2><ol>
+<li>React 中函数组件和类组件的区别<br>因为类组件使用的时候要实例化，而函数组件直接执行函数取返回结果即可。<br>为了提高性能，尽量使用函数组件。<br>函数组件没有 this,没有生命周期，没有状态 state,<br>类组件有 this,有生命周期，有状态 state。</li>
+<li>dom diff 是什么<br>从根节点开始遍历所有节点； 对于不同类型的标签，删除原标签，新建标签； 对于类型相同、属性不同的标签，只修改属性； 对于同一个父节点下的复数同类型标签（即列表类型），基于 key 对比、修改。</li>
+<li>async await 实现原理 generator + yield + promise<br>利用 generator 遍历器生成器函数的分段执行 ，只有在遍历器对象 执行 next 方法之后交出了控制权 ，在完成后 callback || promise.then()里面调用下一次 next 的时候又继续恢复控制权这个功能来实现的</li>
+</ol>
 
       
 
