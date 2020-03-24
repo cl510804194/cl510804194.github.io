@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="程亮的个人博客">
 <meta property="og:description" content="前端综合笔记">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-03-05T06:23:06.968Z">
+<meta property="og:updated_time" content="2020-03-16T08:16:04.861Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="前端综合知识">
 <meta name="twitter:description" content="前端综合笔记">
@@ -359,13 +359,23 @@
 <p>出现于 http1.1,优先级高于 expires,可以在请求头或者响应头中设置</p>
 <h4 id="协商缓存"><a href="#协商缓存" class="headerlink" title="协商缓存"></a>协商缓存</h4><p>如果缓存过期了，就需要发起请求验证资源是否有更新。协商缓存可以通过设置两种 HTTP Header 实现：Last-Modified 和 ETag<br>当浏览器发起请求验证资源时，如果资源没有做改变，那么服务端就会返回 304 状态码，并且更新浏览器缓存有效期</p>
 <ol>
-<li>Last-Modified 和 If-Modified-Since<br>Last-Modified 表示本地文件最后修改日期，If-Modified-Since 会将 Last-Modified 的值发送给服务器，询问服务器在该日期后资源是否有更新，有更新的话就会将新的资源发送回来，否则返回 304 状态码。<br>弊端：<ol>
+<li><p>Last-Modified 和 If-Modified-Since<br>Last-Modified 表示本地文件最后修改日期，If-Modified-Since 会将 Last-Modified 的值发送给服务器，询问服务器在该日期后资源是否有更新，有更新的话就会将新的资源发送回来，否则返回 304 状态码。<br>弊端：</p>
+<ol>
 <li>如果本地打开缓存文件，即使没有对文件进行修改，但还是会造成 Last-Modified 被修改，服务端不能命中缓存导致发送相同的资源</li>
 <li>因为 Last-Modified 只能以秒计时，如果在不可感知的时间内修改完成文件，那么服务端会认为资源还是命中了，不会返回正确的资源</li>
 </ol>
 </li>
-<li>ETag 和 If-None-Match<br>ETag 类似于文件指纹，If-None-Match 会将当前 ETag 发送给服务器，询问该资源 ETag 是否变动，有变动的话就将新的资源发送回来。并且 ETag 优先级比 Last-Modified 高。</li>
+<li><p>ETag 和 If-None-Match<br>ETag 类似于文件指纹，If-None-Match 会将当前 ETag 发送给服务器，询问该资源 ETag 是否变动，有变动的话就将新的资源发送回来。并且 ETag 优先级比 Last-Modified 高。</p>
+</li>
+<li><p>其他</p>
+<ol>
+<li>优先级上 Etag&gt;last-Modified</li>
+<li>性能上 Etag&lt;last-Modified</li>
+<li>精度上 Etag&gt;last-Modified</li>
 </ol>
+</li>
+</ol>
+<h4 id="缓存机制"><a href="#缓存机制" class="headerlink" title="缓存机制"></a>缓存机制</h4><p>强制缓存优先于协商缓存进行，若强制缓存(Expires 和 Cache-Control)生效则直接使用缓存，若不生效则进行协商缓存(Last-Modified / If-Modified-Since 和 Etag / If-None-Match)，协商缓存由服务器决定是否使用缓存，若协商缓存失效，那么代表该请求的缓存失效，返回 200，重新返回资源和缓存标识，再存入浏览器缓存中；生效则返回 304，继续使用缓存</p>
 <h3 id="浏览器渲染原理"><a href="#浏览器渲染原理" class="headerlink" title="浏览器渲染原理"></a>浏览器渲染原理</h3><h4 id="HTML-渲染过程"><a href="#HTML-渲染过程" class="headerlink" title="HTML 渲染过程"></a>HTML 渲染过程</h4><p>字节数据-&gt;字符串-&gt;token(标记)-&gt;node(节点)=&gt;dom</p>
 <h4 id="什么情况阻塞渲染"><a href="#什么情况阻塞渲染" class="headerlink" title="什么情况阻塞渲染"></a>什么情况阻塞渲染</h4><ol>
 <li>HTML 和 css 会阻塞渲染</li>
@@ -624,12 +634,12 @@
 <li>对原生事件的改造<br>比如 onChange 事件，在绑定 onChange 事件时候会给节点绑定其他事件，以达到实时获取内容的目的<br>而原生的 onChange 事件只会在失去焦点的时候触发</li>
 <li>浏览器事件也对 IE 进行了处理，增加了兼容性</li>
 </ul>
-<h4 id="事件注册机制流程"><a href="#事件注册机制流程" class="headerlink" title="事件注册机制流程"></a>事件注册机制流程</h4><ol>
+<h4 id="REACT-事件注册机制流程"><a href="#REACT-事件注册机制流程" class="headerlink" title="REACT 事件注册机制流程"></a>REACT 事件注册机制流程</h4><ol>
 <li>事件注册<br>根据组件内的声明的事件类型-onclick，onchange 等，给 document 上添加事件 -addEventListener，并指定统一的事件处理程序 dispatchEvent</li>
 <li>事件存储<br>就是把 react 组件内的所有事件统一的存放到一个对象里，缓存起来，为了在触发事件的时候可以查找到对应的方法去执行</li>
 <li>关键步骤<br>首先 react 拿到将要挂载的组件的虚拟 dom（其实就是 react element 对象），然后处理 react dom 的 props ，判断属性内是否有声明为事件的属性，比如 onClick,onChange,这个时候得到事件类型 click,change 和对应的事件处理程序 fn，然后执行后面 3 步<br>a. 完成事件注册<br>b. 将 react dom ，事件类型，处理函数 fn 放入数组存储<br>c. 组件挂载完成后，处理 b 步骤生成的数组，经过遍历把事件处理函数存储到 listenerBank(一个对象)中</li>
 </ol>
-<h3 id="事件执行机制"><a href="#事件执行机制" class="headerlink" title="事件执行机制"></a>事件执行机制</h3><p>事件触发过程总结为主要下面几个步骤：</p>
+<h3 id="REACT-事件执行机制"><a href="#REACT-事件执行机制" class="headerlink" title="REACT 事件执行机制"></a>REACT 事件执行机制</h3><p>事件触发过程总结为主要下面几个步骤：</p>
 <ol>
 <li>进入统一的事件分发函数(dispatchEvent)</li>
 <li>结合原生事件找到当前节点对应的 ReactDOMComponent 对象</li>
@@ -676,6 +686,11 @@
 <li>dom diff 是什么<br>从根节点开始遍历所有节点； 对于不同类型的标签，删除原标签，新建标签； 对于类型相同、属性不同的标签，只修改属性； 对于同一个父节点下的复数同类型标签（即列表类型），基于 key 对比、修改。</li>
 <li>async await 实现原理 generator + yield + promise<br>利用 generator 遍历器生成器函数的分段执行 ，只有在遍历器对象 执行 next 方法之后交出了控制权 ，在完成后 callback || promise.then()里面调用下一次 next 的时候又继续恢复控制权这个功能来实现的</li>
 </ol>
+<h3 id="首屏和白屏时间如何计算？"><a href="#首屏和白屏时间如何计算？" class="headerlink" title="首屏和白屏时间如何计算？"></a>首屏和白屏时间如何计算？</h3><ol>
+<li>白屏时间<br>一般是指从 body 标签前或者 head 标签结束</li>
+<li>首屏时间<br>一般是指 body 标签内不可见元素之前或者可见元素之后</li>
+</ol>
+<h3 id="前端如何优化-seo"><a href="#前端如何优化-seo" class="headerlink" title="前端如何优化 seo"></a>前端如何优化 seo</h3><p>合理的 title、description、keywords</p>
 
       
 

@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="程亮的个人博客">
 <meta property="og:description" content="react 源码笔记">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-03-05T06:40:37.713Z">
+<meta property="og:updated_time" content="2020-03-20T02:54:44.584Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="react源码笔记">
 <meta name="twitter:description" content="react 源码笔记">
@@ -241,6 +241,30 @@
 </li>
 <li>setState</li>
 <li>forceUpdate</li>
+</ol>
+<h3 id="什么是-FiberRoot"><a href="#什么是-FiberRoot" class="headerlink" title="什么是 FiberRoot"></a>什么是 FiberRoot</h3><ol>
+<li>整个应用的起点</li>
+<li>包含应用挂载的目标节点</li>
+<li>记录整个应用更新的信息</li>
+</ol>
+<h3 id="Fiber"><a href="#Fiber" class="headerlink" title="Fiber"></a>Fiber</h3><p>1.每一个 ReactElement 对应一个 fiber 对象<br>记录节点的各种状态<br>每个节点只会存一个子节点，但是有 sibling 兄弟节点进行串联<br>遍历时 会 return 返回父节点，然后遍历父节点的兄弟节点，在从兄弟节点返回父父节点</p>
+<h3 id="Update"><a href="#Update" class="headerlink" title="Update"></a>Update</h3><p>用于记录组件状态的改变, 存放于 UpdateQueue 中,多个 Update 可以同时存在<br>创建 createUpdate()</p>
+<ol>
+<li>createUpdate<br>1.payLoad 传入一个 element, 2.调用 enqueueUpdate</li>
+<li>updateQueue<br>这是个链表，里面有 first,next,last 记录不同 update<br>每次更新完就放在 baseState 上，<br>updateQueue 可以同时存在</li>
+<li>enqueueUpdate<br>先读取 update 到 workSpace 上的映射（alternate）</li>
+<li>createUpdateQueue<br>将所有属性设置成 null 并返回</li>
+<li>appendUpdateToQueue</li>
+</ol>
+<h3 id="expiration-time"><a href="#expiration-time" class="headerlink" title="expiration-time"></a>expiration-time</h3><ol>
+<li>每次重新计算，从最近的点到 JS 加载完成的时间差，比较固定</li>
+<li>多次调用 setState,即使他们差距特别小，但是他们的 expiration-time 不一样，从而他们的优先级不一样，从而触发多次更新，造成性能下降</li>
+<li>在一个时间很小的差距中，算出的 expiration-time 是一样的，从而提高性能</li>
+</ol>
+<h3 id="diffrent-expiration-time"><a href="#diffrent-expiration-time" class="headerlink" title="diffrent-expiration-time"></a>diffrent-expiration-time</h3><ol>
+<li>Sync 模式 创建即更新</li>
+<li>异步模式 可能会被中断 会有个中断时间</li>
+<li>指定 context</li>
 </ol>
 
       

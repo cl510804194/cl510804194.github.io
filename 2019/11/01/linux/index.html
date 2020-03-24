@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="程亮的个人博客">
 <meta property="og:description" content="linux 笔记">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-01-10T01:55:21.428Z">
+<meta property="og:updated_time" content="2020-03-20T07:58:47.246Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="linux">
 <meta name="twitter:description" content="linux 笔记">
@@ -229,6 +229,24 @@
 <p>删除组<br>groupdel 组名</p>
 <p>增加用户时候直接加上组<br>useradd -g 用户组 用户名</p>
 <p>修改组<br>usermod -g 用户组 用户名</p>
+<h3 id="使用指令"><a href="#使用指令" class="headerlink" title="使用指令"></a>使用指令</h3><ol>
+<li>指定运行级别<br>级别包含 7 个运行级别：<br>0：关机、1：单用户（找回丢失密码）、2：多用户无网络服务:3：多用户有网络级别、4：保留、5：图形界面、6：重启<br>常用级别为 3、5<br>配置文件为:/etc/inittab<br>切换到指定运行级别的指令：<em>init[0,1,2,3,4,5,6]</em><br>找回 root 密码(只能在 linux 机器上操作，不能远程操作)：进入到单用户模式，然后修改密码就可以了。步骤：开机-&gt;在引导时输入 e -&gt;看到一个新的界面，选中第二行 在输入 e -&gt;在这行输入 1 ，回车-&gt;这时会进入到单用户模式，使用 passwd 指令来修改 root 密码</li>
+<li>帮助指令<br>当我们对某个指令不熟悉时，我们可以使用 linux 提供的帮助指令来了解这个指令的使用方法<br>指令：<ul>
+<li>man[命令或配置文件]</li>
+<li>help</li>
+</ul>
+</li>
+<li>文件目录类<ol>
+<li>pwd 指令 显示当前工作目录的绝对路径</li>
+<li>ls [选项][目录或是文件]<br>常用选项： ls -a 显示所有的，包括隐藏的,ls -l 列表的格式展示</li>
+<li>cd 切换目录 cd ~ 回到家目录</li>
+<li>mkdir 创建目录，mkdir -p 创建多级目录</li>
+<li>rmdir 删除空目录，rm -rf 要删除的目录</li>
+<li>touch 创建空文件</li>
+<li>cp 拷贝文件到指定目录</li>
+</ol>
+</li>
+</ol>
 
       
 

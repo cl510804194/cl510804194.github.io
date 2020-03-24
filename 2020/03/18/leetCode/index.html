@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>前端学习总结 | 程亮的个人博客</title>
+  <title>leetCode | 程亮的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="浏览器渲染页面 浏览器通过 HTMLParser 根据深度遍历的原则把 HTML 解析成 DOM Tree。 浏览器通过 CSSParser 将 CSS 解析成 CSS Rule Tree（CSSOM Tree）。 浏览器将 JavaScript 通过 DOM API 或者 CSSOM API 将 JS 代码解析并应用到布局中，按要求呈现响应的结果。 根据 DOM 树和 CSSOM 树来构造 re">
+  <meta name="description" content="挑战 leetCode时间复杂度：  大 O 表示法用常数 1 取代运行时间中的所有加法常数只保留最高阶项去除最高阶的常数">
 <meta property="og:type" content="article">
-<meta property="og:title" content="前端学习总结">
-<meta property="og:url" content="http://yoursite.com/2019/10/08/studySummarize/index.html">
+<meta property="og:title" content="leetCode">
+<meta property="og:url" content="http://yoursite.com/2020/03/18/leetCode/index.html">
 <meta property="og:site_name" content="程亮的个人博客">
-<meta property="og:description" content="浏览器渲染页面 浏览器通过 HTMLParser 根据深度遍历的原则把 HTML 解析成 DOM Tree。 浏览器通过 CSSParser 将 CSS 解析成 CSS Rule Tree（CSSOM Tree）。 浏览器将 JavaScript 通过 DOM API 或者 CSSOM API 将 JS 代码解析并应用到布局中，按要求呈现响应的结果。 根据 DOM 树和 CSSOM 树来构造 re">
+<meta property="og:description" content="挑战 leetCode时间复杂度：  大 O 表示法用常数 1 取代运行时间中的所有加法常数只保留最高阶项去除最高阶的常数">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-03-20T06:27:48.881Z">
+<meta property="og:updated_time" content="2020-03-24T03:13:55.148Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="前端学习总结">
-<meta name="twitter:description" content="浏览器渲染页面 浏览器通过 HTMLParser 根据深度遍历的原则把 HTML 解析成 DOM Tree。 浏览器通过 CSSParser 将 CSS 解析成 CSS Rule Tree（CSSOM Tree）。 浏览器将 JavaScript 通过 DOM API 或者 CSSOM API 将 JS 代码解析并应用到布局中，按要求呈现响应的结果。 根据 DOM 树和 CSSOM 树来构造 re">
+<meta name="twitter:title" content="leetCode">
+<meta name="twitter:description" content="挑战 leetCode时间复杂度：  大 O 表示法用常数 1 取代运行时间中的所有加法常数只保留最高阶项去除最高阶的常数">
   
     <link rel="alternative" href="/atom.xml" title="程亮的个人博客" type="application/atom+xml">
   
@@ -175,108 +175,72 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-studySummarize" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-leetCode" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      前端学习总结
+      leetCode
     </h1>
   
 
         
-        <a href="/2019/10/08/studySummarize/" class="archive-article-date">
-  	<time datetime="2019-10-08T06:41:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-08</time>
+        <a href="/2020/03/18/leetCode/" class="archive-article-date">
+  	<time datetime="2020-03-18T08:37:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-18</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="浏览器渲染页面"><a href="#浏览器渲染页面" class="headerlink" title="浏览器渲染页面"></a>浏览器渲染页面</h2><ol>
-<li>浏览器通过 HTMLParser 根据深度遍历的原则把 HTML 解析成 DOM Tree。</li>
-<li>浏览器通过 CSSParser 将 CSS 解析成 CSS Rule Tree（CSSOM Tree）。</li>
-<li>浏览器将 JavaScript 通过 DOM API 或者 CSSOM API 将 JS 代码解析并应用到布局中，按要求呈现响应的结果。</li>
-<li>根据 DOM 树和 CSSOM 树来构造 render Tree。</li>
-<li>layout：重排（也可以叫回流），当 render tree 中任一节点的几何尺寸发生改变，render tree 就会重新布局，重新来计算所有节点在屏幕的位置。</li>
-<li>repaint：重绘，当 render tree 中任一元素样式属性（几何尺寸没改变）发生改变时，render tree 都会重新画，比如字体颜色，背景等变化。</li>
-<li>paint：遍历 render tree，并调动硬件图形 API 来绘制每个节点。</li>
-</ol>
-<h2 id="浏览器命令截图新姿势"><a href="#浏览器命令截图新姿势" class="headerlink" title="浏览器命令截图新姿势"></a>浏览器命令截图新姿势</h2><p>打开 Command 菜单 通过 Capture full size screenshot 命令 全屏截图</p>
-<h2 id="Array-prototype-reduce"><a href="#Array-prototype-reduce" class="headerlink" title="Array.prototype.reduce"></a>Array.prototype.reduce</h2><p>arr.reduce((sum, { total }) =&gt; {<br>return sum + total;<br>}, 0)<br>每次将此前的累计值加上当前项的 total 为此次回调函数的返回值，作为下次执行时 sum 的实参使用</p>
-<h2 id="React-memo"><a href="#React-memo" class="headerlink" title="React.memo"></a>React.memo</h2><p>它会检查接下来的渲染是否与前一次的渲染相同，如果两者是一样的，那么就会保留上一次的渲染结果</p>
-<h2 id="定义对象的方式"><a href="#定义对象的方式" class="headerlink" title="定义对象的方式"></a>定义对象的方式</h2><p>使用 object.prototype.方法的方式性能上强些。</p>
-<h2 id="webkit-和-bink-内核的区别"><a href="#webkit-和-bink-内核的区别" class="headerlink" title="webkit 和 bink 内核的区别"></a>webkit 和 bink 内核的区别</h2><p>最根本的区别：Chrome 浏览器基于开源引擎 WebKit 中 WebCore 元件的一个分支–Blink，也就是说 Blink 只是 Webkit 的一个分支。</p>
-<p>1、Webkit(Safari 内核,Chrome 内核原型,开源）</p>
-<p>Webkit:它是苹果公司自己的内核，也是苹果的 Safari 浏览器使用的内核，谷歌 chrome 浏览器最先开发或使用，也叫谷歌内核，2013 年分道扬镳了。WebKit 内核常见的浏览器：Apple Safari (Win/Mac/iPhone/iPad)、Symbian 手机浏览器、Android 默认浏览器。</p>
-<p>2、Blink(Google 的最新内核)</p>
-<p>2013 年 4 月 3 日，谷歌在 Chromium Blog 上发表博客，称将与苹果的开源浏览器核心 Webkit 分道扬镳，在 Chromium 项目中自主研发 Blink 渲染引擎（即浏览器核心），内置于 Chrome 浏览器之中。</p>
-<h3 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h3><p><em>正则表达式是匹配模式，要么匹配字符，要么匹配位置</em></p>
-<h4 id="横向模糊匹配"><a href="#横向模糊匹配" class="headerlink" title="横向模糊匹配"></a>横向模糊匹配</h4><p>譬如{m,n}，表示连续出现最少 m 次，最多 n 次</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var regex = /ab&#123;2,5&#125;c/g;</span><br><span class="line">var string = &quot;abc abbc abbbc abbbbc abbbbbc abbbbbbc&quot;;</span><br><span class="line">console.log( string.match(regex) );</span><br><span class="line">// =&gt; [&quot;abbc&quot;, &quot;abbbc&quot;, &quot;abbbbc&quot;, &quot;abbbbbc&quot;]</span><br></pre></td></tr></table></figure>
-
-<h4 id="纵向模糊匹配"><a href="#纵向模糊匹配" class="headerlink" title="纵向模糊匹配"></a>纵向模糊匹配</h4><p>[abc]，表示该字符是可以字符“a”、“b”、“c”中的任何一个</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">var regex = /a[123]b/g;</span><br><span class="line">var string = &quot;a0b a1b a2b a3b a4b&quot;;</span><br><span class="line">console.log( string.match(regex) );</span><br><span class="line">// =&gt; [&quot;a1b&quot;, &quot;a2b&quot;, &quot;a3b&quot;]</span><br></pre></td></tr></table></figure>
-
-<h4 id="范围表示法"><a href="#范围表示法" class="headerlink" title="范围表示法"></a>范围表示法</h4><p>比如[123456abcdefGHIJKLM]，可以写成[1-6a-fG-M]<br>要匹配“a”、“-”、“z”，可以写成如下的方式：[-az]或[az-]或[a-z]</p>
-<h4 id="排除字符组"><a href="#排除字符组" class="headerlink" title="排除字符组"></a>排除字符组</h4><p>例如[^abc]，表示是一个除”a”、”b”、”c”之外的任意一个字符。字符组的第一位放^（脱字符），表示求反的概念。</p>
-<h4 id="常见的简写方式"><a href="#常见的简写方式" class="headerlink" title="常见的简写方式"></a>常见的简写方式</h4><ul>
-<li>\d [0-9]</li>
-<li>\D [^0-9]</li>
-<li>\w [0-9a-zA-Z_] 表示数字、大小写字母和下划线</li>
-<li>\W [^0-9a-za-z_]</li>
-<li>\s [[^\t\v\n\r\f] 表示空白符，包括空格、水平制表符、垂直制表符、换行符、回车符、换页符</li>
-<li>. [^\n\r\u2028\u2029] 通配符，表示几乎任意字符。</li>
-</ul>
-<h3 id="简写形式"><a href="#简写形式" class="headerlink" title="简写形式"></a>简写形式</h3><ul>
-<li>{m,} 表示至少出现 m 次</li>
-<li>{m} 表示出现 M 次</li>
-<li>? 表示{0,1}，表示出现或不出现; +表示出现至少一次； *等价于{0,}</li>
-</ul>
-<h3 id="贪婪匹配和惰性匹配"><a href="#贪婪匹配和惰性匹配" class="headerlink" title="贪婪匹配和惰性匹配"></a>贪婪匹配和惰性匹配</h3><p>正则/\d{2,5}/ 会匹配 2 位、3 位、4 位、5 位连续数字</p>
-<p>正则/\d{2,5}?/ 表示，虽然 2 到 5 次都行，当 2 个就够的时候，就不在往下尝试了</p>
-<p>通过在量词后面加个问号就能实现惰性匹配</p>
-<h3 id="多选分支"><a href="#多选分支" class="headerlink" title="多选分支"></a>多选分支</h3><p>具体形式如下：(p1|p2|p3)，其中 p1、p2 和 p3 是子模式，用|（管道符）分隔，表示其中任何之一。<br>例如要匹配”good”和”nice”可以使用/good|nice/<br>分支结构也是惰性的，即当前面的匹配上了，后面的就不再尝试了</p>
-<h4 id="和"><a href="#和" class="headerlink" title="^和$"></a>^和$</h4><p>^（脱字符）匹配开头，在多行匹配中匹配行开头。</p>
-<p>$（美元符号）匹配结尾，在多行匹配中匹配行结尾。</p>
-<h4 id="b-和-B"><a href="#b-和-B" class="headerlink" title="\b 和\B"></a>\b 和\B</h4><p>\b 是单词边界，具体就是\w 和\W 之间的位置，也包括\w 和^之间的位置，也包括\w 和$之间的位置。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var result = &quot;[JS] Lesson_01.mp4&quot;.replace(/\b/g, &apos;#&apos;);</span><br><span class="line">console.log(result);</span><br><span class="line">// =&gt; &quot;[#JS#] #Lesson_01#.#mp4#&quot;</span><br></pre></td></tr></table></figure>
-
-<p>\B 就是\b 的反面的意思，非单词边界。例如在字符串中所有位置中，扣掉\b，剩下的都是\B 的。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var result = &quot;[JS] Lesson_01.mp4&quot;.replace(/\B/g, &apos;#&apos;);</span><br><span class="line">console.log(result);</span><br><span class="line">// =&gt; &quot;#[J#S]# L#e#s#s#o#n#_#0#1.m#p#4&quot;</span><br></pre></td></tr></table></figure>
-
-<h3 id="前端路由"><a href="#前端路由" class="headerlink" title="前端路由"></a>前端路由</h3><h4 id="hash-路由"><a href="#hash-路由" class="headerlink" title="hash 路由"></a>hash 路由</h4><p>hash 路由一个明显的标志是带有#,我们主要是通过监听 url 中的 hash 变化来进行路由跳转。<br>优势：兼容性好</p>
-<h4 id="history-路由"><a href="#history-路由" class="headerlink" title="history 路由"></a>history 路由</h4><p>history API =&gt;window.history.xxx</p>
-<ul>
-<li>主要 API<br>window.history.back(); // 后退<br>window.history.forward(); // 前进<br>window.history.go(-3); // 后退三个页面<br>history.pushState 用于在浏览历史中添加历史记录,但是并不触发跳转<br>history.replaceState 方法的参数与 pushState 方法一模一样，区别是它修改浏览历史中当前纪录,而非添加记录,同样不触发跳转。</li>
-</ul>
-<h3 id="apply-和-call"><a href="#apply-和-call" class="headerlink" title="apply 和 call"></a>apply 和 call</h3><p>作用一模一样 都是改变一个对象中的方法或者这个对象 this,到另一个中去<br>apply 接受的参数是一个数组，而 call 是按顺序传递的字符串<br>当传递的参数个数确定时候,一般用 call,反之用 apply</p>
-<h3 id="继承的几种方式"><a href="#继承的几种方式" class="headerlink" title="继承的几种方式"></a>继承的几种方式</h3><ol>
-<li><p>原型链继承<br>缺点：</p>
+        <p>挑战 leetCode<br>时间复杂度：</p>
 <ol>
-<li>通过原型来实现继承时，原型会变成另一个类型的实例，原先的实例属性变成了现在的原型属性，该原型的引用类型属性会被所有的实例共享。</li>
-<li>在创建子类型的实例时，没有办法在不影响所有对象实例的情况下给超类型的构造函数中传递参数。</li>
+<li>大 O 表示法<br>用常数 1 取代运行时间中的所有加法常数<br>只保留最高阶项<br>去除最高阶的常数</li>
 </ol>
-</li>
-<li><p>借用构造函数<br>缺点：<br>方法都在构造函数中定义，函数复用无从谈起，另外超类型原型中定义的方法对于子类型而言都是不可见的。</p>
-</li>
-<li><p>组合继承(原型链 + 借用构造函数)<br>无论什么情况下，都会调用两次超类型构造函数：一次是在创建子类型原型的时候，另一次是在子类型构造函数内部。</p>
-</li>
+<a id="more"></a>
+
+<h3 id="7-整数反转"><a href="#7-整数反转" class="headerlink" title="7 整数反转"></a>7 整数反转</h3><p>思路</p>
+<ol>
+<li>先将输入字符串化；</li>
+<li>将字符串转化为数组；</li>
+<li>反转数组;</li>
+<li>判断正负符号，如果输入的是个负数，就将负号从数组最后放到最前面;</li>
+<li>将数组转化为字符串</li>
+<li>判断是否超过临界值</li>
 </ol>
-<h3 id="单处理进程调度"><a href="#单处理进程调度" class="headerlink" title="单处理进程调度"></a>单处理进程调度</h3><ol>
-<li>先到先得<br>不利于：<ul>
-<li>一次任务执行很长的（类似于食堂打饭，打包一分的对于打包几份的来说不公平）</li>
-<li>需要条件的</li>
-</ul>
-</li>
-<li>轮转</li>
-<li>最短进程优先</li>
-<li>最短剩余时间优先<br>SRT 进一步优化了 SPN，增加了抢占机制。在 SPN 的基础上，当一个进程添加到就绪队列时，操作系统会比较刚添加的新进程和当前正在执行的老进程的‘剩余时间’，如果新进程剩余时间更短，新进程就会抢占老进程</li>
-<li>最高响应比优先(HRRN)</li>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">var reverse = function(l1) &#123;</span><br><span class="line">  let str1 = l1.toString();</span><br><span class="line">  const str1Arr = str1.split(&apos;&apos;);</span><br><span class="line">  const strReverse = str1Arr.reverse();</span><br><span class="line">  if (strReverse[strReverse.length - 1] === &apos;-&apos;) &#123;</span><br><span class="line">    strReverse.unshift(&apos;-&apos;);</span><br><span class="line">    strReverse.pop();</span><br><span class="line">  &#125;</span><br><span class="line">  const strArrJoing = strReverse.join(&apos;&apos;);</span><br><span class="line">  const outRange = strArrJoing &lt; Math.pow(-2, 31) || strArrJoing &gt; Math.pow(2, 31) - 1;</span><br><span class="line"></span><br><span class="line">  return outRange ? 0 : strArrJoing;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-两数相加"><a href="#2-两数相加" class="headerlink" title="2 两数相加"></a>2 两数相加</h3><p>给出两个 非空 的链表用来表示两个非负的整数。其中，它们各自的位数是按照 逆序 的方式存储的，并且它们的每个节点只能存储 一位 数字。<br>如果，我们将这两个数相加起来，则会返回一个新的链表来表示它们的和。<br>您可以假设除了数字 0 之外，这两个数都不会以 0 开头。<br>示例：<br>输入：(2 -&gt; 4 -&gt; 3) + (5 -&gt; 6 -&gt; 4)<br>输出：7 -&gt; 0 -&gt; 8<br>原因：342 + 465 = 807</p>
+<p>思路<br>链表中从左往后依次进位</p>
+<ol>
+<li>创建一个新的链表代表相加的链表</li>
+<li>创建一个数代表是否进位</li>
+<li>创建一个数代表下一位数，该数为被 10 余下的数，也是相加后的数值</li>
+<li>循环遍历，返回相加后的链表</li>
 </ol>
-<h3 id="去除整数后边的部分"><a href="#去除整数后边的部分" class="headerlink" title="去除整数后边的部分"></a>去除整数后边的部分</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const number=41471.428397539 | 0 //返回41471</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">function ListNode(val) &#123;</span><br><span class="line">  this.val = val;</span><br><span class="line">  this.next = null;</span><br><span class="line">&#125;</span><br><span class="line">var addTwoNumbers = function(l1, l2) &#123;</span><br><span class="line">  if (l1 == null &amp;&amp; l2 == null) &#123;</span><br><span class="line">    return null;</span><br><span class="line">  &#125;</span><br><span class="line">  let addOne = 0;</span><br><span class="line">  const dummy = new ListNode(0);</span><br><span class="line">  let head = dummy;</span><br><span class="line">  while (l1 != null || l2 != null || addOne != 0) &#123;</span><br><span class="line">    let val1 = l1 == null ? 0 : l1.val;</span><br><span class="line">    let val2 = l2 == null ? 0 : l2.val;</span><br><span class="line">    let sum = val1 + val2 + addOne;</span><br><span class="line">    head.next = new ListNode(sum % 10);</span><br><span class="line">    head = head.next;</span><br><span class="line">    addOne = parseInt(sum / 10);</span><br><span class="line">    if (l1 != null) l1 = l1.next;</span><br><span class="line">    if (l2 != null) l2 = l2.next;</span><br><span class="line">  &#125;</span><br><span class="line">  return dummy.next;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="13-罗马数字转整数"><a href="#13-罗马数字转整数" class="headerlink" title="13 罗马数字转整数"></a>13 罗马数字转整数</h3><p>思路：当某数小于右侧时相当于加上该数的相反数，大于时为加上该数</p>
+<ol>
+<li>ts 实现</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">enum Rome&#123;</span><br><span class="line">    I=1,</span><br><span class="line">    V=5,</span><br><span class="line">    X=10,L=50,C=100,D=500,M=1000</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">const romeToInt = function (s:string) &#123;</span><br><span class="line">    let result:number=0;</span><br><span class="line">    for(let i=0;i&lt;s.length;i++)&#123;</span><br><span class="line">        if(Rome[s[i]]&lt;Rome[s[i+1]])&#123;</span><br><span class="line">            console.log(Rome[s[i]]);</span><br><span class="line">            result=result-Rome[s[i]]</span><br><span class="line">        &#125;else&#123;</span><br><span class="line">            console.log(Rome[s[i]]);</span><br><span class="line">            result=result+Rome[s[i]]</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return result</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>js 实现</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">const map = new Map();</span><br><span class="line">map.set(&apos;I&apos;, 1);</span><br><span class="line">map.set(&apos;V&apos;, 5);</span><br><span class="line">map.set(&apos;X&apos;, 10);</span><br><span class="line">map.set(&apos;L&apos;, 50);</span><br><span class="line">map.set(&apos;C&apos;, 100);</span><br><span class="line">map.set(&apos;D&apos;, 500);</span><br><span class="line">map.set(&apos;M&apos;, 1000);</span><br><span class="line"></span><br><span class="line">const romanToInt = function(s) &#123;</span><br><span class="line">  let result = 0;</span><br><span class="line">  for (let i = 0; i &lt; s.length; i++) &#123;</span><br><span class="line">    if (map.get(s[i]) &lt; map.get(s[i + 1])) &#123;</span><br><span class="line">      result = result - map.get(s[i]);</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">      result = result + map.get(s[i]);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  return result;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="最长公共前缀"><a href="#最长公共前缀" class="headerlink" title="最长公共前缀"></a>最长公共前缀</h3><h4 id="数组方法"><a href="#数组方法" class="headerlink" title="数组方法"></a>数组方法</h4><ol>
+<li>使用数组，取出第一个数，并将剩下的数形成一个新的数组</li>
+<li>循环第一个数的长度，并使用 array.every 方法将新数组与第一个数比较</li>
+<li>如果 array.evert 返回 true 则为相等，反之不等</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">var longestCommonPrefix = function(strs) &#123;</span><br><span class="line">  if (!strs.length) return &apos;&apos;;</span><br><span class="line">  let [a, ...b] = strs;</span><br><span class="line">  let result = &apos;&apos;;</span><br><span class="line">  for (let i = 0; i &lt; a.length; i++) &#123;</span><br><span class="line">    if (b.every(item =&gt; item[i] == a[i])) &#123;</span><br><span class="line">      result = result + a[i];</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">      break;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  return result;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h4 id="栈方法-ts-实现"><a href="#栈方法-ts-实现" class="headerlink" title="栈方法 ts 实现"></a>栈方法 ts 实现</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">function Stack()&#123;</span><br><span class="line">    const items: Array&lt;string&gt; = [];</span><br><span class="line">    this.pop=function()&#123;</span><br><span class="line">        items.pop()</span><br><span class="line">    &#125;</span><br><span class="line">    this.push=function(item:string)&#123;</span><br><span class="line">        items.push(item)</span><br><span class="line">    &#125;</span><br><span class="line">    this.peek=function()&#123;</span><br><span class="line">        return items[items.length-1];</span><br><span class="line">    &#125;</span><br><span class="line">    this.size=function () &#123;</span><br><span class="line">        return items.length;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">var isValid = function (s:string) &#123;</span><br><span class="line"></span><br><span class="line">    if (!s.length) &#123;</span><br><span class="line">        return false;</span><br><span class="line">    &#125;</span><br><span class="line">    const map = new Map();</span><br><span class="line">    map.set(&apos;(&apos;, &apos;)&apos;);</span><br><span class="line">    map.set(&apos;&#123;&apos;, &apos;&#125;&apos;);</span><br><span class="line">    map.set(&apos;[&apos;, &apos;]&apos;);</span><br><span class="line">    const sStack=new Stack();</span><br><span class="line">    for(let item of s)&#123;</span><br><span class="line">        if(map.has(item))&#123;</span><br><span class="line">            sStack.push(item)</span><br><span class="line">        &#125;</span><br><span class="line">        else&#123;</span><br><span class="line">            if(item!==map.get(sStack.peek()))&#123;</span><br><span class="line">                return false</span><br><span class="line">            &#125;</span><br><span class="line">            else&#123;</span><br><span class="line">                sStack.pop()</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    if(sStack.size()!==0)&#123;</span><br><span class="line">        return false</span><br><span class="line">    &#125;</span><br><span class="line">    else&#123;</span><br><span class="line">        return true</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
 
       
@@ -357,7 +321,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/10/08/studySummarize/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/03/18/leetCode/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -371,18 +335,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/10/09/learnCanvas/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/03/23/tcp-ip/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Canvas学习笔记
+          tcp/ip
         
       </div>
     </a>
   
   
-    <a href="/2019/09/26/excellentLink/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">优秀文章链接</div>
+    <a href="/2020/03/04/docker/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">docker</div>
       <i class="icon-circle-right"></i>
     </a>
   
