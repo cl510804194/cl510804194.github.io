@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="程亮的个人博客">
 <meta property="og:description" content="浏览器渲染页面 浏览器通过 HTMLParser 根据深度遍历的原则把 HTML 解析成 DOM Tree。 浏览器通过 CSSParser 将 CSS 解析成 CSS Rule Tree（CSSOM Tree）。 浏览器将 JavaScript 通过 DOM API 或者 CSSOM API 将 JS 代码解析并应用到布局中，按要求呈现响应的结果。 根据 DOM 树和 CSSOM 树来构造 re">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-03-20T06:27:48.881Z">
+<meta property="og:updated_time" content="2020-03-31T12:58:06.657Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="前端学习总结">
 <meta name="twitter:description" content="浏览器渲染页面 浏览器通过 HTMLParser 根据深度遍历的原则把 HTML 解析成 DOM Tree。 浏览器通过 CSSParser 将 CSS 解析成 CSS Rule Tree（CSSOM Tree）。 浏览器将 JavaScript 通过 DOM API 或者 CSSOM API 将 JS 代码解析并应用到布局中，按要求呈现响应的结果。 根据 DOM 树和 CSSOM 树来构造 re">
@@ -278,6 +278,19 @@
 </ol>
 <h3 id="去除整数后边的部分"><a href="#去除整数后边的部分" class="headerlink" title="去除整数后边的部分"></a>去除整数后边的部分</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const number=41471.428397539 | 0 //返回41471</span><br></pre></td></tr></table></figure>
 
+<h3 id="generator"><a href="#generator" class="headerlink" title="generator"></a>generator</h3><ol>
+<li>generator 函数在 funciton 后面加一个*,并且使用 yield 关键字</li>
+<li>要返回下一个值，必须在 next()后添加获取的值，不然没有返回</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">function* gen() &#123;</span><br><span class="line">  var ret = yield 1 + 2;</span><br><span class="line">  var num = yield 4;</span><br><span class="line">  ret = yield ret + num;</span><br><span class="line">  console.log(ret);</span><br><span class="line">&#125;</span><br><span class="line">gen = gen(); // 转换为 generator 对象</span><br><span class="line">var g = gen.next();</span><br><span class="line">var secondStep = g.value; // 取得第二步 yield 的值，即 4</span><br><span class="line">g = gen.next(secondStep); // 从 next 函数传入第二步的值， 即 num 为 4</span><br><span class="line">console.log(g);</span><br><span class="line">// 由于下面没有了 yield 语句，所以直接执行完函数，ret 为 &#123; value: 7, done: false &#125;</span><br><span class="line">g = gen.next(g.value);</span><br><span class="line">console.log(g);</span><br></pre></td></tr></table></figure>
+
+<h3 id="new-和不-new-的区别"><a href="#new-和不-new-的区别" class="headerlink" title="new 和不 new 的区别"></a>new 和不 new 的区别</h3><p>new 会改变 this 指向，指向实例化的实例，并且会在最后方法执行完，把实例 return 出去，如果不使用 new 直接调用函数，函数没有返回值默认返回 undefined</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">const Foo = (function() &#123;</span><br><span class="line">   let idIndex = 1;</span><br><span class="line">   return function() &#123;</span><br><span class="line">     console.log(this);</span><br><span class="line">     // this.id = idIndex++;</span><br><span class="line">     // console.log(this instanceof Foo)</span><br><span class="line">     // if (this instanceof Foo) &#123;</span><br><span class="line">     //   // 使用了new 会自动返回对象~</span><br><span class="line">     //   this.id = idIndex++;</span><br><span class="line">     // &#125; else &#123;</span><br><span class="line">     //   // 没有使用new，我们帮它返回~</span><br><span class="line">     //   return &#123;</span><br><span class="line">     //     id: idIndex++</span><br><span class="line">     //   &#125;;</span><br><span class="line">     // &#125;</span><br><span class="line">   &#125;;</span><br><span class="line"> &#125;)();</span><br><span class="line"> const a = new Foo();</span><br><span class="line"> console.log(a);</span><br><span class="line"> const b = Foo();</span><br><span class="line"> console.log(b);</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>立即执行函数是一个表达式，不是函数声明，会立即执行</li>
+<li>b 指向 window,a 指向 object</li>
+</ol>
 
       
 

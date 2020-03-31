@@ -193,7 +193,48 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h3 id="OSI-参考模型"><a href="#OSI-参考模型" class="headerlink" title="OSI 参考模型"></a>OSI 参考模型</h3><ol>
+<li>目的：使两个不同的系统能够通信，而不需要改变底层的硬件或软件逻辑（如计算机是个系统，电话也是个系统）</li>
+</ol>
+<h3 id="TCP-IP"><a href="#TCP-IP" class="headerlink" title="TCP/IP"></a>TCP/IP</h3><p>TCP 位于传输层，IP 位于网络层</p>
+<ol>
+<li>tcp/ip 可以比喻为淘宝买卖家和快递公司</li>
+<li>应用层不关心通信，只关心程序的细节</li>
+</ol>
+<h3 id="TCP-UDP"><a href="#TCP-UDP" class="headerlink" title="TCP/UDP"></a>TCP/UDP</h3><ol>
+<li>TCP 使用的是不可靠的 IP 服务，提供一种可靠的运输车服务</li>
+<li>UDP 不可靠</li>
+<li>IP 上主要协议是 TCP 和 UDP，ICMP 是 IP 协议的附属协议，ICMP 会报出问题的原因</li>
+</ol>
+<h3 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h3><ol>
+<li>由上往下，每一层都会留下自己的记号</li>
+<li>以太网数据帧长度必须在 46-1500 字节之间，不足 46 会凑满 46</li>
+<li>以太网帧首部有一个 16bit 的帧类型区域（ip,arp,rarp)</li>
+<li>IP 在首部存入一个长度为 8bit 的数值协议域（icmp,imgmp,tcp,udp,esp,gre)</li>
+<li>TCP 和 UDP 都用一个 16Bit 的端口号来表示不同的应用程序(ftp,http,telnet)</li>
+</ol>
+<h3 id="分用"><a href="#分用" class="headerlink" title="分用"></a>分用</h3><p>发的时候叫封装，收的时候叫分用，TCP-&gt;应用程序</p>
+<h3 id="端口号"><a href="#端口号" class="headerlink" title="端口号"></a>端口号</h3><p>1.大多段 TCP/IP 实现给临时端口分配 1024-5000 之间的端口号 2.源端口号随机的，目的端口号是固定的</p>
+<h3 id="链路层"><a href="#链路层" class="headerlink" title="链路层"></a>链路层</h3><h4 id="以太网"><a href="#以太网" class="headerlink" title="以太网"></a>以太网</h4><ol>
+<li>以太网是指数字设备公司联合公布的一个标准</li>
+<li>采用一种称为 CSMA/CD 的媒体接入方法</li>
+<li>它的速率为 10MB/S,地址为 48bit</li>
+<li>以太网封装格式类型后即为数据</li>
+</ol>
+<h4 id="IEEE802-封装"><a href="#IEEE802-封装" class="headerlink" title="IEEE802 封装"></a>IEEE802 封装</h4><ol>
+<li>封装格式类型后还接着很多字段<br>……</li>
+</ol>
+<h3 id="环回接口"><a href="#环回接口" class="headerlink" title="环回接口"></a>环回接口</h3><ol>
+<li>一般是 127.0.0.1 的任何数据均作为 IP 输入</li>
+<li>广播，广播也包括自己，然后检查是否是本机 IP 地址，是的话就进行环回接口，否的话就需要 ARP 解析，进行地址映射</li>
+</ol>
+<h3 id="IP"><a href="#IP" class="headerlink" title="IP"></a>IP</h3><ol>
+<li>IP 提供不可靠、无连接的数据包传送服务</li>
+<li>IP 不管顺序，TCP 进行排序</li>
+<li>ifconfig netstat 查看当前会话 ipconfig 可以看到 ip 地址</li>
+<li>IP 首部<br>版本号/头部长度/TOS 位（服务类型）/16 位总长度/16 位标识（ID，身份认证）/3 位标志（实际上只有 2 个位，其中一位叫 df,其中一位叫 mf, 这两个与分片有关）<br>IP 头部最多不超过 60 个字节</li>
+</ol>
+
       
 
       
