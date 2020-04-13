@@ -173,6 +173,68 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-异常处理" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/07/异常处理/">异常处理</a>
+    </h1>
+  
+
+        
+        <a href="/2020/04/07/异常处理/" class="archive-article-date">
+  	<time datetime="2020-04-07T03:24:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-07</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/04/07/异常处理/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-tcp-ip" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -193,7 +255,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="OSI-参考模型"><a href="#OSI-参考模型" class="headerlink" title="OSI 参考模型"></a>OSI 参考模型</h3><ol>
+        <a id="more"></a>
+
+<h3 id="OSI-参考模型"><a href="#OSI-参考模型" class="headerlink" title="OSI 参考模型"></a>OSI 参考模型</h3><ol>
 <li>目的：使两个不同的系统能够通信，而不需要改变底层的硬件或软件逻辑（如计算机是个系统，电话也是个系统）</li>
 </ol>
 <h3 id="TCP-IP"><a href="#TCP-IP" class="headerlink" title="TCP/IP"></a>TCP/IP</h3><p>TCP 位于传输层，IP 位于网络层</p>
@@ -214,7 +278,7 @@
 <li>TCP 和 UDP 都用一个 16Bit 的端口号来表示不同的应用程序(ftp,http,telnet)</li>
 </ol>
 <h3 id="分用"><a href="#分用" class="headerlink" title="分用"></a>分用</h3><p>发的时候叫封装，收的时候叫分用，TCP-&gt;应用程序</p>
-<h3 id="端口号"><a href="#端口号" class="headerlink" title="端口号"></a>端口号</h3><p>1.大多段 TCP/IP 实现给临时端口分配 1024-5000 之间的端口号 2.源端口号随机的，目的端口号是固定的</p>
+<h3 id="端口号分类"><a href="#端口号分类" class="headerlink" title="端口号分类"></a>端口号分类</h3><p>1.大多段 TCP/IP 实现给临时端口分配 1024-5000 之间的端口号 2.源端口号随机的，目的端口号是固定的</p>
 <h3 id="链路层"><a href="#链路层" class="headerlink" title="链路层"></a>链路层</h3><h4 id="以太网"><a href="#以太网" class="headerlink" title="以太网"></a>以太网</h4><ol>
 <li>以太网是指数字设备公司联合公布的一个标准</li>
 <li>采用一种称为 CSMA/CD 的媒体接入方法</li>
@@ -233,6 +297,100 @@
 <li>IP 不管顺序，TCP 进行排序</li>
 <li>ifconfig netstat 查看当前会话 ipconfig 可以看到 ip 地址</li>
 <li>IP 首部<br>版本号/头部长度/TOS 位（服务类型）/16 位总长度/16 位标识（ID，身份认证）/3 位标志（实际上只有 2 个位，其中一位叫 df,其中一位叫 mf, 这两个与分片有关）<br>IP 头部最多不超过 60 个字节</li>
+</ol>
+<h3 id="TCP"><a href="#TCP" class="headerlink" title="TCP"></a>TCP</h3><h4 id="首部字段"><a href="#首部字段" class="headerlink" title="首部字段"></a>首部字段</h4><ol>
+<li><p>端口号<br>TCP 报文头部里没有源 ip 和目标 ip 地址，只有源端口号和目标端口号</p>
+</li>
+<li><p>序列号<br>TCP 是面向字节流的协议，通过 TCP 传输的字节流的每个字节都分配了序列号，序列号（Sequence number）指的是本报文段第一个字节的序列号</p>
+<p>TCP 协议利用序列号来解决网络包乱序、重复的问题，以保证数据包以正确的顺序组装传递给上层应用</p>
+</li>
+<li><p>初始序列号<br>在建立连接之初，通信双方都会各自选择一个序列号，称之为初始序列号。在建立连接时，通信双方通过 SYN 报文交换彼此的 ISN</p>
+</li>
+<li><p>确认号<br>TCP 使用确认号（Acknowledgment number, ACK）来告知对方下一个期望接收的序列号，小于此确认号的所有字节都已经收到</p>
+</li>
+<li><p>TCP Flags<br>最常见的有下面这几个：<br>SYN（Synchronize）：用于发起连接数据包同步双方的初始序列号<br>ACK（Acknowledge）：确认数据包<br>RST（Reset）：这个标记用来强制断开连接，通常是之前建立的连接已经不在了、包不合法、或者实在无能为力处理<br>FIN（Finish）：通知对方我发完了所有数据，准备断开连接，后面我不会再发数据包给你了。<br>PSH（Push）：告知对方这些数据包收到以后应该马上交给上层应用，不能缓存起来</p>
+</li>
+<li><p>窗口大小<br>用于表示窗口大小的”Window Size” 只有 16 位<br>窗口大小是 65535 字节（64KB）<br>TCP 协议引入了「TCP 窗口缩放」选项 作为窗口缩放的比例因子，比例因子值的范围是 0 ~ 14，其中最小值 0 表示不缩放，最大值 14<br>窗口缩放值在三次握手的时候指定</p>
+</li>
+<li><p>可选项<br>常用的选项有以下几个：</p>
+<ul>
+<li>MSS：最大段大小选项，是 TCP 允许的从对方接收的最大报文段</li>
+<li>SACK：选择确认选项</li>
+<li>Window Scale：窗口缩放选项</li>
+</ul>
+</li>
+</ol>
+<h4 id="最大传输单元（Maximum-Transmission-Unit-MTU）"><a href="#最大传输单元（Maximum-Transmission-Unit-MTU）" class="headerlink" title="最大传输单元（Maximum Transmission Unit, MTU）"></a>最大传输单元（Maximum Transmission Unit, MTU）</h4><p>数据链路层传输的帧大小是有限制的，不能把一个太大的包直接塞给链路层，这个限制被称为「最大传输单元（Maximum Transmission Unit, MTU）」</p>
+<p>以太网有效荷载最小为 46 字节,有效荷载最大为 1500</p>
+<h4 id="IP-分段"><a href="#IP-分段" class="headerlink" title="IP 分段"></a>IP 分段</h4><p>IPv4 数据报的最大大小为 65535 字节，这已经远远超过了以太网的 MTU，而且有些网络还会开启巨帧（Jumbo Frame）能达到 9000 字节。 当一个 IP 数据包大于 MTU 时，IP 会把数据报文进行切割为多个小的片段(小于 MTU），使得这些小的报文可以通过链路层进行传输</p>
+<p>利用 IP 包分片的策略，有一种对应的网络攻击方式 IP fragment attack，就是一直传 More fragments = 1 的包，导致接收方一直缓存分片，从而可能导致接收方内存耗尽。</p>
+<h4 id="网络中的木桶效应：路径-MTU"><a href="#网络中的木桶效应：路径-MTU" class="headerlink" title="网络中的木桶效应：路径 MTU"></a>网络中的木桶效应：路径 MTU</h4><p>一个包从发送端传输到接收端，中间要跨越很多个网络，每条链路的 MTU 都可能不一样，这个通信过程中最小的 MTU 称为「路径 MTU（Path MTU）」。路径 MTU 就跟木桶效应是一个道理，木桶的盛水量由最短的那条短板决定，路径 MTU 也是由通信链条中最小的 MTU 决定。</p>
+<h4 id="TCP-最大段大小（Max-Segment-Size，MSS）"><a href="#TCP-最大段大小（Max-Segment-Size，MSS）" class="headerlink" title="TCP 最大段大小（Max Segment Size，MSS）"></a>TCP 最大段大小（Max Segment Size，MSS）</h4><p>TCP 为了避免被发送方分片，会主动把数据分割成小段再交给网络层，最大的分段大小称之为 MSS（Max Segment Size）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">MSS = MTU - IP header头大小 - TCP 头大小</span><br></pre></td></tr></table></figure>
+
+<p>在以太网中 TCP 的 MSS = 1500（MTU） - 20（IP 头大小） - 20（TCP 头大小）= 1460</p>
+<h4 id="TSO（TCP-Segment-Offload）特性"><a href="#TSO（TCP-Segment-Offload）特性" class="headerlink" title="TSO（TCP Segment Offload）特性"></a>TSO（TCP Segment Offload）特性</h4><p>TSO 特性是指由网卡代替 CPU 实现 packet 的分段和合并，节省系统资源，因此 TCP 可以抓到超过 MTU 的包，但是不是真正传输的单个包会超过链路的 MTU。</p>
+<h4 id="TCP-套接字选项-TCP-MAXSEG"><a href="#TCP-套接字选项-TCP-MAXSEG" class="headerlink" title="TCP 套接字选项 TCP_MAXSEG"></a>TCP 套接字选项 TCP_MAXSEG</h4><p>TCP 有一个 socket 选项 TCP_MAXSEG，可以用来设置此次连接的 MSS，如果设置了这个选项，则 MSS 不能超过这个值</p>
+<p>为什么 TCP_MAXSEG 的下界是 88？<br>为了保证在 TCP 头占满 60 字节、IP 头占满 60 字节的情况下，至少还能发 8 字节的数据，MSS 至少要等于 (MAX_IP_HDR + MAX_TCP_HDR + MIN_IP_FRAG) - (MIN_IP_HDR + MIN_TCP_HDR) = (60+60+8) - (20+20) = 88 字节。</p>
+<h4 id="端口号"><a href="#端口号" class="headerlink" title="端口号"></a>端口号</h4><p>分层结构中每一层都有一个唯一标识，比如链路层的 MAC 地址，IP 层的 IP 地址，传输层是用端口号。</p>
+<p>如果把 ip 地址比作一间房子，端口就是出入这间房子的门。房子一般只有几个门，但是一台主机端口最多可以有 65536 个。</p>
+<p>传输层就是用端口号来区分同一个主机上不同的应用程序的</p>
+<p>端口号被划分成以下 3 种类型：</p>
+<p>熟知端口号（well-known port）<br>已登记的端口（registered port）<br>临时端口号（ephemeral port）</p>
+<ol>
+<li>熟知端口号（well-known port）<br>熟知端口号由专门的机构由 IANA 分配和控制，范围为 0~1023。为了能让客户端能随时找到自己，服务端程序的端口必须要是固定的。很多熟知端口号已经被用就分配给了特定的应用，比如 HTTP 使用 80 端口，HTTPS 使用 443 端口，ssh 使用 22 端口。</li>
+<li>已登记的端口（registered port）<br>已登记的端口不受 IANA 控制，不过由 IANA 登记并提供它们的使用情况清单。它的范围为 1024 ～ 49151。<br>为什么是 49151 这样一个魔数？ 其实是取的端口号最大值 65536 的 3/4 减 1 （49151 = 65536 * 0.75 - 1）。可以看到已登记的端口占用了大约 75% 端口号的范围。</li>
+<li>临时端口号（ephemeral port）<br>如果应用程序没有调用 bind() 函数将 socket 绑定到特定的端口上，那么 TCP 和 UDP 会为该 socket 分配一个唯一的临时端口。IANA 将 49152 ～ 65535 范围的端口称为临时端口（ephemeral port）或动态端口（dynamic port），也称为私有端口（private port），这些端口可供本地应用程序临时分配端口使用。</li>
+</ol>
+<h4 id="临时端口号是如何分配的"><a href="#临时端口号是如何分配的" class="headerlink" title="临时端口号是如何分配的"></a>临时端口号是如何分配的</h4><h4 id="三次握手"><a href="#三次握手" class="headerlink" title="三次握手"></a>三次握手</h4><p>三次握手的最重要的是交换彼此的 ISN（初始序列号）</p>
+<p>凡是消耗序列号的 TCP 报文段，一定需要对端确认。如果这个段没有收到确认，会一直重传直到达到指定的次数为止。</p>
+<p>除了交换彼此的初始序列号，三次握手的另一个重要作用是交换一些辅助信息，比如最大段大小（MSS）、窗口大小（Win）、窗口缩放因子（WS)、是否支持选择确认（SACK_PERM）等</p>
+<h4 id="初始序列号"><a href="#初始序列号" class="headerlink" title="初始序列号"></a>初始序列号</h4><p>初始的序列号并非从 0 开始，通信双方各自生成，一般情况下两端生成的序列号不会相同。生成的算法是 ISN 随时间而变化，会递增的分配给后续的 TCP 连接的 ISN。<br>ISN 能设置成一个固定值呢？<br>1、出于安全性考虑。如果被知道了连接的 ISN，很容易构造一个在对方窗口内的序列号，源 IP 和源端口号都很容易伪造，这样一来就可以伪造 RST 包，将连接强制关闭掉了。如果采用动态增长的 ISN，要想构造一个在对方窗口内的序列号难度就大很多了。</p>
+<p>2、因为开启 SO_REUSEADDR 以后端口允许重用，收到一个包以后不知道新连接的还是旧连接的包因为网络的原因姗姗来迟，造成数据的混淆。如果采用动态增长的 ISN，那么可以保证两个连接的 ISN 不会相同，不会串包。</p>
+<p>SYN 段长度为 0 却需要消耗一个序列号，原因是 SYN 段需要对端确认<br>ACK 段长度为 0，不消耗序列号，也不用对端确认<br>ISN 不能从一个固定的值开始，原因是处于安全性和避免前后连接互相干扰</p>
+<h4 id="TCP-自连接是什么"><a href="#TCP-自连接是什么" class="headerlink" title="TCP 自连接是什么"></a>TCP 自连接是什么</h4><p>自连接的进程占用了端口，导致真正需要监听端口的服务进程无法监听成功<br>自连接的进程看起来 connect 成功，实际上服务是不正常的，无法正常进行数据通信</p>
+<p>解决自连接有两个常见的办法。</p>
+<ul>
+<li>让服务监听的端口与客户端随机分配的端口不可能相同即可</li>
+<li>出现自连接的时候，主动关掉连接</li>
+</ul>
+<h4 id="四次挥手"><a href="#四次挥手" class="headerlink" title="四次挥手"></a>四次挥手</h4><ol>
+<li>客户端调用 close 方法，执行「主动关闭」，会发送一个 FIN 报文给服务端，从这以后客户端不能再发送数据给服务端了，客户端进入 FIN-WAIT-1 状态。FIN 报文其实就是将 FIN 标志位设置为 1.FIN 段是可以携带数据的，比如客户端可以在它最后要发送的数据块可以“捎带” FIN 段。当然也可以不携带数据。不管 FIN 段是否携带数据，都需要消耗一个序列号。客户端发送 FIN 包以后不能再发送数据给服务端，但是还可以接受服务端发送的数据。这个状态就是所谓的「半关闭（half-close）」主动发起关闭的一方称为「主动关闭方」，另外一段称为「被动关闭方」。</li>
+<li>服务端收到 FIN 包以后回复确认 ACK 报文给客户端，服务端进入 CLOSE_WAIT，客户端收到 ACK 以后进入 FIN-WAIT-2 状态。</li>
+<li>服务端也没有数据要发送了，发送 FIN 报文给客户端，然后进入 LAST-ACK 状态，等待客户端的 ACK。同前面一样如果 FIN 段没有携带数据，也需要消耗一个序列号。</li>
+<li>客户端收到服务端的 FIN 报文以后，回复 ACK 报文用来确认第三步里的 FIN 报文，进入 TIME_WAIT 状态，等待 2 个 MSL 以后进入 CLOSED 状态。服务端收到 ACK 以后进入 CLOSED 状态。</li>
+<li>可以三次挥手结束吗？<br>如果服务端确定没有什么数据需要发给客户端，那么当然是可以把 FIN 和 ACK 合并成一个包，四次挥手的过程就成了三次。</li>
+</ol>
+<h4 id="为什么-FIN-报文要消耗一个序列号"><a href="#为什么-FIN-报文要消耗一个序列号" class="headerlink" title="为什么 FIN 报文要消耗一个序列号"></a>为什么 FIN 报文要消耗一个序列号</h4><p>如果 FIN 包不消耗一个序列号。客户端发送了 100 字节的数据包和 FIN 包，都等待服务端确认。如果这个时候客户端收到了 ACK=1000 的确认包，就无法得知到底是 100 字节的确认包还是 FIN 包的确认包</p>
+<h4 id="TCP-头部时间戳选项（TCP-Timestamps-Option，TSopt）"><a href="#TCP-头部时间戳选项（TCP-Timestamps-Option，TSopt）" class="headerlink" title="TCP 头部时间戳选项（TCP Timestamps Option，TSopt）"></a>TCP 头部时间戳选项（TCP Timestamps Option，TSopt）</h4><p>TCP Timestamps Option 由四部分构成：类别（kind）、长度（Length）、发送方时间戳（TS value）、回显时间戳（TS Echo Reply）。时间戳选项类别（kind）的值等于 8，用来与其它类型的选项区分。长度（length）等于 10。两个时间戳相关的选项都是 4 字节。</p>
+<p>是否使用时间戳选项是在三次握手里面的 SYN 报文里面确定的</p>
+<p>发送方发送数据时，将一个发送时间戳 1734581141 放在发送方时间戳 TSval 中<br>接收方收到数据包以后，将收到的时间戳 1734581141 原封不动的返回给发送方，放在 TSecr 字段中，同时把自己的时间戳 3303928779 放在 TSval 中</p>
+<p>Timestamps 选项的作用</p>
+<ol>
+<li>两端往返时延测量（RTTM）<br>在没启用 Timestamps 之前 RTT=服务第一次返回的时间戳-客户端第一次发送的时间戳，但是无法计算重传的包，启用后，就可以通过 ACK 包里包含的 TSval 和 TSecr 计算</li>
+<li>序列号回绕（PAWS）<br>如果有 Timestamps 的存在，内核会维护一个为每个连接维护一个 ts_recent 值，记录最后一次通信的的 timestamps 值，在 t7 时间点收到迷途数据包 2 时，由于数据包 2 的 timestamps 值小于 ts_recent 值，就会丢弃掉这个数据包。等 t8 时间点真正的数据包 6 到达以后，由于数据包 6 的 timestamps 值大于 ts_recent，这个包可以被正常接收。</li>
+</ol>
+<p>timestamps 值是一个单调递增的值，与我们所知的 epoch 时间戳不是一回事，这个选项不要求两台主机进行时钟同步。两端 timestamps 值增加的间隔也可能步调不一致，比如一条主机以每 1ms 加一的方式递增，另外一条主机可以以每 1s 加一的方式递增。</p>
+<p>与序列号一样，既然是递增 timestamps 值也是会溢出回绕的。</p>
+<p>timestamps 是一个双向的选项，如果只要有一方不开启，双方都将停用 timestamps。比如下面是 curl <a href="http://www.baidu.com" target="_blank" rel="noopener">www.baidu.com</a> 得到的包。</p>
+<h4 id="状态机"><a href="#状态机" class="headerlink" title="状态机"></a>状态机</h4><ol>
+<li><p>CLOSED<br>从 CLOSE 状态转换为其它状态有两种可能：主动打开（Active Open）和被动打开（Passive Open）</p>
+<p>被动打开：一般来说，服务端会监听一个特定的端口，等待客户端的新连接，同时会进入 LISTEN 状态，这种被称为「被动打开」<br>主动打开：客户端主动发送一个 SYN 包准备三次握手，被称为「主动打开（Active Open）」</p>
+</li>
+<li><p>LISTEN<br>处于 LISTEN 状态的连接收到 SYN 包以后会发送 SYN+ACK 给对端，同时进入 SYN-RCVD 阶段</p>
+</li>
+<li><p>SYN-SENT<br>客户端发送 SYN 报文等待 ACK 的过程进入 SYN-SENT 状态。同时会开启一个定时器，如果超时还没有收到 ACK 会重发 SYN</p>
+</li>
+<li><p>SYN-RCVD<br>服务端收到 SYN 报文以后会回复 SYN+ACK，然后等待对端 ACK 的时候进入 SYN-RCVD</p>
+</li>
+<li><p>ESTABLISHED<br>SYN-SENT 或者 SYN-RCVD 状态的连接收到对端确认 ACK 以后进入 ESTABLISHED 状态，连接建立成功。<br>ESTABLISHED 状态的连接有两种可能的状态转换方式:<br>调用 close 等系统调用主动关闭连接，这个时候会发送 FIN 包给对端，同时自己进入 FIN-WAIT-1 状态<br>收到对端的 FIN 包，执行被动关闭，收到 FIN 包以后会回复 ACK，同时自己进入 CLOSE-WAIT 状态</p>
+</li>
+<li><p>FIN-WAIT-1<br>主动关闭的一方发送了 FIN 包，等待对端回复 ACK 时进入 FIN-WAIT-1 状态。<br>FIN_WAIT1 状态的切换如下几种情况<br>当收到 ACK 以后，FIN-WAIT-1 状态会转换到 FIN-WAIT-2 状态<br>当收到 FIN 以后，会回复对端 ACK，FIN-WAIT-1 状态会转换到 CLOSING 状态<br>当收到 FIN+ACK 以后，会回复对端 ACK，FIN-WAIT-1 状态会转换到 TIME_WAIT 状态，跳过了 FIN-WAIT-2 状态</p>
+</li>
+<li><p>FIN-WAIT-2<br>处于 FIN-WAIT-1 状态的连接收到 ACK 确认包以后进入 FIN-WAIT-2 状态，这个时候主动关闭方的 FIN 包已经被对方确认，等待被动关闭方发送 FIN 包。<br>当收到对端的 FIN 包以后，主动关闭方进入 TIME_WAIT 状态</p>
+</li>
+<li><p>CLOSE-WAIT<br>当有一方想关闭连接的时候，调用 close 等系统调用关闭 TCP 连接会发送 FIN 包给对端，这个被动关闭方，收到 FIN 包以后进入 CLOSE-WAIT 状态。</p>
+</li>
 </ol>
 
       
@@ -843,85 +1001,9 @@
 
 
   
-    <article id="post-typescript" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/12/typescript/">typescript笔记与总结</a>
-    </h1>
-  
-
-        
-        <a href="/2019/11/12/typescript/" class="archive-article-date">
-  	<time datetime="2019-11-12T06:17:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-12</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>typescript 学习过程和总结</p>
-        
-          <a class="article-more-a" href="/2019/11/12/typescript/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">typescript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/11/12/typescript/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
     </nav>
   
 
