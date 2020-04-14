@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="程亮的个人博客">
 <meta property="og:description" content="http 的学习笔记 参考来自： HTTP 权威指南学习笔记 @woai30231github.com/woai30231/http/tree/master  URL 与资源URI（统一资源标识符）由 URL（统一资源定位符）和 URN（统一资源名）两个子集构成。 URL 以位置定位URL 是从资源的位置来定义一个资源的，比如在“中国山东的一只小狗”和在“中国广东的一只小狗”就分别定义了两只不同的">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-04-03T07:17:49.854Z">
+<meta property="og:updated_time" content="2020-04-13T09:53:14.429Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HTTP学习笔记">
 <meta name="twitter:description" content="http 的学习笔记 参考来自： HTTP 权威指南学习笔记 @woai30231github.com/woai30231/http/tree/master  URL 与资源URI（统一资源标识符）由 URL（统一资源定位符）和 URN（统一资源名）两个子集构成。 URL 以位置定位URL 是从资源的位置来定义一个资源的，比如在“中国山东的一只小狗”和在“中国广东的一只小狗”就分别定义了两只不同的">
@@ -842,9 +842,18 @@
 <ul>
 <li>MD5</li>
 <li>BASE64</li>
-<li>AES (对称加密),使用同一个秘钥，加密解密</li>
+<li>AES (对称加密),使用同一个秘钥，加密解密,通过这种方式是不知道是否是特定的对方传过来的</li>
 <li>RSA （非对称加密），生成秘钥对，加密解决使用的是不同的秘钥</li>
 </ul>
+<p>身份认证是如何解决的？<br>如 A-&gt;B,A 如何信任 B<br>CA 认证证书包含：1.数字签名（hash 值），2.公钥<br>CA 机构：第三方专门认证</p>
+<ol>
+<li>CA 机构（生成一对公私钥），用 CA 机构自己私钥签名</li>
+<li>将公钥给网站证书</li>
+<li>将私钥给网站</li>
+<li>网站将证书发送给客户端（浏览器）</li>
+<li>浏览器验证，先取出证书，将里面的信息做 hash 运算，对信息进行完整性、真实性进行校验，</li>
+</ol>
+<p>TLS 用于加密加密信息，位于应用层之下，传输层之上其包含加密算法各种，服务端客户端约定使用哪种算法</p>
 
       
 

@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="程亮的个人博客">
 <meta property="og:description" content="挑战 leetCode时间复杂度：  大 O 表示法用常数 1 取代运行时间中的所有加法常数只保留最高阶项去除最高阶的常数">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-04-13T01:38:04.166Z">
+<meta property="og:updated_time" content="2020-04-14T01:49:52.971Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="leetCode">
 <meta name="twitter:description" content="挑战 leetCode时间复杂度：  大 O 表示法用常数 1 取代运行时间中的所有加法常数只保留最高阶项去除最高阶的常数">
@@ -310,6 +310,9 @@
 </li>
 </ol>
 <p>var plusOne = function (digits) {<br>const digitsStr = digits.join(‘’);<br>const digitInt = BigInt(digitsStr) + 1n;<br>const digitTStr = digitInt.toString();<br>const digitArr = digitTStr.split(‘’);<br>return digitArr;<br>};</p>
+<h3 id="二进制求和"><a href="#二进制求和" class="headerlink" title="二进制求和"></a>二进制求和</h3><p>给你两个二进制字符串，返回它们的和（用二进制表示）。<br>输入为 非空 字符串且只包含数字 1 和 0。<br>思路：使用 BigInt 解决</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var addBinary = function (a, b) &#123;</span><br><span class="line">  let sum = 0;</span><br><span class="line">  const IntA = BigInt(&apos;0b&apos; + a);</span><br><span class="line">  const IntB = BigInt(&apos;0b&apos; + b);</span><br><span class="line">  sum = IntA + IntB;</span><br><span class="line">  const sumTow = sum.toString(2);</span><br><span class="line">  return sumTow;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
 
       
 
