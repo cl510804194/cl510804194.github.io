@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="程亮的个人博客">
 <meta property="og:description" content="重学前端笔记 类型运行时类型运行时类型是代码实际执行过程中我们用到的类型。所有的类型数据都会属于 7 个类型之一。从变量、参数、返回值到表达式中间结果，任何 JavaScript 代码运行过程中产生的数据，都具有运行时类型  Undefined 类型表示未定义：因为 JavaScript 的代码 undefined 是一个变量，而并非是一个关键字，这是 JavaScript 语言公认的设计失误之一">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-04-14T02:27:28.495Z">
+<meta property="og:updated_time" content="2020-04-15T01:46:35.661Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="重学前端">
 <meta name="twitter:description" content="重学前端笔记 类型运行时类型运行时类型是代码实际执行过程中我们用到的类型。所有的类型数据都会属于 7 个类型之一。从变量、参数、返回值到表达式中间结果，任何 JavaScript 代码运行过程中产生的数据，都具有运行时类型  Undefined 类型表示未定义：因为 JavaScript 的代码 undefined 是一个变量，而并非是一个关键字，这是 JavaScript 语言公认的设计失误之一">
@@ -367,8 +367,15 @@
 <h4 id="渲染"><a href="#渲染" class="headerlink" title="渲染"></a>渲染</h4><p>指把模型变成位图的过程</p>
 <h4 id="合成"><a href="#合成" class="headerlink" title="合成"></a>合成</h4><p>渲染过程不会把子元素渲染到位图上面，合成的过程，就是为一些元素创建一个“合成后的位图”<br>主流浏览器一般根据 position、transform 等属性来决定合成策略，来“猜测”这些元素未来可能发生变化</p>
 <p>新的 CSS 标准中，规定了 will-change 属性，可以由业务代码来提示浏览器的合成策略，灵活运用这样的特性，可以大大提升合成策略的效果</p>
-<h4 id="绘制"><a href="#绘制" class="headerlink" title="绘制"></a>绘制</h4><p>们把任何位图合成到这个“最终位图”的操作称为绘制</p>
-<h4 id="元信息类标签"><a href="#元信息类标签" class="headerlink" title="元信息类标签"></a>元信息类标签</h4>
+<h4 id="绘制"><a href="#绘制" class="headerlink" title="绘制"></a>绘制</h4><p>把任何位图合成到这个“最终位图”的操作称为绘制</p>
+<h4 id="元信息类标签"><a href="#元信息类标签" class="headerlink" title="元信息类标签"></a>元信息类标签</h4><p>元信息多数情况下是给浏览器、搜索引擎等机器阅读的，有时候这些信息会在页面之外显示给用户，有时候则不会。</p>
+<ol>
+<li>head 标签：<br>head 标签本身并不携带任何信息，它主要是作为盛放其它语义类标签的容器使用。<br>它的内容必须包含一个 title。</li>
+<li>title 标签<br>title 应该是完整地概括整个网页内容的。</li>
+<li>meta 标签<br>meta 标签是一组键值对，它是一种通用的元信息表示标签。<br>具有 http-equiv 属性的 meta 标签，表示执行一个命令，这样的 meta 标签可以不需要 name 属性了。<br>从 HTML5 开始，为了简化写法，meta 标签新增了 charset 属性。添加了 charset 属性的 meta 标签无需再有 name 和 content。建议这个标签放在 head 的第一个。</li>
+<li>name 为 viewport 的 meta<br>它没有在 HTML 标准中定义，却是移动端开发的事实标准：它就是 name 为 viewport 的 meta。<br>这类 meta 的 name 属性为 viewport，它的 content 是一个复杂结构，是用逗号分隔的键值对，键值对的格式是 key=value。</li>
+</ol>
+
       
 
       
@@ -461,11 +468,11 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/08/12/learnHTTP/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/08/12/learnNode/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          HTTP学习笔记
+          Node.js学习
         
       </div>
     </a>

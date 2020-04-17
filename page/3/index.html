@@ -927,87 +927,6 @@
 
 
   
-    <article id="post-learnNode" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/12/learnNode/">Node.js学习</a>
-    </h1>
-  
-
-        
-        <a href="/2019/08/12/learnNode/" class="archive-article-date">
-  	<time datetime="2019-08-12T03:05:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-12</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Node.js 的学习笔记</p>
-<h3 id="创建基类-model"><a href="#创建基类-model" class="headerlink" title="创建基类 model"></a>创建基类 model</h3><p>当成功返回时和失败返回时，返回信息</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">class BaseModel &#123;</span><br><span class="line">  constructor(data, message) &#123;</span><br><span class="line">    <span class="keyword">if</span> (typeof data === <span class="string">'string'</span>) &#123;</span><br><span class="line">      this.message = data;</span><br><span class="line">      data = null;</span><br><span class="line">      message = null;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (data) &#123;</span><br><span class="line">      this.data = data;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (message) &#123;</span><br><span class="line">      this.message = message;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">class SuccessModel extends BaseModel &#123;</span><br><span class="line">  constructor(data, message) &#123;</span><br><span class="line">    super(data, message);</span><br><span class="line">    this.errno = 0;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">class ErrorModel extends BaseModel &#123;</span><br><span class="line">  constructor(data, message) &#123;</span><br><span class="line">    super(data, message);</span><br><span class="line">    this.errno = -1;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">module.exports = &#123;</span><br><span class="line">  SuccessModel,</span><br><span class="line">  ErrorModel</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<h3 id="拆分-URL"><a href="#拆分-URL" class="headerlink" title="拆分 URL"></a>拆分 URL</h3><p>将 url 拆分成一个数组，分成 path 和参数</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">const url = req.url;</span><br><span class="line">req.path = url.split(<span class="string">'?'</span>)[0];</span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2019/08/12/learnNode/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">node.js express</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/08/12/learnNode/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-learnHTTP" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1067,6 +986,87 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/08/12/learnHTTP/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-learnNode" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/12/learnNode/">Node.js学习</a>
+    </h1>
+  
+
+        
+        <a href="/2019/08/12/learnNode/" class="archive-article-date">
+  	<time datetime="2019-08-12T03:05:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-12</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Node.js 的学习笔记</p>
+<h3 id="创建基类-model"><a href="#创建基类-model" class="headerlink" title="创建基类 model"></a>创建基类 model</h3><p>当成功返回时和失败返回时，返回信息</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">class BaseModel &#123;</span><br><span class="line">  constructor(data, message) &#123;</span><br><span class="line">    <span class="keyword">if</span> (typeof data === <span class="string">'string'</span>) &#123;</span><br><span class="line">      this.message = data;</span><br><span class="line">      data = null;</span><br><span class="line">      message = null;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (data) &#123;</span><br><span class="line">      this.data = data;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (message) &#123;</span><br><span class="line">      this.message = message;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">class SuccessModel extends BaseModel &#123;</span><br><span class="line">  constructor(data, message) &#123;</span><br><span class="line">    super(data, message);</span><br><span class="line">    this.errno = 0;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">class ErrorModel extends BaseModel &#123;</span><br><span class="line">  constructor(data, message) &#123;</span><br><span class="line">    super(data, message);</span><br><span class="line">    this.errno = -1;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">module.exports = &#123;</span><br><span class="line">  SuccessModel,</span><br><span class="line">  ErrorModel</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="拆分-URL"><a href="#拆分-URL" class="headerlink" title="拆分 URL"></a>拆分 URL</h3><p>将 url 拆分成一个数组，分成 path 和参数</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">const url = req.url;</span><br><span class="line">req.path = url.split(<span class="string">'?'</span>)[0];</span><br></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2019/08/12/learnNode/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">node.js express</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/08/12/learnNode/">展开全文 >></a>
         </p>
       
 

@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="程亮的个人博客">
 <meta property="og:description" content="算法与数据结构">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-04-10T03:21:02.784Z">
+<meta property="og:updated_time" content="2020-04-16T01:51:57.355Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="算法与数据结构">
 <meta name="twitter:description" content="算法与数据结构">
@@ -412,10 +412,11 @@
 </ol>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">// p是要传入的数组，pb是用于检测p数组的某一项是否已经push</span><br><span class="line">function dfs(p,pb,level,res) &#123;</span><br><span class="line">    // 截止条件</span><br><span class="line">    if(level==p.length+1)&#123;</span><br><span class="line">        console.log(res)</span><br><span class="line">        return</span><br><span class="line">    &#125;</span><br><span class="line">    // 2.遍历候选节点</span><br><span class="line">    for(var i=0;i&lt;p.length;i++)&#123;</span><br><span class="line">        // 筛选</span><br><span class="line">        var c=p[i];</span><br><span class="line">        if(!pb[i])&#123;</span><br><span class="line">            res.push(c);</span><br><span class="line">            pb[i]=true;</span><br><span class="line">            debugger;</span><br><span class="line">            dfs(p,pb,level+1,res);</span><br><span class="line">            res.pop();</span><br><span class="line">            pb[i]=false;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  var p=[&apos;A&apos;,&apos;B&apos;,&apos;C&apos;]</span><br><span class="line">  var pb=[false,false,false]</span><br><span class="line">  dfs(p,pb,1,[])</span><br></pre></td></tr></table></figure>
 
-<h3 id="动态规划-DP"><a href="#动态规划-DP" class="headerlink" title="动态规划 DP"></a>动态规划 DP</h3><p>DP 可以没有递归，但是需要有一个数组</p>
+<h3 id="动态规划-DP"><a href="#动态规划-DP" class="headerlink" title="动态规划 DP"></a>动态规划 DP</h3><p>DP 可以没有递归，但是需要有一个数组<br>最优子结构(子问题的最优解推出问题的最优解)<br>重复子问题(递归求解过程成会重复计算之前已经计算过的问题)<br>无后效性(前面的状态一旦确定不会因为后面的状态改变而改变)</p>
 <ol>
 <li>根据前一个状态来推下一个状态</li>
 </ol>
+<h3 id="贪心算法"><a href="#贪心算法" class="headerlink" title="贪心算法"></a>贪心算法</h3><p>解决的是最优解问题<br>由局部最优到整体最优</p>
 
       
 
