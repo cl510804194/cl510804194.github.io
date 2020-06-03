@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="程亮的个人博客">
 <meta property="og:description" content="重学前端笔记 类型运行时类型运行时类型是代码实际执行过程中我们用到的类型。所有的类型数据都会属于 7 个类型之一。从变量、参数、返回值到表达式中间结果，任何 JavaScript 代码运行过程中产生的数据，都具有运行时类型  Undefined 类型表示未定义：因为 JavaScript 的代码 undefined 是一个变量，而并非是一个关键字，这是 JavaScript 语言公认的设计失误之一">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-04-15T01:46:35.661Z">
+<meta property="og:updated_time" content="2020-04-22T03:24:38.610Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="重学前端">
 <meta name="twitter:description" content="重学前端笔记 类型运行时类型运行时类型是代码实际执行过程中我们用到的类型。所有的类型数据都会属于 7 个类型之一。从变量、参数、返回值到表达式中间结果，任何 JavaScript 代码运行过程中产生的数据，都具有运行时类型  Undefined 类型表示未定义：因为 JavaScript 的代码 undefined 是一个变量，而并非是一个关键字，这是 JavaScript 语言公认的设计失误之一">
@@ -374,6 +374,39 @@
 <li>title 标签<br>title 应该是完整地概括整个网页内容的。</li>
 <li>meta 标签<br>meta 标签是一组键值对，它是一种通用的元信息表示标签。<br>具有 http-equiv 属性的 meta 标签，表示执行一个命令，这样的 meta 标签可以不需要 name 属性了。<br>从 HTML5 开始，为了简化写法，meta 标签新增了 charset 属性。添加了 charset 属性的 meta 标签无需再有 name 和 content。建议这个标签放在 head 的第一个。</li>
 <li>name 为 viewport 的 meta<br>它没有在 HTML 标准中定义，却是移动端开发的事实标准：它就是 name 为 viewport 的 meta。<br>这类 meta 的 name 属性为 viewport，它的 content 是一个复杂结构，是用逗号分隔的键值对，键值对的格式是 key=value。</li>
+</ol>
+<h3 id="Promise"><a href="#Promise" class="headerlink" title="Promise"></a>Promise</h3><p>我们把宿主发起的任务称为宏观任务，把 JavaScript 引擎发起的任务称为微观任务</p>
+<ol>
+<li>宏观和微观任务<br>JavaScript 必须保证这些异步代码在一个宏观任务中完成，因此，每个宏观任务中又包含了一个微观任务队列<br>首先我们分析有多少个宏任务；<br>在每个宏任务中，分析有多少个微任务；<br>根据调用次序，确定宏任务中的微任务执行次序；<br>根据宏任务的触发规则和调用次序，确定宏任务的执行次序；<br>确定整个顺序。<br>generator/iterator 也常常被跟异步一起来讲，我们必须说明 generator/iterator 并非异步代码，只是在缺少 async/await 的时候，一些框架（最著名的要数 co）使用这样的特性来模拟 async/await</li>
+</ol>
+<h3 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h3><p>闭包其实只是一个绑定了执行环境的函数，这个函数并不是印在书本里的一条简单的表达式，闭包与普通函数的区别是，它携带了执行的环境，就像人在外星中需要自带吸氧的装备一样，这个函数也带有在程序中生存的环境<br>闭包包含两个部分</p>
+<ol>
+<li>环境部分<br>环境<br>标识符列表</li>
+<li>表达式部分</li>
+</ol>
+<h3 id="执行上下文"><a href="#执行上下文" class="headerlink" title="执行上下文"></a>执行上下文</h3><p>ES3:<br>scope：作用域，也常常被叫做作用域链。<br>variable object：变量对象，用于存储变量的对象。<br>this value：this 值。</p>
+<p>ES5:<br>lexical environment：词法环境，当获取变量时使用。<br>variable environment：变量环境，当声明变量时使用。<br>this value：this 值。</p>
+<p>ES2018:<br>lexical environment：词法环境，当获取变量或者 this 值时使用。<br>variable environment：变量环境，当声明变量时使用<br>code evaluation state：用于恢复代码执行位置。<br>Function：执行的任务是函数时使用，表示正在被执行的函数。<br>ScriptOrModule：执行的任务是脚本或者模块时使用，表示正在被执行的代码。<br>Realm：使用的基础库和内置对象实例。<br>Generator：仅生成器上下文有这个属性，表示当前生成器。</p>
+<ol>
+<li><p>立即执行函数</p>
+<ul>
+<li>加大括号<br>括号有个缺点，那就是如果上一行代码不写分号，括号会被解释为上一行代码最末的函数调用，产生完全不符合预期</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">(function()&#123;</span><br><span class="line"> var a;</span><br><span class="line"> //code</span><br><span class="line"> &#125;());</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>加 void(推荐)</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">void function()&#123;</span><br><span class="line"> var a;</span><br><span class="line"> //code</span><br></pre></td></tr></table></figure>
+
+<p>}();</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><ol>
+<li>this 关键字的行为<br>调用函数时使用的引用，决定了函数执行时刻的 this 值<br>改为箭头函数后，不论用什么引用来调用它，都不影响它的 this 值。</li>
+<li>this 关键字的机制</li>
 </ol>
 
       

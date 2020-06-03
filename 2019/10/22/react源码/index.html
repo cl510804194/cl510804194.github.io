@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="程亮的个人博客">
 <meta property="og:description" content="react 源码笔记">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-03-20T02:54:44.584Z">
+<meta property="og:updated_time" content="2020-05-13T07:38:25.153Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="react源码笔记">
 <meta name="twitter:description" content="react 源码笔记">
@@ -198,7 +198,7 @@
         <p>react 源码笔记</p>
 <a id="more"></a>
 
-<h3 id="jsx-到-js-的转换"><a href="#jsx-到-js-的转换" class="headerlink" title="jsx 到 js 的转换"></a>jsx 到 js 的转换</h3><h3 id="react-createElement"><a href="#react-createElement" class="headerlink" title="react.createElement"></a>react.createElement</h3><p>如果是大写，react.createElement 第一个参数是变量，则为一个组件，小写则是一个字符串，则为一个原生 html 标签，因此自定义组件必须大写开头。</p>
+<h3 id="jsx-到-js-的转换"><a href="#jsx-到-js-的转换" class="headerlink" title="jsx 到 js 的转换"></a>jsx 到 js 的转换</h3><h3 id="react-createElement"><a href="#react-createElement" class="headerlink" title="react.createElement"></a>react.createElement</h3><p>接受 3 个参数 type,config,children,返回一个对象包含两个属性 type,props,props 中包含 config 和 children<br>其中 children 还做了一步兼容处理，如果 child 是 object 类型（即 React.createElement 返回的 react 元素），则返回 child,否则它是一个字符串，生成一个对象，该对象 添加一个 symbol 类型的属性 type,该对象的 props 中再传入 child<br>如果是大写，react.createElement 第一个参数是变量，则为一个组件，小写则是一个字符串，则为一个原生 html 标签，因此自定义组件必须大写开头。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">export function createElement(type, config, children) &#123;&#125;</span><br></pre></td></tr></table></figure>
 
 <p>流程：</p>
@@ -247,7 +247,6 @@
 <li>包含应用挂载的目标节点</li>
 <li>记录整个应用更新的信息</li>
 </ol>
-<h3 id="Fiber"><a href="#Fiber" class="headerlink" title="Fiber"></a>Fiber</h3><p>1.每一个 ReactElement 对应一个 fiber 对象<br>记录节点的各种状态<br>每个节点只会存一个子节点，但是有 sibling 兄弟节点进行串联<br>遍历时 会 return 返回父节点，然后遍历父节点的兄弟节点，在从兄弟节点返回父父节点</p>
 <h3 id="Update"><a href="#Update" class="headerlink" title="Update"></a>Update</h3><p>用于记录组件状态的改变, 存放于 UpdateQueue 中,多个 Update 可以同时存在<br>创建 createUpdate()</p>
 <ol>
 <li>createUpdate<br>1.payLoad 传入一个 element, 2.调用 enqueueUpdate</li>
@@ -262,9 +261,76 @@
 <li>在一个时间很小的差距中，算出的 expiration-time 是一样的，从而提高性能</li>
 </ol>
 <h3 id="diffrent-expiration-time"><a href="#diffrent-expiration-time" class="headerlink" title="diffrent-expiration-time"></a>diffrent-expiration-time</h3><ol>
-<li>Sync 模式 创建即更新</li>
+<li>Async 模式 创建即更新</li>
 <li>异步模式 可能会被中断 会有个中断时间</li>
 <li>指定 context</li>
+</ol>
+<h3 id="react-Fiber"><a href="#react-Fiber" class="headerlink" title="react-Fiber"></a>react-Fiber</h3><p>filber 是一个执行单元<br>把一个单任务分成多个小任务，使用单链表<br>每一个 ReactElement 对应一个 fiber 对象<br>记录节点的各种状态</p>
+<ol>
+<li><p>requestAnimationFrame</p>
+</li>
+<li><p>requestIdleCallback</p>
+<ul>
+<li>timeRemaining</li>
+<li>didTimeOut</li>
+</ul>
+</li>
+<li><p>Update 类 是个链表；</p>
+</li>
+<li><p>UpdateQueue 更新队列，实际是一个链表包含原状态，第一个更新状态，最后一个更新状态</p>
+</li>
+<li><p>enqueueUpdate 方法</p>
+<ul>
+<li>传入一个数据如果 updateQueue 的第一个更新数据为空，则第一个和最后一个都指向该数据</li>
+<li>如果 firstUpdate 不为空，则让 lastUpdate.nextUpdate 指向自己，在让 lastUpdate 指向自己</li>
+</ul>
+</li>
+<li><p>forceUpdate() 方法<br>获取老状态然后遍历这个链表，进行更新</p>
+</li>
+<li><p>遍历 render 树</p>
+<ol>
+<li>每个节点只会存一个子节点，但是有 sibling 兄弟节点进行串联</li>
+<li>遍历时 会 return 返回父节点，然后遍历父节点的兄弟节点，在从兄弟节点返回父父节点</li>
+</ol>
+</li>
+<li><p>createReact()</p>
+</li>
+<li><p>render()<br>diff 阶段就是 render 阶段<br>接受两个参数，element,container</p>
+<ul>
+<li><p>rootFiber 属性 tag,stateNode,props<br>tag 是一个标识，标识为根元素<br>stateNode 指向真实 DOM 元素<br>props ，有个属性对象 children 属性，里面放的是要渲染的元素，即 element</p>
+</li>
+<li><p>scheduleRoot() 接受 rootFiber 为参数<br>从根节点开始渲染和调度，有两个阶段 diff 阶段和 commit 阶段<br>diff 阶段 对比新旧的虚拟 DOM，进行增量更新或创建，这个阶段可以进行拆分，此阶段可以暂停<br>commit 阶段，进行 DOM 更新创建阶段，此阶段不能暂停<br>声明 nextUnitOfWork 当前工作单元<br>wrokLoop 默认参数 deadLine 工作循环<br>如果 nextUnitOfWork 不为空，则循环，否则 render 阶段结束<br>声明 shoulyYilId 是否让出时间片<br>如果在执行完一个任务，没有空间时间的话就需要让出控制权</p>
+<p>requestIdleCallBack(wrokLoop) 告诉浏览器清闲时候执行 workLoop<br>workInProgressRoot 应用根指针<br>performUnitOfWork() 传入一个 fiber 控制开始工作循环，执行 beginWork,如果有 child 返回 child,没有 child 返回 sibing<br>beginWork() 接受一个 fiber ,创建真实 dom 元素和创建子 fiber</p>
+<p>updateHostRoot() 接受一个 fiber,创建根 fiber</p>
+</li>
+<li><p>reconcileChilden 接受 currentFiber,newChildren;用于更新子 fiber<br>将 createElement 所返回的虚拟 dom，进一步转化成 fiber,主要是添加 tag,更新 type,props,effectList,<br>effectList 中只会收集有更新的 fiber</p>
+</li>
+<li><p>updateHostText 接受当前 fiber 如果此节点没有创建 Dom 则创建 Dom</p>
+</li>
+<li><p>createDom（） 接受当前 fiber,根据当前的 tag 创建不同的真实节点</p>
+</li>
+<li><p>upDateDom（） 接受当前 fiber， 更新 dom,执行 setProps</p>
+</li>
+<li><p>setProps() 设置属性 接受 dom，oldProps,newProps</p>
+</li>
+<li><p>setProp() 设置 prop</p>
+</li>
+<li><p>completeUnitOfWork 收集有副作用的 fiber<br>每个 fiber 有两个属性 firstEffect 指向第一个用副作用的儿子，last 指向最后一个，nextEffect 将其他 effect 链接成链表</p>
+</li>
+<li><p>任务</p>
+<ol>
+<li>生成 fiber 树</li>
+<li>收集 effectList 知道哪些树增加了，哪些树减少了</li>
+</ol>
+</li>
+<li><p>commitRoot() 提交阶段 不可取消</p>
+</li>
+<li><p>commitWork(currentFiber)<br>拿到父节点的 stateNode,<br>如果当前 currentFiber.effectTag 为更新，则渲染</p>
+</li>
+<li><p>currentRoot</p>
+</li>
+</ul>
+</li>
 </ol>
 
       

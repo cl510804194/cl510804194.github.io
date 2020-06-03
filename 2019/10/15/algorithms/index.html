@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="程亮的个人博客">
 <meta property="og:description" content="算法与数据结构">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-04-16T01:51:57.355Z">
+<meta property="og:updated_time" content="2020-04-27T07:11:11.875Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="算法与数据结构">
 <meta name="twitter:description" content="算法与数据结构">
@@ -198,6 +198,23 @@
         <p>算法与数据结构</p>
 <a id="more"></a>
 
+<h3 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h3><h4 id="应用套路"><a href="#应用套路" class="headerlink" title="应用套路"></a>应用套路</h4><ol>
+<li><p>回文特性<br>如果从中间位置“劈开”，那么两边的两个子串在内容上是完全对称的。</p>
+<ul>
+<li>例子：给定一个非空字符串 s，最多删除一个字符。判断是否能成为回文字符串。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">const validPalindrome=function(s)&#123;</span><br><span class="line">    const len=s.length;</span><br><span class="line">    let i=0;j=len-1;</span><br><span class="line">    while(i&lt;j&amp;&amp;s[i]==s[j])&#123;</span><br><span class="line">        i++;j--;</span><br><span class="line">    &#125;</span><br><span class="line">    if (isPalindrome(i + 1, j))&#123;</span><br><span class="line">        return true</span><br><span class="line">    &#125;</span><br><span class="line">    if (isPalindrome(i, j - 1))&#123;</span><br><span class="line">        return true</span><br><span class="line">    &#125;;</span><br><span class="line">    function isPalindrome(st,ed) &#123;</span><br><span class="line">        while(st&lt;ed)&#123;</span><br><span class="line">            if(s[st]!=s[ed])&#123;</span><br><span class="line">                return false</span><br><span class="line">            &#125;</span><br><span class="line">            st++;ed--;</span><br><span class="line">        &#125;</span><br><span class="line">        return true;</span><br><span class="line">    &#125;</span><br><span class="line">    return false</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<p>2.</p>
+<h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><h4 id="二维数组"><a href="#二维数组" class="headerlink" title="二维数组"></a>二维数组</h4><p>形如下图代码所示，二维数组别名矩阵</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">const arr=new Array(7) //生成一个数组</span><br><span class="line">&lt;!-- 生成一个二维数组 --&gt;</span><br><span class="line">const len = arr.length</span><br><span class="line">for(let i=0;i&lt;len;i++) &#123;</span><br><span class="line">    // 将数组的每一个坑位初始化为数组</span><br><span class="line">    arr[i] = []</span><br><span class="line">&#125;</span><br><span class="line">&lt;!-- 数组形式 --&gt;</span><br><span class="line">const arr = [</span><br><span class="line">  [1,2,3,4,5],</span><br><span class="line">  [1,2,3,4,5],</span><br><span class="line">  [1,2,3,4,5],</span><br><span class="line">  [1,2,3,4,5],</span><br><span class="line">  [1,2,3,4,5]</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
+<h4 id="应用套路-1"><a href="#应用套路-1" class="headerlink" title="应用套路"></a>应用套路</h4><ol>
+<li>两数求和<br>所有的求和问题，都可以转化为求差问题</li>
+<li>双指针法<br>三数求和就是利用的双指针法<br>左右指针一起从两边往中间位置相互迫近，这样的特殊双指针形态，被称为“对撞指针”，适用于有序和数组。</li>
+</ol>
 <h3 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h3><ol>
 <li>后进先出</li>
 <li>往一个栈插入新元素被称作进栈、入栈、压栈</li>

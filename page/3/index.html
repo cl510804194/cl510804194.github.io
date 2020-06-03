@@ -173,6 +173,184 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-learnNext" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/10/10/learnNext/">nextJs学习笔记</a>
+    </h1>
+  
+
+        
+        <a href="/2019/10/10/learnNext/" class="archive-article-date">
+  	<time datetime="2019-10-10T03:14:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-10</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>学习 next.js 所做笔记</p>
+<h2 id="路由"><a href="#路由" class="headerlink" title="路由"></a>路由</h2><ol>
+<li>使用 Link 标签</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;Link href=&#123;&#123;pathname:&apos;/xiaojiejie&apos;,query:&#123;name:&apos;结衣&apos;&#125;&#125;&#125;&gt;&lt;a&gt;选结衣&lt;/a&gt;&lt;/Link&gt;&lt;br/&gt;</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>使用 router 进行编程式跳转</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">function gotoXiaojiejie()&#123;</span><br><span class="line">    Router.push(&#123;</span><br><span class="line">      pathname:&apos;/xiaojiejie&apos;,</span><br><span class="line">      query:&#123;</span><br><span class="line">        name:&apos;井空&apos;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>next.js 中只有 query 传参</p>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">next.js</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/10/10/learnNext/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-learnCanvas" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/10/09/learnCanvas/">Canvas学习笔记</a>
+    </h1>
+  
+
+        
+        <a href="/2019/10/09/learnCanvas/" class="archive-article-date">
+  	<time datetime="2019-10-09T09:40:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-09</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>学习 canvas 中总结的一些知识</p>
+<h2 id="设置画布-width、height"><a href="#设置画布-width、height" class="headerlink" title="设置画布 width、height"></a>设置画布 width、height</h2><ul>
+<li><p>HTML 属性设置 width、height</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;canvas id=&quot;canvas&quot; width=&quot;400&quot; height=&quot;400&quot;&gt;</span><br></pre></td></tr></table></figure>
+
+<p>canvas 画布的宽度为 400，高度为 400，背景颜色为黑色</p>
+</li>
+<li><p>CSS 属性设置 width、height</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#canvas &#123;</span><br><span class="line">          background: #000;</span><br><span class="line">          width: 400px;</span><br><span class="line">          height: 400px;</span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure>
+
+<p>使用 CSS 来设置宽高的话，画布就会按照 300 _ 150 的比例进行缩放，也就是将 300 _ 150 的页面显示在 400 * 400 的容器中。</p>
+</li>
+<li><p>JS 属性设置 width、height</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var canvas = document.getElementById(&quot;canvas&quot;);</span><br><span class="line">var context = canvas.getContext(&quot;2d&quot;);</span><br><span class="line">var cx = canvas.width = 400;</span><br><span class="line">var cy = canvas.height = 400;</span><br><span class="line"></span><br><span class="line">context.beginPath();</span><br><span class="line">context.arc(100, 100, 50, 0, Math.PI * 2, true);</span><br><span class="line">context.closePath();</span><br><span class="line">context.fillStyle = &apos;rgb(255,255,255)&apos;;</span><br><span class="line">context.fill();</span><br></pre></td></tr></table></figure>
+
+<p>尽量使用 HTML 的 width 和 height 属性或者直接使用 JS 动态来设置宽高，不要使用 CSS 设置。</p>
+</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">canvas</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/10/09/learnCanvas/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-studySummarize" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -667,6 +845,171 @@
 
 
   
+    <article id="post-learnDart" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/21/learnDart/">learnDart</a>
+    </h1>
+  
+
+        
+        <a href="/2019/08/21/learnDart/" class="archive-article-date">
+  	<time datetime="2019-08-21T08:21:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-21</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>dart 简单知识体系</p>
+<h2 id="常用数据类型"><a href="#常用数据类型" class="headerlink" title="常用数据类型"></a>常用数据类型</h2><ol>
+<li><p>数字</p>
+<ul>
+<li>num<br>是其他数字类型的父类，既可以是整数型，也可以是浮点型</li>
+<li>int<br>只可以是整形</li>
+<li>double<br>只可以是浮点型</li>
+<li>API<br>num.abs() -&gt;求绝对值<br>num.toInt()<br>num.toDouble()</li>
+</ul>
+</li>
+<li><p>字符串</p>
+<ul>
+<li>字符串拼接<br>两种方法</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String str3 = &apos;str:$str1 str2:$str2&apos;; //字符串拼接</span><br><span class="line"> String str4 = &apos;str1:&apos; + str1 + &apos;str2:&apos; + str2; //字符串拼接</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>API<br>.substring()<br>.indexOf()</li>
+</ul>
+</li>
+<li><p>布尔</p>
+</li>
+<li><p>集合</p>
+<ul>
+<li>声明用 List，接受泛型,等同于 JS 的 array</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">List number=[1,2,3,4]</span><br><span class="line">List&lt;int&gt; number=[1,2,3,4]</span><br></pre></td></tr></table></figure>
+
+<p>API</p>
+<ul>
+<li>.add()</li>
+<li>.addAll()</li>
+<li>.generate(length,item=&gt;{});</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">List list4 = List.generate(10, (item) =&gt; item * 2);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Map</p>
+<ul>
+<li>使用 Map 声明，相当于 js 的{}</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Map names = &#123;&apos;xiaoming&apos;: &apos;小明&apos;, &apos;xiaohong&apos;: &apos;小红&apos;&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>在进行字符串拼接时，需要使用{}括起来</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(&apos;$&#123;names[&apos;xiaoming&apos;]&#125;);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>遍历<br>.forEach()<br>.map()<br>.keys()<br>.values()<br>.containsKey()</li>
+</ul>
+</li>
+<li><p>var、dynamic、Object</p>
+<ul>
+<li>var 静态类型，一旦被定义，值类型就不能被修改</li>
+<li>dynamic 动态类型，只有在运行时才会推断数据类型，无法调用具体类型的方法</li>
+<li>Object 动态类型，无法调用 Object 类不存在的方法</li>
+</ul>
+</li>
+<li><p>类型转换</p>
+</li>
+</ol>
+<h2 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h2><h3 id="封装、继承、多态"><a href="#封装、继承、多态" class="headerlink" title="封装、继承、多态"></a>封装、继承、多态</h3><ol>
+<li><p>封装</p>
+</li>
+<li><p>继承</p>
+</li>
+<li><p>多态<br>使用@override 进行父类方法的重写</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">@override //重载，重写方法</span><br><span class="line">String toString() &#123;</span><br><span class="line">return &apos;name:$name, age:$age&apos;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h3 id="类"><a href="#类" class="headerlink" title="类"></a>类</h3><ul>
+<li>标准构造方法</li>
+<li>初始化列表<br>在接受到一个参数后，希望对该参数进行修改</li>
+<li>命名构造方法<br>为类实现多个构造方法</li>
+<li>工厂构造方法<br>不仅仅是构造方法，更是一种模式</li>
+<li>命名工厂构造方法<br>factory [类名+.+方法名]</li>
+<li>静态方法<br>在方法名前添加 static，可以直接调用类的方法</li>
+<li>setters 和 getters<br>getters 可以获取私有字段<br>setters 控制外接对私有字段的修改</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line">// 定义一个Dart类，所有的类都继承自Object</span><br><span class="line">class Person &#123;</span><br><span class="line">  String name;</span><br><span class="line">  int age;</span><br><span class="line">  // 标准的构造方法</span><br><span class="line">  Person(this.name, this.age);</span><br><span class="line">  @override //重载，重写方法</span><br><span class="line">  String toString() &#123;</span><br><span class="line">    return &apos;name:$name, age:$age&apos;;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Logger &#123;</span><br><span class="line">  static Logger _cache;</span><br><span class="line">  // 工厂构造方法</span><br><span class="line">  // 不仅仅是构造方法，更是一种模式</span><br><span class="line">  factory Logger() &#123;</span><br><span class="line">    if (_cache == null) &#123;</span><br><span class="line">      _cache = Logger._internal();</span><br><span class="line">    &#125;</span><br><span class="line">    return _cache;</span><br><span class="line">  &#125;</span><br><span class="line">  Logger._internal() &#123;&#125;</span><br><span class="line">  void log(String msg) &#123;</span><br><span class="line">    print(msg);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 子类Student继承Person</span><br><span class="line">class Student extends Person &#123;</span><br><span class="line">  // 定义类的方法</span><br><span class="line">  String _school; //下划线标识私有变量</span><br><span class="line">  String city; //可选参数,构造方法中使用大括号标识</span><br><span class="line">  String country; //默认参数，用大括号标识并且在其中赋值</span><br><span class="line">  String name;</span><br><span class="line">  Student(this._school, String name, int age,</span><br><span class="line">      &#123;this.city, this.country = &apos;China&apos;&#125;)</span><br><span class="line">      :</span><br><span class="line">        // 初始化列表，在接受到一个参数后，希望对该参数进行修改</span><br><span class="line">        name = &apos;$country.$city&apos;,</span><br><span class="line">        //  如果父类没有默认构造方法（无参构造方法），则需要在初始化列表中调用父类的构造方法进行初始化</span><br><span class="line">        super(name, age) &#123;</span><br><span class="line">    print(&apos;构造方法体不是必须的&apos;);</span><br><span class="line">  &#125;</span><br><span class="line">  // 命名构造方法，为类实现多个构造方法</span><br><span class="line">  Student.cover(Student stu) : super(stu.name, stu.age);</span><br><span class="line">   // 命名工厂构造方法 factory [类名+.+方法名]</span><br><span class="line">  factory Student.stu(Student stu) &#123;</span><br><span class="line">    return Student(stu._school, stu.name, stu.age);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>生成类</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">void _oopLearn() &#123;</span><br><span class="line">    Logger log1 = Logger();</span><br><span class="line">    Logger log2 = Logger();</span><br><span class="line">    Student.doPrint(&apos;——oppLearn&apos;);</span><br><span class="line">    Student stu1 = Student(&apos;清华&apos;, &apos;Jack&apos;, 18);</span><br><span class="line">    stu1.school = &apos;985&apos;;</span><br><span class="line">    print(stu1.toString());</span><br><span class="line">    Student stu2 = Student(&apos;北大&apos;, &apos;Tom&apos;, 16, city: &apos;上海&apos;, country: &apos;中国&apos;);</span><br><span class="line">    print(stu2);</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="抽象类"><a href="#抽象类" class="headerlink" title="抽象类"></a>抽象类</h3><p>不能有自己的实例，使用 abstract 声明</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">// 抽象类 抽象类不能被实例化</span><br><span class="line">abstract class Study &#123;</span><br><span class="line">  void study();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class StudyFlutter extends Study &#123;</span><br><span class="line">  @override</span><br><span class="line">  void study() &#123;</span><br><span class="line">    print(&apos;我在学习&apos;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="mixins"><a href="#mixins" class="headerlink" title="mixins"></a>mixins</h3><p>为类添加特征：mixins<br>mixins 是在多个类层次结构中重用代码的一种方式<br>要使用 mixins,在 with 关键字后面跟上一个或多个 mixin 的名字(用逗号分隔)<br>特征：实现 mixin,就创建一个集成 Object 类的子类（不能继承其他类）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">class Tset extends Person with Study &#123;</span><br><span class="line">  Tset(String name, int age) : super(name, age);</span><br><span class="line">  @override</span><br><span class="line">  void study()&#123;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="函数-方法"><a href="#函数-方法" class="headerlink" title="函数/方法"></a>函数/方法</h2><ol>
+<li>标准方法</li>
+<li>私有方法</li>
+<li>匿名方法</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">class FunctionLearn &#123;</span><br><span class="line">  //方法构成</span><br><span class="line">  //返回值+方法名+参数</span><br><span class="line">  // 返回值类型可缺省，也可为void或具体的类型</span><br><span class="line">  // 方法名 匿名方法不需要方法名</span><br><span class="line">  // 参数：参数类型和参数名，参数类型可缺省</span><br><span class="line"></span><br><span class="line">  // 标准方法</span><br><span class="line"></span><br><span class="line">  int sum(int val1, int val2) &#123;</span><br><span class="line">    return val1 + val2;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  // 私有方法 加一个下划线</span><br><span class="line">  _learn() &#123;</span><br><span class="line">    print(&apos;私有方法&apos;);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  //匿名方法</span><br><span class="line">  anonymousFunction() &#123;</span><br><span class="line">    var list = [&apos;私有方法&apos;, &apos;匿名方法&apos;];</span><br><span class="line">    list.forEach((i) &#123;</span><br><span class="line">      //  里面的i就是匿名方法</span><br><span class="line">      print(list.indexOf(i).toString());</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="泛型"><a href="#泛型" class="headerlink" title="泛型"></a>泛型</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">import &apos;opp_learn.dart&apos;;</span><br><span class="line"></span><br><span class="line">class TestGeneric &#123;</span><br><span class="line">  void start() &#123;</span><br><span class="line">    Cache&lt;String&gt; cache1 = Cache();</span><br><span class="line">    cache1.setItem(&apos;cache1&apos;, &apos;1&apos;);</span><br><span class="line">    String string1 = cache1.getItem(&apos;cache1&apos;);</span><br><span class="line">    print(string1);</span><br><span class="line">    Member&lt;Student&gt; member = Member(Student(&apos;&apos;, &apos;&apos;, 16));</span><br><span class="line">    print(member.fixedName());</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 泛型：主要是解决类、接口、方法的复用性、以及对不特定数据类型的支持</span><br><span class="line">// 泛型类：提高代码的复用度</span><br><span class="line">class Cache&lt;T&gt; &#123;</span><br><span class="line">  static final Map&lt;String, Object&gt; _cached = Map();</span><br><span class="line">  void setItem(String key, T value) &#123;</span><br><span class="line">    _cached[key] = value;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  T getItem(String key) &#123;</span><br><span class="line">    return _cached[key];</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Member&lt;T extends Person&gt; &#123;</span><br><span class="line">  T _person;</span><br><span class="line">  Member(this._person);</span><br><span class="line">  String fixedName() &#123;</span><br><span class="line">    print(&apos;----fixedName----&apos;);</span><br><span class="line">    return &apos;fixed:$&#123;_person.name&#125;&apos;;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="final-const-static"><a href="#final-const-static" class="headerlink" title="final const static"></a>final const static</h2><p>“static” 表示成员在类本身上可用，而不是在类的实例上。 这就是它的意思，并没有用于其他地方。 static 修饰成员。</p>
+<p>“final” 表示单一赋值：final 变量或字段必须初始化。 一旦赋值，就不能改变 final 变量的值。 final 修饰变量。</p>
+<p>“const” 的含义在 Dart 中有点复杂和微妙。 const 修饰值。 您可以在创建集合时使用它，例如 const [1,2,3] ，以及构造对象（代替 new），比如 const Point（2,3）。这里，const 意味着对象的整个深度状态可以在编译时完全确定，并且对象将被冻结并完全不可变。</p>
+<h2 id="技巧"><a href="#技巧" class="headerlink" title="技巧"></a>技巧</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">// 编程技巧</span><br><span class="line">//一：封装、继承、多态</span><br><span class="line">//善于封装、大到功能呢模块的封装、类的封装与抽象、小到方法的封装、封装的目的在于复用和易于扩展</span><br><span class="line">//二：点点点的技巧 1.点查看对象有哪些方法和属性；2.点看源码；3.点探究竟</span><br><span class="line"></span><br><span class="line">void main() &#123;</span><br><span class="line">  List list;</span><br><span class="line">  //Dart编程小技巧1：安全的调用</span><br><span class="line">  //对于不确定是否为空的对象可以通过?.的方法来定位它的属性和方法以防止空异常;</span><br><span class="line">  print(list?.length);</span><br><span class="line">  //Dart编程小技巧2：:设置默认值</span><br><span class="line">  print(list?.length ?? -1);</span><br><span class="line">  // Dart编程小技巧3：:简化</span><br><span class="line">  list = [];</span><br><span class="line">  list.add(0);</span><br><span class="line">  list.add(&apos;value&apos;);</span><br><span class="line">  list.add(null);</span><br><span class="line">  if ([null, 0, &apos;&apos;].contains(list[0])) &#123;</span><br><span class="line">    //......s</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/08/21/learnDart/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-work" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -801,272 +1144,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/08/14/reviewFrondEnd/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-reviewEs6" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/13/reviewEs6/">回顾ES6</a>
-    </h1>
-  
-
-        
-        <a href="/2019/08/13/reviewEs6/" class="archive-article-date">
-  	<time datetime="2019-08-13T07:23:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-13</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="执行上下文"><a href="#执行上下文" class="headerlink" title="执行上下文"></a>执行上下文</h3><p>当有两个相同函数名时候，后面的会覆盖前面的函数</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">function foo() &#123;</span><br><span class="line">  console.log(&apos;foo1&apos;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">foo(); // foo2</span><br><span class="line"></span><br><span class="line">function foo() &#123;</span><br><span class="line">  console.log(&apos;foo2&apos;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">foo(); // foo2</span><br></pre></td></tr></table></figure>
-
-<h3 id="actionScope"><a href="#actionScope" class="headerlink" title="actionScope"></a>actionScope</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">var value = 1;</span><br><span class="line"></span><br><span class="line">function foo() &#123;</span><br><span class="line">  // console.log(this);</span><br><span class="line">  console.log(1);</span><br><span class="line">  console.log(value);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function bar() &#123;</span><br><span class="line">  var value = 2;</span><br><span class="line">  // console.log(this);</span><br><span class="line">  foo();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">bar();</span><br></pre></td></tr></table></figure>
-
-<p>输出 1</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var scope = &apos;global scope&apos;;</span><br><span class="line">function checkscope() &#123;</span><br><span class="line">  var scope = &apos;local scope&apos;;</span><br><span class="line">  // console.log(scope);</span><br><span class="line">  function f() &#123;</span><br><span class="line">    return scope;</span><br><span class="line">  &#125;</span><br><span class="line">  return f();</span><br><span class="line">&#125;</span><br><span class="line">checkscope();</span><br></pre></td></tr></table></figure>
-
-<p>输出 local scope</p>
-<h3 id="解构赋值"><a href="#解构赋值" class="headerlink" title="解构赋值"></a>解构赋值</h3><ul>
-<li>获取数组中的值</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var foo = [&quot;one&quot;, &quot;two&quot;, &quot;three&quot;, &quot;four&quot;];</span><br><span class="line">var [one, two, three] = foo;</span><br><span class="line">console.log(one); // &quot;one&quot;</span><br><span class="line">console.log(two); // &quot;two&quot;</span><br><span class="line">console.log(three); // &quot;three&quot;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>如果要忽略掉某些值</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var [first, , , last] = foo;</span><br><span class="line">console.log(first); // &quot;one&quot;</span><br><span class="line">console.log(last); // &quot;four&quot;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>如果没有从数组中拿到值，可以为变量设置一个默认值</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[a=5, b=7] = [1];</span><br><span class="line">console.log(a); // 1</span><br><span class="line">console.log(b); // 7</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>交换两数</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var a = 1;</span><br><span class="line">var b = 3;</span><br><span class="line">[a, b] = [b, a];</span><br><span class="line">console.log(a); // 3</span><br><span class="line">console.log(b); // 1</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>获取对象的值</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">const student = &#123;</span><br><span class="line">  name:&apos;Ming&apos;,</span><br><span class="line">  age:&apos;18&apos;,</span><br><span class="line">  city:&apos;Shanghai&apos;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">const &#123;name,age,city&#125; = student;</span><br><span class="line">console.log(name); // &quot;Ming&quot;</span><br><span class="line">console.log(age); // &quot;18&quot;</span><br><span class="line">console.log(city); // &quot;Shanghai&quot;</span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2019/08/13/reviewEs6/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/08/13/reviewEs6/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-learnHTTP" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/12/learnHTTP/">HTTP学习笔记</a>
-    </h1>
-  
-
-        
-        <a href="/2019/08/12/learnHTTP/" class="archive-article-date">
-  	<time datetime="2019-08-12T03:05:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-12</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>http 的学习笔记</p>
-<p>参考来自：</p>
-<blockquote><p>HTTP 权威指南学习笔记</p>
-<footer><strong>@woai30231</strong><cite><a href="https://github.com/woai30231/http/tree/master" target="_blank" rel="noopener">github.com/woai30231/http/tree/master</a></cite></footer></blockquote>
-
-<h2 id="URL-与资源"><a href="#URL-与资源" class="headerlink" title="URL 与资源"></a>URL 与资源</h2><p>URI（统一资源标识符）由 URL（统一资源定位符）和 URN（统一资源名）两个子集构成。</p>
-<h3 id="URL-以位置定位"><a href="#URL-以位置定位" class="headerlink" title="URL 以位置定位"></a>URL 以位置定位</h3><p>URL 是从资源的位置来定义一个资源的，比如在“中国山东的一只小狗”和在“中国广东的一只小狗”就分别定义了两只不同的狗<br>缺点：如果资源的位置发生了改变，那么资源也就找不到了</p>
-<h3 id="URN-以名字定位"><a href="#URN-以名字定位" class="headerlink" title="URN 以名字定位"></a>URN 以名字定位</h3><p>URN 是从资源的名字来定义的，比如小明和小李就分别定义了两个人</p>
-<h3 id="URL-和-URN-对比"><a href="#URL-和-URN-对比" class="headerlink" title="URL 和 URN 对比"></a>URL 和 URN 对比</h3><p>URL 的缺点就是如果资源的位置发生了改变，那么资源也就找不到了，而 URN 正是解决这个问题的，因为 URN 不受位置的限制，它只受名字的管理，因为对于 URN 来说，一个资源的名字是唯一的，所以无论资源移动到什么地方，都能通过名字定位到资源。从某种意义上来说，URN 是 URI 的未来趋势，但是 URN 的实现需要一个中间架构来满足这种位置到名字的映射，所以要完成从 URL 到 URN 的过度，显然是一个工程量的过程，如果不是 URL 到了不能用的时候，URN 的实现需要很长的时间，幸运的是现在 URL 架构还是很好的满足网络需求的！</p>
-<h2 id="URL-的语法"><a href="#URL-的语法" class="headerlink" title="URL 的语法"></a>URL 的语法</h2><p>URL 的语法描述的是 URL 由哪些组件构成，以及这些组件是怎么组合成一个 URL，中间由什么符号连接，每个组件代表什么等！其格式如下：</p>
-<blockquote><p><code>&lt;scheme&gt;://&lt;user&gt;:&lt;password&gt;@&lt;host&gt;:&lt;port&gt;/&lt;path&gt;;&lt;params&gt;?&lt;query&gt;#&lt;frag&gt;</code></p>
-</blockquote>
-<p>其中：<br>scheme:方法描述了请求资源时用了什么协议，用“:”与 url 其它部分隔开；<br>user:用户名描述了访问是带的用户名；<br>password:密码描述了用户名后面可能跟的密码，用“:”跟用户名隔开；<br>host:主机描述了网站主机名或 ip 地址，如果前面有用户名和密码，用@分开；<br>post:服务器当前正在监听的端口，http 默认为 80，https 默认为 443;<br>path:路劲描述了资源在服务器上的位置，用‘/’跟前面部分隔开；<br>params:参数描述了请求需要附加的参数，用“;”与其他部分隔开；<br>query:查询是用来激活服务器程序去执行某些操作，比如查询数据库等，用“?”与其余部分隔开；<br>frag:片段只在客户端使用，不发送到服务器端；</p>
-        
-          <a class="article-more-a" href="/2019/08/12/learnHTTP/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">http</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/08/12/learnHTTP/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-learnNode" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/12/learnNode/">Node.js学习</a>
-    </h1>
-  
-
-        
-        <a href="/2019/08/12/learnNode/" class="archive-article-date">
-  	<time datetime="2019-08-12T03:05:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-12</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Node.js 的学习笔记</p>
-<h3 id="创建基类-model"><a href="#创建基类-model" class="headerlink" title="创建基类 model"></a>创建基类 model</h3><p>当成功返回时和失败返回时，返回信息</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">class BaseModel &#123;</span><br><span class="line">  constructor(data, message) &#123;</span><br><span class="line">    <span class="keyword">if</span> (typeof data === <span class="string">'string'</span>) &#123;</span><br><span class="line">      this.message = data;</span><br><span class="line">      data = null;</span><br><span class="line">      message = null;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (data) &#123;</span><br><span class="line">      this.data = data;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (message) &#123;</span><br><span class="line">      this.message = message;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">class SuccessModel extends BaseModel &#123;</span><br><span class="line">  constructor(data, message) &#123;</span><br><span class="line">    super(data, message);</span><br><span class="line">    this.errno = 0;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">class ErrorModel extends BaseModel &#123;</span><br><span class="line">  constructor(data, message) &#123;</span><br><span class="line">    super(data, message);</span><br><span class="line">    this.errno = -1;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">module.exports = &#123;</span><br><span class="line">  SuccessModel,</span><br><span class="line">  ErrorModel</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<h3 id="拆分-URL"><a href="#拆分-URL" class="headerlink" title="拆分 URL"></a>拆分 URL</h3><p>将 url 拆分成一个数组，分成 path 和参数</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">const url = req.url;</span><br><span class="line">req.path = url.split(<span class="string">'?'</span>)[0];</span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2019/08/12/learnNode/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">node.js express</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/08/12/learnNode/">展开全文 >></a>
         </p>
       
 
