@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="程亮的个人博客">
 <meta property="og:description" content="总结了从参加实习到工作以来中遇见的问题，和可以改进的地方">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-04-27T06:25:17.304Z">
+<meta property="og:updated_time" content="2020-06-17T09:23:51.295Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="工作中遇见的问题">
 <meta name="twitter:description" content="总结了从参加实习到工作以来中遇见的问题，和可以改进的地方">
@@ -340,6 +340,10 @@
 
 <h3 id="飞冰中如何配置-webpack"><a href="#飞冰中如何配置-webpack" class="headerlink" title="飞冰中如何配置 webpack"></a>飞冰中如何配置 webpack</h3><p>飞冰支持链式的 webpack-chain 配置</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">module.exports = (&#123; onGetWebpackConfig &#125;) =&gt; &#123;</span><br><span class="line">  onGetWebpackConfig((config) =&gt; &#123;</span><br><span class="line">    config.module</span><br><span class="line">      .rule(&apos;new-rule&apos;)</span><br><span class="line">      .test(/\.xml$/)</span><br><span class="line">      .use(&apos;xml-loader&apos;)</span><br><span class="line">      .loader(&apos;xml-loader&apos;);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="node-中如何正确将一个数组以-FS-的方式存到本地"><a href="#node-中如何正确将一个数组以-FS-的方式存到本地" class="headerlink" title="node 中如何正确将一个数组以 FS 的方式存到本地"></a>node 中如何正确将一个数组以 FS 的方式存到本地</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">const fs = require(&apos;fs&apos;);</span><br><span class="line"></span><br><span class="line">let arr = [</span><br><span class="line">    1,</span><br><span class="line">    2,</span><br><span class="line">    3,</span><br><span class="line">    &apos;abc&apos;</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line">fs.writeFile(&quot;url.js&quot;,&apos;let articleUrlList = &apos; + JSON.stringify(arr), err =&gt; &#123;</span><br><span class="line">    if(!err) console.log(&quot;success~&quot;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="如何使用-lodash-进行对象数组的去重"><a href="#如何使用-lodash-进行对象数组的去重" class="headerlink" title="如何使用 lodash 进行对象数组的去重"></a>如何使用 lodash 进行对象数组的去重</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">_.unipWith(data,_.isEqual)</span><br></pre></td></tr></table></figure>
 
 
       
